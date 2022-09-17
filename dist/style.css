@@ -1,3 +1,15 @@
+:root {
+  --skyBlue: hsl(212, 83%, 43%);
+  --darkestBlue: hsl(235, 27%, 8%);
+  --veryDarkBlue: hsl(232, 31%, 10%);
+  --brightPeach: hsl(9, 100%, 64%);
+  --darkBlue: hsl(233, 26%, 24%);
+  --greyishBlue: hsl(233, 8%, 62%);
+  --lightGrey: hsl(220, 14%, 96%);
+  --veryLightGrey: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -19,28 +31,22 @@ body {
   color: var(--greyishBlue);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 700;
   line-height: 1.2;
   margin-top: 0;
+  color: var(--darkBlue);
 }
 
 p {
   margin-top: 0;
 }
 
-a, a:visited, a:active {
+a,
+a:visited,
+a:active {
   text-decoration: none;
-}
-
-:root {
-  --skyBlue: hsl(212, 83%, 43%);
-  --darkestBlue: hsl(235, 27%, 8%);
-  --veryDarkBlue: hsl(232, 31%, 10%);
-  --brightPeach: hsl(9, 100%, 64%);
-  --darkBlue: hsl(233, 26%, 24%);
-  --greyishBlue: hsl(233, 8%, 62%);
-  --lightGrey: hsl(220, 14%, 96%);
-  --veryLightGrey: hsl(0, 0%, 98%);
-  --white: hsl(0, 0%, 100%);
 }
