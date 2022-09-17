@@ -1,0 +1,22 @@
+@use '../util/' as u;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  font-family: u.$mitr;
+  font-weight: 300;
+  background-color: var(--white);
+  color: var(--greyishBlue);
+}
