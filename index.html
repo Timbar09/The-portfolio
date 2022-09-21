@@ -1,23 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/a1e854484d.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="/dist/style.css">
-  <script defer src="/app/js/script.js"></script>
-  <title>Front-End Web Developer|Miles Mosweu</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/a1e854484d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/style.css" />
+    <script defer src="/app/js/script.js"></script>
+    <title>Front-End Web Developer|Miles Mosweu</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content container container-px">
+        <nav class="nav flex flex-jc-sb flex-ai-c">
+          <a href="/" class="header__logo"></a>
 
-  <main class="main">
-    <h1>KING TIMBAR</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, reprehenderit consectetur? Cupiditate, fugiat fugit consectetur veritatis dicta doloremque quisquam sed.</p>
-  </main>
-  
-</body>
+          <div class="header__links flex flex-ai-c">
+            <a href="#home">Home</a>
+            <a href="#work">Projects</a>
+            <a href="#about">About</a>
+            <a href="#capabilities">Abilities</a>
+            <button class="header__toggle" title="Darkmode">
+              <div class="slider"></div>
+            </button>
+          </div>
+
+          <button
+            id="btnHumburger"
+            class="header__hamburger flex fle-jc-c flex-ai-c"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="header__cta button button-primary">
+            <a href="#contact">Contact me</a>
+          </div>
+
+          <div class="header__menu">
+            <a href="#work" class="option" id="appear">Projects</a>
+            <a href="#about" class="option" id="appear">About</a>
+            <a href="#capabilities" class="option" id="appear">Abilities</a>
+            <a href="#contact" class="option" id="appear">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="overlay"></div>
+
+    <main class="main">
+      <h1><i>The Big</i> Title</h1>
+      <h2>Sub-title</h2>
+      <h3>Smaller sub-title</h3>
+      <h4>Smallest sub-title</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem suscipit
+        quos placeat, alias quidem reprehenderit nemo facere harum perspiciatis
+        numquam?
+      </p>
+    </main>
+  </body>
 </html>
