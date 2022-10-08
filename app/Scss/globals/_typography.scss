@@ -57,12 +57,66 @@ a:visited,
 a:active {
   font-size: inherit;
   text-decoration: none;
+  border-radius: 5px;
+
+  &:focus {
+    outline: solid 2px var(--greyishBlue);
+    outline-offset: 3px;
+  }
+}
+
+// LOGOS
+.logo {
+  display: inline-block;
+  width: 200px;
+  height: 30px;
+  background-image: url('/images/logo-header.svg');
+  background-size: cover;
+}
+
+//SOCIALS
+.social-media {
+  position: relative;
+
+  a {
+    position: relative;
+    display: inline-block;
+    font-size: 1.125em;
+    transition: top 250ms, color 250ms;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      top: -0.2em;
+      color: var(--peach);
+    }
+
+    &:focus-within {
+      outline: solid 0.1rem var(--peach);
+    }
+  }
 }
 
 // BUTTONS
+
+button {
+  &:focus {
+    outline: solid 2px var(--greyishBlue);
+    outline-offset: 3px;
+    opacity: 1;
+  }
+}
+
 .button {
   border-radius: 5px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 150ms ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.35);
+  }
 
   a {
     position: relative;
@@ -72,32 +126,36 @@ a:active {
     font-weight: 300;
     padding: 0.275rem 1.5rem;
     background-color: transparent;
-    transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+    transition: background-color 150ms ease-in-out, color 150ms ease-in-out,
+      border 150ms ease-in-out;
   }
 
   &-primary {
     background-color: var(--white);
 
     a {
-      background: linear-gradient(45deg, var(--peach), hsl(32, 100%, 64%));
+      background: var(--peach-gradient);
       padding: 0.375rem 1.5rem;
       transition: opacity 150ms ease-in-out;
 
       &:hover {
-        opacity: 0.9;
+        opacity: 0.825;
       }
     }
   }
 
   &-secondary {
+    background: var(--peach-gradient);
+
     a {
-      background-color: transparent;
+      background-color: var(--bg-intro);
       border: solid 3px var(--peach);
       color: var(--peach);
 
       &:hover {
-        background-color: var(--peach);
+        background-color: transparent;
         color: var(--bg-intro);
+        border: solid 3px transparent;
       }
     }
   }

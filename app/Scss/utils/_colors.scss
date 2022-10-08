@@ -1,10 +1,17 @@
 :root {
   --skyBlue: hsl(212, 83%, 43%);
-  --darkestBlue: hsl(235, 27%, 8%);
-  --veryDarkBlue: hsl(232, 31%, 10%);
+  --skyBlue-gradient: linear-gradient(
+    65deg,
+    var(--skyBlue),
+    hsl(189, 83%, 43%)
+  );
   --peach: hsl(9, 100%, 64%);
+  --peach-gradient: linear-gradient(65deg, var(--peach), hsl(32, 100%, 64%));
 
-  --darkBlue: hsl(233, 26%, 24%);
+  --darkBlue: hsl(235, 27%, 8%);
+  --bg-footer: hsl(235, 27%, 8%);
+
+  --veryDarkBlue: hsl(233, 26%, 24%);
   --color: hsl(233, 26%, 24%);
 
   --greyishBlue: hsl(233, 8%, 62%);

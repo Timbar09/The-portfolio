@@ -22,7 +22,7 @@
     <header class="header">
       <div class="header__content container container-px">
         <nav class="nav flex flex-jc-sb flex-ai-c">
-          <a href="/" class="header__logo"></a>
+          <a href="/" class="header__logo logo"></a>
 
           <div class="header__links flex flex-ai-c">
             <a href="#home">Home</a>
@@ -70,5 +70,93 @@
         numquam?
       </p>
     </main>
+
+    <footer id="contact" class="footer">
+      <div class="footer__content container container-pall">
+        <h2 class="footer__title">Get in touch</h2>
+        <p class="footer__description">
+          Would you like to colaborate on a project?
+        </p>
+
+        <div class="footer__grid">
+          <div class="footer__group form-group">
+            <form
+              action="https://formsubmit.co/el/vofuve"
+              method="POST"
+              class="footer__form"
+            >
+              <div class="footer__form-group">
+                <input type="hidden" name="_subject" value="Visitor Enquery" />
+                <label for="message">Message *</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="5"
+                  title="Please write a your induiry"
+                  placeholder="Write your message or inquiry here..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="footer__form-group">
+                <label for="name">Name *</label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Enter your name..."
+                  required
+                />
+              </div>
+
+              <div class="footer__form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email..."
+                  required
+                />
+              </div>
+              <div class="footer__form-group">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="footer__logo-container">
+            <a href="#home" class="footer__logo logo"></a>
+          </div>
+
+          <div class="footer__details details-one">
+            <p><i class="fa-solid fa-location-dot"></i> Palapye, Botswana</p>
+
+            <a href="#"
+              ><i class="fa-solid fa-envelope"></i> Send me an email</a
+            >
+
+            <div class="footer__social social-media">
+              <a href="" class="social-link" target="_blank" title="facebook">
+                <i class="fa-brands fa-facebook"></i> </a
+              ><a href="" class="social-link" target="_blank" title="instagram">
+                <i class="fa-brands fa-instagram"></i> </a
+              ><a href="" class="social-link" target="_blank" title="twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__details details-two">
+            <div class="footer__policies">
+              <a href="#">Terms of Use</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Disclaimer</a>
+              <a href="#">Credits</a>
+            </div>
+
+            <div class="footer__copyright">&copy; 2022 MILES MOSWEU</div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
