@@ -14,14 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://timbar09.github.io/Miles-Mosweu/dist/style.css"
-    />
-    <script
-      defer
-      src="https://timbar09.github.io/Miles-Mosweu/app/js/script.js"
-    ></script>
+    <link rel="stylesheet" href="dist/style.css" />
+    <script defer src="app/js/script.js"></script>
     <title>Front-End Web Developer|Miles Mosweu</title>
 
     <!-- Add https://timbar09.github.io/Miles-Mosweu/ before you merge into main branch -->
@@ -34,7 +28,7 @@
 
           <div class="header__links flex flex-ai-c">
             <a href="#home">Home</a>
-            <a href="#work">Projects</a>
+            <a href="#projects">Projects</a>
             <a href="#about">About</a>
             <a href="#capabilities">Abilities</a>
             <button class="header__toggle" title="Darkmode">
@@ -80,23 +74,23 @@
     </main>
 
     <footer id="contact" class="footer">
-      <div class="footer__content container container-pall">
+      <div class="footer__container container container-pall">
         <h2 class="footer__title">Get in touch</h2>
         <p class="footer__description">
           Would you like to colaborate on a project?
         </p>
 
         <div class="footer__grid">
-          <div class="footer__group form-group">
+          <div class="footer__group">
             <form action="sendemail.php" method="post" class="footer__form">
               <div class="footer__form-group">
                 <label for="message">Message *</label>
                 <textarea
                   name="message"
                   id="message"
+                  class="john-wick"
                   rows="5"
-                  title="Please write a your induiry"
-                  placeholder="Write your message or inquiry here..."
+                  placeholder="Message *"
                   required
                 ></textarea>
               </div>
@@ -105,9 +99,10 @@
                 <label for="name">Name *</label>
                 <input
                   id="name"
+                  class="john-wick"
                   name="name"
                   type="text"
-                  placeholder="Enter your name..."
+                  placeholder="Name *"
                   required
                 />
               </div>
@@ -116,9 +111,10 @@
                 <label for="email">Email *</label>
                 <input
                   id="email"
+                  class="john-wick"
                   name="email"
                   type="email"
-                  placeholder="Enter your email..."
+                  placeholder="Email *"
                   required
                 />
               </div>
@@ -128,37 +124,61 @@
             </form>
           </div>
 
-          <div class="footer__logo-container">
+          <div class="footer__group">
             <a href="#home" class="footer__logo logo"></a>
+            <p>Hit me up and lets make magic.</p>
           </div>
 
-          <div class="footer__details details-one">
-            <p><i class="fa-solid fa-location-dot"></i> Palapye, Botswana</p>
-
-            <a href="#"
-              ><i class="fa-solid fa-envelope"></i> Send me an email</a
+          <div class="footer__group footer__links">
+            <a href="https://goo.gl/maps/dLSLyaEgB41sBXMe6" target="_blank"
+              ><i class="fa-solid fa-location-dot"></i> Palapye, Botswana</a
             >
 
-            <div class="footer__social social-media">
-              <a href="" class="social-link" target="_blank" title="facebook">
-                <i class="fa-brands fa-facebook"></i> </a
-              ><a href="" class="social-link" target="_blank" title="instagram">
-                <i class="fa-brands fa-instagram"></i> </a
-              ><a href="" class="social-link" target="_blank" title="twitter">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
+            <div class="social-media footer__social">
+              <a
+                href="https://github.com/Timbar09"
+                class="social-media-link"
+                target="_blank"
+                title="Github"
+              >
+                <i class="fa-brands fa-github"></i> </a
+              ><a
+                href="https://www.linkedin.com/in/miles-mosweu09"
+                class="social-media-link"
+                target="_blank"
+                title="Linkedin"
+              >
+                <i class="fa-brands fa-linkedin"></i></a
+              ><a
+                href="_blank"
+                class="social-media-link"
+                target="_blank"
+                title="facebook"
+              >
+                <i class="fa-brands fa-facebook"></i
+              ></a>
             </div>
+
+            <div class="footer__copyright">&copy; 2022 MILES MOSWEU</div>
           </div>
 
-          <div class="footer__details details-two">
-            <div class="footer__policies">
+          <div class="footer__group">
+            <h3 class="footer__group-title">Site Map</h3>
+            <nav class="footer__nav footer__links">
+              <a href="#home">Home</a>
+              <a href="#projects">Projects</a>
+              <a href="#about">About</a>
+              <a href="#capabilities">Abilities</a>
+            </nav>
+          </div>
+          <div class="footer__group">
+            <h3 class="footer__group-title">Policies & Security</h3>
+            <div class="footer__policies footer__links">
               <a href="#">Terms of Use</a>
               <a href="#">Privacy Policy</a>
               <a href="#">Disclaimer</a>
               <a href="#">Credits</a>
             </div>
-
-            <div class="footer__copyright">&copy; 2022 MILES MOSWEU</div>
           </div>
         </div>
       </div>

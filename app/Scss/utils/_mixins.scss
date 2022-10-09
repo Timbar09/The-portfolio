@@ -29,7 +29,7 @@ $breakpoints-down: (
 //PSEUDO ELEMENTS
 
 // BEFORE
-@mixin pseudo-before {
+@mixin before {
   &::before {
     content: '';
     position: absolute;
@@ -38,7 +38,7 @@ $breakpoints-down: (
 }
 
 // AFTER
-@mixin pseudo-after {
+@mixin after {
   &::after {
     content: '';
     position: absolute;
