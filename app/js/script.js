@@ -77,3 +77,31 @@ buttons.forEach((button) =>
     });
   })
 );
+
+// FORM INPUT PLACEHOLDER
+
+const formInputs = document.querySelectorAll('.john-wick');
+
+formInputs.forEach((input) =>
+  input.addEventListener('focusin', function () {
+    if (input.placeholder === 'Name *') {
+      input.placeholder = 'e.g John Wick';
+    } else if (input.placeholder === 'Email *') {
+      input.placeholder = 'e.g giveMeThanos@yahoo.com';
+    } else if ((input.placeholder = 'Message *')) {
+      input.placeholder = 'e.g Where is Thanos?';
+    }
+  })
+);
+
+formInputs.forEach((input) =>
+  input.addEventListener('blur', function () {
+    if (input.placeholder === 'e.g John Wick') {
+      input.placeholder = 'Name *';
+    } else if (input.placeholder === 'e.g giveMeThanos@yahoo.com') {
+      input.placeholder = 'Email *';
+    } else if ((input.placeholder = 'e.g Where is Thanos?')) {
+      input.placeholder = 'Message *';
+    }
+  })
+);

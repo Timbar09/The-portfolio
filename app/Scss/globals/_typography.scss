@@ -74,31 +74,6 @@ a:active {
   background-size: cover;
 }
 
-//SOCIALS
-.social-media {
-  position: relative;
-
-  a {
-    position: relative;
-    display: inline-block;
-    font-size: 1.125em;
-    transition: top 250ms, color 250ms;
-
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
-
-    &:hover {
-      top: -0.2em;
-      color: var(--peach);
-    }
-
-    &:focus-within {
-      outline: solid 0.1rem var(--peach);
-    }
-  }
-}
-
 // BUTTONS
 
 button {
