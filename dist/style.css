@@ -739,13 +739,13 @@ button:focus {
   .footer__grid {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr 1fr;
-    grid-template-rows: 6.5rem auto;
+    grid-template-rows: 7.75rem auto;
     grid-template-areas: "footer-logo form navigation policies" "address form navigation policies";
   }
 }
 .footer__group {
   position: relative;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }
 @media (min-width: 40em) {
   .footer__group {
@@ -794,7 +794,7 @@ button:focus {
   }
 }
 .footer__group:nth-child(2) p {
-  margin-left: 1rem;
+  margin: 0.6875rem 0 1rem 1rem;
   font-style: italic;
 }
 @media (min-width: 40em) {
@@ -984,7 +984,7 @@ button:focus {
 .footer__social a {
   position: relative;
   display: inline-block;
-  transition: color 250ms;
+  transition: color 150ms;
 }
 .footer__social a:not(:last-child) {
   margin-right: 1rem;

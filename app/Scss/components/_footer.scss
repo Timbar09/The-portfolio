@@ -83,7 +83,7 @@
     @include u.breakpoint-up(large) {
       display: grid;
       grid-template-columns: 1fr 3fr 1fr 1fr;
-      grid-template-rows: 6.5rem auto;
+      grid-template-rows: 7.75rem auto;
       grid-template-areas:
         'footer-logo form navigation policies'
         'address form navigation policies';
@@ -92,7 +92,7 @@
 
   &__group {
     position: relative;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
 
     @include u.breakpoint-up(medium) {
       padding: 0;
@@ -142,7 +142,7 @@
       }
 
       p {
-        margin-left: 1rem;
+        margin: 0.6875rem 0 1rem 1rem;
         font-style: italic;
       }
     }
@@ -366,7 +366,7 @@
     a {
       position: relative;
       display: inline-block;
-      transition: color 250ms;
+      transition: color 150ms;
 
       &:not(:last-child) {
         margin-right: 1rem;
