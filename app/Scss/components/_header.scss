@@ -13,7 +13,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
 
-    @include u.pseudo-before {
+    @include u.before {
       left: 0;
       bottom: 0;
       background-color: hsla(0, 0%, 60%, 0.2);
@@ -52,7 +52,7 @@
       letter-spacing: 3.5px;
       transition: color 250ms ease-in-out;
 
-      @include u.pseudo-before {
+      @include u.before {
         left: 0;
         bottom: 2px;
         width: 100%;
