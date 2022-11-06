@@ -738,7 +738,7 @@ button:focus {
 @media (min-width: 64em) {
   .footer__grid {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-template-columns: 1fr 3fr 0.5fr 1fr;
     grid-template-rows: 7.75rem auto;
     grid-template-areas: "footer-logo form navigation policies" "address form navigation policies";
   }

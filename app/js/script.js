@@ -78,7 +78,13 @@ buttons.forEach((button) =>
   })
 );
 
-// FORM INPUT PLACEHOLDER
+// FORM
+
+window.onbeforeunload = () => {
+  for (const form of document.getElementsByTagName('form')) {
+    form.reset();
+  }
+};
 
 const formInputs = document.querySelectorAll('.john-wick');
 
