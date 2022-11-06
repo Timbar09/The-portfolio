@@ -82,9 +82,19 @@
 
         <div class="footer__grid">
           <div class="footer__group">
-            <form action="sendemail.php" method="post" class="footer__form">
+            <form
+              action="https://formsubmit.co/el/vofuve"
+              method="POST"
+              class="footer__form"
+            >
               <div class="footer__form-group">
                 <label for="message">Message *</label>
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://milesmosweu.netlify.app/pages/thanks.html"
+                />
+                <input type="hidden" name="_subject" value="Visitor Enquiry!" />
                 <textarea
                   name="message"
                   id="message"
@@ -152,12 +162,12 @@
               >
                 <i class="fa-brands fa-linkedin"></i></a
               ><a
-                href="_blank"
+                href="https://twitter.com/Milez09"
                 class="social-media-link"
                 target="_blank"
-                title="facebook"
+                title="twitter"
               >
-                <i class="fa-brands fa-facebook"></i
+                <i class="fa-brands fa-twitter"></i
               ></a>
             </div>
 
