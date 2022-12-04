@@ -33,7 +33,7 @@
   box-shadow: 0px 6px 12px 6px rgba(255, 99, 71, 0.4);
 }
 .darkmode .header__toggle .slider {
-  left: 1.4375em;
+  left: 1.575em;
 }
 
 .fade-in {
@@ -468,12 +468,12 @@ a:focus, a:focus:focus-within {
   position: absolute;
   left: 0;
   bottom: 2px;
-  width: 100%;
-  height: 1px;
+  width: 4px;
+  height: 4px;
   background-color: var(--peach);
   opacity: 0;
-  border-radius: 10px;
-  transition: all 250ms ease-in-out;
+  border-radius: 10px 10px 0 0;
+  transition: bottom 200ms ease-in-out, opacity 200ms ease-in-out, width 200ms 200ms ease-in-out;
 }
 @media (max-width: 63.9375em) {
   .header__links a {
@@ -486,12 +486,13 @@ a:focus, a:focus:focus-within {
 .header__links a:hover::before {
   opacity: 1;
   height: 4px;
+  width: 100%;
   bottom: -2rem;
   background-color: var(--color);
 }
 .header__toggle {
   position: relative;
-  border: solid 0.25em var(--color);
+  border: solid 0.2em var(--color);
   width: 3.75em;
   border-radius: 2em;
   background-image: url("/icons/toggle-background.svg");
@@ -502,10 +503,10 @@ a:focus, a:focus:focus-within {
   cursor: pointer;
   opacity: 0.65;
   padding: 0;
+  transition: opacity 150ms ease-in-out;
 }
 .header__toggle:hover {
   opacity: 1;
-  border: solid 0.25em var(--color);
 }
 @media (max-width: 63.9375em) {
   .header__toggle {
