@@ -32,14 +32,6 @@
 .darkmode .button:hover {
   box-shadow: 0px 6px 12px 6px rgba(255, 99, 71, 0.4);
 }
-.darkmode .header .logo {
-  background-image: url("/images/logo-header-dark.svg");
-}
-@media (max-width: 63.9375em) {
-  .darkmode .header__logo {
-    background-image: url("/images/logo-dark.svg");
-  }
-}
 .darkmode .header__toggle .slider {
   left: 1.4375em;
 }
@@ -278,20 +270,6 @@ a:focus {
   outline-offset: 3px;
 }
 
-.logo {
-  display: inline-block;
-  width: 200px;
-  height: 30px;
-  background-image: url("/images/logo-header.svg");
-  background-size: cover;
-}
-
-button:focus {
-  outline: solid 2px var(--greyishBlue);
-  outline-offset: 3px;
-  opacity: 1;
-}
-
 .button {
   border-radius: 5px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
@@ -299,6 +277,14 @@ button:focus {
 }
 .button:hover {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.35);
+}
+.button:focus-visible {
+  outline: 0;
+}
+.button:focus {
+  outline: solid 2px var(--greyishBlue);
+  outline-offset: 3px;
+  opacity: 1;
 }
 .button a {
   position: relative;
@@ -368,6 +354,7 @@ button:focus {
 }
 
 .container {
+  position: relative;
   max-width: 80em;
   margin: 0 auto;
 }
@@ -428,16 +415,20 @@ button:focus {
 
 .header {
   position: relative;
+  height: 100vh;
+  background-color: var(--bg-intro);
 }
-.header__nav {
+.header__nav-section {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   background-color: var(--bg-intro);
   z-index: 1000;
+}
+.header__nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .header__nav::before {
   content: "";
@@ -451,23 +442,18 @@ button:focus {
 }
 @media (min-width: 64em) {
   .header__nav {
-    padding-top: 1.875rem;
+    padding-top: 2rem;
     padding-bottom: 1.875rem;
   }
 }
-@media (min-width: ) {
-  .header__nav {
-    padding-top: 2.4875rem;
-    padding-bottom: 2.4875rem;
-  }
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: var(--color);
+  transition: color 150ms ease-in-out;
 }
-@media (max-width: 63.9375em) {
-  .header__logo {
-    border-radius: 4px;
-    width: 30px;
-    height: 30px;
-    background-image: url("/images/logo.svg");
-  }
+.header__logo:hover {
+  color: var(--peach);
 }
 .header__links a {
   position: relative;

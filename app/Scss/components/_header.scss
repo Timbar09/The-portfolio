@@ -2,16 +2,21 @@
 
 .header {
   position: relative;
+  height: 100vh;
+  background-color: var(--bg-intro);
 
-  &__nav {
+  &__nav-section {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     background-color: var(--bg-intro);
     z-index: 1000;
+  }
+
+  &__nav {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     @include u.before {
       left: 0;
@@ -23,22 +28,19 @@
     }
 
     @include u.breakpoint-up(large) {
-      padding-top: 1.875rem;
+      padding-top: 2rem;
       padding-bottom: 1.875rem;
-    }
-
-    @include u.breakpoint-up(x-large) {
-      padding-top: 2.4875rem;
-      padding-bottom: 2.4875rem;
     }
   }
 
   &__logo {
-    @include u.breakpoint-down(medium) {
-      border-radius: 4px;
-      width: 30px;
-      height: 30px;
-      background-image: url('/images/logo.svg');
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--color);
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: var(--peach);
     }
   }
 

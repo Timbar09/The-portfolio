@@ -16,15 +16,6 @@
   }
 
   .header {
-    .logo {
-      background-image: url('/images/logo-header-dark.svg');
-    }
-
-    &__logo {
-      @include m.breakpoint-down(medium) {
-        background-image: url('/images/logo-dark.svg');
-      }
-    }
     &__toggle {
       .slider {
         left: 1.4375em;
