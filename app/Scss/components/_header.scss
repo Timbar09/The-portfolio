@@ -1,17 +1,17 @@
 @use '../utils' as u;
 
 .header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 100;
-  background-color: var(--bg-intro);
+  position: relative;
 
-  &__content {
-    position: relative;
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    background-color: var(--bg-intro);
+    z-index: 1000;
 
     @include u.before {
       left: 0;
@@ -27,7 +27,7 @@
       padding-bottom: 1.875rem;
     }
 
-    @include u.breakpoint-up(xlarge) {
+    @include u.breakpoint-up(x-large) {
       padding-top: 2.4875rem;
       padding-bottom: 2.4875rem;
     }
@@ -67,8 +67,10 @@
         display: none;
       }
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         color: var(--color);
+        outline: none;
 
         &::before {
           opacity: 1;
@@ -76,10 +78,6 @@
           bottom: -0.5rem;
           background-color: var(--color);
         }
-      }
-
-      &:focus-visible {
-        outline: none;
       }
 
       &:focus {
@@ -147,8 +145,8 @@
       background-color: var(--bg-intro);
       border-radius: 5px;
       border: solid 1px var(--color);
-      transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out,
-        transform 100ms 100ms ease-in-out, background-color 100ms ease-in-out;
+      transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out, transform 100ms 100ms ease-in-out,
+        background-color 100ms ease-in-out;
 
       &:not(:first-child) {
         margin-top: 5px;
@@ -221,8 +219,7 @@
 
       &__hamburger {
         > span {
-          transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out,
-            rotate 100ms 100ms ease-in-out;
+          transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out, rotate 100ms 100ms ease-in-out;
 
           &:first-child {
             top: 8px;
@@ -250,8 +247,7 @@
 
       &__hamburger {
         > span {
-          transition: opacity 100ms 100ms ease-in-out,
-            top 100ms 100ms ease-in-out, rotate 100ms ease-in-out;
+          transition: opacity 100ms 100ms ease-in-out, top 100ms 100ms ease-in-out, rotate 100ms ease-in-out;
 
           &:first-child {
             top: 0;

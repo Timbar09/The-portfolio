@@ -262,16 +262,18 @@ p {
   margin-top: 0;
 }
 
-a,
-a:visited,
-a:active {
-  font-size: inherit;
+a {
   text-decoration: none;
   border-radius: 5px;
+  font-size: inherit;
 }
-a:focus,
-a:visited:focus,
-a:active:focus {
+a:visited, a:active {
+  text-decoration: none;
+}
+a:focus-visible {
+  border: 0;
+}
+a:focus {
   outline: solid 2px var(--greyishBlue);
   outline-offset: 3px;
 }
@@ -425,19 +427,19 @@ button:focus {
 }
 
 .header {
+  position: relative;
+}
+.header__nav {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 100;
-  background-color: var(--bg-intro);
-}
-.header__content {
-  position: relative;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  background-color: var(--bg-intro);
+  z-index: 1000;
 }
-.header__content::before {
+.header__nav::before {
   content: "";
   position: absolute;
   left: 0;
@@ -448,13 +450,13 @@ button:focus {
   border-radius: 5rem;
 }
 @media (min-width: 64em) {
-  .header__content {
+  .header__nav {
     padding-top: 1.875rem;
     padding-bottom: 1.875rem;
   }
 }
-@media (min-width: 87.5em) {
-  .header__content {
+@media (min-width: ) {
+  .header__nav {
     padding-top: 2.4875rem;
     padding-bottom: 2.4875rem;
   }
@@ -493,17 +495,15 @@ button:focus {
     display: none;
   }
 }
-.header__links a:hover {
+.header__links a:hover, .header__links a:focus-visible {
   color: var(--color);
+  outline: none;
 }
-.header__links a:hover::before {
+.header__links a:hover::before, .header__links a:focus-visible::before {
   opacity: 1;
   height: 3px;
   bottom: -0.5rem;
   background-color: var(--color);
-}
-.header__links a:focus-visible {
-  outline: none;
 }
 .header__links a:focus {
   outline: solid 2px var(--greyishBlue);

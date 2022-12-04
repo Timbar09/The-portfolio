@@ -52,12 +52,19 @@ p {
   margin-top: 0;
 }
 
-a,
-a:visited,
-a:active {
-  font-size: inherit;
+a {
   text-decoration: none;
   border-radius: 5px;
+  font-size: inherit;
+
+  &:visited,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    border: 0;
+  }
 
   &:focus {
     outline: solid 2px var(--greyishBlue);
@@ -101,8 +108,7 @@ button {
     font-weight: 300;
     padding: 0.275rem 1.5rem;
     background-color: transparent;
-    transition: background-color 150ms ease-in-out, color 150ms ease-in-out,
-      border 150ms ease-in-out;
+    transition: background-color 150ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
   }
 
   &-primary {
