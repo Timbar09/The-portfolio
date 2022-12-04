@@ -57,23 +57,23 @@ a {
   border-radius: 5px;
   font-size: inherit;
 
-  &:visited,
-  &:active {
-    text-decoration: none;
-  }
-
-  &:focus-visible {
-    border: 0;
-  }
-
-  &:focus {
-    outline: solid 2px var(--greyishBlue);
+  &:focus,
+  &:focus:focus-within {
     outline-offset: 3px;
   }
 }
-
 // LOGOS
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: var(--color);
+  transition: color 150ms ease-in-out;
+
+  &:hover {
+    color: var(--peach);
+  }
+}
 // BUTTONS
 
 .button {

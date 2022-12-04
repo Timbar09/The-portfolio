@@ -303,8 +303,7 @@
         top: 2rem;
         left: 1.125rem;
         opacity: 0;
-        transition: top 200ms ease-in-out, left 200ms ease-in-out,
-          opacity 150ms 50ms ease-in-out;
+        transition: top 200ms ease-in-out, left 200ms ease-in-out, opacity 150ms 50ms ease-in-out;
       }
 
       input,
@@ -315,8 +314,8 @@
         color: var(--white);
         font-weight: 300;
         border-radius: 5px;
-        transition: border 200ms ease-in-out, background-color 200ms ease-in-out,
-          outline 200ms ease-in-out, outline-offset 50ms ease-in-out;
+        transition: border 200ms ease-in-out, background-color 200ms ease-in-out, outline 200ms ease-in-out,
+          outline-offset 50ms ease-in-out;
 
         &:focus,
         &:focus-visible {
@@ -349,12 +348,6 @@
         }
       }
     }
-  }
-
-  &__logo {
-    width: 167px;
-    height: 25px;
-    background-image: url('/images/logo-footer.svg');
   }
 
   &__social {

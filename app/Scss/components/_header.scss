@@ -33,24 +33,17 @@
     }
   }
 
-  &__logo {
-    font-size: 1.5rem;
-    font-weight: 200;
-    color: var(--color);
-    transition: color 150ms ease-in-out;
-
-    &:hover {
-      color: var(--peach);
-    }
-  }
-
   &__links {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
     a {
       position: relative;
       margin-right: 1.5rem;
       padding: 0.15rem 0.5rem;
       color: var(--greyishBlue);
-      font-weight: 400;
+      font-weight: 300;
       letter-spacing: 3.5px;
       transition: color 250ms ease-in-out;
 
@@ -69,23 +62,15 @@
         display: none;
       }
 
-      &:hover,
-      &:focus-visible {
+      &:hover {
         color: var(--color);
-        outline: none;
 
         &::before {
           opacity: 1;
-          height: 3px;
-          bottom: -0.5rem;
+          height: 4px;
+          bottom: -2rem;
           background-color: var(--color);
         }
-      }
-
-      &:focus {
-        outline: solid 2px var(--greyishBlue);
-        outline-offset: 3px;
-        color: var(--color);
       }
     }
   }

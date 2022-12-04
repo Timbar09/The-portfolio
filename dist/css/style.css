@@ -259,15 +259,18 @@ a {
   border-radius: 5px;
   font-size: inherit;
 }
-a:visited, a:active {
-  text-decoration: none;
-}
-a:focus-visible {
-  border: 0;
-}
-a:focus {
-  outline: solid 2px var(--greyishBlue);
+a:focus, a:focus:focus-within {
   outline-offset: 3px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: var(--color);
+  transition: color 150ms ease-in-out;
+}
+.logo:hover {
+  color: var(--peach);
 }
 
 .button {
@@ -446,21 +449,17 @@ a:focus {
     padding-bottom: 1.875rem;
   }
 }
-.header__logo {
-  font-size: 1.5rem;
-  font-weight: 200;
-  color: var(--color);
-  transition: color 150ms ease-in-out;
-}
-.header__logo:hover {
-  color: var(--peach);
+.header__links {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 .header__links a {
   position: relative;
   margin-right: 1.5rem;
   padding: 0.15rem 0.5rem;
   color: var(--greyishBlue);
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 3.5px;
   transition: color 250ms ease-in-out;
 }
@@ -481,20 +480,14 @@ a:focus {
     display: none;
   }
 }
-.header__links a:hover, .header__links a:focus-visible {
+.header__links a:hover {
   color: var(--color);
-  outline: none;
 }
-.header__links a:hover::before, .header__links a:focus-visible::before {
+.header__links a:hover::before {
   opacity: 1;
-  height: 3px;
-  bottom: -0.5rem;
+  height: 4px;
+  bottom: -2rem;
   background-color: var(--color);
-}
-.header__links a:focus {
-  outline: solid 2px var(--greyishBlue);
-  outline-offset: 3px;
-  color: var(--color);
 }
 .header__toggle {
   position: relative;
@@ -953,11 +946,6 @@ a:focus {
 .footer__form-group:focus-within input:focus,
 .footer__form-group:focus-within textarea:focus {
   --border: var(--focus);
-}
-.footer__logo {
-  width: 167px;
-  height: 25px;
-  background-image: url("/images/logo-footer.svg");
 }
 .footer__social {
   font-size: 1.5em;
