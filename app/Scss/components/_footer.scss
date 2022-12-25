@@ -1,9 +1,11 @@
 @use '../utils' as u;
 
 .footer {
+  --footer-color: hsl(232, 6%, 48%);
+
   position: relative;
   background-color: var(--bg-footer);
-  color: hsl(232, 6%, 48%);
+  color: var(--footer-color);
   text-align: center;
 
   a,
@@ -347,6 +349,13 @@
           }
         }
       }
+    }
+  }
+
+  &__logo {
+    &::before,
+    &::after {
+      background-color: var(--footer-color);
     }
   }
 

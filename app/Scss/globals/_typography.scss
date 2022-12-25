@@ -65,13 +65,42 @@ a {
 // LOGOS
 
 .logo {
+  position: relative;
   font-size: 1.5rem;
   font-weight: 200;
   color: var(--color);
   transition: color 150ms ease-in-out;
 
   &:hover {
-    color: var(--peach);
+    // color: var(--peach);
+
+    @include u.before {
+      width: 35%;
+    }
+
+    @include u.after {
+      width: 58%;
+    }
+  }
+
+  @include u.before {
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 3px;
+    background-color: var(--peach);
+    border-radius: 50rem;
+    transition: width 150ms ease-in-out;
+  }
+
+  @include u.after {
+    bottom: 0;
+    right: 0;
+    height: 3px;
+    width: 3px;
+    background-color: var(--peach);
+    border-radius: 50rem;
+    transition: width 150ms ease-in-out;
   }
 }
 // BUTTONS
