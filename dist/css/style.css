@@ -26,10 +26,12 @@
   --color: hsl(0, 0%, 98%);
 }
 .darkmode .button {
-  box-shadow: 0px 4px 8px 4px rgba(255, 99, 71, 0.25);
   transition: box-shadow 150ms ease-in-out;
 }
-.darkmode .button:hover {
+.darkmode .button-primary, .darkmode .button-secondary {
+  box-shadow: 0px 4px 8px 4px rgba(255, 99, 71, 0.25);
+}
+.darkmode .button-primary:hover, .darkmode .button-secondary:hover {
   box-shadow: 0px 6px 12px 6px rgba(255, 99, 71, 0.4);
 }
 .darkmode .header__toggle .slider {
@@ -199,6 +201,10 @@ body .main {
   padding-top: 117px;
 }
 
+.section {
+  text-align: center;
+}
+
 h1,
 h2,
 h3,
@@ -207,15 +213,20 @@ h4 {
   line-height: 1.2;
   margin-top: 0;
   color: var(--color);
-  text-align: center;
 }
 
 h1 {
   font-size: 4.8125em;
+  margin-bottom: 1rem;
+  font-weight: 500;
 }
-h1 i {
-  font-style: normal;
+h1 .hello {
+  display: block;
+  font-size: 0.5em;
   font-weight: 200;
+}
+h1 .hello .miles {
+  color: var(--peach);
 }
 @media (max-width: 63.9375em) {
   h1 {
@@ -287,7 +298,7 @@ a:focus, a:focus:focus-within {
   left: 0;
   height: 3px;
   width: 3px;
-  background-color: var(--peach);
+  background: var(--peach-gradient);
   border-radius: 50rem;
   transition: width 150ms ease-in-out;
 }
@@ -298,14 +309,13 @@ a:focus, a:focus:focus-within {
   right: 0;
   height: 3px;
   width: 3px;
-  background-color: var(--peach);
+  background: var(--peach-gradient);
   border-radius: 50rem;
   transition: width 150ms ease-in-out;
 }
 
 .button {
   border-radius: 5px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
   transition: box-shadow 150ms ease-in-out;
 }
 .button:hover {
@@ -319,7 +329,7 @@ a:focus, a:focus:focus-within {
   outline-offset: 3px;
   opacity: 1;
 }
-.button a {
+.button .btn {
   position: relative;
   display: inline-block;
   border-radius: inherit;
@@ -331,35 +341,37 @@ a:focus, a:focus:focus-within {
 }
 .button-primary {
   background-color: var(--white);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 }
-.button-primary a {
+.button-primary .btn {
   background: var(--peach-gradient);
   padding: 0.375rem 1.5rem;
   transition: opacity 150ms ease-in-out;
 }
-.button-primary a:hover {
+.button-primary .btn:hover {
   opacity: 0.825;
 }
 .button-secondary {
   background: var(--peach-gradient);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 }
-.button-secondary a {
+.button-secondary .btn {
   background-color: var(--bg-intro);
   border: solid 3px var(--peach);
   color: var(--peach);
 }
-.button-secondary a:hover {
+.button-secondary .btn:hover {
   background-color: transparent;
   color: var(--bg-intro);
   border: solid 3px transparent;
 }
-.button-tertiary a {
+.button-tertiary .btn {
   background-color: transparent;
   border: solid 2px rgba(150, 152, 166, 0.1450980392);
   font-size: 0.9em;
   color: var(--greyishBlue);
 }
-.button-tertiary a:hover {
+.button-tertiary .btn:hover {
   color: var(--bg-intro);
   background-color: var(--greyishBlue);
 }
@@ -385,10 +397,14 @@ a:focus, a:focus:focus-within {
 .flex-nowrap {
   flex-wrap: nowrap;
 }
+.flex-column {
+  flex-direction: column;
+}
 
 .container {
   position: relative;
   max-width: 80em;
+  min-width: 21.25rem;
   margin: 0 auto;
 }
 .container-pall {
@@ -477,6 +493,11 @@ a:focus, a:focus:focus-within {
   .header__nav {
     padding-top: 2rem;
     padding-bottom: 1.875rem;
+  }
+}
+@media (max-width: 63.9375em) {
+  .header__logo span {
+    display: none;
   }
 }
 .header__links {
@@ -631,6 +652,30 @@ a:focus, a:focus:focus-within {
   .header__menu {
     display: none;
   }
+}
+.header__hero {
+  padding-top: 2rem;
+}
+@media (min-width: 64em) {
+  .header__hero {
+    padding-top: 3rem;
+  }
+}
+.header__hero-text {
+  height: 100vh;
+  gap: 1rem;
+}
+@media (min-width: 40em) {
+  .header__hero-text {
+    gap: 2rem;
+  }
+}
+.header__hero-description {
+  max-width: 45.625rem;
+  margin: auto;
+}
+.header__hero-buttons {
+  gap: 1rem;
 }
 .header.open .header__menu {
   right: 0;

@@ -1,5 +1,9 @@
 @use '../utils' as u;
 
+.section {
+  text-align: center;
+}
+
 h1,
 h2,
 h3,
@@ -8,15 +12,21 @@ h4 {
   line-height: 1.2;
   margin-top: 0;
   color: var(--color);
-  text-align: center;
 }
 
 h1 {
   font-size: u.$fz-h1;
+  margin-bottom: 1rem;
+  font-weight: 500;
 
-  i {
-    font-style: normal;
+  .hello {
+    display: block;
+    font-size: 0.5em;
     font-weight: 200;
+
+    .miles {
+      color: var(--peach);
+    }
   }
 
   @include u.breakpoint-down(medium) {
@@ -88,7 +98,7 @@ a {
     left: 0;
     height: 3px;
     width: 3px;
-    background-color: var(--peach);
+    background: var(--peach-gradient);
     border-radius: 50rem;
     transition: width 150ms ease-in-out;
   }
@@ -98,7 +108,7 @@ a {
     right: 0;
     height: 3px;
     width: 3px;
-    background-color: var(--peach);
+    background: var(--peach-gradient);
     border-radius: 50rem;
     transition: width 150ms ease-in-out;
   }
@@ -107,7 +117,6 @@ a {
 
 .button {
   border-radius: 5px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
   transition: box-shadow 150ms ease-in-out;
 
   &:hover {
@@ -124,7 +133,7 @@ a {
     opacity: 1;
   }
 
-  a {
+  .btn {
     position: relative;
     display: inline-block;
     border-radius: inherit;
@@ -137,8 +146,9 @@ a {
 
   &-primary {
     background-color: var(--white);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 
-    a {
+    .btn {
       background: var(--peach-gradient);
       padding: 0.375rem 1.5rem;
       transition: opacity 150ms ease-in-out;
@@ -151,8 +161,9 @@ a {
 
   &-secondary {
     background: var(--peach-gradient);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 
-    a {
+    .btn {
       background-color: var(--bg-intro);
       border: solid 3px var(--peach);
       color: var(--peach);
@@ -166,7 +177,7 @@ a {
   }
 
   &-tertiary {
-    a {
+    .btn {
       background-color: transparent;
       border: solid 2px #9698a625;
       font-size: 0.9em;
@@ -207,12 +218,17 @@ a {
   &-nowrap {
     flex-wrap: nowrap;
   }
+
+  &-column {
+    flex-direction: column;
+  }
 }
 
 // CONTAINER PADDING
 .container {
   position: relative;
   max-width: 80em; // 1040px
+  min-width: 21.25rem;
   margin: 0 auto;
 
   &-pall {
