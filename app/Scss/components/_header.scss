@@ -2,7 +2,6 @@
 
 .header {
   position: relative;
-  height: 100vh;
   background-color: var(--bg-intro);
 
   &__nav-section {
@@ -12,6 +11,15 @@
     left: 0;
     background-color: var(--bg-intro);
     z-index: 1000;
+    transition: translate 500ms ease-in-out;
+
+    &.nav-hidden {
+      translate: 0px -4.5rem;
+
+      @include u.breakpoint-up('large') {
+        translate: 0px -6.25rem;
+      }
+    }
   }
 
   &__nav {
@@ -214,7 +222,7 @@
     }
 
     &-text {
-      height: 100vh;
+      height: max(23.4375rem, 100vh);
       gap: 1rem;
 
       @include u.breakpoint-up(medium) {

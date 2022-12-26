@@ -1,17 +1,13 @@
 :root {
   --skyBlue: hsl(212, 83%, 43%);
-  --skyBlue-gradient: linear-gradient(
-    65deg,
-    var(--skyBlue),
-    hsl(189, 83%, 43%)
-  );
+  --skyBlue-gradient: linear-gradient(65deg, var(--skyBlue), hsl(189, 83%, 43%));
   --peach: hsl(9, 100%, 64%);
   --peach-gradient: linear-gradient(65deg, var(--peach), hsl(32, 100%, 64%));
   --darkBlue: hsl(235, 27%, 8%);
   --bg-footer: hsl(235, 27%, 8%);
   --veryDarkBlue: hsl(233, 26%, 24%);
   --color: hsl(233, 26%, 24%);
-  --greyishBlue: hsl(233, 8%, 62%);
+  --greyishBlue: hsl(233, 10%, 50%);
   --lightGrey: hsl(220, 14%, 96%);
   --bg-main: hsl(220, 14%, 96%);
   --veryLightGrey: hsl(0, 0%, 98%);
@@ -464,7 +460,6 @@ a:focus, a:focus:focus-within {
 
 .header {
   position: relative;
-  height: 100vh;
   background-color: var(--bg-intro);
 }
 .header__nav-section {
@@ -474,6 +469,15 @@ a:focus, a:focus:focus-within {
   left: 0;
   background-color: var(--bg-intro);
   z-index: 1000;
+  transition: translate 500ms ease-in-out;
+}
+.header__nav-section.nav-hidden {
+  translate: 0px -4.5rem;
+}
+@media (min-width: 64em) {
+  .header__nav-section.nav-hidden {
+    translate: 0px -6.25rem;
+  }
 }
 .header__nav {
   padding-top: 1rem;
@@ -662,7 +666,7 @@ a:focus, a:focus:focus-within {
   }
 }
 .header__hero-text {
-  height: 100vh;
+  height: max(23.4375rem, 100vh);
   gap: 1rem;
 }
 @media (min-width: 40em) {
