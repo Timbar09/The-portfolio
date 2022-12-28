@@ -1,9 +1,7 @@
-@use 'mixins' as m;
+@use 'mixins';
 
 .darkmode {
-  --bg-intro: hsl(0, 0%, 7%);
   --bg-main: hsl(0, 0%, 13%);
-  --bg-footer: hsl(0, 0%, 7%);
   --color: hsl(0, 0%, 98%);
 
   .button {
@@ -20,10 +18,24 @@
   }
 
   .header {
+    --bg-intro: hsl(0, 0%, 7%);
+
     &__toggle {
       .slider {
         left: 1.575em;
       }
     }
+
+    &__hero {
+      --bg-intro-opaque: linear-gradient(90deg, var(--bg-intro) 50%, hsla(0, 0%, 7%, 0.95), transparent);
+
+      @include mixins.breakpoint-up(medium) {
+        background-image: url('/images/alexandru-acea-TMkrN9QZERw-unsplash.jpg');
+      }
+    }
+  }
+
+  .footer {
+    --bg-footer: hsl(0, 0%, 7%);
   }
 }

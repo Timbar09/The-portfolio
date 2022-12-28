@@ -1,6 +1,7 @@
 @use '../utils' as u;
 
 .footer {
+  --bg-footer: hsl(235, 27%, 8%);
   --footer-color: hsl(232, 6%, 48%);
 
   position: relative;
@@ -355,7 +356,7 @@
   &__logo {
     &::before,
     &::after {
-      background-color: var(--footer-color);
+      background: var(--footer-color);
     }
   }
 

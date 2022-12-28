@@ -1,11 +1,10 @@
 const body = document.querySelector('body');
 const header = document.querySelector('.header');
 const overlay = document.querySelector('.overlay');
-const logo = document.querySelector('.header__logo');
 
 // NAV DISAPPEARENCE AND REAPPEARENCE
 
-const navStatus = () => {
+const navAppearence = () => {
   const nav = document.querySelector('.header__nav-section');
   let lastScrollY = window.scrollY;
 
@@ -20,7 +19,7 @@ const navStatus = () => {
   });
 };
 
-navStatus();
+navAppearence();
 
 // DARK-MODE TOGGLE
 let darkMode = localStorage.getItem('darkMode');

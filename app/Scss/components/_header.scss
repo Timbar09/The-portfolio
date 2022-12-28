@@ -1,6 +1,8 @@
 @use '../utils' as u;
 
 .header {
+  --bg-intro: hsl(0, 0%, 98%);
+
   position: relative;
   background-color: var(--bg-intro);
 
@@ -11,7 +13,7 @@
     left: 0;
     background-color: var(--bg-intro);
     z-index: 1000;
-    transition: translate 500ms ease-in-out;
+    transition: translate 350ms ease-in-out;
 
     &.nav-hidden {
       translate: 0px -4.5rem;
@@ -215,13 +217,30 @@
   }
 
   &__hero {
+    --bg-intro-opaque: linear-gradient(90deg, var(--bg-intro) 45%, hsla(0, 0%, 98%, 0.95), transparent);
+
+    position: relative;
     padding-top: 2rem;
+
+    @include u.breakpoint-up(medium) {
+      text-align: left;
+      background-image: url('/images/pexels-elvis-2528118.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center right;
+
+      @include u.before {
+        inset: 0;
+        background: var(--bg-intro-opaque);
+      }
+    }
 
     @include u.breakpoint-up(large) {
       padding-top: 3rem;
     }
 
     &-text {
+      position: relative;
       height: max(23.4375rem, 100vh);
       gap: 1rem;
 
@@ -233,10 +252,19 @@
     &-description {
       max-width: 45.625rem;
       margin: auto;
+
+      @include u.breakpoint-up(medium) {
+        margin: 0 auto 0 0;
+      }
     }
 
     &-buttons {
       gap: 1rem;
+
+      @include u.breakpoint-up(medium) {
+        gap: 2rem;
+        justify-content: flex-start;
+      }
     }
   }
 
