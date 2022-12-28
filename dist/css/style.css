@@ -1,39 +1,46 @@
 :root {
   --skyBlue: hsl(212, 83%, 43%);
-  --skyBlue-gradient: linear-gradient(
-    65deg,
-    var(--skyBlue),
-    hsl(189, 83%, 43%)
-  );
+  --skyBlue-gradient: linear-gradient(65deg, var(--skyBlue), hsl(189, 83%, 43%));
   --peach: hsl(9, 100%, 64%);
   --peach-gradient: linear-gradient(65deg, var(--peach), hsl(32, 100%, 64%));
   --darkBlue: hsl(235, 27%, 8%);
-  --bg-footer: hsl(235, 27%, 8%);
   --veryDarkBlue: hsl(233, 26%, 24%);
   --color: hsl(233, 26%, 24%);
-  --greyishBlue: hsl(233, 8%, 62%);
+  --greyishBlue: hsl(233, 10%, 50%);
   --lightGrey: hsl(220, 14%, 96%);
-  --bg-main: hsl(220, 14%, 96%);
   --veryLightGrey: hsl(0, 0%, 98%);
-  --bg-intro: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
 }
 
 .darkmode {
-  --bg-intro: hsl(0, 0%, 7%);
   --bg-main: hsl(0, 0%, 13%);
-  --bg-footer: hsl(0, 0%, 7%);
   --color: hsl(0, 0%, 98%);
 }
 .darkmode .button {
-  box-shadow: 0px 4px 8px 4px rgba(255, 99, 71, 0.25);
   transition: box-shadow 150ms ease-in-out;
 }
-.darkmode .button:hover {
+.darkmode .button-primary, .darkmode .button-secondary {
+  box-shadow: 0px 4px 8px 4px rgba(255, 99, 71, 0.25);
+}
+.darkmode .button-primary:hover, .darkmode .button-secondary:hover {
   box-shadow: 0px 6px 12px 6px rgba(255, 99, 71, 0.4);
+}
+.darkmode .header {
+  --bg-intro: hsl(0, 0%, 7%);
 }
 .darkmode .header__toggle .slider {
   left: 1.575em;
+}
+.darkmode .header__hero {
+  --bg-intro-opaque: linear-gradient(90deg, var(--bg-intro) 50%, hsla(0, 0%, 7%, 0.95), transparent);
+}
+@media (min-width: 40em) {
+  .darkmode .header__hero {
+    background-image: url("/images/alexandru-acea-TMkrN9QZERw-unsplash.jpg");
+  }
+}
+.darkmode .footer {
+  --bg-footer: hsl(0, 0%, 7%);
 }
 
 .fade-in {
@@ -165,6 +172,7 @@ html {
 }
 
 body {
+  --bg-main: hsl(220, 14%, 96%);
   margin: 0;
   padding: 0;
   line-height: 1.4;
@@ -199,6 +207,10 @@ body .main {
   padding-top: 117px;
 }
 
+.section {
+  text-align: center;
+}
+
 h1,
 h2,
 h3,
@@ -207,15 +219,20 @@ h4 {
   line-height: 1.2;
   margin-top: 0;
   color: var(--color);
-  text-align: center;
 }
 
 h1 {
   font-size: 4.8125em;
+  margin-bottom: 1rem;
+  font-weight: 500;
 }
-h1 i {
-  font-style: normal;
+h1 .hello {
+  display: block;
+  font-size: 0.5em;
   font-weight: 200;
+}
+h1 .hello .miles {
+  color: var(--peach);
 }
 @media (max-width: 63.9375em) {
   h1 {
@@ -264,18 +281,47 @@ a:focus, a:focus:focus-within {
 }
 
 .logo {
+  position: relative;
   font-size: 1.5rem;
   font-weight: 200;
   color: var(--color);
   transition: color 150ms ease-in-out;
 }
-.logo:hover {
-  color: var(--peach);
+.logo:hover::before {
+  content: "";
+  position: absolute;
+  width: 35%;
+}
+.logo:hover::after {
+  content: "";
+  position: absolute;
+  width: 58%;
+}
+.logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 3px;
+  background: var(--peach-gradient);
+  border-radius: 50rem;
+  transition: width 150ms ease-in-out;
+}
+.logo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 3px;
+  width: 3px;
+  background: var(--peach-gradient);
+  border-radius: 50rem;
+  transition: width 150ms ease-in-out;
 }
 
 .button {
   border-radius: 5px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
   transition: box-shadow 150ms ease-in-out;
 }
 .button:hover {
@@ -289,7 +335,7 @@ a:focus, a:focus:focus-within {
   outline-offset: 3px;
   opacity: 1;
 }
-.button a {
+.button .btn {
   position: relative;
   display: inline-block;
   border-radius: inherit;
@@ -301,35 +347,37 @@ a:focus, a:focus:focus-within {
 }
 .button-primary {
   background-color: var(--white);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 }
-.button-primary a {
+.button-primary .btn {
   background: var(--peach-gradient);
   padding: 0.375rem 1.5rem;
   transition: opacity 150ms ease-in-out;
 }
-.button-primary a:hover {
+.button-primary .btn:hover {
   opacity: 0.825;
 }
 .button-secondary {
   background: var(--peach-gradient);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 }
-.button-secondary a {
+.button-secondary .btn {
   background-color: var(--bg-intro);
   border: solid 3px var(--peach);
   color: var(--peach);
 }
-.button-secondary a:hover {
+.button-secondary .btn:hover {
   background-color: transparent;
   color: var(--bg-intro);
   border: solid 3px transparent;
 }
-.button-tertiary a {
+.button-tertiary .btn {
   background-color: transparent;
   border: solid 2px rgba(150, 152, 166, 0.1450980392);
   font-size: 0.9em;
   color: var(--greyishBlue);
 }
-.button-tertiary a:hover {
+.button-tertiary .btn:hover {
   color: var(--bg-intro);
   background-color: var(--greyishBlue);
 }
@@ -355,10 +403,14 @@ a:focus, a:focus:focus-within {
 .flex-nowrap {
   flex-wrap: nowrap;
 }
+.flex-column {
+  flex-direction: column;
+}
 
 .container {
   position: relative;
   max-width: 80em;
+  min-width: 21.25rem;
   margin: 0 auto;
 }
 .container-pall {
@@ -417,8 +469,8 @@ a:focus, a:focus:focus-within {
 }
 
 .header {
+  --bg-intro: hsl(0, 0%, 98%);
   position: relative;
-  height: 100vh;
   background-color: var(--bg-intro);
 }
 .header__nav-section {
@@ -428,6 +480,15 @@ a:focus, a:focus:focus-within {
   left: 0;
   background-color: var(--bg-intro);
   z-index: 1000;
+  transition: translate 350ms ease-in-out;
+}
+.header__nav-section.nav-hidden {
+  translate: 0px -4.5rem;
+}
+@media (min-width: 64em) {
+  .header__nav-section.nav-hidden {
+    translate: 0px -6.25rem;
+  }
 }
 .header__nav {
   padding-top: 1rem;
@@ -449,6 +510,11 @@ a:focus, a:focus:focus-within {
     padding-bottom: 1.875rem;
   }
 }
+@media (max-width: 63.9375em) {
+  .header__logo span {
+    display: none;
+  }
+}
 .header__links {
   padding: 0;
   margin: 0;
@@ -468,8 +534,8 @@ a:focus, a:focus:focus-within {
   position: absolute;
   left: 0;
   bottom: 2px;
-  width: 4px;
-  height: 4px;
+  width: 3px;
+  height: 3px;
   background-color: var(--peach);
   opacity: 0;
   border-radius: 10px 10px 0 0;
@@ -485,7 +551,7 @@ a:focus, a:focus:focus-within {
 }
 .header__links a:hover::before {
   opacity: 1;
-  height: 4px;
+  height: 3px;
   width: 100%;
   bottom: -2rem;
   background-color: var(--color);
@@ -602,6 +668,59 @@ a:focus, a:focus:focus-within {
     display: none;
   }
 }
+.header__hero {
+  --bg-intro-opaque: linear-gradient(90deg, var(--bg-intro) 45%, hsla(0, 0%, 98%, 0.95), transparent);
+  position: relative;
+  padding-top: 2rem;
+}
+@media (min-width: 40em) {
+  .header__hero {
+    text-align: left;
+    background-image: url("/images/pexels-elvis-2528118.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center right;
+  }
+  .header__hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-intro-opaque);
+  }
+}
+@media (min-width: 64em) {
+  .header__hero {
+    padding-top: 3rem;
+  }
+}
+.header__hero-text {
+  position: relative;
+  height: max(23.4375rem, 100vh);
+  gap: 1rem;
+}
+@media (min-width: 40em) {
+  .header__hero-text {
+    gap: 2rem;
+  }
+}
+.header__hero-description {
+  max-width: 45.625rem;
+  margin: auto;
+}
+@media (min-width: 40em) {
+  .header__hero-description {
+    margin: 0 auto 0 0;
+  }
+}
+.header__hero-buttons {
+  gap: 1rem;
+}
+@media (min-width: 40em) {
+  .header__hero-buttons {
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+}
 .header.open .header__menu {
   right: 0;
   -webkit-animation: fade-in 300ms ease-in-out 1 forwards;
@@ -641,9 +760,11 @@ a:focus, a:focus:focus-within {
 }
 
 .footer {
+  --bg-footer: hsl(235, 27%, 8%);
+  --footer-color: hsl(232, 6%, 48%);
   position: relative;
   background-color: var(--bg-footer);
-  color: hsl(232deg, 6%, 48%);
+  color: var(--footer-color);
   text-align: center;
 }
 .footer a,
@@ -947,6 +1068,9 @@ a:focus, a:focus:focus-within {
 .footer__form-group:focus-within input:focus,
 .footer__form-group:focus-within textarea:focus {
   --border: var(--focus);
+}
+.footer__logo::before, .footer__logo::after {
+  background: var(--footer-color);
 }
 .footer__social {
   font-size: 1.5em;
