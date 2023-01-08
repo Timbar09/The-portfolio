@@ -1,10 +1,13 @@
 @use 'mixins';
 
 .darkmode {
-  --bg-main: hsl(0, 0%, 13%);
-  --color: hsl(0, 0%, 98%);
+  --bg-body: hsl(0, 0%, 0%);
+  --title: var(--veryLightGrey);
+  --text: hsl(231, 17%, 59%);
 
   .button {
+    --btn-text: var(--bg-body);
+
     transition: box-shadow 150ms ease-in-out;
 
     &-primary,
@@ -18,7 +21,7 @@
   }
 
   .header {
-    --bg-intro: hsl(0, 0%, 7%);
+    --bg-hero: hsl(0, 0%, 7%);
 
     &__toggle {
       .slider {
@@ -27,10 +30,10 @@
     }
 
     &__hero {
-      --bg-intro-opaque: linear-gradient(90deg, var(--bg-intro) 50%, hsla(0, 0%, 7%, 0.95), transparent);
+      --bg-hero-opaque: linear-gradient(90deg, var(--bg-hero) 50%, hsla(0, 0%, 7%, 0.95), transparent);
 
       @include mixins.breakpoint-up(medium) {
-        background-image: url('/images/alexandru-acea-TMkrN9QZERw-unsplash.jpg');
+        background-image: url('/images/hero-bg-dark.png');
       }
     }
   }

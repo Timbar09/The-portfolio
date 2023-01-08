@@ -1,22 +1,24 @@
 :root {
-  --skyBlue: hsl(212, 83%, 43%);
-  --skyBlue-gradient: linear-gradient(65deg, var(--skyBlue), hsl(189, 83%, 43%));
-  --peach: hsl(9, 100%, 64%);
-  --peach-gradient: linear-gradient(65deg, var(--peach), hsl(32, 100%, 64%));
-  --darkBlue: hsl(235, 27%, 8%);
-  --veryDarkBlue: hsl(233, 26%, 24%);
+  --blue: hsl(212, 83%, 43%);
+  --blue-gradient: linear-gradient(65deg, var(--skyBlue), hsl(189, 83%, 43%));
+  --tomato: hsl(9, 100%, 64%);
+  --tomato-gradient: linear-gradient(65deg, var(--tomato), hsl(32, 100%, 64%));
+  --veryDarkBlue: hsl(235, 27%, 8%);
+  --darkBlue: hsl(234, 27%, 20%);
   --color: hsl(233, 26%, 24%);
-  --greyishBlue: hsl(233, 10%, 50%);
+  --greyishBlue: hsl(234, 11%, 38%);
   --lightGrey: hsl(220, 14%, 96%);
   --veryLightGrey: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
 }
 
 .darkmode {
-  --bg-main: hsl(0, 0%, 13%);
-  --color: hsl(0, 0%, 98%);
+  --bg-body: hsl(0, 0%, 0%);
+  --title: var(--veryLightGrey);
+  --text: hsl(231, 17%, 59%);
 }
 .darkmode .button {
+  --btn-text: var(--bg-body);
   transition: box-shadow 150ms ease-in-out;
 }
 .darkmode .button-primary, .darkmode .button-secondary {
@@ -26,17 +28,17 @@
   box-shadow: 0px 6px 12px 6px rgba(255, 99, 71, 0.4);
 }
 .darkmode .header {
-  --bg-intro: hsl(0, 0%, 7%);
+  --bg-hero: hsl(0, 0%, 7%);
 }
 .darkmode .header__toggle .slider {
   left: 1.575em;
 }
 .darkmode .header__hero {
-  --bg-intro-opaque: linear-gradient(90deg, var(--bg-intro) 50%, hsla(0, 0%, 7%, 0.95), transparent);
+  --bg-hero-opaque: linear-gradient(90deg, var(--bg-hero) 50%, hsla(0, 0%, 7%, 0.95), transparent);
 }
 @media (min-width: 40em) {
   .darkmode .header__hero {
-    background-image: url("/images/alexandru-acea-TMkrN9QZERw-unsplash.jpg");
+    background-image: url("/images/hero-bg-dark.png");
   }
 }
 .darkmode .footer {
@@ -172,15 +174,17 @@ html {
 }
 
 body {
-  --bg-main: hsl(220, 14%, 96%);
+  --bg-body: var(--white);
+  --title: var(--darkBlue);
+  --text: var(--greyishBlue);
   margin: 0;
   padding: 0;
   line-height: 1.4;
   font-size: 0.9375rem;
   font-family: "Mitr", sans-serif;
   font-weight: 300;
-  background-color: var(--bg-main);
-  color: var(--greyishBlue);
+  background-color: var(--bg-body);
+  color: var(--text);
 }
 @media (min-width: 64em) {
   body {
@@ -194,7 +198,7 @@ body .overlay {
   visibility: hidden;
   position: absolute;
   inset: 2.0625rem 0 0;
-  background: linear-gradient(to bottom, var(--color), transparent);
+  background: linear-gradient(to bottom, var(--title), transparent);
   z-index: 90;
 }
 @media (min-width: 40em) {
@@ -203,6 +207,7 @@ body .overlay {
   }
 }
 body .main {
+  --bg-main: var(--ligthGrey);
   background-color: var(--bg-main);
   padding-top: 117px;
 }
@@ -218,7 +223,7 @@ h4 {
   font-weight: 500;
   line-height: 1.2;
   margin-top: 0;
-  color: var(--color);
+  color: var(--title);
 }
 
 h1 {
@@ -232,7 +237,7 @@ h1 .hello {
   font-weight: 200;
 }
 h1 .hello .miles {
-  color: var(--peach);
+  color: var(--tomato);
 }
 @media (max-width: 63.9375em) {
   h1 {
@@ -267,6 +272,12 @@ h4 {
   }
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
 p {
   margin-top: 0;
 }
@@ -284,7 +295,7 @@ a:focus, a:focus:focus-within {
   position: relative;
   font-size: 1.5rem;
   font-weight: 200;
-  color: var(--color);
+  color: var(--title);
   transition: color 150ms ease-in-out;
 }
 .logo:hover::before {
@@ -304,7 +315,7 @@ a:focus, a:focus:focus-within {
   left: 0;
   height: 3px;
   width: 3px;
-  background: var(--peach-gradient);
+  background: var(--tomato-gradient);
   border-radius: 50rem;
   transition: width 150ms ease-in-out;
 }
@@ -315,12 +326,13 @@ a:focus, a:focus:focus-within {
   right: 0;
   height: 3px;
   width: 3px;
-  background: var(--peach-gradient);
+  background: var(--tomato-gradient);
   border-radius: 50rem;
   transition: width 150ms ease-in-out;
 }
 
 .button {
+  --btn-text: var(--white);
   border-radius: 5px;
   transition: box-shadow 150ms ease-in-out;
 }
@@ -331,7 +343,7 @@ a:focus, a:focus:focus-within {
   outline: 0;
 }
 .button:focus {
-  outline: solid 2px var(--greyishBlue);
+  outline: solid 2px var(--text);
   outline-offset: 3px;
   opacity: 1;
 }
@@ -339,18 +351,18 @@ a:focus, a:focus:focus-within {
   position: relative;
   display: inline-block;
   border-radius: inherit;
-  color: var(--bg-intro);
+  color: var(--btn-text);
   font-weight: 300;
   padding: 0.275rem 1.5rem;
   background-color: transparent;
   transition: background-color 150ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
 }
 .button-primary {
-  background-color: var(--white);
+  background-color: var(--btn-text);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 }
 .button-primary .btn {
-  background: var(--peach-gradient);
+  background: var(--tomato-gradient);
   padding: 0.375rem 1.5rem;
   transition: opacity 150ms ease-in-out;
 }
@@ -358,17 +370,17 @@ a:focus, a:focus:focus-within {
   opacity: 0.825;
 }
 .button-secondary {
-  background: var(--peach-gradient);
+  background: var(--tomato-gradient);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
 }
 .button-secondary .btn {
-  background-color: var(--bg-intro);
-  border: solid 3px var(--peach);
-  color: var(--peach);
+  background-color: var(--veryLightGrey);
+  border: solid 3px var(--tomato);
+  color: var(--tomato);
 }
 .button-secondary .btn:hover {
   background-color: transparent;
-  color: var(--bg-intro);
+  color: var(--veryLightGrey);
   border: solid 3px transparent;
 }
 .button-tertiary .btn {
@@ -378,7 +390,7 @@ a:focus, a:focus:focus-within {
   color: var(--greyishBlue);
 }
 .button-tertiary .btn:hover {
-  color: var(--bg-intro);
+  color: var(--veryLightGrey);
   background-color: var(--greyishBlue);
 }
 
@@ -469,16 +481,16 @@ a:focus, a:focus:focus-within {
 }
 
 .header {
-  --bg-intro: hsl(0, 0%, 98%);
+  --bg-hero: var(--veryLightGrey);
   position: relative;
-  background-color: var(--bg-intro);
+  background-color: var(--bg-hero);
 }
 .header__nav-section {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  background-color: var(--bg-intro);
+  background-color: var(--bg-hero);
   z-index: 1000;
   transition: translate 350ms ease-in-out;
 }
@@ -515,16 +527,11 @@ a:focus, a:focus:focus-within {
     display: none;
   }
 }
-.header__links {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
 .header__links a {
   position: relative;
   margin-right: 1.5rem;
   padding: 0.15rem 0.5rem;
-  color: var(--greyishBlue);
+  color: var(--text);
   font-weight: 300;
   letter-spacing: 3.5px;
   transition: color 250ms ease-in-out;
@@ -536,7 +543,7 @@ a:focus, a:focus:focus-within {
   bottom: 2px;
   width: 3px;
   height: 3px;
-  background-color: var(--peach);
+  background-color: var(--tomato);
   opacity: 0;
   border-radius: 10px 10px 0 0;
   transition: bottom 200ms ease-in-out, opacity 200ms ease-in-out, width 200ms 200ms ease-in-out;
@@ -547,18 +554,18 @@ a:focus, a:focus:focus-within {
   }
 }
 .header__links a:hover {
-  color: var(--color);
+  color: var(--title);
 }
 .header__links a:hover::before {
   opacity: 1;
   height: 3px;
   width: 100%;
   bottom: -2rem;
-  background-color: var(--color);
+  background-color: var(--title);
 }
 .header__toggle {
   position: relative;
-  border: solid 0.2em var(--color);
+  border: solid 0.2em var(--title);
   width: 3.75em;
   border-radius: 2em;
   background-image: url("/icons/toggle-background.svg");
@@ -577,7 +584,7 @@ a:focus, a:focus:focus-within {
 @media (max-width: 63.9375em) {
   .header__toggle {
     opacity: 0.85;
-    border: solid 0.25em var(--color);
+    border: solid 0.25em var(--title);
   }
 }
 @media (max-width: 39.9375em) {
@@ -593,7 +600,7 @@ a:focus, a:focus:focus-within {
   width: 1.71875em;
   border-radius: 50%;
   transform: scale(0.75);
-  background-color: var(--color);
+  background-color: var(--title);
   transition: left 50ms ease-in-out;
 }
 .header__hamburger {
@@ -609,9 +616,9 @@ a:focus, a:focus:focus-within {
   display: inline-block;
   height: 3px;
   width: 30px;
-  background-color: var(--bg-intro);
+  background-color: var(--bg-hero);
   border-radius: 5px;
-  border: solid 1px var(--color);
+  border: solid 1px var(--title);
   transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out, transform 100ms 100ms ease-in-out, background-color 100ms ease-in-out;
 }
 .header__hamburger > span:not(:first-child) {
@@ -628,7 +635,7 @@ a:focus, a:focus:focus-within {
   }
 }
 .header__hamburger:hover > span {
-  background-color: var(--color);
+  background-color: var(--title);
 }
 @media (max-width: 63.9375em) {
   .header__cta {
@@ -638,7 +645,7 @@ a:focus, a:focus:focus-within {
 .header__menu {
   visibility: hidden;
   position: absolute;
-  background-color: var(--bg-intro);
+  background-color: var(--bg-hero);
   padding: 1.5rem;
   width: 100%;
   top: 4.15em;
@@ -648,7 +655,7 @@ a:focus, a:focus:focus-within {
 }
 .header__menu a {
   display: block;
-  color: var(--color);
+  color: var(--title);
   font-size: 1.3125rem;
   font-weight: 500;
   letter-spacing: 3.5px;
@@ -657,11 +664,11 @@ a:focus, a:focus:focus-within {
   transition: all 150ms ease-in-out;
 }
 .header__menu a:hover {
-  background-color: var(--skyBlue);
+  background-color: var(--tomato);
   color: var(--white);
 }
 .header__menu a:active {
-  background-color: var(--peach);
+  background-color: var(--tomato);
 }
 @media (min-width: 64em) {
   .header__menu {
@@ -669,14 +676,14 @@ a:focus, a:focus:focus-within {
   }
 }
 .header__hero {
-  --bg-intro-opaque: linear-gradient(90deg, var(--bg-intro) 45%, hsla(0, 0%, 98%, 0.95), transparent);
+  --bg-hero-opaque: linear-gradient(90deg, var(--bg-hero) 45%, hsla(0, 0%, 98%, 0.95), transparent);
   position: relative;
   padding-top: 2rem;
 }
 @media (min-width: 40em) {
   .header__hero {
     text-align: left;
-    background-image: url("/images/pexels-elvis-2528118.jpg");
+    background-image: url("/images/hero-bg-light.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center right;
@@ -685,7 +692,7 @@ a:focus, a:focus:focus-within {
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--bg-intro-opaque);
+    background: var(--bg-hero-opaque);
   }
 }
 @media (min-width: 64em) {
@@ -778,7 +785,7 @@ a:focus, a:focus:focus-within {
   font-size: 3rem;
   font-weight: 700;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: thin var(--peach);
+  -webkit-text-stroke: thin var(--tomato);
 }
 @media (min-width: 40em) {
   .footer__title {
@@ -812,7 +819,7 @@ a:focus, a:focus:focus-within {
 .footer__links > a::before {
   content: "";
   position: absolute;
-  background: var(--peach-gradient);
+  background: var(--tomato-gradient);
   height: 2px;
   width: 0;
   bottom: -5px;
@@ -937,7 +944,7 @@ a:focus, a:focus:focus-within {
 }
 .footer__form {
   --border: hsla(233, 8%, 62%, 0.4);
-  --focus: var(--peach);
+  --focus: var(--tomato);
   position: relative;
   max-width: 40em;
   margin: auto;
@@ -958,7 +965,7 @@ a:focus, a:focus:focus-within {
   box-shadow: 0px 6px 12px 6px rgba(255, 99, 71, 0.4);
 }
 .footer__form:valid .footer__form-group button {
-  background: var(--peach-gradient);
+  background: var(--tomato-gradient);
   opacity: 0.85;
 }
 .footer__form:valid .footer__form-group button:hover {
@@ -1089,7 +1096,7 @@ a:focus, a:focus:focus-within {
   margin-right: 1rem;
 }
 .footer__social a:hover {
-  color: var(--peach);
+  color: var(--tomato);
 }
 .footer__nav a {
   display: block;

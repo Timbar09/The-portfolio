@@ -1,17 +1,17 @@
 @use '../utils' as u;
 
 .header {
-  --bg-intro: hsl(0, 0%, 98%);
+  --bg-hero: var(--veryLightGrey);
 
   position: relative;
-  background-color: var(--bg-intro);
+  background-color: var(--bg-hero);
 
   &__nav-section {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    background-color: var(--bg-intro);
+    background-color: var(--bg-hero);
     z-index: 1000;
     transition: translate 350ms ease-in-out;
 
@@ -52,15 +52,11 @@
   }
 
   &__links {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-
     a {
       position: relative;
       margin-right: 1.5rem;
       padding: 0.15rem 0.5rem;
-      color: var(--greyishBlue);
+      color: var(--text);
       font-weight: 300;
       letter-spacing: 3.5px;
       transition: color 250ms ease-in-out;
@@ -70,7 +66,7 @@
         bottom: 2px;
         width: 3px;
         height: 3px;
-        background-color: var(--peach);
+        background-color: var(--tomato);
         opacity: 0;
         border-radius: 10px 10px 0 0;
         transition: bottom 200ms ease-in-out, opacity 200ms ease-in-out, width 200ms 200ms ease-in-out;
@@ -81,14 +77,14 @@
       }
 
       &:hover {
-        color: var(--color);
+        color: var(--title);
 
         &::before {
           opacity: 1;
           height: 3px;
           width: 100%;
           bottom: -2rem;
-          background-color: var(--color);
+          background-color: var(--title);
         }
       }
     }
@@ -96,7 +92,7 @@
 
   &__toggle {
     position: relative;
-    border: solid 0.2em var(--color);
+    border: solid 0.2em var(--title);
     width: 3.75em;
     border-radius: 2em;
     background-image: url('/icons/toggle-background.svg');
@@ -115,7 +111,7 @@
 
     @include u.breakpoint-down(medium) {
       opacity: 0.85;
-      border: solid 0.25em var(--color);
+      border: solid 0.25em var(--title);
     }
 
     @include u.breakpoint-down(small) {
@@ -130,7 +126,7 @@
       width: 1.71875em;
       border-radius: 50%;
       transform: scale(0.75);
-      background-color: var(--color);
+      background-color: var(--title);
       transition: left 50ms ease-in-out;
     }
   }
@@ -148,9 +144,9 @@
       display: inline-block;
       height: 3px;
       width: 30px;
-      background-color: var(--bg-intro);
+      background-color: var(--bg-hero);
       border-radius: 5px;
-      border: solid 1px var(--color);
+      border: solid 1px var(--title);
       transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out, transform 100ms 100ms ease-in-out,
         background-color 100ms ease-in-out;
 
@@ -169,7 +165,7 @@
 
     &:hover {
       > span {
-        background-color: var(--color);
+        background-color: var(--title);
       }
     }
   }
@@ -183,7 +179,7 @@
   &__menu {
     visibility: hidden;
     position: absolute;
-    background-color: var(--bg-intro);
+    background-color: var(--bg-hero);
     padding: 1.5rem;
     width: 100%;
     top: 4.15em;
@@ -193,7 +189,7 @@
 
     a {
       display: block;
-      color: var(--color);
+      color: var(--title);
       font-size: u.$fz-lg;
       font-weight: 500;
       letter-spacing: 3.5px;
@@ -202,12 +198,12 @@
       transition: all 150ms ease-in-out;
 
       &:hover {
-        background-color: var(--skyBlue);
+        background-color: var(--tomato);
         color: var(--white);
       }
 
       &:active {
-        background-color: var(--peach);
+        background-color: var(--tomato);
       }
     }
 
@@ -217,21 +213,21 @@
   }
 
   &__hero {
-    --bg-intro-opaque: linear-gradient(90deg, var(--bg-intro) 45%, hsla(0, 0%, 98%, 0.95), transparent);
+    --bg-hero-opaque: linear-gradient(90deg, var(--bg-hero) 45%, hsla(0, 0%, 98%, 0.95), transparent);
 
     position: relative;
     padding-top: 2rem;
 
     @include u.breakpoint-up(medium) {
       text-align: left;
-      background-image: url('/images/pexels-elvis-2528118.jpg');
+      background-image: url('/images/hero-bg-light.png');
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center right;
 
       @include u.before {
         inset: 0;
-        background: var(--bg-intro-opaque);
+        background: var(--bg-hero-opaque);
       }
     }
 

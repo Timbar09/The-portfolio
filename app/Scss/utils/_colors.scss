@@ -1,19 +1,13 @@
 :root {
-  --skyBlue: hsl(212, 83%, 43%);
-  --skyBlue-gradient: linear-gradient(65deg, var(--skyBlue), hsl(189, 83%, 43%));
-  --peach: hsl(9, 100%, 64%);
-  --peach-gradient: linear-gradient(65deg, var(--peach), hsl(32, 100%, 64%));
-
-  --darkBlue: hsl(235, 27%, 8%);
-
-  --veryDarkBlue: hsl(233, 26%, 24%);
+  --blue: hsl(212, 83%, 43%);
+  --blue-gradient: linear-gradient(65deg, var(--skyBlue), hsl(189, 83%, 43%));
+  --tomato: hsl(9, 100%, 64%);
+  --tomato-gradient: linear-gradient(65deg, var(--tomato), hsl(32, 100%, 64%));
+  --veryDarkBlue: hsl(235, 27%, 8%);
+  --darkBlue: hsl(234, 27%, 20%);
   --color: hsl(233, 26%, 24%);
-
-  --greyishBlue: hsl(233, 10%, 50%);
-
+  --greyishBlue: hsl(234, 11%, 38%);
   --lightGrey: hsl(220, 14%, 96%);
-
   --veryLightGrey: hsl(0, 0%, 98%);
-
   --white: hsl(0, 0%, 100%);
 }

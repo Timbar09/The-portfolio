@@ -12,7 +12,9 @@ html {
 }
 
 body {
-  --bg-main: hsl(220, 14%, 96%);
+  --bg-body: var(--white);
+  --title: var(--darkBlue);
+  --text: var(--greyishBlue);
 
   margin: 0;
   padding: 0;
@@ -20,8 +22,8 @@ body {
   font-size: u.$fz-sm;
   font-family: u.$ff-mitr;
   font-weight: 300;
-  background-color: var(--bg-main);
-  color: var(--greyishBlue);
+  background-color: var(--bg-body);
+  color: var(--text);
 
   @include u.breakpoint-up(large) {
     font-size: u.$fz-med;
@@ -35,7 +37,7 @@ body {
     visibility: hidden;
     position: absolute;
     inset: 2.0625rem 0 0;
-    background: linear-gradient(to bottom, var(--color), transparent);
+    background: linear-gradient(to bottom, var(--title), transparent);
     z-index: 90;
 
     @include u.breakpoint-up(medium) {
@@ -44,6 +46,8 @@ body {
   }
 
   .main {
+    --bg-main: var(--ligthGrey);
+
     background-color: var(--bg-main);
     padding-top: 117px;
   }

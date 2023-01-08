@@ -21,7 +21,7 @@
     font-size: 3rem;
     font-weight: 700;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: thin var(--peach);
+    -webkit-text-stroke: thin var(--tomato);
 
     @include u.breakpoint-up(medium) {
       font-size: 5rem;
@@ -52,7 +52,7 @@
       transition: color 250ms;
 
       @include u.before {
-        background: var(--peach-gradient);
+        background: var(--tomato-gradient);
         height: 2px;
         width: 0;
         bottom: -5px;
@@ -193,7 +193,7 @@
 
   &__form {
     --border: hsla(233, 8%, 62%, 0.4);
-    --focus: var(--peach);
+    --focus: var(--tomato);
 
     @include u.breakpoint-up(medium) {
       display: grid;
@@ -213,7 +213,7 @@
         }
 
         button {
-          background: var(--peach-gradient);
+          background: var(--tomato-gradient);
           opacity: 0.85;
 
           &:hover {
@@ -376,7 +376,7 @@
       }
 
       &:hover {
-        color: var(--peach);
+        color: var(--tomato);
       }
     }
   }
