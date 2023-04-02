@@ -1,0 +1,37 @@
+@use '../utils' as u;
+
+.projects {
+  position: relative;
+
+  &__content {
+    text-align: center;
+  }
+
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr auto;
+    height: 40rem;
+    transform: perspective(3000px) rotateY(-20deg);
+    margin: 5rem auto 0rem;
+    max-width: 45em;
+    transition: transform 500ms 200ms ease-in-out;
+
+    &:hover {
+      transform: perspective(3000px) rotateY(0deg);
+    }
+
+    @include u.breakpoint-down(small) {
+      display: block;
+      height: fit-content;
+      transform: perspective(3000px) rotateY(0deg);
+    }
+
+    @include u.breakpoint-up(large) {
+      height: 55rem;
+      max-width: 65em;
+    }
+  }
+}

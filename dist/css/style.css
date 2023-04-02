@@ -163,7 +163,6 @@ body .overlay {
 body .main {
   --bg-main: var(--ligthGrey);
   background-color: var(--bg-main);
-  padding-top: 117px;
 }
 
 .section {
@@ -716,6 +715,42 @@ a:focus, a:focus:focus-within {
 .header.close .header__hamburger > span:last-child {
   top: 0;
   rotate: 0;
+}
+
+.projects {
+  position: relative;
+}
+.projects__content {
+  text-align: center;
+}
+.projects__grid {
+  position: relative;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.5fr 1fr auto;
+  height: 40rem;
+  transform: perspective(3000px) rotateY(-20deg);
+  margin: 5rem auto 0rem;
+  max-width: 45em;
+  transition: transform 500ms 200ms ease-in-out;
+}
+.projects__grid:hover {
+  transform: perspective(3000px) rotateY(0deg);
+}
+@media (max-width: 39.9375em) {
+  .projects__grid {
+    display: block;
+    height: -moz-fit-content;
+    height: fit-content;
+    transform: perspective(3000px) rotateY(0deg);
+  }
+}
+@media (min-width: 64em) {
+  .projects__grid {
+    height: 55rem;
+    max-width: 65em;
+  }
 }
 
 .footer {
