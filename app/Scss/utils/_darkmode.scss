@@ -3,7 +3,7 @@
 .darkmode {
   --bg-body: hsl(0, 0%, 0%);
   --title: var(--veryLightGrey);
-  --text: hsl(231, 17%, 59%);
+  --text: var(--greyishBlue);
 
   .button {
     --btn-text: var(--bg-body);
@@ -30,7 +30,12 @@
     }
 
     &__hero {
-      --bg-hero-opaque: linear-gradient(90deg, var(--bg-hero) 50%, hsla(0, 0%, 7%, 0.95), transparent);
+      --bg-hero-opaque: linear-gradient(
+        90deg,
+        var(--bg-hero) 50%,
+        hsla(0, 0%, 7%, 0.95),
+        transparent
+      );
 
       @include mixins.breakpoint-up(medium) {
         background-image: url('/images/hero-bg-dark.png');

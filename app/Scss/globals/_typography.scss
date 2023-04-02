@@ -189,10 +189,10 @@ a {
       background-color: transparent;
       border: solid 2px #9698a625;
       font-size: 0.9em;
-      color: var(--greyishBlue);
+      color: var(--text);
 
       &:hover {
-        color: var(--veryLightGrey);
+        color: var(--btn-text);
         background-color: var(--greyishBlue);
       }
     }

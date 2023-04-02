@@ -6,7 +6,7 @@
   --veryDarkBlue: hsl(235, 27%, 8%);
   --darkBlue: hsl(234, 27%, 20%);
   --color: hsl(233, 26%, 24%);
-  --greyishBlue: hsl(234, 11%, 38%);
+  --greyishBlue: hsl(233, 8%, 62%);
   --lightGrey: hsl(220, 14%, 96%);
   --veryLightGrey: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
@@ -15,7 +15,7 @@
 .darkmode {
   --bg-body: hsl(0, 0%, 0%);
   --title: var(--veryLightGrey);
-  --text: hsl(231, 17%, 59%);
+  --text: var(--greyishBlue);
 }
 .darkmode .button {
   --btn-text: var(--bg-body);
@@ -34,7 +34,12 @@
   left: 1.575em;
 }
 .darkmode .header__hero {
-  --bg-hero-opaque: linear-gradient(90deg, var(--bg-hero) 50%, hsla(0, 0%, 7%, 0.95), transparent);
+  --bg-hero-opaque: linear-gradient(
+    90deg,
+    var(--bg-hero) 50%,
+    hsla(0, 0%, 7%, 0.95),
+    transparent
+  );
 }
 @media (min-width: 40em) {
   .darkmode .header__hero {
@@ -46,23 +51,7 @@
 }
 
 .fade-in {
-  -webkit-animation: fade-in 300ms ease-in-out 1 forwards;
-          animation: fade-in 300ms ease-in-out 1 forwards;
-}
-
-@-webkit-keyframes fade-in {
-  from {
-    visibility: hidden;
-    opacity: 0;
-  }
-  1% {
-    visibility: visible;
-    opacity: 0;
-  }
-  to {
-    visibility: visible;
-    opacity: 1;
-  }
+  animation: fade-in 300ms ease-in-out 1 forwards;
 }
 
 @keyframes fade-in {
@@ -80,23 +69,7 @@
   }
 }
 .fade-out {
-  -webkit-animation: fade-out 300ms ease-in-out 1 forwards;
-          animation: fade-out 300ms ease-in-out 1 forwards;
-}
-
-@-webkit-keyframes fade-out {
-  from {
-    visibility: visible;
-    opacity: 1;
-  }
-  99% {
-    visibility: visible;
-    opacity: 0;
-  }
-  to {
-    visibility: hidden;
-    opacity: 0;
-  }
+  animation: fade-out 300ms ease-in-out 1 forwards;
 }
 
 @keyframes fade-out {
@@ -123,26 +96,7 @@
   top: 0;
   left: 0;
   transform: scale(0);
-  -webkit-animation: click 300ms ease 1 forwards;
-          animation: click 300ms ease 1 forwards;
-}
-
-@-webkit-keyframes click {
-  from {
-    transform: scaleY(0) scaleX(0);
-    opacity: 1;
-  }
-  25% {
-    opacity: 1;
-  }
-  99% {
-    transform: scaleY(1.5) scaleX(1.25);
-    opacity: 0;
-    border-radius: 5px;
-  }
-  to {
-    opacity: 0;
-  }
+  animation: click 300ms ease 1 forwards;
 }
 
 @keyframes click {
@@ -176,7 +130,7 @@ html {
 body {
   --bg-body: var(--white);
   --title: var(--darkBlue);
-  --text: var(--greyishBlue);
+  --text: hsl(231, 3%, 41%);
   margin: 0;
   padding: 0;
   line-height: 1.4;
@@ -387,10 +341,10 @@ a:focus, a:focus:focus-within {
   background-color: transparent;
   border: solid 2px rgba(150, 152, 166, 0.1450980392);
   font-size: 0.9em;
-  color: var(--greyishBlue);
+  color: var(--text);
 }
 .button-tertiary .btn:hover {
-  color: var(--veryLightGrey);
+  color: var(--btn-text);
   background-color: var(--greyishBlue);
 }
 
@@ -511,7 +465,7 @@ a:focus, a:focus:focus-within {
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: hsla(0deg, 0%, 60%, 0.2);
+  background-color: hsla(0, 0%, 60%, 0.2);
   width: 100%;
   height: 0.125rem;
   border-radius: 5rem;
@@ -730,8 +684,7 @@ a:focus, a:focus:focus-within {
 }
 .header.open .header__menu {
   right: 0;
-  -webkit-animation: fade-in 300ms ease-in-out 1 forwards;
-          animation: fade-in 300ms ease-in-out 1 forwards;
+  animation: fade-in 300ms ease-in-out 1 forwards;
 }
 .header.open .header__hamburger > span {
   transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out, rotate 100ms 100ms ease-in-out;
@@ -748,8 +701,7 @@ a:focus, a:focus:focus-within {
   rotate: -45deg;
 }
 .header.close .header__menu {
-  -webkit-animation: fade-out 300ms ease-in-out 1 forwards;
-          animation: fade-out 300ms ease-in-out 1 forwards;
+  animation: fade-out 300ms ease-in-out 1 forwards;
 }
 .header.close .header__hamburger > span {
   transition: opacity 100ms 100ms ease-in-out, top 100ms 100ms ease-in-out, rotate 100ms ease-in-out;
@@ -871,7 +823,7 @@ a:focus, a:focus:focus-within {
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: hsla(0deg, 0%, 60%, 0.2);
+  background-color: hsla(0, 0%, 60%, 0.2);
   width: 100%;
   height: 0.125rem;
   border-radius: 5rem;
@@ -1058,7 +1010,7 @@ a:focus, a:focus:focus-within {
 .footer__form-group textarea:focus-visible {
   outline: solid 2px var(--greyishBlue);
   outline-offset: 3px;
-  background-color: hsla(0deg, 0%, 100%, 0.05);
+  background-color: hsla(0, 0%, 100%, 0.05);
 }
 .footer__form-group textarea {
   max-height: 6em;
@@ -1100,7 +1052,6 @@ a:focus, a:focus:focus-within {
 }
 .footer__nav a {
   display: block;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   margin: 0.75em auto 0;
@@ -1112,7 +1063,6 @@ a:focus, a:focus:focus-within {
 }
 .footer__policies a {
   display: block;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   margin: 0.75em auto 0;
