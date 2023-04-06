@@ -16,6 +16,7 @@ body {
   --title: var(--darkBlue);
   --text: hsl(231, 3%, 41%);
 
+  position: relative;
   margin: 0;
   padding: 0;
   line-height: 1.4;
@@ -36,8 +37,12 @@ body {
   .overlay {
     visibility: hidden;
     position: absolute;
-    inset: 2.0625rem 0 0;
-    background: linear-gradient(to bottom, var(--title), transparent);
+    top: 2.0625rem;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    background: hsla(235, 27%, 8%, 0.65);
+    backdrop-filter: blur(3px);
     z-index: 90;
 
     @include u.breakpoint-up(medium) {
@@ -46,7 +51,7 @@ body {
   }
 
   .main {
-    --bg-main: var(--ligthGrey);
+    --bg-main: var(--lightGrey);
 
     background-color: var(--bg-main);
   }

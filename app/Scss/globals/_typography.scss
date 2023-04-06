@@ -36,26 +36,14 @@ h1 {
 
 h2 {
   font-size: u.$fz-h2;
-
-  @include u.breakpoint-down(medium) {
-    font-size: u.$fz-h3;
-  }
 }
 
 h3 {
   font-size: u.$fz-h3;
-
-  @include u.breakpoint-down(medium) {
-    font-size: u.$fz-h4;
-  }
 }
 
 h4 {
   font-size: u.$fz-h4;
-
-  @include u.breakpoint-down(medium) {
-    font-size: u.$fz-lg;
-  }
 }
 
 ul {
