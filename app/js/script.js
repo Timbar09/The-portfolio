@@ -80,20 +80,7 @@ btnHamburger.addEventListener('click', function () {
 menuOptions.forEach((option) =>
   option.addEventListener('click', function () {
     closeMenu();
-  })
-);
-
-//BUTTON CLICK ANIMATION
-
-const buttons = document.querySelectorAll('.button a');
-
-buttons.forEach((button) =>
-  button.addEventListener('click', function () {
-    button.classList.add('click');
-    button.addEventListener('animationend', () => {
-      button.classList.remove('click');
-    });
-  })
+  }),
 );
 
 // FORM
@@ -115,7 +102,7 @@ formInputs.forEach((input) =>
     } else if ((input.placeholder = 'Message *')) {
       input.placeholder = 'e.g Where is Thanos?';
     }
-  })
+  }),
 );
 
 formInputs.forEach((input) =>
@@ -127,5 +114,5 @@ formInputs.forEach((input) =>
     } else if ((input.placeholder = 'e.g Where is Thanos?')) {
       input.placeholder = 'Message *';
     }
-  })
+  }),
 );
