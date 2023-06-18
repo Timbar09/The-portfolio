@@ -3,6 +3,8 @@
 html {
   font-size: 100%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 *,
@@ -37,10 +39,7 @@ body {
   .overlay {
     visibility: hidden;
     position: absolute;
-    top: 2.0625rem;
-    width: 100%;
-    left: 0;
-    height: 100%;
+    inset: 0;
     background: hsla(235, 27%, 8%, 0.65);
     backdrop-filter: blur(3px);
     z-index: 90;

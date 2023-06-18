@@ -1,0 +1,174 @@
+@use '../utils' as u;
+
+.about {
+  &__grid {
+    margin-top: 2rem;
+    text-align: center;
+    background-color: var(--bg-body);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.125);
+    overflow: hidden;
+
+    @include u.breakpoint-up(large) {
+      display: flex;
+    }
+  }
+
+  section {
+    padding: 1rem;
+
+    @include u.breakpoint-up(medium) {
+      padding: 2rem;
+    }
+  }
+
+  &__details {
+    --title: var(--white);
+
+    color: var(--lightGrey);
+    background: var(--tomato-gradient);
+
+    h3,
+    p {
+      margin: 0;
+    }
+
+    @include u.breakpoint-up(medium) {
+      display: flex;
+      gap: 2rem;
+    }
+
+    @include u.breakpoint-up(large) {
+      width: 30%;
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    &-photo {
+      --dimension: 10rem;
+
+      display: inline-block;
+      width: var(--dimension);
+      height: var(--dimension);
+      background-image: url('../../../images/self.JPG');
+      background-repeat: no-repeat;
+      background-size: contain;
+      outline: solid 3px var(--bg-body);
+      outline-offset: 2px;
+      border: solid 1px var(--lightGrey);
+      border-radius: 50%;
+
+      @include u.breakpoint-up(large) {
+        --dimension: 15rem;
+
+        margin: 0 2rem;
+      }
+    }
+
+    &-grid {
+      &:last-child {
+        text-align: center;
+
+        @include u.breakpoint-up(medium) {
+          text-align: left;
+        }
+
+        @include u.breakpoint-up(large) {
+          text-align: center;
+        }
+      }
+    }
+
+    &-name {
+      color: var(--title);
+    }
+
+    &-socials {
+      --hover: var(--white);
+      --github: #333;
+      --linkedin: #0077b5;
+      --twitter: #1da1f2;
+
+      margin: 0.25rem 0;
+      padding: 0.25rem 0;
+      border-top: solid 1px var(--lightGrey);
+      border-bottom: solid 1px var(--lightGrey);
+      font-size: 1.5em;
+      gap: 0.5rem;
+
+
+      @include u.breakpoint-up(medium) {
+        justify-content: flex-start;
+      }
+
+      @include u.breakpoint-up(large) {
+        font-size: 1.125em;
+        justify-content: center;
+      }
+
+      li {
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+
+        &:first-child {
+          a {
+            --hover: var(--github);
+          }
+        }
+
+        &:nth-child(2) {
+          a {
+            --hover: var(--linkedin);
+          }
+        }
+
+        &:last-child {
+          a {
+            --hover: var(--twitter);
+          }
+        }
+
+        a {
+          position: relative;
+          display: inline-block;
+          text-decoration: none;
+          color: inherit;
+          transition: color 150ms;
+
+          &:hover {
+            color: var(--hover);
+          }
+        }
+      }
+    }
+
+    &-info {
+      p {
+        color: var(--grey);
+
+        &:not(:last-child) {
+          margin-bottom: 0.25rem;
+        }
+
+        span {
+          color: var(--title);
+        }
+      }
+    }
+  }
+
+  &__bio {
+    
+    @include u.breakpoint-up(medium) {
+      text-align: left;
+    }
+    
+    &-actions {
+      .button {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

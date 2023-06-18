@@ -165,6 +165,10 @@
       @include u.breakpoint-up(medium) {
         grid-area: navigation;
         padding-top: 4rem;
+
+        h3 {
+          text-align: center;
+        }
       }
 
       @include u.breakpoint-up(large) {
@@ -194,6 +198,10 @@
   &__form {
     --border: hsla(233, 8%, 62%, 0.4);
     --focus: var(--tomato);
+
+    position: relative;
+    max-width: 40em;
+    margin: auto;
 
     @include u.breakpoint-up(medium) {
       display: grid;
@@ -226,10 +234,6 @@
         }
       }
     }
-
-    position: relative;
-    max-width: 40em;
-    margin: auto;
 
     &-group {
       &:first-child {
@@ -317,8 +321,8 @@
         color: var(--white);
         font-weight: 300;
         border-radius: 5px;
-        transition: border 200ms ease-in-out, background-color 200ms ease-in-out, outline 200ms ease-in-out,
-          outline-offset 50ms ease-in-out;
+        transition: border 200ms ease-in-out, background-color 200ms ease-in-out,
+          outline 200ms ease-in-out, outline-offset 50ms ease-in-out;
 
         &:focus,
         &:focus-visible {
@@ -361,6 +365,10 @@
   }
 
   &__social {
+    --git-hub: #333;
+    --linked-in: #0077b5;
+    --twitter: #1da1f2;
+
     font-size: 1.5em;
 
     @include u.breakpoint-up(large) {
@@ -375,8 +383,12 @@
         margin-right: 1rem;
       }
 
+      &:first-child {
+        --hover: var(--git-hub);
+      }
+
       &:hover {
-        color: var(--tomato);
+        color: var(--hover);
       }
     }
   }
