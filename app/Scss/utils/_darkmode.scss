@@ -43,6 +43,14 @@
     }
   }
 
+  .abilities {
+    --opaque: rgba(0, 0, 0, 0.8);
+
+    &__ability {
+      box-shadow: 0 0 20px 5px rgba(225, 99, 71, 0.125);
+    }
+  }
+
   .footer {
     --bg-footer: hsl(0, 0%, 7%);
   }

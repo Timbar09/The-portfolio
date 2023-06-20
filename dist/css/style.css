@@ -47,6 +47,12 @@
 .darkmode .about__grid {
   box-shadow: 0 0 20px 5px rgba(225, 99, 71, 0.125);
 }
+.darkmode .abilities {
+  --opaque: rgba(0, 0, 0, 0.8);
+}
+.darkmode .abilities__ability {
+  box-shadow: 0 0 20px 5px rgba(225, 99, 71, 0.125);
+}
 .darkmode .footer {
   --bg-footer: hsl(0, 0%, 7%);
 }
@@ -173,6 +179,7 @@ body .main {
 
 .section__title {
   text-align: center;
+  font-weight: 300;
 }
 
 h1,
@@ -1361,4 +1368,81 @@ a:focus, a:focus:focus-within {
 }
 .footer__copyright {
   margin-top: 0.75em;
+}
+
+.abilities {
+  --opaque: rgba(255, 255, 255, 0.8);
+}
+.abilities .container {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../../images/image-restaurant.jpg");
+  background-attachment: fixed;
+  z-index: 0;
+}
+.abilities .container::before {
+  content: "";
+  position: absolute;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--opaque);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 1;
+}
+.abilities h2 {
+  position: relative;
+  margin-bottom: 4rem;
+  z-index: 3;
+}
+.abilities__grid {
+  gap: 2rem;
+  position: relative;
+  z-index: 3;
+}
+.abilities__ability {
+  padding: 1em;
+  width: 100%;
+  max-width: 25em;
+  text-align: center;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.125);
+}
+.abilities__ability-icon {
+  width: 2.5em;
+  height: 2.5em;
+  font-size: 3em;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: solid 3px var(--tomato);
+}
+.abilities__ability h4 {
+  font-weight: 400;
+  display: inline-block;
+  position: relative;
+  margin: 0.5rem 0;
+  padding-bottom: 0.5rem;
+}
+.abilities__ability h4::before {
+  content: "";
+  position: absolute;
+  translate: -50% 0;
+  left: 50%;
+  bottom: 0;
+  width: 30%;
+  height: 2px;
+  background-color: var(--text);
+  border-radius: 10rem;
+  transition: bottom 200ms ease-in-out, opacity 200ms ease-in-out, width 200ms 200ms ease-in-out;
+}
+@media (min-width: 40em) {
+  .abilities__ability p {
+    text-align: left;
+  }
 }/*# sourceMappingURL=style.css.map */
