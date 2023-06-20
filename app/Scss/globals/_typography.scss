@@ -3,6 +3,23 @@
 .section__title {
   text-align: center;
   font-weight: 300;
+
+  .underlined {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    color: var(--text);
+    font-weight: 200;
+
+    @include u.before {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.25rem;
+      background: var(--tomato-gradient);
+      border-radius: 5px;
+    }
+  }
 }
 
 h1,
@@ -19,6 +36,7 @@ h1 {
   font-size: u.$fz-h1;
   margin-bottom: 1rem;
   font-weight: 500;
+  text-align: left;
 
   .hello {
     display: block;
@@ -33,18 +51,22 @@ h1 {
   @include u.breakpoint-down(medium) {
     font-size: u.$fz-h2;
   }
+  
+  @include u.breakpoint-down(small) {
+    text-align: center;
+  }
 }
 
 h2 {
-  font-size: u.$fz-h2;
-}
-
-h3 {
   font-size: u.$fz-h3;
 }
 
-h4 {
+h3 {
   font-size: u.$fz-h4;
+}
+
+h4 {
+  font-size: u.$fz-lg;
 }
 
 ul {
@@ -125,7 +147,7 @@ a {
   border-radius: 5px;
   z-index: 1;
   transition: box-shadow 150ms ease-in-out, opacity 150ms ease-in-out, translate 150ms ease-in-out,
-    color 150ms ease-in-out, border 150ms ease-in-out, width 150ms ease-in-out, height 150ms ease-in-out;
+    color 150ms ease-in-out, border 150ms ease-in-out;
 
   &:hover {
     box-shadow: var(--shadow-2);
@@ -149,7 +171,6 @@ a {
     background: transparent;
     border: solid 3px var(--tomato);
     box-shadow: var(--shadow-1);
-    // overflow: hidden;
 
     &:active {
       translate: 0 -1px;
@@ -176,7 +197,7 @@ a {
       height: 0;
       border-radius: 10rem 0 0 0.25rem;
       background: var(--tomato-gradient);
-      transition: all 400ms ease-in-out;
+      transition: width 200ms ease-in-out, height 200ms ease-in-out, border-radius 200ms ease-in-out;
       z-index: -1;
     }
   }

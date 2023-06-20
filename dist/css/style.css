@@ -181,6 +181,23 @@ body .main {
   text-align: center;
   font-weight: 300;
 }
+.section__title .underlined {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  color: var(--text);
+  font-weight: 200;
+}
+.section__title .underlined::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.25rem;
+  background: var(--tomato-gradient);
+  border-radius: 5px;
+}
 
 h1,
 h2,
@@ -196,6 +213,7 @@ h1 {
   font-size: 4.8125em;
   margin-bottom: 1rem;
   font-weight: 500;
+  text-align: left;
 }
 h1 .hello {
   display: block;
@@ -207,20 +225,25 @@ h1 .hello .miles {
 }
 @media (max-width: 63.9375em) {
   h1 {
-    font-size: 2em;
+    font-size: 3em;
+  }
+}
+@media (max-width: 39.9375em) {
+  h1 {
+    text-align: center;
   }
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.25rem;
 }
 
 h3 {
-  font-size: 1.55rem;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.3125rem;
 }
 
 ul {
@@ -295,7 +318,7 @@ a:focus, a:focus:focus-within {
   margin: 0;
   border-radius: 5px;
   z-index: 1;
-  transition: box-shadow 150ms ease-in-out, opacity 150ms ease-in-out, translate 150ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out, width 150ms ease-in-out, height 150ms ease-in-out;
+  transition: box-shadow 150ms ease-in-out, opacity 150ms ease-in-out, translate 150ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
 }
 .button:hover {
   box-shadow: var(--shadow-2);
@@ -339,7 +362,7 @@ a:focus, a:focus:focus-within {
   height: 0;
   border-radius: 10rem 0 0 0.25rem;
   background: var(--tomato-gradient);
-  transition: all 400ms ease-in-out;
+  transition: width 200ms ease-in-out, height 200ms ease-in-out, border-radius 200ms ease-in-out;
   z-index: -1;
 }
 .button-tertiary {
