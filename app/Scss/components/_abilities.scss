@@ -1,7 +1,12 @@
 @use '../utils' as u;
 
-.abilities {
-  --opaque: rgba(255, 255, 255, 0.8);
+.ability {
+  --opaque: hsla(0, 0%, 100%, 0.6);
+
+  h4 {
+    margin: 0;
+    font-weight: 300;
+  }
 
   .container {
     position: relative;
@@ -17,65 +22,130 @@
       position: absolute;
       inset: 0;
       background: var(--opaque);
-      backdrop-filter: blur(5px);
       z-index: 1;
     }
   }
 
   h2 {
     position: relative;
-    margin-bottom: 4rem;
     z-index: 3;
   }
 
   &__grid {
-    gap: 2rem;
     position: relative;
     z-index: 3;
+
+    @include u.breakpoint-up(large) {
+      margin-top: 4rem;
+      display: flex;
+      gap: 2rem;
+    }
   }
 
-  &__ability {
-    padding: 1em;
-    width: 100%;
-    max-width: 25em;
-    text-align: center;
-    border-radius: .25rem;
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.125);
+  &__description {
+    order: 1;
+    flex: none;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(65deg, var(--tomato), hsl(32, 100%, 64%));
 
-    &-icon {
-      width: 2.5em;
-      height: 2.5em;
-      font-size: 3em;
-      margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      border: solid 3px var(--tomato);
+    @include u.breakpoint-up(medium) {
+      flex-direction: row;
     }
 
-    h4 {
-      font-weight: 400;
-      display: inline-block;
-      position: relative;
-      margin: .5rem 0;
-      padding-bottom: 0.5rem;
+    @include u.breakpoint-up(large) {
+      flex-direction: column;
+    }
 
-      @include u.before {
-        translate: -50% 0;
-        left: 50%;
-        bottom: 0;
-        width: 30%;
-        height: 2px;
-        background-color: var(--text);
-        border-radius: 10rem;
-        transition: bottom 200ms ease-in-out, opacity 200ms ease-in-out, width 200ms 200ms ease-in-out;
+    &--item {
+      gap: 1rem;
+      text-align: center;
+      flex: 1;
+
+      &:nth-child(2) {
+        border-top: solid 1px var(--white);
+        border-bottom: solid 1px var(--white);
+        padding: 1rem 0;
+
+        @include u.breakpoint-up(medium) {
+          padding: 0 1rem;
+          border-top: none;
+          border-bottom: none;
+          border-left: solid 1px var(--white);
+          border-right: solid 1px var(--white);
+        }
+
+        @include u.breakpoint-up(large) {
+          padding: 1rem 0;
+          border-left: none;
+          border-right: none;
+          border-top: solid 1px var(--white);
+          border-bottom: solid 1px var(--white);
+        }
+      }
+
+      span {
+        --dimension: 4.25rem;
+
+        display: grid;
+        place-items: center;
+        height: var(--dimension);
+        width: var(--dimension);
+        border-radius: 50%;
+        background-color: var(--white);
+        color: var(--tomato);
+        font-size: 2rem;
       }
     }
+  }
 
-    p {
-      @include u.breakpoint-up(medium) {
-        text-align: left;
+  &__list {
+    &--item {
+      border-bottom: solid 1px var(--text);
+      padding: 1rem 0;
+
+      &__header {
+        button {
+          display: none !important;
+          all: unset;
+          height: 1.5rem;
+          width: 1.5rem;
+          display: grid;
+          place-items: center;
+          border-radius: 0.25rem;
+          color: var(--title);
+          cursor: pointer;
+          transition: color 150ms ease-in-out,
+            background-color 150ms ease-in-out;
+
+          &:hover {
+            color: var(--tomato);
+            background-color: var(--opaque);
+          }
+        }
+      }
+
+      &__list {
+        margin-top: 1rem;
+        gap: 1rem;
+
+        &--item {
+          padding: 0.5rem;
+          text-align: center;
+          border-radius: 0.25rem;
+          background-color: var(--opaque);
+          backdrop-filter: blur(5px);
+
+          span {
+            font-size: 2.5rem;
+            color: var(--tomato);
+          }
+
+          p {
+            margin: 0;
+          }
+        }
       }
     }
   }
