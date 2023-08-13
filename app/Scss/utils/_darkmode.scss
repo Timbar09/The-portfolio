@@ -14,8 +14,14 @@
     --bg-hero: hsl(0, 0%, 7%);
 
     &__toggle {
+      --toggle-bg: hsl(0, 0%, 15%);
+      --toggle-color: hsl(0, 0%, 91%);
+      --white: hsl(0, 0%, 5%);
+      --toggle-shadow: 0px 8px 20px rgba(255, 99, 71, 0.55);
+
+      text-align: right;
       .slider {
-        left: 1.575em;
+        left: 52%;
       }
     }
 

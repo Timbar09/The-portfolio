@@ -40,11 +40,15 @@ if (darkMode === 'enabled') {
 }
 
 dakModeToggle.addEventListener('click', () => {
+  sliderText = document.querySelector('.slider');
   darkMode = localStorage.getItem('darkMode');
+
   if (darkMode !== 'enabled') {
     enableDarkMode();
+    sliderText.textContent = 'Dark';
   } else {
     disableDarkMode();
+    sliderText.textContent = 'Light';
   }
 });
 
@@ -80,7 +84,7 @@ btnHamburger.addEventListener('click', function () {
 menuOptions.forEach((option) =>
   option.addEventListener('click', function () {
     closeMenu();
-  }),
+  })
 );
 
 // FORM
@@ -102,7 +106,7 @@ formInputs.forEach((input) =>
     } else if ((input.placeholder = 'Message *')) {
       input.placeholder = 'e.g Where is Thanos?';
     }
-  }),
+  })
 );
 
 formInputs.forEach((input) =>
@@ -114,5 +118,5 @@ formInputs.forEach((input) =>
     } else if ((input.placeholder = 'e.g Where is Thanos?')) {
       input.placeholder = 'Message *';
     }
-  }),
+  })
 );
