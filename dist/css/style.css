@@ -919,7 +919,7 @@ a:focus, a:focus:focus-within {
 }
 @media (min-width: 64em) {
   .about__details {
-    width: 30%;
+    flex: none;
     flex-direction: column;
     gap: 2rem;
     text-align: center;
@@ -965,7 +965,7 @@ a:focus, a:focus:focus-within {
   --github: #333;
   --linkedin: #0077b5;
   --twitter: #1da1f2;
-  margin: 0.25rem 0;
+  margin: 0.5rem 0;
   padding: 0.25rem 0;
   border-top: solid 1px var(--lightGrey);
   border-bottom: solid 1px var(--lightGrey);
@@ -1004,6 +1004,9 @@ a:focus, a:focus:focus-within {
 }
 .about__details-socials li a:hover {
   color: var(--hover);
+}
+.about__details-info {
+  font-size: 0.85em;
 }
 .about__details-info p {
   color: var(--grey);

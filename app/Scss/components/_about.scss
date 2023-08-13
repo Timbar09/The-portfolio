@@ -39,7 +39,7 @@
     }
 
     @include u.breakpoint-up(large) {
-      width: 30%;
+      flex: none;
       flex-direction: column;
       gap: 2rem;
       text-align: center;
@@ -90,13 +90,12 @@
       --linkedin: #0077b5;
       --twitter: #1da1f2;
 
-      margin: 0.25rem 0;
+      margin: 0.5rem 0;
       padding: 0.25rem 0;
       border-top: solid 1px var(--lightGrey);
       border-bottom: solid 1px var(--lightGrey);
       font-size: 1.5em;
       gap: 0.5rem;
-
 
       @include u.breakpoint-up(medium) {
         justify-content: flex-start;
@@ -145,6 +144,7 @@
     }
 
     &-info {
+      font-size: 0.85em;
       p {
         color: var(--grey);
 
@@ -160,11 +160,10 @@
   }
 
   &__bio {
-    
     @include u.breakpoint-up(medium) {
       text-align: left;
     }
-    
+
     &-actions {
       .button {
         margin-top: 0.5rem;
