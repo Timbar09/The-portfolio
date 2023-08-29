@@ -54,4 +54,25 @@ body {
 
     background-color: var(--bg-main);
   }
+
+  // Scrollbar styles
+  &::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--bg-body);
+    border-radius: 100vh;
+    margin-block: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--text);
+    border-radius: 100vh;
+    border: 0.125rem solid var(--bg-body);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--tomato-gradient);
+  }
 }

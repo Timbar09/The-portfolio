@@ -180,6 +180,22 @@ body .main {
   --bg-main: var(--lightGrey);
   background-color: var(--bg-main);
 }
+body::-webkit-scrollbar {
+  width: 0.75rem;
+}
+body::-webkit-scrollbar-track {
+  background: var(--bg-body);
+  border-radius: 100vh;
+  margin-block: 0.5rem;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--text);
+  border-radius: 100vh;
+  border: 0.125rem solid var(--bg-body);
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--tomato-gradient);
+}
 
 .section__title {
   text-align: center;
