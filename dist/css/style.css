@@ -55,7 +55,7 @@
   box-shadow: 0 0 20px 5px rgba(225, 99, 71, 0.125);
 }
 .darkmode .ability {
-  --opaque: rgba(0, 0, 0, 0.6);
+  --opaque: rgba(0, 0, 0, 0.7);
 }
 .darkmode .footer {
   --bg-footer: hsl(0, 0%, 7%);
@@ -1437,7 +1437,8 @@ a:focus, a:focus:focus-within {
   gap: 1rem;
   padding: 2rem;
   border-radius: 0.25rem;
-  background: linear-gradient(65deg, var(--tomato), hsl(32, 100%, 64%));
+  border: solid 1px var(--tomato);
+  color: var(--title);
 }
 @media (min-width: 40em) {
   .ability__description {
@@ -1455,8 +1456,8 @@ a:focus, a:focus:focus-within {
   flex: 1;
 }
 .ability__description--item:nth-child(2) {
-  border-top: solid 1px var(--white);
-  border-bottom: solid 1px var(--white);
+  border-top: solid 1px var(--title);
+  border-bottom: solid 1px var(--title);
   padding: 1rem 0;
 }
 @media (min-width: 40em) {
@@ -1464,8 +1465,8 @@ a:focus, a:focus:focus-within {
     padding: 0 1rem;
     border-top: none;
     border-bottom: none;
-    border-left: solid 1px var(--white);
-    border-right: solid 1px var(--white);
+    border-left: solid 1px var(--title);
+    border-right: solid 1px var(--title);
   }
 }
 @media (min-width: 64em) {
@@ -1473,8 +1474,8 @@ a:focus, a:focus:focus-within {
     padding: 1rem 0;
     border-left: none;
     border-right: none;
-    border-top: solid 1px var(--white);
-    border-bottom: solid 1px var(--white);
+    border-top: solid 1px var(--title);
+    border-bottom: solid 1px var(--title);
   }
 }
 .ability__description--item span {
@@ -1484,8 +1485,7 @@ a:focus, a:focus:focus-within {
   height: var(--dimension);
   width: var(--dimension);
   border-radius: 50%;
-  background-color: var(--white);
-  color: var(--tomato);
+  background: var(--tomato-gradient);
   font-size: 2rem;
 }
 .ability__list--item {

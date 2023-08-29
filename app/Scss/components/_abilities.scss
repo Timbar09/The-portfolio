@@ -48,7 +48,9 @@
     gap: 1rem;
     padding: 2rem;
     border-radius: 0.25rem;
-    background: linear-gradient(65deg, var(--tomato), hsl(32, 100%, 64%));
+    border: solid 1px var(--tomato);
+    color: var(--title);
+    // background: linear-gradient(65deg, var(--tomato), hsl(32, 100%, 64%));
 
     @include u.breakpoint-up(medium) {
       flex-direction: row;
@@ -64,24 +66,24 @@
       flex: 1;
 
       &:nth-child(2) {
-        border-top: solid 1px var(--white);
-        border-bottom: solid 1px var(--white);
+        border-top: solid 1px var(--title);
+        border-bottom: solid 1px var(--title);
         padding: 1rem 0;
 
         @include u.breakpoint-up(medium) {
           padding: 0 1rem;
           border-top: none;
           border-bottom: none;
-          border-left: solid 1px var(--white);
-          border-right: solid 1px var(--white);
+          border-left: solid 1px var(--title);
+          border-right: solid 1px var(--title);
         }
 
         @include u.breakpoint-up(large) {
           padding: 1rem 0;
           border-left: none;
           border-right: none;
-          border-top: solid 1px var(--white);
-          border-bottom: solid 1px var(--white);
+          border-top: solid 1px var(--title);
+          border-bottom: solid 1px var(--title);
         }
       }
 
@@ -93,8 +95,7 @@
         height: var(--dimension);
         width: var(--dimension);
         border-radius: 50%;
-        background-color: var(--white);
-        color: var(--tomato);
+        background: var(--tomato-gradient);
         font-size: 2rem;
       }
     }
