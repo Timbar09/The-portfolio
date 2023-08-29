@@ -631,6 +631,9 @@ a:focus, a:focus:focus-within {
   text-align: center;
   transition: right 200ms ease-in-out;
 }
+.header__menu li:hover a {
+  rotate: x 0deg;
+}
 .header__menu a {
   display: block;
   color: var(--title);
@@ -639,11 +642,8 @@ a:focus, a:focus:focus-within {
   letter-spacing: 3.5px;
   padding: 1rem 0;
   border-radius: 5px;
-  transition: all 150ms ease-in-out;
-}
-.header__menu a:hover {
-  background-color: var(--tomato);
-  color: var(--white);
+  rotate: x 90deg;
+  transition: rotate 250ms ease-in-out, background-color 150ms ease-in-out;
 }
 .header__menu a:active {
   background-color: var(--tomato);
@@ -651,6 +651,14 @@ a:focus, a:focus:focus-within {
 @media (min-width: 64em) {
   .header__menu {
     display: none;
+  }
+}
+@media (hover: none) {
+  .header__menu a {
+    rotate: x 0deg;
+  }
+  .header__menu a:hover {
+    rotate: x 0deg;
   }
 }
 .header__hero {
