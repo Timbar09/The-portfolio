@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import { useMediaQuery } from '../../src/hooks/useMediaQueries';
 
 // Test component that uses the hook
-function TestComponent() {
-  const matches = useMediaQuery('(min-width: 600px)');
+function TestComponent({ breakpoint, direction }) {
+  const matches = useMediaQuery(breakpoint, direction);
   return <div>{matches ? 'Matches' : 'Does not match'}</div>;
 }
 
@@ -18,7 +18,7 @@ globalThis.matchMedia = (query) => ({
 });
 
 test('useMediaQuery returns false when the media query does not match', () => {
-  render(<TestComponent />);
+  render(<TestComponent breakpoint="md" direction="up" />);
   expect(screen.getByText('Does not match')).toBeInTheDocument();
 });
 
@@ -32,6 +32,6 @@ test('useMediaQuery returns true when the media query matches', () => {
     dispatchEvent: () => {},
   });
 
-  render(<TestComponent />);
+  render(<TestComponent breakpoint="md" direction="up" />);
   expect(screen.getByText('Matches')).toBeInTheDocument();
 });
