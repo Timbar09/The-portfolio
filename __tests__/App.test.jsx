@@ -1,5 +1,5 @@
 import { render, fireEvent, screen } from '@testing-library/react';
-import App from '../src/App';
+import App from '../src/components/App';
 
 test('renders Vite + React heading', () => {
   render(<App />);
