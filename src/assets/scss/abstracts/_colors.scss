@@ -1,0 +1,44 @@
+:root {
+  // COLORS
+  --primary-100: hsl(9, 100%, 64%);
+  --primary-200: hsl(32, 100%, 64%);
+  --primary-300: hsl(60, 100%, 82%);
+  --primary-gradient: linear-gradient(
+    65deg,
+    var(--primary-100),
+    var(--primary-200)
+  );
+
+  --accent-100: hsl(214, 35%, 37%);
+  --accent-200: hsl(208, 100%, 90%);
+
+  --text-100: hsl(0, 0%, 100%);
+  --text-200: hsl(0, 0%, 96%);
+  --text-300: hsl(0, 0%, 88%);
+  --text-400: hsl(0, 0%, 80%);
+
+  --bg-100: hsl(212, 60%, 5%);
+  --bg-200: hsl(215, 50%, 9%);
+  --bg-300: hsl(217, 33%, 18%);
+
+  --opaque-100: hsla(0, 0%, 100%, 0.2);
+  --opaque-200: hsla(0, 0%, 100%, 0.4);
+  --opaque-300: hsla(0, 0%, 100%, 0.6);
+  --opaque-400: hsla(0, 0%, 100%, 0.8);
+}
+
+[data-theme='light'] {
+  --text-100: hsl(215, 50%, 9%);
+  --text-200: hsl(217, 33%, 18%);
+  --text-300: hsl(218, 23%, 28%);
+  --text-400: hsl(220, 23%, 38%);
+
+  --bg-100: hsl(0, 0%, 100%);
+  --bg-200: hsl(0, 0%, 96%);
+  --bg-300: hsl(0, 0%, 88%);
+
+  --opaque-100: hsla(0, 0%, 0%, 0.2);
+  --opaque-200: hsla(0, 0%, 0%, 0.4);
+  --opaque-300: hsla(0, 0%, 0%, 0.6);
+  --opaque-400: hsla(0, 0%, 0%, 0.8);
+}
