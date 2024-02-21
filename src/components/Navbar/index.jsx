@@ -1,3 +1,4 @@
+import Logo from '../Logo';
 import ThemeToggle from './ThemeToggle';
 
 import '../../assets/scss/components/Navbar.scss';
@@ -6,6 +7,7 @@ const Navbar = () => {
   return (
     <nav className="nav">
       <div className="container px-2">
+        <Logo />
         <ThemeToggle />
       </div>
     </nav>
