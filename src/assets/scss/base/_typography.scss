@@ -33,6 +33,7 @@ ul {
 }
 
 .container {
+  min-width: 21.25em; // 340px
+  max-width: 80em; // 1040px
   margin: 0 auto;
-  width: minmax(21.25rem, 80em); // 340px - 1040px
 }
