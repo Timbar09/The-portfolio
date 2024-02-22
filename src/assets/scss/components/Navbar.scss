@@ -1,4 +1,93 @@
+@use '../utils/' as *;
+
 .nav {
+  &__menu {
+    &-toggle {
+      flex-direction: column;
+      gap: 0.25rem;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+      border-radius: 0.15rem;
+      background-color: transparent;
+
+      &--stroke {
+        position: relative;
+        display: inline-block;
+        height: 0.45rem;
+        width: 2.75rem;
+        background: var(--primary-gradient);
+        border-radius: 10rem;
+        transition: border 100ms 500ms ease-in-out;
+      }
+
+      @include breakpoint-up(large) {
+        display: none;
+      }
+    }
+  }
+
+  &.open {
+    .nav {
+      &__menu {
+        // right: 0;
+        // animation: fade-in 300ms ease-in-out 1 forwards;
+
+        &-toggle {
+          &--stroke {
+            border: solid 2px var(--text-200);
+            background: var(--bg-100);
+            transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out,
+              rotate 100ms 300ms ease-in-out;
+
+            &-top {
+              top: 11px;
+              rotate: 45deg;
+            }
+
+            &-mid {
+              opacity: 0;
+            }
+
+            &-bottom {
+              top: -11px;
+              rotate: -45deg;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.closed {
+    .nav {
+      &__menu {
+        // animation: fade-out 300ms ease-in-out 1 forwards;
+
+        &-toggle {
+          &--stroke {
+            transition: opacity 100ms 100ms ease-in-out,
+              top 100ms 400ms ease-in-out, rotate 100ms ease-in-out;
+
+            &-top {
+              top: 0;
+              rotate: 0;
+            }
+
+            &-mid {
+              opacity: 1;
+            }
+
+            &-bottom {
+              top: 0;
+              rotate: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
   &__theme-toggle {
     padding: 0;
     font-size: 0.75rem;
