@@ -1,10 +1,11 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 import Logo from '../Logo';
 import ThemeToggle from './ThemeToggle';
 
-const menuItems = [
+let menuItems = [
   {
     title: 'Home',
     link: '#home',
@@ -17,10 +18,6 @@ const menuItems = [
     title: 'About',
     link: '#about',
   },
-  // {
-  //   title: 'Abilities',
-  //   link: '#abilities',
-  // },
   {
     title: 'Contact',
     link: '#contact',
@@ -46,6 +43,24 @@ const NavContent = ({ isMenuOpen }) => {
         transition: { duration: 0.5, ease: 'easeInOut', delay: 0.2 },
       }
     : {};
+
+  useEffect(() => {
+    if (isMobile) {
+      return;
+    }
+
+    menuItems = menuItems.filter((item) => item.title !== 'Contact');
+
+    return () => {
+      menuItems = [
+        ...menuItems,
+        {
+          title: 'Contact',
+          link: '#contact',
+        },
+      ];
+    };
+  }, [isMobile]);
 
   return (
     <motion.div
