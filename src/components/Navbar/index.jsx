@@ -1,24 +1,18 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 import MenuHeader from './MenuHeader';
-import Logo from '../Logo';
-import ThemeToggle from './ThemeToggle';
 import NavContent from './NavContent';
 
 import '../../assets/scss/components/Navbar.scss';
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Navbar = ({ isMenuOpen, handleToggleMenu }) => {
   const isMobile = useMediaQuery('sm', 'down');
 
-  const handleToggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <nav className={`nav ${isMenuOpen ? 'open' : 'closed'}`}>
-      <div className="container px-2 flex-jc-sb flex-ai-c">
+    <nav className={`nav ${isMobile && (isMenuOpen ? 'open' : 'closed')}`}>
+      <div className="container flex-jc-sb flex-ai-c px-2">
         {isMobile && (
           <MenuHeader
             isMenuOpen={isMenuOpen}
@@ -26,10 +20,15 @@ const Navbar = () => {
           />
         )}
 
-        <NavContent />
+        <NavContent isMenuOpen={isMenuOpen} />
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  isMenuOpen: PropTypes.bool.isRequired,
+  handleToggleMenu: PropTypes.func.isRequired,
 };
 
 export default Navbar;

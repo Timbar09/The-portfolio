@@ -17,10 +17,10 @@ const menuItems = [
     title: 'About',
     link: '#about',
   },
-  {
-    title: 'Abilities',
-    link: '#abilities',
-  },
+  // {
+  //   title: 'Abilities',
+  //   link: '#abilities',
+  // },
   {
     title: 'Contact',
     link: '#contact',
@@ -38,28 +38,37 @@ const NavContent = ({ isMenuOpen }) => {
     },
   };
 
+  const animationProps = isMobile
+    ? {
+        initial: 'closed',
+        animate: isMenuOpen ? 'open' : 'closed',
+        variants: navContentVariants,
+        transition: { duration: 0.5, ease: 'easeInOut', delay: 0.2 },
+      }
+    : {};
+
   return (
     <motion.div
-      initial="closed"
-      animate={isMenuOpen ? 'open' : 'closed'}
-      variants={navContentVariants}
-      transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}
+      {...animationProps}
+      className="nav__content flex-ai-c flex-jc-sb gap-1"
     >
-      <div className="nav__content py-2">
-        {!isMobile && <Logo />}
+      {!isMobile && (
+        <div className="nav__content--logo grid grid-pi-c">
+          <Logo />
+        </div>
+      )}
 
-        <ul className="nav__menu">
-          {menuItems.map((item, index) => (
-            <li key={index} className="nav__menu-item">
-              <a href={item.link}>{item.title}</a>
-            </li>
-          ))}
-
-          <li className="py-1">
-            <ThemeToggle />
+      <ul className="nav__menu flex-ai-c gap-1">
+        {menuItems.map((item, index) => (
+          <li key={index} className="nav__menu-item">
+            <a href={item.link}>{item.title}</a>
           </li>
-        </ul>
-      </div>
+        ))}
+
+        <li className="py-1">
+          <ThemeToggle />
+        </li>
+      </ul>
     </motion.div>
   );
 };

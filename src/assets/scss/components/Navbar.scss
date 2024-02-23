@@ -7,8 +7,36 @@
   width: 100%;
   z-index: 1000;
 
+  @include breakpoint-up(md) {
+    background-color: var(--bg-100);
+  }
+
+  &__content {
+    @include breakpoint-up(md) {
+      position: relative;
+      display: flex;
+      opacity: 1;
+      visibility: visible !important;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: hsla(0, 0%, 60%, 0.2);
+        width: 100%;
+        height: 0.15em;
+        border-radius: 5rem;
+      }
+    }
+  }
+
   &__menu {
     text-align: center;
+
+    @include breakpoint-up(md) {
+      display: flex;
+    }
 
     &-toggle {
       flex-direction: column;
@@ -34,10 +62,16 @@
 
     li {
       position: relative;
+      border-radius: 0.15rem;
       background-color: var(--bg-200);
 
       &:not(:first-child) {
         margin-top: 0.25rem;
+      }
+
+      @include breakpoint-up(md) {
+        background-color: transparent;
+        margin-top: 0 !important;
       }
     }
 
@@ -46,8 +80,8 @@
         display: block;
         padding: 0.5rem 0;
         color: var(--text-400);
-        font-size: 1.25rem;
-        border-radius: 0.15rem;
+
+        letter-spacing: 3.5px;
         transition: color 100ms ease-in-out, background-color 100ms ease-in-out;
 
         &:hover {
@@ -58,6 +92,47 @@
         &:active {
           color: var(--text-400);
           background-color: var(--bg-400);
+        }
+
+        @include breakpoint-down(sm) {
+          font-size: 1.25rem;
+        }
+
+        @include breakpoint-up(md) {
+          padding: 1.5rem 0.5rem;
+          font-size: clamp(0.75em, 2.5vw, 1em);
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 1.5em;
+            width: 0.1875em;
+            height: 0.1875em;
+            background-color: var(--primary-100);
+            opacity: 0;
+            border-radius: 10px 10px 0 0;
+            transition: bottom 200ms ease-in-out, opacity 200ms ease-in-out,
+              width 200ms 200ms ease-in-out;
+          }
+
+          &:hover {
+            color: var(--text-100);
+            background-color: transparent;
+
+            &::before {
+              opacity: 1;
+              height: 3px;
+              width: 100%;
+              bottom: 0;
+              background-color: var(--text-100);
+            }
+          }
+
+          &:active {
+            color: var(--text-100);
+            background-color: transparent;
+          }
         }
       }
     }

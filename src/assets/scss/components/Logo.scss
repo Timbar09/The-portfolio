@@ -14,6 +14,16 @@
     &::after {
       background: var(--primary-gradient);
     }
+
+    span {
+      @include breakpoint-up(md) {
+        display: none;
+      }
+
+      @include breakpoint-up(lg) {
+        display: inline;
+      }
+    }
   }
 
   &__footer {
