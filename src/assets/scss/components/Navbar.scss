@@ -1,13 +1,18 @@
 @use '../utils/' as *;
 
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
   &__menu {
+    text-align: center;
+
     &-toggle {
       flex-direction: column;
       gap: 0.25rem;
-      cursor: pointer;
-      border: none;
-      padding: 0;
       border-radius: 0.15rem;
       background-color: transparent;
 
@@ -16,8 +21,9 @@
         display: inline-block;
         height: 0.45rem;
         width: 2.75rem;
-        background: var(--primary-gradient);
+        background: var(--bg-100);
         border-radius: 10rem;
+        border: solid 2px var(--text-100);
         transition: border 100ms 500ms ease-in-out;
       }
 
@@ -25,20 +31,47 @@
         display: none;
       }
     }
+
+    li {
+      position: relative;
+      background-color: var(--bg-200);
+
+      &:not(:first-child) {
+        margin-top: 0.25rem;
+      }
+    }
+
+    &-item {
+      a {
+        display: block;
+        padding: 0.5rem 0;
+        color: var(--text-400);
+        font-size: 1.25rem;
+        border-radius: 0.15rem;
+        transition: color 100ms ease-in-out, background-color 100ms ease-in-out;
+
+        &:hover {
+          color: var(--text-100);
+          background-color: var(--bg-300);
+        }
+
+        &:active {
+          color: var(--text-400);
+          background-color: var(--bg-400);
+        }
+      }
+    }
   }
 
   &.open {
     .nav {
       &__menu {
-        // right: 0;
-        // animation: fade-in 300ms ease-in-out 1 forwards;
-
         &-toggle {
           &--stroke {
             border: solid 2px var(--text-200);
             background: var(--bg-100);
             transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out,
-              rotate 100ms 300ms ease-in-out;
+              rotate 100ms 200ms ease-in-out;
 
             &-top {
               top: 11px;
@@ -55,6 +88,32 @@
             }
           }
         }
+
+        li {
+          &:not(:first-child) {
+            margin-top: 0.25rem;
+          }
+
+          &:nth-child(2) {
+            transition: margin-top 150ms 150ms ease;
+          }
+
+          &:nth-child(3) {
+            transition: margin-top 150ms 300ms ease;
+          }
+
+          &:nth-child(4) {
+            transition: margin-top 150ms 450ms ease;
+          }
+
+          &:nth-child(5) {
+            transition: margin-top 150ms 600ms ease;
+          }
+
+          &:last-child {
+            transition: margin-top 150ms 750ms ease;
+          }
+        }
       }
     }
   }
@@ -62,12 +121,10 @@
   &.closed {
     .nav {
       &__menu {
-        // animation: fade-out 300ms ease-in-out 1 forwards;
-
         &-toggle {
           &--stroke {
             transition: opacity 100ms 100ms ease-in-out,
-              top 100ms 400ms ease-in-out, rotate 100ms ease-in-out;
+              top 100ms 300ms ease-in-out, rotate 100ms ease-in-out;
 
             &-top {
               top: 0;
@@ -82,6 +139,32 @@
               top: 0;
               rotate: 0;
             }
+          }
+        }
+
+        li {
+          &:not(:first-child) {
+            margin-top: -42px;
+          }
+
+          &:nth-child(2) {
+            transition: margin-top 100ms 50ms ease-in-out;
+          }
+
+          &:nth-child(3) {
+            transition: margin-top 150ms 150ms ease-in-out;
+          }
+
+          &:nth-child(4) {
+            transition: margin-top 150ms 300ms ease-in-out;
+          }
+
+          &:nth-child(5) {
+            transition: margin-top 150ms 450ms ease-in-out;
+          }
+
+          &:last-child {
+            transition: margin-top 150ms 600ms ease-in-out;
           }
         }
       }
@@ -101,7 +184,7 @@
     .dark {
       display: inline-block;
       padding: 0.25rem 1rem;
-      color: var(--text-200);
+      color: var(--text-400);
     }
 
     &--slider {
@@ -110,7 +193,7 @@
       top: 0;
       left: 0;
       border-radius: 1rem;
-      color: var(--text-400);
+      color: var(--text-300);
       background-color: var(--bg-100);
       box-shadow: 0px 0px 5px 0px hsla(0, 0%, 100%, 0.15);
       transition: left 100ms ease-in-out;
