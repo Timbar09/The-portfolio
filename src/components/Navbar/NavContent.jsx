@@ -1,46 +1,47 @@
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
-import Logo from '../Logo';
-import ThemeToggle from './ThemeToggle';
+import Logo from "../Logo";
+import ThemeToggle from "./ThemeToggle";
+import Button from "../Button";
 
 let menuItems = [
   {
-    title: 'Home',
-    link: '#home',
+    title: "Home",
+    link: "#home",
   },
   {
-    title: 'Projects',
-    link: '#projects',
+    title: "Projects",
+    link: "#projects",
   },
   {
-    title: 'About',
-    link: '#about',
+    title: "About",
+    link: "#about",
   },
   {
-    title: 'Contact',
-    link: '#contact',
+    title: "Contact",
+    link: "#contact",
   },
 ];
 
 const NavContent = ({ isMenuOpen }) => {
-  const isMobile = useMediaQuery('sm', 'down');
+  const isMobile = useMediaQuery("sm", "down");
 
   const navContentVariants = {
-    open: { opacity: 1, visibility: 'visible' },
+    open: { opacity: 1, visibility: "visible" },
     closed: {
       opacity: 0,
-      transitionEnd: { visibility: 'hidden' },
+      transitionEnd: { visibility: "hidden" },
     },
   };
 
   const animationProps = isMobile
     ? {
-        initial: 'closed',
-        animate: isMenuOpen ? 'open' : 'closed',
+        initial: "closed",
+        animate: isMenuOpen ? "open" : "closed",
         variants: navContentVariants,
-        transition: { duration: 0.5, ease: 'easeInOut', delay: 0.2 },
+        transition: { duration: 0.5, ease: "easeInOut", delay: 0.2 },
       }
     : {};
 
@@ -49,14 +50,14 @@ const NavContent = ({ isMenuOpen }) => {
       return;
     }
 
-    menuItems = menuItems.filter((item) => item.title !== 'Contact');
+    menuItems = menuItems.filter(item => item.title !== "Contact");
 
     return () => {
       menuItems = [
         ...menuItems,
         {
-          title: 'Contact',
-          link: '#contact',
+          title: "Contact",
+          link: "#contact",
         },
       ];
     };
@@ -84,6 +85,16 @@ const NavContent = ({ isMenuOpen }) => {
           <ThemeToggle />
         </li>
       </ul>
+
+      {!isMobile && (
+        <div className="nav__content--button">
+          <Button
+            className="button__primary"
+            name="Contact Me"
+            link="#contact"
+          />
+        </div>
+      )}
     </motion.div>
   );
 };

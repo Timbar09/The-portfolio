@@ -3,6 +3,7 @@ import useLocalStorage from "use-local-storage";
 
 import Navbar from "./Navbar";
 import Overlay from "./Overlay";
+import Button from "./Button";
 
 import "../assets/scss/components/App.scss";
 
@@ -68,6 +69,18 @@ const App = () => {
             project that you would like to discuss, feel free to contact me. I
             would love to hear from you! 😊
           </p>
+
+          <h2 style={{ textAlign: "center", margin: "2rem 0" }}>Buttons</h2>
+
+          <div className="buttons flex flex-ai-c flex-jc-c gap-2 flex-wrap">
+            <Button />
+            <Button name="Secondary" className="button__secondary" />
+            <Button
+              name="Tertiary Link"
+              className="button__tertiary"
+              link="https://www.google.com"
+            />
+          </div>
         </div>
       </div>
     </ThemeContext.Provider>
