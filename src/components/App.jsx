@@ -41,7 +41,8 @@ const App = () => {
 
         <Navbar isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
 
-        <div
+        <section
+          id="home"
           className="container px-2 py-3"
           style={{
             marginTop: "5rem",
@@ -81,7 +82,56 @@ const App = () => {
               link="https://www.google.com"
             />
           </div>
-        </div>
+        </section>
+
+        <section id="projects" className="container px-2 py-3">
+          <h2>Projects</h2>
+
+          <p>
+            Here are some of the projects that I have worked on. These projects
+            showcase my skills and experience as a web developer. I have
+            experience in building websites, web applications, and other digital
+            products. I am always looking for new projects to work on. If you
+            have a project that you would like to discuss, feel free to contact
+            me. I would love to hear from you! 😊
+          </p>
+        </section>
+
+        <section id="about" className="container px-2 py-3">
+          <h2>About Me</h2>
+
+          <p>
+            I am a web developer with a passion for building beautiful and
+            functional websites. I have experience in building websites using
+            HTML, CSS, JavaScript, React, and other web technologies. I am also
+            familiar with web design principles and best practices. I am always
+            looking for new opportunities to learn and grow as a developer. I am
+            open to freelance work and other opportunities. If you have a
+            project that you would like to discuss, feel free to contact me. I
+            would love to hear from you! 😊
+          </p>
+        </section>
+
+        <section id="contact" className="container px-2 py-3">
+          <h2>Contact Me</h2>
+
+          <p>
+            If you have any questions or suggestions, feel free to contact me. I
+            am always looking for new opportunities to learn and grow as a
+            developer. I am open to freelance work and other opportunities. If
+            you have a project that you would like to discuss, feel free to
+            contact me. I would love to hear from you! 😊
+          </p>
+        </section>
+
+        <footer className="footer container px-2 py-3">
+          <p>
+            Made with ❤️ by{" "}
+            <a href="" target="_blank" rel="noreferrer">
+              Miles Mosweu
+            </a>
+          </p>
+        </footer>
       </div>
     </ThemeContext.Provider>
   );

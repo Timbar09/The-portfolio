@@ -6,7 +6,7 @@ import Logo from "../Logo";
 import ThemeToggle from "./ThemeToggle";
 import Button from "../Button";
 
-let menuItems = [
+const menuItems = [
   {
     title: "Home",
     link: "#home",
@@ -18,10 +18,6 @@ let menuItems = [
   {
     title: "About",
     link: "#about",
-  },
-  {
-    title: "Contact",
-    link: "#contact",
   },
 ];
 
@@ -46,24 +42,6 @@ const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
       }
     : {};
 
-  useEffect(() => {
-    if (isMobile) {
-      return;
-    }
-
-    menuItems = menuItems.filter(item => item.title !== "Contact");
-
-    return () => {
-      menuItems = [
-        ...menuItems,
-        {
-          title: "Contact",
-          link: "#contact",
-        },
-      ];
-    };
-  }, [isMobile]);
-
   return (
     <motion.div
       {...animationProps}
@@ -78,20 +56,34 @@ const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
       <ul className="nav__menu flex-ai-c gap-1">
         {menuItems.map((item, index) => (
           <li key={index} className="nav__menu-item">
-            <a href={item.link} onClick={() => isMobile && handleToggleMenu()}>
+            <a
+              className="py-1"
+              href={item.link}
+              onClick={() => isMobile && handleToggleMenu()}
+            >
               {item.title}
             </a>
           </li>
         ))}
 
-        <li className="py-1">
+        <li className="py-1 flex flex-ai-c flex-jc-c flex-col gap-2">
+          {isMobile && (
+            <div>
+              <Button
+                name="Contact Me"
+                link="#contact"
+                onClick={handleToggleMenu}
+              />
+            </div>
+          )}
+
           <ThemeToggle />
         </li>
       </ul>
 
       {!isMobile && (
         <div className="nav__content--button">
-          <Button type="primary" name="Contact Me" link="#contact" />
+          <Button name="Contact Me" link="#contact" />
         </div>
       )}
     </motion.div>

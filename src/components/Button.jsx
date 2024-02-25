@@ -19,6 +19,7 @@ const Button = ({
           href={link}
           target={link.startsWith("#") ? null : "_blank"}
           rel="noreferrer"
+          onClick={onClick}
         >
           {name}
           {link.startsWith("#") ? <ArrowIcon /> : <ExternalLinkIcon />}
