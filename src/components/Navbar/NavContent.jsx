@@ -91,11 +91,7 @@ const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
 
       {!isMobile && (
         <div className="nav__content--button">
-          <Button
-            className="button__primary"
-            name="Contact Me"
-            link="#contact"
-          />
+          <Button type="primary" name="Contact Me" link="#contact" />
         </div>
       )}
     </motion.div>

@@ -42,7 +42,7 @@ const App = () => {
         <Navbar isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
 
         <div
-          className="container px-1 py-3"
+          className="container px-2 py-3"
           style={{
             marginTop: "5rem",
           }}
@@ -73,11 +73,11 @@ const App = () => {
           <h2 style={{ textAlign: "center", margin: "2rem 0" }}>Buttons</h2>
 
           <div className="buttons flex flex-ai-c flex-jc-c gap-2 flex-wrap">
-            <Button />
-            <Button name="Secondary" className="button__secondary" />
+            <Button form={true} />
+            <Button name="Secondary" type="secondary" />
             <Button
               name="Tertiary Link"
-              className="button__tertiary"
+              type="tertiary"
               link="https://www.google.com"
             />
           </div>
