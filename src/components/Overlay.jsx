@@ -1,14 +1,14 @@
-import { motion } from 'framer-motion';
-import { useMediaQuery } from '../hooks/useMediaQuery';
+import { motion } from "framer-motion";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
-const Overlay = ({ isMenuOpen }) => {
-  const isMobile = useMediaQuery('sm', 'down');
+const Overlay = ({ isMenuOpen, handleToggleMenu }) => {
+  const isMobile = useMediaQuery("sm", "down");
 
   const overlayVariants = {
-    open: { opacity: 1, visibility: 'visible' },
+    open: { opacity: 1, visibility: "visible" },
     closed: {
       opacity: 0,
-      transitionEnd: { visibility: 'hidden' },
+      transitionEnd: { visibility: "hidden" },
       transition: { delay: 0.2 },
     },
   };
@@ -18,10 +18,11 @@ const Overlay = ({ isMenuOpen }) => {
       {isMobile && (
         <motion.div
           className="overlay"
+          onClick={handleToggleMenu}
           initial="closed"
-          animate={isMenuOpen ? 'open' : 'closed'}
+          animate={isMenuOpen ? "open" : "closed"}
           variants={overlayVariants}
-          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         />
       )}
     </>

@@ -1,17 +1,17 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
-import MenuHeader from './MenuHeader';
-import NavContent from './NavContent';
+import MenuHeader from "./MenuHeader";
+import NavContent from "./NavContent";
 
-import '../../assets/scss/components/Navbar.scss';
+import "../../assets/scss/components/Navbar.scss";
 
 const Navbar = ({ isMenuOpen, handleToggleMenu }) => {
-  const isMobile = useMediaQuery('sm', 'down');
+  const isMobile = useMediaQuery("sm", "down");
 
   return (
-    <nav className={`nav ${isMobile && (isMenuOpen ? 'open' : 'closed')}`}>
+    <nav className={`nav ${isMobile && (isMenuOpen ? "open" : "closed")}`}>
       <div className="container flex-jc-sb flex-ai-c px-2">
         {isMobile && (
           <MenuHeader
@@ -20,7 +20,10 @@ const Navbar = ({ isMenuOpen, handleToggleMenu }) => {
           />
         )}
 
-        <NavContent isMenuOpen={isMenuOpen} />
+        <NavContent
+          isMenuOpen={isMenuOpen}
+          handleToggleMenu={handleToggleMenu}
+        />
       </div>
     </nav>
   );

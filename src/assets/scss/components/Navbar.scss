@@ -1,4 +1,4 @@
-@use '../utils/' as *;
+@use "../utils/" as *;
 
 .nav {
   position: fixed;
@@ -19,7 +19,7 @@
       visibility: visible !important;
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         bottom: 0;
@@ -103,7 +103,7 @@
           font-size: clamp(0.75em, 2.5vw, 1em);
 
           &::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             bottom: 2em;
@@ -174,19 +174,19 @@
           }
 
           &:nth-child(3) {
-            transition: margin-top 150ms 300ms ease;
+            transition: margin-top 500ms ease;
           }
 
           &:nth-child(4) {
-            transition: margin-top 150ms 450ms ease;
+            transition: margin-top 500ms ease;
           }
 
           &:nth-child(5) {
-            transition: margin-top 150ms 600ms ease;
+            transition: margin-top 500ms ease;
           }
 
           &:last-child {
-            transition: margin-top 150ms 750ms ease;
+            transition: margin-top 500ms ease;
           }
         }
       }
@@ -223,23 +223,23 @@
           }
 
           &:nth-child(2) {
-            transition: margin-top 100ms 50ms ease-in-out;
+            transition: margin-top 300ms ease-in-out;
           }
 
           &:nth-child(3) {
-            transition: margin-top 150ms 150ms ease-in-out;
+            transition: margin-top 300ms ease-in-out;
           }
 
           &:nth-child(4) {
-            transition: margin-top 150ms 300ms ease-in-out;
+            transition: margin-top 300ms ease-in-out;
           }
 
           &:nth-child(5) {
-            transition: margin-top 150ms 450ms ease-in-out;
+            transition: margin-top 300ms ease-in-out;
           }
 
           &:last-child {
-            transition: margin-top 150ms 600ms ease-in-out;
+            transition: margin-top 300ms ease-in-out;
           }
         }
       }

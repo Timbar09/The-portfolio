@@ -25,7 +25,7 @@ let menuItems = [
   },
 ];
 
-const NavContent = ({ isMenuOpen }) => {
+const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
   const isMobile = useMediaQuery("sm", "down");
 
   const navContentVariants = {
@@ -33,6 +33,7 @@ const NavContent = ({ isMenuOpen }) => {
     closed: {
       opacity: 0,
       transitionEnd: { visibility: "hidden" },
+      transition: { delay: 0.2 },
     },
   };
 
@@ -41,7 +42,7 @@ const NavContent = ({ isMenuOpen }) => {
         initial: "closed",
         animate: isMenuOpen ? "open" : "closed",
         variants: navContentVariants,
-        transition: { duration: 0.5, ease: "easeInOut", delay: 0.2 },
+        transition: { duration: 0.2, ease: "easeInOut" },
       }
     : {};
 
@@ -77,7 +78,9 @@ const NavContent = ({ isMenuOpen }) => {
       <ul className="nav__menu flex-ai-c gap-1">
         {menuItems.map((item, index) => (
           <li key={index} className="nav__menu-item">
-            <a href={item.link}>{item.title}</a>
+            <a href={item.link} onClick={() => isMobile && handleToggleMenu()}>
+              {item.title}
+            </a>
           </li>
         ))}
 

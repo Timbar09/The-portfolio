@@ -37,7 +37,7 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className="app">
-        <Overlay isMenuOpen={isMenuOpen} />
+        <Overlay isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
 
         <Navbar isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
 
