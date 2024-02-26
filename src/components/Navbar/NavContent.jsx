@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 import Logo from "../Logo";
@@ -8,16 +8,13 @@ import Button from "../Button";
 
 const menuItems = [
   {
-    title: "Home",
-    link: "#home",
+    link: "Home",
   },
   {
-    title: "Projects",
-    link: "#projects",
+    link: "Projects",
   },
   {
-    title: "About",
-    link: "#about",
+    link: "About",
   },
 ];
 
@@ -56,13 +53,17 @@ const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
       <ul className="nav__menu flex-ai-c gap-1">
         {menuItems.map((item, index) => (
           <li key={index} className="nav__menu-item">
-            <a
+            <Link
               className="py-1"
-              href={item.link}
               onClick={() => isMobile && handleToggleMenu()}
+              to={item.link.toLocaleLowerCase()}
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
             >
-              {item.title}
-            </a>
+              {item.link}
+            </Link>
           </li>
         ))}
 

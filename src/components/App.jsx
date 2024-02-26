@@ -42,6 +42,7 @@ const App = () => {
         <Navbar isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
 
         <section
+          name="home"
           id="home"
           className="container px-2 py-3"
           style={{
@@ -84,7 +85,7 @@ const App = () => {
           </div>
         </section>
 
-        <section id="projects" className="container px-2 py-3">
+        <section name="projects" id="projects" className="container px-2 py-3">
           <h2>Projects</h2>
 
           <p>
@@ -97,7 +98,7 @@ const App = () => {
           </p>
         </section>
 
-        <section id="about" className="container px-2 py-3">
+        <section name="about" id="about" className="container px-2 py-3">
           <h2>About Me</h2>
 
           <p>
@@ -112,7 +113,7 @@ const App = () => {
           </p>
         </section>
 
-        <section id="contact" className="container px-2 py-3">
+        <section name="contact" id="contact" className="container px-2 py-3">
           <h2>Contact Me</h2>
 
           <p>
