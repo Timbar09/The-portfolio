@@ -15,7 +15,7 @@ const MenuHeader = ({ isMenuOpen, handleToggleMenu }) => {
   };
 
   return (
-    <header className="nav__menu--header flex flex-jc-sb flex-ai-c px-2 py-3">
+    <header className="nav__menu--header flex flex-jc-sb flex-ai-c py-1">
       <motion.div
         className="nav__menu--header__logo"
         initial="closed"

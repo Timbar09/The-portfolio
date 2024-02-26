@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const MenuToggleButton = ({ handleClick }) => {
   return (
-    <div className="nav__button">
+    <div className="nav__menu-toggle--wrap p-1">
       <button
         type="button"
         onClick={handleClick}

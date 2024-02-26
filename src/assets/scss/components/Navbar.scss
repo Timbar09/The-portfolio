@@ -39,6 +39,8 @@
     }
 
     &-toggle {
+      --bg-stroke: var(--bg-100);
+
       flex-direction: column;
       gap: 0.25rem;
       border-radius: 0.15rem;
@@ -49,14 +51,19 @@
         display: inline-block;
         height: 0.45rem;
         width: 2.75rem;
-        background: var(--bg-100);
+        background-color: var(--bg-stroke);
         border-radius: 10rem;
         border: solid 2px var(--text-100);
-        transition: border 100ms 500ms ease-in-out;
+        transition: border 100ms 500ms ease-in-out,
+          background-color 100ms ease-in-out;
       }
 
       @include breakpoint-up(large) {
         display: none;
+      }
+
+      &:hover {
+        --bg-stroke: var(--primary-100);
       }
     }
 
@@ -143,7 +150,6 @@
         &-toggle {
           &--stroke {
             border: solid 2px var(--text-200);
-            background: var(--bg-100);
             transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out,
               rotate 100ms 200ms ease-in-out;
 
@@ -166,25 +172,6 @@
         li {
           &:not(:first-child) {
             margin-top: 0.25rem;
-          }
-
-          &:nth-child(2) {
-            transition: margin-top 150ms 150ms ease;
-          }
-
-          &:nth-child(3) {
-            transition: margin-top 500ms ease;
-          }
-
-          &:nth-child(4) {
-            transition: margin-top 500ms ease;
-          }
-
-          &:nth-child(5) {
-            transition: margin-top 500ms ease;
-          }
-
-          &:last-child {
             transition: margin-top 500ms ease;
           }
         }
@@ -219,25 +206,6 @@
         li {
           &:not(:first-child) {
             margin-top: -42px;
-          }
-
-          &:nth-child(2) {
-            transition: margin-top 300ms ease-in-out;
-          }
-
-          &:nth-child(3) {
-            transition: margin-top 300ms ease-in-out;
-          }
-
-          &:nth-child(4) {
-            transition: margin-top 300ms ease-in-out;
-          }
-
-          &:nth-child(5) {
-            transition: margin-top 300ms ease-in-out;
-          }
-
-          &:last-child {
             transition: margin-top 300ms ease-in-out;
           }
         }
