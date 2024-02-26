@@ -1,0 +1,80 @@
+@use "../utils/" as *;
+
+.button {
+  position: relative;
+  display: inline-block;
+  border-radius: var(--radius-200);
+  color: var(--bg-100);
+  font-family: $ff-titillium;
+  font-size: inherit;
+  font-weight: 600;
+  padding: 0.375rem 1.5rem;
+  transition: background-color 150ms ease-in-out, border 150ms ease-in-out,
+    box-shadow 150ms ease-in-out, top 150ms ease-in-out;
+
+  &__primary {
+    background: var(--primary-gradient);
+    box-shadow: var(--shadow-100);
+    top: 0;
+
+    &:hover {
+      box-shadow: var(--shadow-200);
+      top: -3px;
+    }
+
+    &:active {
+      box-shadow: var(--shadow-100);
+      top: -1px;
+    }
+  }
+
+  &__secondary {
+    color: var(--primary-100);
+    border: solid 2px var(--primary-100);
+    padding: 0.25rem 1.5rem;
+    overflow: hidden;
+    transition: color 300ms ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      rotate: 45deg;
+      width: 0;
+      height: 12rem;
+      z-index: -1;
+      background: var(--primary-gradient);
+      transition: width 300ms ease-in-out;
+    }
+
+    &:hover {
+      box-shadow: var(--shadow-200);
+      color: var(--bg-100);
+
+      &::before {
+        width: 105%;
+      }
+    }
+
+    &:active {
+      box-shadow: var(--shadow-100);
+    }
+  }
+
+  &__tertiary {
+    color: var(--text-400);
+    font-weight: 400;
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      background-color: var(--bg-200);
+      color: var(--text-300);
+    }
+
+    &:active {
+      background-color: var(--bg-300);
+    }
+  }
+}
