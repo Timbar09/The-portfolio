@@ -4,6 +4,7 @@ import useLocalStorage from "use-local-storage";
 import Navbar from "./Navbar";
 import Overlay from "./Overlay";
 import Button from "./Button";
+import HomeSection from "../sections/HomeSection";
 
 import "../assets/scss/components/App.scss";
 
@@ -41,9 +42,9 @@ const App = () => {
 
         <Navbar isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
 
+        <HomeSection />
+
         <section
-          name="home"
-          id="home"
           className="container px-2 py-3"
           style={{
             marginTop: "5rem",

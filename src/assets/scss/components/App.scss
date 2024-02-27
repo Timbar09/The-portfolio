@@ -1,14 +1,4 @@
 .app {
-  .title {
-    font-size: 4em;
-    font-weight: 700;
-    background: var(--primary-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-  }
-
   .overlay {
     position: fixed;
     top: 0;
