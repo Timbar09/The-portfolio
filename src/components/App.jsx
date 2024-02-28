@@ -26,7 +26,7 @@ const App = () => {
   };
 
   const toggleTheme = () => {
-    setTheme(prev => (prev === "light" ? "dark" : "light"));
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const App = () => {
             <Button
               name="Tertiary Link"
               type="tertiary"
-              link="https://www.google.com"
+              linkTo="https://www.google.com"
             />
           </div>
         </section>

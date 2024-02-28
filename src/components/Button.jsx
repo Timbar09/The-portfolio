@@ -2,7 +2,7 @@ import { Link } from "react-scroll";
 
 import { FaArrowRightLong as ArrowIcon } from "react-icons/fa6";
 import { TbExternalLink as ExternalLinkIcon } from "react-icons/tb";
-import { IoIosSend as SendIcon } from "react-icons/io";
+import { LuSendHorizonal as SendIcon } from "react-icons/lu";
 
 import "../assets/scss/components/Button.scss";
 
@@ -11,7 +11,7 @@ import "../assets/scss/components/Button.scss";
  *
  * @param {string} type - The type of button to display e.g. primary, secondary, tertiary
  * @param {string} name - The name of the button
- * @param {string} link - The link to navigate to when the button is clicked (optional)
+ * @param {string} linkTo - The linkTo to navigate to when the button is clicked (optional)
  * @param {string} form - The form to submit when the button is inside a form (optional)
  * @param {function} onClick - The function to execute when the button is clicked (optional)
  *
@@ -21,17 +21,17 @@ import "../assets/scss/components/Button.scss";
 const Button = ({
   type = "primary",
   name = "Primary",
-  link = null,
+  linkTo = null,
   form = null,
   onClick = () => console.log("Button Clicked"),
 }) => {
   return (
     <>
-      {link ? (
-        link.startsWith("http") || link.startsWith("www") ? (
+      {linkTo ? (
+        linkTo.startsWith("http") || linkTo.startsWith("www") ? (
           <a
             className={`button button__${type} flex flex-ai-c gap-1`}
-            href={link}
+            href={linkTo}
             target="_blank"
             rel="noreferrer"
           >
@@ -41,7 +41,8 @@ const Button = ({
         ) : (
           <Link
             className={`button button__${type} flex flex-ai-c gap-1`}
-            to={link.replace("#", "")}
+            tabIndex="0"
+            to={linkTo.replace("#", "")}
             spy={true}
             smooth={true}
             offset={-100}

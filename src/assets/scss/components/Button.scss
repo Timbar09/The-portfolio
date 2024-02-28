@@ -18,7 +18,8 @@
     box-shadow: var(--shadow-100);
     top: 0;
 
-    &:hover {
+    &:hover,
+    &:focus {
       box-shadow: var(--shadow-200);
       top: -3px;
     }
@@ -50,7 +51,8 @@
       transition: width 300ms ease-in-out;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       box-shadow: var(--shadow-200);
       color: var(--bg-100);
 
@@ -69,7 +71,8 @@
     font-weight: 400;
     transition: color 150ms ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: var(--bg-200);
       color: var(--text-300);
     }

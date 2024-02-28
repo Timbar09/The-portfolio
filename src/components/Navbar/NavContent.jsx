@@ -54,6 +54,7 @@ const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
         {menuItems.map((item, index) => (
           <li key={index} className="nav__menu-item">
             <Link
+              tabIndex="0"
               className="py-1"
               onClick={() => isMobile && handleToggleMenu()}
               to={item.link.toLocaleLowerCase()}
@@ -72,7 +73,7 @@ const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
             <div>
               <Button
                 name="Contact Me"
-                link="#contact"
+                linkTo="#contact"
                 onClick={handleToggleMenu}
               />
             </div>
@@ -84,7 +85,7 @@ const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
 
       {!isMobile && (
         <div className="nav__content--button">
-          <Button name="Contact Me" link="#contact" />
+          <Button name="Contact Me" linkTo="#contact" />
         </div>
       )}
     </motion.div>

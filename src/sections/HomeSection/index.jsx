@@ -24,9 +24,9 @@ const HomeSection = () => {
         </div>
 
         <div className="home__buttons home__group flex flex-jc-c flex-ai-c flex_md-jc-fs flex-wrap gap-2">
-          <Button name="View Projects" link="#projects" />
+          <Button name="View Projects" linkTo="#projects" />
 
-          <Button type="tertiary" name="More About Me" link="#about" />
+          <Button type="tertiary" name="More About Me" linkTo="#about" />
         </div>
       </div>
     </section>
