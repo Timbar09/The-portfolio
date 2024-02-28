@@ -1,4 +1,5 @@
 import Button from "../../components/Button";
+import SocialLinkTree from "../../components/SocialLinkTree";
 
 import "../../assets/scss/sections/HomeSection.scss";
 
@@ -27,6 +28,10 @@ const HomeSection = () => {
           <Button name="View Projects" linkTo="#projects" />
 
           <Button type="tertiary" name="More About Me" linkTo="#about" />
+        </div>
+
+        <div className="home__group flex flex-jc-c flex_md-jc-fs">
+          <SocialLinkTree />
         </div>
       </div>
     </section>

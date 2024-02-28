@@ -1,0 +1,61 @@
+@use "../utils/" as *;
+
+.social {
+  &__list {
+    width: max-content;
+
+    &:hover,
+    &:focus-within {
+      .social__item {
+        margin-left: 0;
+        opacity: 1;
+        scale: 1;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    font-size: 1.5em;
+    background-color: var(--bg-100);
+
+    @include touch {
+      margin-left: 0;
+      opacity: 1;
+      scale: 1;
+    }
+
+    &:not(:first-child) {
+      margin-left: -1.5em;
+      opacity: 0;
+      scale: 0.75;
+      transition: margin-left 300ms ease-in-out, opacity 300ms ease-in-out,
+        scale 300ms ease-in-out;
+    }
+
+    &:first-child {
+      z-index: 3;
+    }
+
+    &:nth-child(2) {
+      z-index: 2;
+    }
+
+    &:last-child {
+      z-index: 1;
+      transition-delay: 350ms;
+    }
+
+    &--link {
+      color: currentColor;
+
+      &:hover {
+        color: var(--primary-100);
+      }
+
+      &:focus {
+        color: var(--primary-100);
+      }
+    }
+  }
+}
