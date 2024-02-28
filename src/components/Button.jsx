@@ -13,7 +13,7 @@ import "../assets/scss/components/Button.scss";
  * @param {string} name - The name of the button
  * @param {string} linkTo - The linkTo to navigate to when the button is clicked (optional)
  * @param {string} form - The form to submit when the button is inside a form (optional)
- * @param {function} onClick - The function to execute when the button is clicked (optional)
+ * @param {function} func - The function to execute when the button is clicked (optional)
  *
  * @returns {JSX.Element} - The button component
  */
@@ -23,8 +23,14 @@ const Button = ({
   name = "Primary",
   linkTo = null,
   form = null,
-  onClick = () => console.log("Button Clicked"),
+  func,
 }) => {
+  const handleClick = () => {
+    if (func) {
+      func();
+    }
+  };
+
   return (
     <>
       {linkTo ? (
@@ -40,6 +46,7 @@ const Button = ({
           </a>
         ) : (
           <Link
+            onClick={handleClick}
             className={`button button__${type} flex flex-ai-c gap-1`}
             tabIndex="0"
             to={linkTo.replace("#", "")}
@@ -55,7 +62,6 @@ const Button = ({
       ) : (
         <button
           className={`button button__${type} flex flex-ai-c gap-1`}
-          onClick={onClick}
           type={form ? "submit" : "button"}
         >
           {name}

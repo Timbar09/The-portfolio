@@ -1,11 +1,14 @@
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import { MenuContext } from "./index";
 
-const MenuToggleButton = ({ handleClick }) => {
+const MenuToggleButton = () => {
+  const { toggleMenu } = useContext(MenuContext);
+
   return (
     <div className="nav__menu-toggle--wrap p-1">
       <button
         type="button"
-        onClick={handleClick}
+        onClick={toggleMenu}
         className="nav__menu-toggle flex fle-jc-c flex-ai-c"
       >
         <span className="nav__menu-toggle--stroke nav__menu-toggle--stroke-top" />
@@ -14,10 +17,6 @@ const MenuToggleButton = ({ handleClick }) => {
       </button>
     </div>
   );
-};
-
-MenuToggleButton.propTypes = {
-  handleClick: PropTypes.func.isRequired,
 };
 
 export default MenuToggleButton;

@@ -11,19 +11,11 @@ import "../assets/scss/components/App.scss";
 export const ThemeContext = createContext(null);
 
 const App = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const preference = window.matchMedia("(prefers-color-scheme: light)").matches;
   const [theme, setTheme] = useLocalStorage(
     "theme",
     preference ? "light" : "dark"
   );
-
-  const handleToggleMenu = () => {
-    const body = document.querySelector("body");
-
-    setIsMenuOpen(!isMenuOpen);
-    body.style.overflow = isMenuOpen ? "auto" : "hidden";
-  };
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
@@ -38,9 +30,9 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className="app">
-        <Overlay isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
+        {/* <Overlay isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} /> */}
 
-        <Navbar isMenuOpen={isMenuOpen} handleToggleMenu={handleToggleMenu} />
+        <Navbar />
 
         <HomeSection />
 

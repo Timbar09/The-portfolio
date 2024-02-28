@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { MenuContext } from "./index";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
@@ -18,7 +20,8 @@ const menuItems = [
   },
 ];
 
-const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
+const NavContent = () => {
+  const { isMenuOpen, toggleMenu } = useContext(MenuContext);
   const isMobile = useMediaQuery("sm", "down");
 
   const navContentVariants = {
@@ -56,7 +59,7 @@ const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
             <Link
               tabIndex="0"
               className="py-1"
-              onClick={() => isMobile && handleToggleMenu()}
+              onClick={() => isMobile && toggleMenu()}
               to={item.link.toLocaleLowerCase()}
               spy={true}
               smooth={true}
@@ -71,11 +74,7 @@ const NavContent = ({ isMenuOpen, handleToggleMenu }) => {
         <li className="py-1 flex flex-ai-c flex-jc-c flex-col gap-2">
           {isMobile && (
             <div>
-              <Button
-                name="Contact Me"
-                linkTo="#contact"
-                onClick={handleToggleMenu}
-              />
+              <Button name="Contact Me" linkTo="#contact" func={toggleMenu} />
             </div>
           )}
 
