@@ -1,12 +1,19 @@
+@use "../utils/" as *;
+
 .home {
   &__content {
     height: clamp(30em, 100vh, 60em);
+    text-align: center;
+
+    @include breakpoint-up(md) {
+      text-align: left;
+    }
   }
 
   .title {
     font-size: clamp(2.75rem, 6.5vw, 4.5rem);
     font-weight: 500;
-    margin-bottom: 0.25em;
+    margin-bottom: 0;
 
     &__greeting {
       display: block;
@@ -16,6 +23,17 @@
 
     &__name {
       color: var(--primary-100);
+    }
+  }
+
+  &__description {
+    max-width: 30em;
+    margin: auto;
+    font-size: 1.15em;
+
+    @include breakpoint-up(md) {
+      max-width: 40rem;
+      margin: 0;
     }
   }
 }
