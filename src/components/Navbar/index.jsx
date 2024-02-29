@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className={`nav ${isMobile && (isMenuOpen ? "open" : "closed")}`}>
-      <div className="container flex-jc-sb flex-ai-c px-2">
+      <div className="container flex-jc-sb flex-ai-c">
         {isMobile && <MenuHeader />}
 
         <NavContent />

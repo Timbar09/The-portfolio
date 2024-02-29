@@ -6,7 +6,7 @@ import "../../assets/scss/sections/HomeSection.scss";
 const HomeSection = () => {
   return (
     <section name="home" id="home" className="home">
-      <div className="home__content container p-2 flex flex-col flex-jc-c gap-3">
+      <div className="home__content container flex flex-col flex-jc-c gap-3">
         <div className="home__group">
           <h1 className="title">
             <span className="title__greeting">
