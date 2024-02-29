@@ -18,7 +18,7 @@ const MenuHeader = () => {
   };
 
   return (
-    <header className="nav__menu--header flex flex-jc-sb flex-ai-c py-1">
+    <header className="nav__menu--header flex flex-jc-sb flex-ai-c py-2">
       <motion.div
         className="nav__menu--header__logo"
         initial="closed"

@@ -1,28 +1,30 @@
 @use "../utils/" as *;
 
 .home {
+  &__section {
+    .title {
+      font-size: clamp(2.75rem, 6.5vw, 4.5rem);
+      font-weight: 500;
+      margin-bottom: 0;
+
+      &__greeting {
+        display: block;
+        font-size: 0.45em;
+        font-weight: 200;
+      }
+
+      &__name {
+        color: var(--primary-100);
+      }
+    }
+  }
+
   &__content {
     height: clamp(30em, 100vh, 60em);
     text-align: center;
 
     @include breakpoint-up(md) {
       text-align: left;
-    }
-  }
-
-  .title {
-    font-size: clamp(2.75rem, 6.5vw, 4.5rem);
-    font-weight: 500;
-    margin-bottom: 0;
-
-    &__greeting {
-      display: block;
-      font-size: 0.45em;
-      font-weight: 200;
-    }
-
-    &__name {
-      color: var(--primary-100);
     }
   }
 

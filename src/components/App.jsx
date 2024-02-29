@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Overlay from "./Overlay";
 import Button from "./Button";
 import HomeSection from "../sections/HomeSection";
+import ProjectsSection from "../sections/ProjectsSection";
 
 import "../assets/scss/components/App.scss";
 
@@ -45,6 +46,8 @@ const App = () => {
           <Navbar />
 
           <HomeSection />
+
+          <ProjectsSection />
 
           <section
             className="container px-2 py-3"
