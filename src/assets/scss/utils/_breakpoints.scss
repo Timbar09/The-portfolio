@@ -25,3 +25,9 @@ $breakpoints-down: (
     @content;
   }
 }
+
+@mixin touch {
+  @media (hover: none) {
+    @content;
+  }
+}

@@ -1,3 +1,5 @@
+@use "../utils/" as *;
+
 .flex {
   display: flex !important;
 
@@ -26,6 +28,61 @@
 
   &-wrap {
     flex-wrap: wrap;
+  }
+}
+
+// FLEXBOX MEDIA QUERIES
+
+.flex {
+  &_md {
+    @include breakpoint-up(md) {
+      display: flex !important;
+    }
+
+    &-jc {
+      &-sb {
+        @include breakpoint-up(md) {
+          justify-content: space-between;
+        }
+      }
+      &-c {
+        @include breakpoint-up(md) {
+          justify-content: center;
+        }
+      }
+
+      &-fs {
+        @include breakpoint-up(md) {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    &-ai {
+      &-c {
+        @include breakpoint-up(md) {
+          align-items: center;
+        }
+      }
+    }
+
+    &-row {
+      @include breakpoint-up(md) {
+        flex-direction: row;
+      }
+    }
+
+    &-col {
+      @include breakpoint-up(md) {
+        flex-direction: column;
+      }
+    }
+
+    &-wrap {
+      @include breakpoint-up(md) {
+        flex-wrap: wrap;
+      }
+    }
   }
 }
 

@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-
+import { useContext } from "react";
+import { MenuContext } from "../App";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 import MenuHeader from "./MenuHeader";
@@ -7,31 +7,19 @@ import NavContent from "./NavContent";
 
 import "../../assets/scss/components/Navbar.scss";
 
-const Navbar = ({ isMenuOpen, handleToggleMenu }) => {
+const Navbar = () => {
+  const { isMenuOpen } = useContext(MenuContext);
   const isMobile = useMediaQuery("sm", "down");
 
   return (
     <nav className={`nav ${isMobile && (isMenuOpen ? "open" : "closed")}`}>
       <div className="container flex-jc-sb flex-ai-c px-2">
-        {isMobile && (
-          <MenuHeader
-            isMenuOpen={isMenuOpen}
-            handleToggleMenu={handleToggleMenu}
-          />
-        )}
+        {isMobile && <MenuHeader />}
 
-        <NavContent
-          isMenuOpen={isMenuOpen}
-          handleToggleMenu={handleToggleMenu}
-        />
+        <NavContent />
       </div>
     </nav>
   );
-};
-
-Navbar.propTypes = {
-  isMenuOpen: PropTypes.bool.isRequired,
-  handleToggleMenu: PropTypes.func.isRequired,
 };
 
 export default Navbar;

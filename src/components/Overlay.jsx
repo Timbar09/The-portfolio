@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { MenuContext } from "./App";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
-const Overlay = ({ isMenuOpen, handleToggleMenu }) => {
+const Overlay = () => {
+  const { isMenuOpen, toggleMenu } = useContext(MenuContext);
   const isMobile = useMediaQuery("sm", "down");
 
   const overlayVariants = {
@@ -18,7 +21,7 @@ const Overlay = ({ isMenuOpen, handleToggleMenu }) => {
       {isMobile && (
         <motion.div
           className="overlay"
-          onClick={handleToggleMenu}
+          onClick={toggleMenu}
           initial="closed"
           animate={isMenuOpen ? "open" : "closed"}
           variants={overlayVariants}

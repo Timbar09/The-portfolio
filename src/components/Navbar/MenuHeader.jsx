@@ -1,10 +1,13 @@
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import { MenuContext } from "../App";
 import { motion } from "framer-motion";
 
 import Logo from "../Logo";
 import MenuToggleButton from "./MenuToggleButton";
 
-const MenuHeader = ({ isMenuOpen, handleToggleMenu }) => {
+const MenuHeader = () => {
+  const { isMenuOpen, toggleMenu } = useContext(MenuContext);
+
   const menuLogoVariants = {
     open: { opacity: 1, visibility: "visible" },
     closed: {
@@ -26,14 +29,9 @@ const MenuHeader = ({ isMenuOpen, handleToggleMenu }) => {
         <Logo />
       </motion.div>
 
-      <MenuToggleButton handleClick={handleToggleMenu} />
+      <MenuToggleButton />
     </header>
   );
-};
-
-MenuHeader.propTypes = {
-  isMenuOpen: PropTypes.bool.isRequired,
-  handleToggleMenu: PropTypes.func.isRequired,
 };
 
 export default MenuHeader;
