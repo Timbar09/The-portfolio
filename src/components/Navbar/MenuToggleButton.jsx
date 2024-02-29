@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MenuContext } from "./index";
+import { MenuContext } from "../App";
 
 const MenuToggleButton = () => {
   const { toggleMenu } = useContext(MenuContext);

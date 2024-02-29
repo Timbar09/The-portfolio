@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MenuContext } from "./index";
+import { MenuContext } from "../App";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { useMediaQuery } from "../../hooks/useMediaQuery";

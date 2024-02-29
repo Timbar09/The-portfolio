@@ -19,18 +19,18 @@
     font-size: 1.5em;
     background-color: var(--bg-100);
 
-    @include touch {
-      margin-left: 0;
-      opacity: 1;
-      scale: 1;
-    }
-
     &:not(:first-child) {
       margin-left: -1.5em;
       opacity: 0;
       scale: 0.75;
       transition: margin-left 300ms ease-in-out, opacity 300ms ease-in-out,
         scale 300ms ease-in-out;
+
+      @include touch {
+        margin-left: 0;
+        opacity: 1;
+        scale: 1;
+      }
     }
 
     &:first-child {
