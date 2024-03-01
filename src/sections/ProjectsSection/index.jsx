@@ -1,4 +1,4 @@
-import ProjectCard from "./ProjectCard";
+import ProjectList from "./ProjectList";
 
 import "../../assets/scss/sections/ProjectsSection.scss";
 
@@ -10,16 +10,7 @@ const ProjectsSection = () => {
           <span class="underlined">My</span> <span>Projects</span>
         </h2>
 
-        <ul class="project__list">
-          <ProjectCard
-            title="Project 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec."
-          />
-
-          <a href="pages/projects.html" class="projects__all-btn">
-            View more projects
-          </a>
-        </ul>
+        <ProjectList />
       </div>
     </section>
   );
