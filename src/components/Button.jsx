@@ -22,8 +22,8 @@ const Button = ({
   type = "primary",
   name = "Primary",
   linkTo = null,
-  form = null,
-  func,
+  form = false,
+  func = null,
 }) => {
   const handleClick = () => {
     if (func) {
