@@ -1,4 +1,4 @@
-@use '../utils/' as *;
+@use "../utils/" as *;
 
 .grid {
   display: grid;
@@ -29,13 +29,13 @@
 
   // Breakpoints
   &_sm {
-    @include breakpoint-up('md') {
+    @include breakpoint-up("md") {
       display: grid;
     }
 
     &-pi {
       &-c {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           place-items: center;
         }
       }
@@ -43,25 +43,25 @@
 
     &-gap {
       &-0 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           grid-gap: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           grid-gap: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           grid-gap: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           grid-gap: 1.75rem;
         }
       }

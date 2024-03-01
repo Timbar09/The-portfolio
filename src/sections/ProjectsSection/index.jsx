@@ -6,8 +6,8 @@ const ProjectsSection = () => {
   return (
     <section name="projects" id="projects" className="project__section section">
       <div className="container">
-        <h2 class="section__title">
-          <span class="underlined">My</span> <span>Projects</span>
+        <h2 className="section__title">
+          <span className="underlined">My</span> <span>Projects</span>
         </h2>
 
         <ProjectList />

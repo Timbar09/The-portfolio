@@ -1,19 +1,48 @@
+@use "../utils/" as *;
+
 .project {
+  &__list {
+    @include breakpoint-up(md) {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
   &__card {
     background-color: var(--bg-200);
-    background-size: 100% 100%;
+    background-size: 115% auto;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: var(--radius-300);
-    margin: 0 auto;
-    max-width: 30em;
-    height: 20em;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     transition: background-size 2000ms ease-in-out;
+
+    @include breakpoint-up(md) {
+      aspect-ratio: 16 / 8;
+    }
+
+    &--main-project {
+      @include breakpoint-up(md) {
+        grid-column: span 12;
+      }
+    }
+
+    &--project-2,
+    &--project-3,
+    &--project-4,
+    &--project-5 {
+      @include breakpoint-up(md) {
+        grid-column: span 6;
+      }
+    }
 
     &--container {
       height: 100%;
       background-color: var(--project-card-opaque-100);
+
+      @include touch {
+        background-color: var(--project-card-opaque-200);
+      }
     }
 
     &--info {
@@ -22,7 +51,7 @@
 
     &:hover,
     &:focus-within {
-      background-size: 110% 110%;
+      background-size: 110% auto;
 
       .project__card {
         &--container {
@@ -52,6 +81,11 @@
       opacity: 0;
       transition: margin-bottom 300ms ease-in-out,
         opacity 300ms 100ms ease-in-out;
+
+      @include touch {
+        opacity: 1;
+        margin-bottom: 0;
+      }
     }
 
     &--details {
@@ -73,6 +107,12 @@
       opacity: 0;
       transition: left 300ms 400ms ease-in-out, opacity 300ms 400ms ease-in-out,
         visibility 10ms ease-in-out;
+
+      @include touch {
+        visibility: visible;
+        opacity: 1;
+        left: 0;
+      }
     }
   }
 }

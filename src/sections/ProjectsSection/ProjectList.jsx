@@ -4,6 +4,7 @@ import neonManImg from "../../assets/images/projects/man-in-neon.jpg";
 import coderImg from "../../assets/images/projects/coder.jpg";
 import darkSkyImg from "../../assets/images/projects/dark-sky.jpg";
 import parrotImg from "../../assets/images/projects/parrot.jpg";
+import whiteCarImg from "../../assets/images/projects/white-car.jpg";
 
 const data = [
   {
@@ -37,11 +38,18 @@ const data = [
     bgImage: parrotImg,
     tech: ["HTML", "CSS", "JavaScript"],
   },
+  {
+    title: "Project 5",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec.",
+    bgImage: whiteCarImg,
+    tech: ["HTML", "CSS", "JavaScript"],
+  },
 ];
 
 const ProjectList = () => {
   return (
-    <ul class="project__list">
+    <ul className="project__list grid grid-gap-1">
       {data.map((item, index) => (
         <ProjectCard
           key={index}
@@ -51,10 +59,6 @@ const ProjectList = () => {
           tech={item.tech}
         />
       ))}
-
-      <a href="pages/projects.html" class="projects__all-btn">
-        View more projects
-      </a>
     </ul>
   );
 };
