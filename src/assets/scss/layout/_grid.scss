@@ -3,6 +3,14 @@
 .grid {
   display: grid;
 
+  &-col {
+    grid-template-columns: repeat(12, 1fr);
+
+    &-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
   &-pi {
     &-c {
       place-items: center;
@@ -28,9 +36,21 @@
   }
 
   // Breakpoints
-  &_sm {
+  &_md {
     @include breakpoint-up("md") {
       display: grid;
+    }
+
+    &-col {
+      @include breakpoint-up("md") {
+        grid-template-columns: repeat(12, 1fr);
+      }
+
+      &-5 {
+        @include breakpoint-up("md") {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
     }
 
     &-pi {

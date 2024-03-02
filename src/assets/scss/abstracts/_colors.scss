@@ -8,6 +8,11 @@
     var(--primary-100),
     var(--primary-200)
   );
+  --primary-radial-gradient: radial-gradient(
+    circle at 50% 50%,
+    var(--primary-100),
+    transparent 50%
+  );
 
   --accent-100: hsl(214, 35%, 37%);
   --accent-200: hsl(208, 100%, 90%);

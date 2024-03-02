@@ -49,7 +49,7 @@ const data = [
 
 const ProjectList = () => {
   return (
-    <ul className="project__list grid grid-gap-1">
+    <ul className="project__list grid grid_md-col grid-gap-1">
       {data.map((item, index) => (
         <ProjectCard
           key={index}

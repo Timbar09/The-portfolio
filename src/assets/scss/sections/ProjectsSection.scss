@@ -2,9 +2,7 @@
 
 .project {
   &__list {
-    @include breakpoint-up(md) {
-      grid-template-columns: repeat(12, 1fr);
-    }
+    background: var(--primary-radial-gradient);
   }
 
   &__card {
@@ -39,6 +37,8 @@
     &--container {
       height: 100%;
       background-color: var(--project-card-opaque-100);
+      transition: background-color 300ms ease-in-out,
+        backdrop-filter 300ms ease-in-out;
 
       @include touch {
         background-color: var(--project-card-opaque-200);
@@ -56,6 +56,7 @@
       .project__card {
         &--container {
           background-color: var(--project-card-opaque-200);
+          backdrop-filter: blur(5px);
         }
 
         &--button {
