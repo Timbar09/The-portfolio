@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { ProjectModalContext } from "../../components/App";
+
 import Button from "../../components/Button";
 
 const ProjectCard = ({ title, description, bgImage, tech }) => {
+  const { toggleProjectModal } = useContext(ProjectModalContext);
+
   return (
     <li
       className={`project__card project__card--${title
@@ -26,7 +31,11 @@ const ProjectCard = ({ title, description, bgImage, tech }) => {
             </ul>
 
             <div className="project__card--button">
-              <Button type="secondary" name="View more" />
+              <Button
+                type="secondary"
+                name="View more"
+                func={toggleProjectModal}
+              />
             </div>
           </div>
         </div>

@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { ProjectModalContext } from "../../components/App";
+
 import ProjectCard from "./ProjectCard";
+import ProjectModal from "./ProjectModal";
 
 import neonManImg from "../../assets/images/projects/man-in-neon.jpg";
 import coderImg from "../../assets/images/projects/coder.jpg";
@@ -48,6 +52,7 @@ const data = [
 ];
 
 const ProjectList = () => {
+  const { isProjectModalOpen } = useContext(ProjectModalContext);
   return (
     <ul className="project__list grid grid_md-col grid-gap-1">
       {data.map((item, index) => (
@@ -59,6 +64,8 @@ const ProjectList = () => {
           tech={item.tech}
         />
       ))}
+
+      {isProjectModalOpen && <ProjectModal />}
     </ul>
   );
 };

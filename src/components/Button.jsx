@@ -63,6 +63,7 @@ const Button = ({
         <button
           className={`button button__${type} flex flex-ai-c gap-1`}
           type={form ? "submit" : "button"}
+          onClick={handleClick}
         >
           {name}
           {form && <SendIcon />}
