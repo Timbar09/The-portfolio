@@ -6,7 +6,7 @@ const ProjectModal = () => {
     useContext(ProjectModalContext);
 
   return (
-    <div className="project__modal">
+    <div className="project__modal p-2">
       <button type="button" onClick={toggleProjectModal}>
         Close
       </button>

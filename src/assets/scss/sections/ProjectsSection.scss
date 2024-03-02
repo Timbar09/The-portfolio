@@ -119,10 +119,12 @@
 
   &__modal {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
+    inset: 5%;
+    max-width: 60em;
+    min-width: 16.5625rem;
+    margin: 0 auto;
     z-index: 1010;
-    border: solid 2px red;
+    border-radius: var(--radius-200);
+    background-color: var(--bg-200);
   }
 }
