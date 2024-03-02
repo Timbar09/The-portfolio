@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import { ProjectModalContext } from "../../components/App";
-
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 
@@ -57,15 +54,13 @@ const data = [
 ];
 
 const ProjectList = () => {
-  const { isProjectModalOpen } = useContext(ProjectModalContext);
-
   return (
     <ul className="project__list grid grid_md-col grid-gap-1">
       {data.map((item) => (
         <ProjectCard key={item.id} data={item} />
       ))}
 
-      {isProjectModalOpen && <ProjectModal />}
+      <ProjectModal />
     </ul>
   );
 };

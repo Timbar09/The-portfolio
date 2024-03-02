@@ -13,6 +13,7 @@ import "../assets/scss/components/Button.scss";
  * @param {string} name - The name of the button
  * @param {string} linkTo - The linkTo to navigate to when the button is clicked (optional)
  * @param {string} form - The form to submit when the button is inside a form (optional)
+ * @param {JSX.Element} icon - The icon to display next to the button name (optional)
  * @param {function} func - The function to execute when the button is clicked (optional)
  *
  * @returns {JSX.Element} - The button component
@@ -23,6 +24,7 @@ const Button = ({
   name = "Primary",
   linkTo = null,
   form = false,
+  icon = <ExternalLinkIcon />,
   func = null,
 }) => {
   const handleClick = () => {
@@ -42,7 +44,7 @@ const Button = ({
             rel="noreferrer"
           >
             {name}
-            <ExternalLinkIcon />
+            {icon}
           </a>
         ) : (
           <Link
