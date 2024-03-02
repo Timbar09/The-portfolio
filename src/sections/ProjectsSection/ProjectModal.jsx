@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { ProjectModalContext } from "../../components/App";
 
 const ProjectModal = () => {
-  const { toggleProjectModal } = useContext(ProjectModalContext);
+  const { toggleProjectModal, selectedProject } =
+    useContext(ProjectModalContext);
 
   return (
     <div className="project__modal">
@@ -10,7 +11,7 @@ const ProjectModal = () => {
         Close
       </button>
 
-      <h2>Project Modal</h2>
+      <h2>{selectedProject.title}</h2>
     </div>
   );
 };

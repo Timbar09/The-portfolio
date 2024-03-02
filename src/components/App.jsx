@@ -16,6 +16,13 @@ export const ProjectModalContext = createContext(null);
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState({
+    id: 0,
+    title: "Dummy Project",
+    description: "This is a dummy project",
+    bgImage: "https://via.placeholder.com/300",
+    tech: ["HTML", "CSS", "JavaScript"],
+  });
   const preference = window.matchMedia("(prefers-color-scheme: light)").matches;
   const [theme, setTheme] = useLocalStorage(
     "theme",
@@ -35,7 +42,7 @@ const App = () => {
 
   const toggleProjectModal = () => {
     const body = document.querySelector("body");
-    console.log("Toggling project modal");
+
     setIsProjectModalOpen(!isProjectModalOpen);
     body.style.overflow = isProjectModalOpen ? "auto" : "hidden";
   };
@@ -50,7 +57,12 @@ const App = () => {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <MenuContext.Provider value={{ isMenuOpen, toggleMenu }}>
         <ProjectModalContext.Provider
-          value={{ isProjectModalOpen, toggleProjectModal }}
+          value={{
+            isProjectModalOpen,
+            toggleProjectModal,
+            selectedProject,
+            setSelectedProject,
+          }}
         >
           <div className="app">
             <Overlay />

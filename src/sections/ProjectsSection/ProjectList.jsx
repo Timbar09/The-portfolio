@@ -12,6 +12,7 @@ import whiteCarImg from "../../assets/images/projects/white-car.jpg";
 
 const data = [
   {
+    id: 1,
     title: "Main Project",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec.",
@@ -20,6 +21,7 @@ const data = [
   },
 
   {
+    id: 2,
     title: "Project 2",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec.",
@@ -28,6 +30,7 @@ const data = [
   },
 
   {
+    id: 3,
     title: "Project 3",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec.",
@@ -36,6 +39,7 @@ const data = [
   },
 
   {
+    id: 4,
     title: "Project 4",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec.",
@@ -43,6 +47,7 @@ const data = [
     tech: ["HTML", "CSS", "JavaScript"],
   },
   {
+    id: 5,
     title: "Project 5",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec.",
@@ -53,16 +58,11 @@ const data = [
 
 const ProjectList = () => {
   const { isProjectModalOpen } = useContext(ProjectModalContext);
+
   return (
     <ul className="project__list grid grid_md-col grid-gap-1">
-      {data.map((item, index) => (
-        <ProjectCard
-          key={index}
-          title={item.title}
-          description={item.description}
-          bgImage={item.bgImage}
-          tech={item.tech}
-        />
+      {data.map((item) => (
+        <ProjectCard key={item.id} data={item} />
       ))}
 
       {isProjectModalOpen && <ProjectModal />}
