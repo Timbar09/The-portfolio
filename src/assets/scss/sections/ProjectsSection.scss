@@ -11,11 +11,15 @@
     background-position: center;
     background-repeat: no-repeat;
     border-radius: var(--radius-300);
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 12;
     overflow: hidden;
     transition: background-size 2000ms ease-in-out;
 
-    @include breakpoint-up(md) {
+    @include breakpoint-up(sm) {
+      aspect-ratio: 16 / 10;
+    }
+
+    @include breakpoint-up(lg) {
       aspect-ratio: 16 / 8;
     }
 
@@ -46,7 +50,7 @@
     }
 
     &--info {
-      max-width: 20em;
+      max-width: 25em;
     }
 
     &:hover,
@@ -93,14 +97,6 @@
       font-size: 0.75em;
     }
 
-    &--tech {
-      &__item {
-        padding: 0.5em;
-        background-color: var(--bg-300);
-        border-radius: var(--radius-100);
-      }
-    }
-
     &--button {
       position: relative;
       left: 2em;
@@ -113,6 +109,32 @@
         visibility: visible;
         opacity: 1;
         left: 0;
+      }
+    }
+  }
+
+  &__tech {
+    &--item {
+      gap: 0.25em;
+      padding: 0.5em;
+      border: solid 0.125em var(--bg-300);
+      color: var(--text-300);
+      background-color: var(--bg-200);
+      border-radius: var(--radius-200);
+
+      svg {
+        color: var(--opaque-200);
+        transition: color 150ms ease-in-out;
+
+        @include touch {
+          color: var(--text-300);
+        }
+      }
+
+      &:hover {
+        svg {
+          color: var(--text-300);
+        }
       }
     }
   }
@@ -149,7 +171,7 @@
         font-size: 2em;
         color: var(--text-200);
         border-radius: var(--radius-round);
-        background: radial-gradient(circle, var(--bg-200), transparent 50%);
+        background: radial-gradient(circle, var(--bg-200) 30%, transparent 30%);
         transition: color 150ms ease-in-out;
 
         &:hover {
@@ -201,12 +223,6 @@
 
           @include breakpoint-up(md) {
             flex: 1;
-          }
-
-          li {
-            border: solid 0.125em var(--bg-300);
-            border-radius: var(--radius-200);
-            background-color: var(--bg-200);
           }
         }
       }

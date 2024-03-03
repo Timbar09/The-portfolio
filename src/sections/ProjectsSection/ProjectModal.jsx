@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ProjectModalContext } from "../../components/App";
 
 import Button from "../../components/Button";
+import TechItem from "./TechItem";
 
 import { IoCloseCircle as CloseModalIcon } from "react-icons/io5";
 import { FaGitAlt as SourceCodeIcon } from "react-icons/fa6";
@@ -58,12 +59,7 @@ const ProjectModal = () => {
 
             <ul className="project__modal--body__text--tech flex flex-ai-c flex-wrap gap-1">
               {selectedProject.tech.map((item, index) => (
-                <li
-                  key={index}
-                  className="project__card--body__text--tech__item p-1"
-                >
-                  {item}
-                </li>
+                <TechItem key={index} item={item} />
               ))}
             </ul>
           </div>
