@@ -16,6 +16,14 @@
     &-c {
       align-items: center;
     }
+
+    &-fs {
+      align-items: flex-start;
+    }
+
+    &-fe {
+      align-items: flex-end;
+    }
   }
 
   &-row {
@@ -62,6 +70,18 @@
       &-c {
         @include breakpoint-up(md) {
           align-items: center;
+        }
+      }
+
+      &-fs {
+        @include breakpoint-up(md) {
+          align-items: flex-start;
+        }
+      }
+
+      &-fe {
+        @include breakpoint-up(md) {
+          align-items: flex-end;
         }
       }
     }
