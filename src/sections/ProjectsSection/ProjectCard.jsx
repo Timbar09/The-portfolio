@@ -13,7 +13,6 @@ const ProjectCard = ({ data }) => {
       className={`project__card project__card--${data.title
         .toLowerCase()
         .replace(/\s/g, "-")}`}
-      tabIndex="0"
       aria-label={data.title}
       style={{ backgroundImage: `url(${data.bgImage})` }}
     >
