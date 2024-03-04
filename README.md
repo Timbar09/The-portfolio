@@ -2,12 +2,14 @@
 
 ## Overview
 
-This repository contains the source code for my personal portfolio website. The portfolio showcases my skills, projects, and experiences as a software developer.
+This repository contains the source code for my personal portfolio website that I built using React. It has a dark mode feature and a responsive design. The website is built using React, Sass, and a few other libraries. The website is hosted on Netlify and the source code is available on GitHub. Feel free to use this website as a template for your own portfolio website. If you have any questions or suggestions, feel free to contact me. I hope you like it! 😊
 
 ## Technologies Used
 
 - Sass
 - React
+
+  > [Here](package.json) are libraries used in this project.
 
 ## Features
 
