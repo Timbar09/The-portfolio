@@ -43,6 +43,8 @@ While this is a personal project, if you find any bugs or ways to improve the co
 
 ## Acknowledgements
 
+Bio Image by <a href="https://www.freepik.com/free-vector/bangkok-thailand-may-12-2023-caricature-tiger-woods-smilin_48121667.htm#fromView=search&page=1&position=4&uuid=769c45c3-a74a-40c9-aa87-1752943877cc">brgfx on Freepik</a>
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
