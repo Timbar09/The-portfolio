@@ -89,7 +89,10 @@ ul {
 }
 
 .section {
-  padding: 4em 0;
+  .container {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
 
   &__title {
     margin-bottom: 2em;

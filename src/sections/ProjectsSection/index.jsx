@@ -1,5 +1,6 @@
 import { Link } from "react-scroll";
 
+import SectionTitle from "../SectionTitle";
 import ProjectList from "./ProjectList";
 
 import "../../assets/scss/sections/ProjectsSection.scss";
@@ -9,9 +10,7 @@ const ProjectsSection = () => {
     <section name="projects" id="projects" className="project__section section">
       <div className="container">
         <header className="project__section--header">
-          <h2 className="section__title">
-            <span className="underlined">My</span> <span>Projects</span>
-          </h2>
+          <SectionTitle firstWord="My" secondWord="Projects" />
 
           <p className="section__subtitle">
             I've worked on numerous projects, many open-source. Feel free to
