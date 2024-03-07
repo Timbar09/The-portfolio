@@ -1,4 +1,6 @@
-import bioImage from "../../assets/images/animated-bio.jpg";
+import AboutBioInfo from "./AboutBioInfo";
+
+import "../../assets/scss/sections/AboutSection.scss";
 
 const AboutSection = () => {
   return (
@@ -8,14 +10,8 @@ const AboutSection = () => {
           <span>About</span> <span className="underlined">Me</span>
         </h2>
 
-        <div className="about__bio">
-          <div className="about__bio--image">
-            <img
-              src={bioImage}
-              alt="Miles Mosweu"
-              className="about__bio--image"
-            />
-          </div>
+        <div className="about__bio flex flex-col flex-ai-c gap-2">
+          <AboutBioInfo />
 
           <div className="about__bio--text">
             <h3 className="about__bio--title">
