@@ -88,6 +88,21 @@
           margin-bottom: 0;
         }
       }
+
+      &__buttons {
+        margin-top: 0.5em;
+
+        a {
+          &:first-child {
+            flex: 1;
+          }
+
+          &:last-child {
+            font-size: 1.25em;
+            border: solid 0.075em var(--bg-300);
+          }
+        }
+      }
     }
   }
 }

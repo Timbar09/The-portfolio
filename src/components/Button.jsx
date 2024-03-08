@@ -14,6 +14,7 @@ import "../assets/scss/components/Button.scss";
  * @param {string} linkTo - The linkTo to navigate to when the button is clicked (optional)
  * @param {string} form - The form to submit when the button is inside a form (optional)
  * @param {JSX.Element} icon - The icon to display next to the button name (optional)
+ * @param {string} title - The title of the button (optional)
  * @param {function} func - The function to execute when the button is clicked (optional)
  *
  * @returns {JSX.Element} - The button component
@@ -26,6 +27,7 @@ const Button = ({
   form = false,
   icon = <ExternalLinkIcon />,
   func = null,
+  title = null,
 }) => {
   const handleClick = () => {
     if (func) {
@@ -38,10 +40,11 @@ const Button = ({
       {linkTo ? (
         linkTo.startsWith("http") || linkTo.startsWith("www") ? (
           <a
-            className={`button button__${type} flex flex-ai-c gap-1`}
+            className={`button button__${type} flex flex-jc-c flex-ai-c gap-1`}
             href={linkTo}
             target="_blank"
             rel="noreferrer"
+            title={title}
           >
             {name}
             {icon}
@@ -49,8 +52,9 @@ const Button = ({
         ) : (
           <Link
             onClick={handleClick}
-            className={`button button__${type} flex flex-ai-c gap-1`}
+            className={`button button__${type} flex flex-jc-c flex-ai-c gap-1`}
             tabIndex="0"
+            title={title}
             to={linkTo.replace("#", "")}
             spy={true}
             smooth={true}
@@ -63,9 +67,10 @@ const Button = ({
         )
       ) : (
         <button
-          className={`button button__${type} flex flex-ai-c gap-1`}
+          className={`button button__${type} flex flex-jc-c flex-ai-c gap-1`}
           type={form ? "submit" : "button"}
           onClick={handleClick}
+          title={title}
         >
           {name}
           {form && <SendIcon />}

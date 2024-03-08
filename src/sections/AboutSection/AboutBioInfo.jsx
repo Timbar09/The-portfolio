@@ -1,6 +1,7 @@
 import SocialLinkTree from "../../components/SocialLinkTree";
+import Button from "../../components/Button";
 
-import { SlLocationPin as LocationIcon } from "react-icons/sl";
+import { IoMdDownload as DownloadIcon } from "react-icons/io";
 
 import bioImage from "../../assets/images/animated-bio.jpg";
 
@@ -24,8 +25,20 @@ const AboutBioInfo = () => {
         </div>
       </div>
 
-      <div className="about__bio--info__buttons">
-        View resume button and download resume button
+      <div className="about__bio--info__buttons flex gap-2">
+        <Button
+          name="View Resume"
+          type="secondary"
+          linkTo="https://www.linkedin.com/in/miles-mosweu-3a3b9b1b6/"
+          title="View resume google doc"
+        />
+        <Button
+          name=""
+          type="tertiary"
+          linkTo="https://www.linkedin.com/in/miles-mosweu-3a3b9b1b6/"
+          icon={<DownloadIcon />}
+          title="Download resume"
+        />
       </div>
     </div>
   );
