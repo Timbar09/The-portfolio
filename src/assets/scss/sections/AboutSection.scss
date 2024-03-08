@@ -1,16 +1,92 @@
-.about {
-  &__bio {
-    &--image {
-      --dimension: 20em;
-      width: var(--dimension);
-      height: var(--dimension);
-      border-radius: var(--radius-200);
+@use "../utils/" as *;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        overflow: hidden;
+.about {
+  &__section {
+    background-color: var(--bg-100);
+  }
+
+  &__bio {
+    &--info {
+      --dimension: 20em;
+
+      position: relative;
+      width: var(--dimension);
+      perspective: 1000px;
+
+      &:hover,
+      &:focus-within {
+        .about__bio--info {
+          &__image {
+            rotate: y 180deg;
+          }
+
+          &__contact {
+            visibility: visible;
+          }
+        }
+      }
+
+      &__image {
+        aspect-ratio: 1 / 1;
+        position: relative;
+        transition: rotate 1000ms ease;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: var(--radius-200);
+        }
+      }
+
+      &__contact {
+        display: grid;
+        place-items: center;
+        text-align: center;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: calc(100% + 3px);
+        height: calc(var(--dimension) + 3px);
+        border-radius: var(--radius-200);
+        background-color: var(--bg-200);
+        visibility: hidden;
+        transition: visibility 0ms 300ms ease;
+
+        @include touch {
+          position: relative;
+          width: 100%;
+          height: auto;
+          rotate: y 0deg;
+          inset: auto;
+          visibility: visible;
+          margin-top: 0.5em;
+          padding: 0.5em;
+          border: solid 0.125em var(--bg-300);
+
+          .about__bio--info {
+            &__contact {
+              &--content {
+                rotate: y 0deg;
+              }
+            }
+          }
+        }
+
+        &--content {
+          rotate: y 180deg;
+        }
+
+        &--name {
+          color: var(--text-200);
+          font-size: 1.75em;
+          font-weight: 700;
+          margin-bottom: 0;
+        }
+
+        &--title {
+          margin-bottom: 0;
+        }
       }
     }
   }

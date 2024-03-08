@@ -8,6 +8,7 @@ const AboutSection = () => {
     <section name="about" id="about" className="about__section section">
       <div className="container">
         <SectionTitle firstWord="About" secondWord="Me" underlineLeft={false} />
+
         <AboutBio />
       </div>
     </section>
