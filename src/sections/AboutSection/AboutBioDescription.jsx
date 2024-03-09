@@ -1,16 +1,14 @@
+import MyLink from "../../components/MyLink";
+
 const AboutBioDescription = () => {
   return (
     <div className="about__bio--description">
       <h3 className="about__bio--description__title">
         I'm Miles Mosweu, a self-driven fullstack web developer based in{" "}
-        <a
-          href="https://www.google.com/maps/place/Botswana"
-          className="link"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Botswana
-        </a>
+        <MyLink
+          linkText="Botswana"
+          linkTo="https://www.google.com/maps/place/Botswana"
+        />
         .
       </h3>
 
@@ -20,6 +18,14 @@ const AboutBioDescription = () => {
           web design principles and best practices, but also specialize in
           building interactive web applications on the client side, leveraging
           technologies like React, SASS, Javascript, and Rails.
+        </p>
+
+        <p>
+          Over the last four years, I have been grinding on my software skills
+          and working with developers from all over the world on a bunch of cool
+          projects. It's been a wild ride, and I've learned a lot more than just
+          how to code. I've also gotten the hang of talking to people, working
+          in a team, and managing my time and projects.
         </p>
 
         <p>

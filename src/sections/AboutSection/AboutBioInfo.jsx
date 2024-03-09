@@ -29,13 +29,13 @@ const AboutBioInfo = () => {
         <Button
           name="View Resume"
           type="secondary"
-          linkTo="https://www.linkedin.com/in/miles-mosweu-3a3b9b1b6/"
+          linkTo="https://docs.google.com/document/d/1rOU5wqF-9cZJrHmSSsP3YFXvpCAB7M-cY_R3njqn6Vs/view?usp=sharing"
           title="View resume on Google Drive"
         />
         <Button
           name=""
           type="tertiary"
-          linkTo="https://www.linkedin.com/in/miles-mosweu-3a3b9b1b6/"
+          linkTo="https://docs.google.com/document/d/1rOU5wqF-9cZJrHmSSsP3YFXvpCAB7M-cY_R3njqn6Vs/export?format=pdf"
           icon={<DownloadIcon />}
           title="Download resume"
         />
