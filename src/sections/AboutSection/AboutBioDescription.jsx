@@ -3,9 +3,15 @@ const AboutBioDescription = () => {
     <div className="about__bio--description">
       <h3 className="about__bio--description__title">
         I'm Miles Mosweu, a self-driven fullstack web developer based in{" "}
-        <a href="#" className="link">
-          Botswana.
+        <a
+          href="https://www.google.com/maps/place/Botswana"
+          className="link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Botswana
         </a>
+        .
       </h3>
 
       <div className="about__bio--description__text">
