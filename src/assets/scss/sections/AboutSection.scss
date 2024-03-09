@@ -133,5 +133,31 @@
     h3 {
       text-align: center;
     }
+
+    &--list {
+      margin-top: 2em;
+
+      &__item {
+        grid-column: span 12;
+        background-color: var(--bg-300);
+        border: solid 0.125em var(--bg-400);
+        border-radius: var(--radius-200);
+
+        @include breakpoint-up(md) {
+          grid-column: span 6;
+        }
+
+        h4 {
+          margin-bottom: 0.5em;
+          color: var(--text-200);
+          font-size: 1.25em;
+          // font-weight: 500;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
   }
 }
