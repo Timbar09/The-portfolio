@@ -30,7 +30,7 @@ const AboutBioInfo = () => {
           name="View Resume"
           type="secondary"
           linkTo="https://www.linkedin.com/in/miles-mosweu-3a3b9b1b6/"
-          title="View resume google doc"
+          title="View resume on Google Drive"
         />
         <Button
           name=""

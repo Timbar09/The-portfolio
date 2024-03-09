@@ -40,19 +40,21 @@ const Button = ({
       {linkTo ? (
         linkTo.startsWith("http") || linkTo.startsWith("www") ? (
           <a
-            className={`button button__${type} flex flex-jc-c flex-ai-c gap-1`}
+            className={`button button__${type}`}
             href={linkTo}
             target="_blank"
             rel="noreferrer"
             title={title}
           >
-            {name}
-            {icon}
+            <span className="flex flex-jc-c flex-ai-c gap-1">
+              {name}
+              {icon}
+            </span>
           </a>
         ) : (
           <Link
             onClick={handleClick}
-            className={`button button__${type} flex flex-jc-c flex-ai-c gap-1`}
+            className={`button button__${type}`}
             tabIndex="0"
             title={title}
             to={linkTo.replace("#", "")}
@@ -61,19 +63,23 @@ const Button = ({
             offset={-100}
             duration={500}
           >
-            {name}
-            <ArrowIcon />
+            <span className="flex flex-jc-c flex-ai-c gap-1">
+              {name}
+              <ArrowIcon />
+            </span>
           </Link>
         )
       ) : (
         <button
-          className={`button button__${type} flex flex-jc-c flex-ai-c gap-1`}
+          className={`button button__${type}`}
           type={form ? "submit" : "button"}
           onClick={handleClick}
           title={title}
         >
-          {name}
-          {form && <SendIcon />}
+          <span className="flex flex-jc-c flex-ai-c gap-1">
+            {name}
+            {form && <SendIcon />}
+          </span>
         </button>
       )}
     </>

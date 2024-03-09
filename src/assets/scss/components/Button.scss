@@ -33,7 +33,7 @@
   &__secondary {
     color: var(--primary-100);
     border: solid 2px var(--primary-100);
-    padding: 0.25rem 1.5rem;
+    padding: 0;
     overflow: hidden;
     z-index: 1;
     transition: color 300ms ease-in-out;
@@ -50,6 +50,11 @@
       z-index: -1;
       background: var(--primary-gradient);
       transition: width 300ms ease-in-out;
+    }
+
+    span {
+      display: inline-block;
+      padding: 0.25rem 1.5rem;
     }
 
     &:hover,
@@ -74,7 +79,7 @@
 
     &:hover,
     &:focus {
-      background-color: var(--bg-200);
+      background-color: var(--bg-300);
       color: var(--text-300);
     }
 

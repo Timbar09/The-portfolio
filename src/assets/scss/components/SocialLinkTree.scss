@@ -23,8 +23,8 @@
       margin-left: -1.5em;
       opacity: 0;
       scale: 0.75;
-      transition: margin-left 300ms ease-in-out, opacity 300ms ease-in-out,
-        scale 300ms ease-in-out;
+      transition: margin-left 200ms ease-in-out, opacity 200ms ease-in-out,
+        scale 200ms ease-in-out;
 
       @include touch {
         margin-left: 0;
@@ -43,7 +43,7 @@
 
     &:last-child {
       z-index: 1;
-      transition-delay: 350ms;
+      transition-delay: 100ms;
     }
 
     &--link {
