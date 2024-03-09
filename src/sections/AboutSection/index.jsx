@@ -1,5 +1,6 @@
 import SectionTitle from "../SectionTitle";
 import AboutBio from "./AboutBio";
+import AboutSoftSkills from "./AboutSoftSkills";
 
 import "../../assets/scss/sections/AboutSection.scss";
 
@@ -10,6 +11,8 @@ const AboutSection = () => {
         <SectionTitle firstWord="About" secondWord="Me" underlineLeft={false} />
 
         <AboutBio />
+
+        <AboutSoftSkills />
       </div>
     </section>
   );

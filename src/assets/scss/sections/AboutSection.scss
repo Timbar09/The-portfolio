@@ -5,6 +5,10 @@
     background-color: var(--bg-100);
   }
 
+  &__subtitle {
+    font-size: 2em;
+  }
+
   &__bio {
     &--info {
       --dimension: 20em;
@@ -120,11 +124,14 @@
         flex: min-content;
         order: -1;
       }
+    }
+  }
 
-      &__title {
-        font-size: 2em;
-        // font-weight: 400;
-      }
+  &__soft-skills {
+    margin-top: 1em;
+
+    h3 {
+      text-align: center;
     }
   }
 }

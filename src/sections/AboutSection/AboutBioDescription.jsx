@@ -3,7 +3,7 @@ import MyLink from "../../components/MyLink";
 const AboutBioDescription = () => {
   return (
     <div className="about__bio--description">
-      <h3 className="about__bio--description__title">
+      <h3 className="about__subtitle">
         I'm Miles Mosweu, a self-driven fullstack web developer based in{" "}
         <MyLink
           linkText="Botswana"
