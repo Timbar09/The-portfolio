@@ -49,6 +49,10 @@
     &--link {
       color: currentColor;
 
+      // svg {
+      //   background-color: white;
+      // }
+
       &:hover {
         color: var(--primary-100);
       }

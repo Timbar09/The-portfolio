@@ -37,11 +37,9 @@
   &-wrap {
     flex-wrap: wrap;
   }
-}
 
-// FLEXBOX MEDIA QUERIES
+  // MEDIUM SCREENS
 
-.flex {
   &_md {
     @include breakpoint-up(md) {
       display: flex !important;
@@ -104,6 +102,71 @@
       }
     }
   }
+
+  // LARGE SCREENS
+
+  &_lg {
+    @include breakpoint-up(lg) {
+      display: flex !important;
+    }
+
+    &-jc {
+      &-sb {
+        @include breakpoint-up(lg) {
+          justify-content: space-between;
+        }
+      }
+      &-c {
+        @include breakpoint-up(lg) {
+          justify-content: center;
+        }
+      }
+
+      &-fs {
+        @include breakpoint-up(lg) {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    &-ai {
+      &-c {
+        @include breakpoint-up(lg) {
+          align-items: center;
+        }
+      }
+
+      &-fs {
+        @include breakpoint-up(lg) {
+          align-items: flex-start;
+        }
+      }
+
+      &-fe {
+        @include breakpoint-up(lg) {
+          align-items: flex-end;
+        }
+      }
+    }
+
+    &-row {
+      @include breakpoint-up(lg) {
+        flex-direction: row;
+      }
+    }
+
+    &-col {
+      @include breakpoint-up(lg) {
+        flex-direction: column;
+      }
+    }
+
+    &-wrap {
+      @include breakpoint-up(lg) {
+        flex-wrap: wrap;
+      }
+    }
+  }
 }
 
 .gap {
@@ -118,5 +181,64 @@
   }
   &-3 {
     gap: 1.75rem;
+  }
+
+  &-4 {
+    gap: 2.5rem;
+  }
+
+  // GAP MEDIA QUERIES
+  &_md {
+    @include breakpoint-up(md) {
+      gap: 0;
+    }
+    &-1 {
+      @include breakpoint-up(md) {
+        gap: 0.5rem;
+      }
+    }
+    &-2 {
+      @include breakpoint-up(md) {
+        gap: 1rem;
+      }
+    }
+    &-3 {
+      @include breakpoint-up(md) {
+        gap: 1.75rem;
+      }
+    }
+
+    &-4 {
+      @include breakpoint-up(md) {
+        gap: 2.5rem;
+      }
+    }
+  }
+
+  &_lg {
+    @include breakpoint-up(lg) {
+      gap: 0;
+    }
+    &-1 {
+      @include breakpoint-up(lg) {
+        gap: 0.5rem;
+      }
+    }
+    &-2 {
+      @include breakpoint-up(lg) {
+        gap: 1rem;
+      }
+    }
+    &-3 {
+      @include breakpoint-up(lg) {
+        gap: 1.75rem;
+      }
+    }
+
+    &-4 {
+      @include breakpoint-up(lg) {
+        gap: 2.5rem;
+      }
+    }
   }
 }

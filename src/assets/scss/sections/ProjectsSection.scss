@@ -40,12 +40,12 @@
 
     &--container {
       height: 100%;
-      background-color: var(--project-card-opaque-100);
+      background-color: var(--opaque-light-100);
       transition: background-color 300ms ease-in-out,
         backdrop-filter 300ms ease-in-out;
 
       @include touch {
-        background-color: var(--project-card-opaque-200);
+        background-color: var(--opaque-light-200);
       }
     }
 
@@ -59,7 +59,7 @@
 
       .project__card {
         &--container {
-          background-color: var(--project-card-opaque-200);
+          background-color: var(--opaque-light-200);
           backdrop-filter: blur(5px);
         }
 
@@ -113,10 +113,11 @@
     &--item {
       gap: 0.25em;
       padding: 0.5em;
-      border: solid 0.125em var(--bg-300);
+      border: solid 0.125em var(--bg-400);
       color: var(--text-300);
-      background-color: var(--bg-200);
+      background-color: var(--bg-300);
       border-radius: var(--radius-200);
+      cursor: default;
 
       svg {
         color: var(--opaque-200);
