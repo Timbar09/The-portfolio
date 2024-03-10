@@ -6,10 +6,17 @@
   }
 
   &__subtitle {
+    margin-top: 3rem;
     font-size: 2em;
   }
 
   &__bio {
+    .about__subtitle {
+      @include breakpoint-up(lg) {
+        margin-top: 0;
+      }
+    }
+
     &--info {
       --dimension: 20em;
 
@@ -113,7 +120,6 @@
 
           &:last-child {
             font-size: 1.25em;
-            border: solid 0.1025em var(--bg-400);
           }
         }
       }
@@ -129,10 +135,6 @@
 
   &__soft-skills {
     margin-top: 1em;
-
-    h3 {
-      text-align: center;
-    }
 
     &--list {
       margin-top: 2em;

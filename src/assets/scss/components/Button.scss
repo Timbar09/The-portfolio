@@ -32,7 +32,7 @@
 
   &__secondary {
     color: var(--primary-100);
-    border: solid 2px var(--primary-100);
+    border: solid 0.115em var(--primary-100);
     padding: 0;
     overflow: hidden;
     z-index: 1;
@@ -75,7 +75,7 @@
   &__tertiary {
     color: var(--text-400);
     font-weight: 400;
-    border: solid 2px var(--bg-400);
+    border: solid 0.115em var(--bg-400);
     transition: color 150ms ease-in-out;
 
     &:hover,

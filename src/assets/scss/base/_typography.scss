@@ -24,7 +24,7 @@ a:active {
 .link {
   position: relative;
   display: inline-flex;
-  color: inherit;
+  color: var(--text-200);
   text-decoration: none;
   cursor: pointer;
   transition: color 200ms ease-in-out;
@@ -51,7 +51,7 @@ a:active {
   }
 
   &:hover {
-    color: var(--text-100);
+    color: var(--text-400);
 
     &::after {
       width: 100%;
