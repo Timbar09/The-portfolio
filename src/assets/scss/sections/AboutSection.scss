@@ -104,6 +104,12 @@
         }
 
         &--socials {
+          .social__item {
+            margin-left: 0;
+            opacity: 1;
+            scale: 1;
+          }
+
           svg {
             background-color: var(--bg-400);
           }

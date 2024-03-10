@@ -1,6 +1,6 @@
 import { FaGithub as GithubIcon } from "react-icons/fa";
 import { FaLinkedin as LinkedInIcon } from "react-icons/fa";
-import { FaXTwitter as TwitterIcon } from "react-icons/fa6";
+import { FaXTwitter as XIcon } from "react-icons/fa6";
 
 import "../assets/scss/components/SocialLinkTree.scss";
 
@@ -16,9 +16,9 @@ const socialLinks = [
     icon: <LinkedInIcon />,
   },
   {
-    name: "Twitter",
+    name: "X / Twitter",
     url: "https://twitter.com/Milez09",
-    icon: <TwitterIcon />,
+    icon: <XIcon />,
   },
 ];
 
@@ -32,9 +32,9 @@ const SocialLinkTree = () => {
             target="_blank"
             rel="noreferrer"
             className="social__item--link grid"
-            title={link.name}
           >
             {link.icon}
+            <span className="social__item--name">{link.name}</span>
           </a>
         </li>
       ))}
