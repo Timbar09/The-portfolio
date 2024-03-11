@@ -174,4 +174,39 @@
       }
     }
   }
+
+  &__tech {
+    &--list {
+      &__item {
+        grid-column: span 12;
+        background-color: var(--bg-300);
+        border: solid 0.125em var(--bg-400);
+        border-radius: var(--radius-200);
+        grid-column: span 6;
+
+        @include breakpoint-up(md) {
+          grid-column: span 4;
+        }
+
+        @include breakpoint-up(lg) {
+          grid-column: span 3;
+        }
+
+        svg {
+          font-size: 3.5em;
+        }
+
+        h4 {
+          font-size: 1.25em;
+          margin-bottom: 0.15em;
+          border-bottom: solid 0.125em var(--bg-400);
+        }
+
+        p {
+          font-size: 0.75em;
+          margin: 0;
+        }
+      }
+    }
+  }
 }

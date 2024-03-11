@@ -17,7 +17,7 @@ const techData = [
     name: "JavaScript",
     icon: <JsIcon style={{ color: "#f0db4f" }} />,
     category: "front-end",
-    description: "High-level programming language",
+    description: "High-level language",
   },
 
   {
@@ -25,7 +25,7 @@ const techData = [
     name: "React",
     icon: <ReactIcon style={{ color: "#61dafb" }} />,
     category: "front-end",
-    description: "JavaScript library for building user interfaces",
+    description: "UI JavaScript library",
   },
 
   {
@@ -33,8 +33,7 @@ const techData = [
     name: "Ruby",
     icon: <RubyIcon style={{ color: "#cc342d" }} />,
     category: "back-end",
-    description:
-      "Dynamic, open source programming language with a focus on simplicity and productivity",
+    description: "Dynamic language",
   },
 
   {
@@ -42,7 +41,7 @@ const techData = [
     name: "Rails",
     icon: <RailsIcon style={{ color: "#cc0000" }} />,
     category: "back-end",
-    description: "Server-side web application framework",
+    description: "Ruby web app framework",
   },
 
   {
@@ -50,7 +49,7 @@ const techData = [
     name: "PostgreSQL",
     icon: <PostgresqlIcon style={{ color: "#336791" }} />,
     category: "back-end",
-    description: "Open source object-relational database system",
+    description: "Open source relational database",
   },
 
   {
@@ -58,17 +57,35 @@ const techData = [
     name: "Git",
     icon: <GitIcon style={{ color: "#f34f29" }} />,
     category: "tools",
-    description: "Distributed version control system",
+    description: "Distributed version control",
   },
 ];
 
-const TechItem = ({ name, description, icon }) => {
+const RenderTechItems = ({ data, activeTab }) => {
   return (
-    <div className="tabs__item">
-      {icon}
-      <h4 className="tabs__item-title">{name}</h4>
-      <p className="tabs__item-description">{description}</p>
-    </div>
+    <ul className="about__tech--list grid grid-col grid-gap-1">
+      {data
+        .filter((item) => {
+          if (activeTab === "all") {
+            return item;
+          } else if (item.category === activeTab) {
+            return item;
+          }
+        })
+        .map((item) => (
+          <li
+            className="about__tech--list__item p-1 flex gap-1 flex-ai-c"
+            key={item.id}
+          >
+            {item.icon}
+
+            <div className="">
+              <h4>{item.name}</h4>
+              <p>{item.description}</p>
+            </div>
+          </li>
+        ))}
+    </ul>
   );
 };
 
@@ -82,7 +99,7 @@ const AboutTechnologies = () => {
         but not limited to:
       </h3>
 
-      <div className="about__tech--list">
+      <div className="about__tech--content">
         <TabButtons
           tabData={techData}
           setActiveTab={setActiveTab}
@@ -92,7 +109,7 @@ const AboutTechnologies = () => {
         <TabContent
           tabData={techData}
           activeTab={activeTab}
-          Component={TechItem}
+          Component={RenderTechItems}
         />
       </div>
     </div>

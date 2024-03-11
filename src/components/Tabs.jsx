@@ -36,18 +36,8 @@ export const TabButtons = ({ tabData, activeTab, setActiveTab }) => {
 
 export const TabContent = ({ tabData, activeTab, Component }) => {
   return (
-    <div className="tabs__content">
-      {tabData
-        .filter((item) => {
-          if (activeTab === "all") {
-            return item;
-          } else if (item.category === activeTab) {
-            return item;
-          }
-        })
-        .map((item) => (
-          <Component key={item.id} {...item} />
-        ))}
+    <div className="tab__content">
+      <Component data={tabData} activeTab={activeTab} />
     </div>
   );
 };

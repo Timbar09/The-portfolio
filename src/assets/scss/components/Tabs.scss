@@ -32,14 +32,15 @@
     font-family: $ff-mitr;
     font-size: 1em;
     width: 100%;
-    transition: background-color 150ms ease, color 150ms ease;
+    transition: color 150ms ease;
 
     &--active {
       color: var(--text-200);
     }
 
-    &:hover {
-      background-color: var(--bg-300);
+    &:hover,
+    &:focus {
+      color: var(--text-200);
     }
   }
 
@@ -67,5 +68,10 @@
     &.tools {
       left: 75%;
     }
+  }
+
+  &__content {
+    position: relative;
+    margin-top: 1.5em;
   }
 }
