@@ -1,0 +1,71 @@
+@use "../utils/" as *;
+
+.tab {
+  &__header {
+    width: 100%;
+
+    @include breakpoint-up(sm) {
+      width: 90%;
+    }
+
+    @include breakpoint-up(md) {
+      width: 70%;
+    }
+
+    @include breakpoint-up(xl) {
+      width: 50%;
+    }
+  }
+
+  &__list {
+    border-radius: var(--radius-200);
+    background-color: var(--bg-200);
+
+    li {
+      flex: 1;
+    }
+  }
+
+  &__button {
+    border-radius: var(--radius-200);
+    color: inherit;
+    font-family: $ff-mitr;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 150ms ease, color 150ms ease;
+
+    &--active {
+      color: var(--text-200);
+    }
+
+    &:hover {
+      background-color: var(--bg-300);
+    }
+  }
+
+  &__indicator {
+    position: relative;
+    left: 0;
+    background: var(--primary-gradient);
+    height: 0.125em;
+    width: 25%;
+    border-radius: var(--radius-pill);
+    transition: left 200ms ease;
+
+    &.all {
+      left: 0;
+    }
+
+    &.front-end {
+      left: 25%;
+    }
+
+    &.back-end {
+      left: 50%;
+    }
+
+    &.tools {
+      left: 75%;
+    }
+  }
+}
