@@ -24,8 +24,11 @@
       .social__item {
         &--link {
           color: var(--primary-100);
-          scale: 0.925;
           bottom: -0.15em;
+
+          svg {
+            scale: 0.925;
+          }
         }
 
         &--name {
@@ -37,7 +40,7 @@
     }
 
     &:not(:first-child) {
-      margin-left: -1.5em;
+      margin-left: -2.25em;
       opacity: 0;
       scale: 0.75;
       transition: margin-left 200ms ease-in-out, opacity 200ms ease-in-out,
@@ -67,7 +70,11 @@
       position: relative;
       bottom: 0;
       color: currentColor;
-      transition: scale 200ms ease-in-out, bottom 200ms ease-in-out;
+      transition: bottom 200ms ease-in-out;
+
+      svg {
+        transition: scale 200ms ease-in-out;
+      }
     }
 
     &--name {

@@ -8,6 +8,7 @@
   &__subtitle {
     margin-top: 3rem;
     font-size: 2em;
+    font-weight: 200;
   }
 
   &__bio {
@@ -156,10 +157,15 @@
         }
 
         h4 {
-          margin-bottom: 0.5em;
+          margin-bottom: 0.25em;
+          padding-bottom: 0.25em;
           color: var(--text-200);
           font-size: 1.25em;
-          // font-weight: 500;
+          border-bottom: solid 0.125em var(--bg-400);
+
+          svg {
+            color: var(--primary-gradient);
+          }
         }
 
         p {

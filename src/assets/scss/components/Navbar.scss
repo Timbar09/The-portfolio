@@ -12,6 +12,8 @@
   }
 
   &__content {
+    visibility: hidden;
+
     @include breakpoint-up(md) {
       position: relative;
       display: flex;
