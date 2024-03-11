@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 import { TabButtons, TabContent } from "../../components/Tabs";
 
@@ -61,6 +62,12 @@ const techData = [
   },
 ];
 
+const techItemAnimationProps = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 },
+};
+
 const RenderTechItems = ({ data, activeTab }) => {
   return (
     <ul className="about__tech--list grid grid-col grid-gap-1">
@@ -73,9 +80,10 @@ const RenderTechItems = ({ data, activeTab }) => {
           }
         })
         .map((item) => (
-          <li
+          <motion.li
             className="about__tech--list__item p-1 flex gap-1 flex-ai-c"
             key={item.id}
+            {...techItemAnimationProps}
           >
             {item.icon}
 
@@ -83,7 +91,7 @@ const RenderTechItems = ({ data, activeTab }) => {
               <h4>{item.name}</h4>
               <p>{item.description}</p>
             </div>
-          </li>
+          </motion.li>
         ))}
     </ul>
   );
