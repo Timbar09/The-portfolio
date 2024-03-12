@@ -3,14 +3,24 @@ import { motion } from "framer-motion";
 
 import { TabButtons, TabContent } from "../../components/Tabs";
 
-import { BiLogoJavascript as JsIcon } from "react-icons/bi";
+import { TbBrandVscode as VscodeIcon } from "react-icons/tb";
+import {
+  BiLogoJavascript as JsIcon,
+  BiLogoTailwindCss as TailwindIcon,
+  BiLogoSass as SassLogo,
+} from "react-icons/bi";
 import { IoLogoReact as ReactIcon } from "react-icons/io5";
 import { DiRubyRough as RubyIcon } from "react-icons/di";
 import {
   SiRubyonrails as RailsIcon,
   SiPostgresql as PostgresqlIcon,
+  SiBootstrap as BootstrapIcon,
 } from "react-icons/si";
-import { FaGitAlt as GitIcon } from "react-icons/fa6";
+import {
+  FaGitAlt as GitIcon,
+  FaGithub as GithubIcon,
+  FaGitlab as GitlabIcon,
+} from "react-icons/fa6";
 
 const techData = [
   {
@@ -31,6 +41,30 @@ const techData = [
 
   {
     id: 3,
+    name: "Tailwind CSS",
+    icon: <TailwindIcon style={{ color: "#06b6d4" }} />,
+    category: "front-end",
+    description: "Utility-first CSS framework",
+  },
+
+  {
+    id: 4,
+    name: "Sass",
+    icon: <SassLogo style={{ color: "#cc6699" }} />,
+    category: "front-end",
+    description: "CSS preprocessor",
+  },
+
+  {
+    id: 5,
+    name: "Bootstrap",
+    icon: <BootstrapIcon style={{ color: "#7952b3" }} />,
+    category: "front-end",
+    description: "CSS framework",
+  },
+
+  {
+    id: 6,
     name: "Ruby",
     icon: <RubyIcon style={{ color: "#cc342d" }} />,
     category: "back-end",
@@ -38,7 +72,7 @@ const techData = [
   },
 
   {
-    id: 4,
+    id: 7,
     name: "Rails",
     icon: <RailsIcon style={{ color: "#cc0000" }} />,
     category: "back-end",
@@ -46,7 +80,7 @@ const techData = [
   },
 
   {
-    id: 5,
+    id: 8,
     name: "PostgreSQL",
     icon: <PostgresqlIcon style={{ color: "#336791" }} />,
     category: "back-end",
@@ -54,11 +88,35 @@ const techData = [
   },
 
   {
-    id: 6,
+    id: 9,
     name: "Git",
     icon: <GitIcon style={{ color: "#f34f29" }} />,
     category: "tools",
     description: "Distributed version control",
+  },
+
+  {
+    id: 10,
+    name: "GitHub",
+    icon: <GithubIcon style={{ color: "#181717" }} />,
+    category: "tools",
+    description: "Web-based Git repository hosting",
+  },
+
+  {
+    id: 11,
+    name: "GitLab",
+    icon: <GitlabIcon style={{ color: "#fca326" }} />,
+    category: "tools",
+    description: "Web-based DevOps lifecycle tool",
+  },
+
+  {
+    id: 12,
+    name: "VSCode",
+    icon: <VscodeIcon style={{ color: "#007acc" }} />,
+    category: "tools",
+    description: "Code editor",
   },
 ];
 
@@ -98,7 +156,7 @@ const RenderTechItems = ({ data, activeTab }) => {
 };
 
 const AboutTechnologies = () => {
-  const [activeTab, setActiveTab] = useState("tools");
+  const [activeTab, setActiveTab] = useState("all");
 
   return (
     <div className="about__tech">
