@@ -2,12 +2,14 @@
 
 ## Overview
 
-This repository contains the source code for my personal portfolio website. The portfolio showcases my skills, projects, and experiences as a software developer.
+This repository contains the source code for my personal portfolio website that I built using React. It has a dark mode feature and a responsive design. The website is built using React, Sass, and a few other libraries. The website is hosted on Netlify and the source code is available on GitHub. Feel free to use this website as a template for your own portfolio website. If you have any questions or suggestions, feel free to contact me. I hope you like it! 😊
 
 ## Technologies Used
 
 - Sass
 - React
+
+  > [Here](package.json) are libraries used in this project.
 
 ## Features
 
@@ -40,6 +42,8 @@ The site will be available at `http://localhost:3000`.
 While this is a personal project, if you find any bugs or ways to improve the code, your contributions are welcome. Please open an issue or submit a pull request.
 
 ## Acknowledgements
+
+Bio Image by <a href="https://www.freepik.com/free-vector/bangkok-thailand-may-12-2023-caricature-tiger-woods-smilin_48121667.htm#fromView=search&page=1&position=4&uuid=769c45c3-a74a-40c9-aa87-1752943877cc">brgfx on Freepik</a>
 
 ## License
 

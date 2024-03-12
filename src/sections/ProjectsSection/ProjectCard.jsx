@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ProjectModalContext } from "../../components/App";
 
+import TechItem from "./TechItem";
 import Button from "../../components/Button";
 
 const ProjectCard = ({ data }) => {
@@ -12,7 +13,6 @@ const ProjectCard = ({ data }) => {
       className={`project__card project__card--${data.title
         .toLowerCase()
         .replace(/\s/g, "-")}`}
-      tabIndex="0"
       aria-label={data.title}
       style={{ backgroundImage: `url(${data.bgImage})` }}
     >
@@ -25,9 +25,7 @@ const ProjectCard = ({ data }) => {
           <div className="project__card--details flex flex-jc-sb flex-wrap gap-1">
             <ul className="project__card--tech__list flex flex-ai-c flex-jc-sb gap-1">
               {data.tech.map((item, index) => (
-                <li key={index} className="project__card--tech__item">
-                  {item}
-                </li>
+                <TechItem key={index} item={item} />
               ))}
             </ul>
 

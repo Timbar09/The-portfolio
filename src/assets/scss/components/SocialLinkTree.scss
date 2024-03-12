@@ -17,14 +17,34 @@
   &__item {
     position: relative;
     font-size: 1.5em;
-    background-color: var(--bg-100);
+    padding: 0.25em;
+
+    &:hover,
+    &:focus-within {
+      .social__item {
+        &--link {
+          color: var(--primary-100);
+          bottom: -0.15em;
+
+          svg {
+            scale: 0.925;
+          }
+        }
+
+        &--name {
+          top: -80%;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
 
     &:not(:first-child) {
-      margin-left: -1.5em;
+      margin-left: -2.25em;
       opacity: 0;
       scale: 0.75;
-      transition: margin-left 300ms ease-in-out, opacity 300ms ease-in-out,
-        scale 300ms ease-in-out;
+      transition: margin-left 200ms ease-in-out, opacity 200ms ease-in-out,
+        scale 200ms ease-in-out;
 
       @include touch {
         margin-left: 0;
@@ -43,19 +63,32 @@
 
     &:last-child {
       z-index: 1;
-      transition-delay: 350ms;
+      transition-delay: 100ms;
     }
 
     &--link {
+      position: relative;
+      bottom: 0;
       color: currentColor;
+      transition: bottom 200ms ease-in-out;
 
-      &:hover {
-        color: var(--primary-100);
+      svg {
+        transition: scale 200ms ease-in-out;
       }
+    }
 
-      &:focus {
-        color: var(--primary-100);
-      }
+    &--name {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      translate: -50% 0;
+      width: max-content;
+      font-size: 0.5em;
+      font-weight: 600;
+      color: var(--text-200);
+      opacity: 0;
+      visibility: hidden;
+      transition: top 200ms ease-in-out, opacity 200ms ease-in-out;
     }
   }
 }

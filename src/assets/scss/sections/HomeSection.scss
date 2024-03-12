@@ -2,6 +2,8 @@
 
 .home {
   &__section {
+    background-color: var(--bg-100);
+
     .title {
       font-size: clamp(2.75rem, 6.5vw, 4.5rem);
       font-weight: 500;
