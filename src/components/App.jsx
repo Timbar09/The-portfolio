@@ -3,10 +3,10 @@ import useLocalStorage from "use-local-storage";
 
 import Navbar from "./Navbar";
 import Overlay from "./Overlay";
-import Button from "./Button";
 import HomeSection from "../sections/HomeSection";
 import ProjectsSection from "../sections/ProjectsSection";
 import AboutSection from "../sections/AboutSection";
+import ContactSection from "../sections/ContactSection";
 
 import "../assets/scss/components/App.scss";
 
@@ -78,6 +78,8 @@ const App = () => {
               <ProjectsSection />
 
               <AboutSection />
+
+              <ContactSection />
 
               <section
                 name="contact"
