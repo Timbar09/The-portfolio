@@ -1,4 +1,6 @@
-import SectionTitle from "../SectionTitle";
+import ContactForm from "./ContactForm";
+
+import "../../assets/scss/sections/ContactSection.scss";
 
 const ContactSection = () => {
   return (
@@ -12,6 +14,8 @@ const ContactSection = () => {
             just want to say hi, my inbox is always open.
           </p>
         </div>
+
+        <ContactForm />
       </div>
     </section>
   );
