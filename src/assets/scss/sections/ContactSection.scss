@@ -34,6 +34,10 @@
   position: relative;
   grid-column: span 12;
 
+  &:not(:first-child) {
+    margin-top: 0.75em;
+  }
+
   &__label {
     position: absolute;
     top: 0.55em;
@@ -50,6 +54,7 @@
 
   input,
   textarea {
+    margin: 0;
     position: relative;
     display: block;
     font-family: inherit;
@@ -64,10 +69,11 @@
     &:focus {
       outline: none;
     }
+  }
 
-    &:valid + .form-field__indicator::before {
-      opacity: 1;
-    }
+  textarea {
+    resize: none;
+    min-height: 5em;
   }
 
   &__indicator {
@@ -93,6 +99,14 @@
       opacity: 0;
       border-radius: 0 0 var(--radius-200) var(--radius-200);
       transition: opacity 300ms ease;
+    }
+
+    &.valid {
+      width: 99.5%;
+
+      &::before {
+        opacity: 1;
+      }
     }
   }
 
