@@ -41,8 +41,6 @@
     }
 
     &-toggle {
-      --bg-stroke: var(--bg-100);
-
       flex-direction: column;
       gap: 0.25rem;
       border-radius: var(--radius-100);
@@ -53,11 +51,18 @@
         display: inline-block;
         height: 0.45rem;
         width: 2.75rem;
-        background-color: var(--bg-stroke);
+        background: var(--primary-gradient);
         border-radius: var(--radius-pill);
         border: solid 2px var(--text-100);
-        transition: border 100ms 500ms ease-in-out,
-          background-color 100ms ease-in-out;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-color: var(--bg-100);
+          opacity: 1;
+          transition: opacity 150ms ease-in-out;
+        }
       }
 
       @include breakpoint-up(large) {
@@ -65,7 +70,11 @@
       }
 
       &:hover {
-        --bg-stroke: var(--primary-100);
+        .nav__menu-toggle--stroke {
+          &::before {
+            opacity: 0;
+          }
+        }
       }
     }
 

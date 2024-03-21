@@ -9,7 +9,7 @@ import { TbBrandVscode as VscodeIcon } from "react-icons/tb";
 import {
   BiLogoJavascript as JsIcon,
   BiLogoTailwindCss as TailwindIcon,
-  BiLogoSass as SassLogo,
+  BiLogoSass as SassIcon,
 } from "react-icons/bi";
 import { IoLogoReact as ReactIcon } from "react-icons/io5";
 import { DiRubyRough as RubyIcon } from "react-icons/di";
@@ -91,7 +91,7 @@ const AboutTechnologies = () => {
     {
       id: 4,
       name: "Sass",
-      icon: <SassLogo style={{ color: "#cc6699" }} />,
+      icon: <SassIcon style={{ color: "#cc6699" }} />,
       category: "front-end",
       description: "CSS preprocessor",
     },
