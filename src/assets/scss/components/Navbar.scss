@@ -6,9 +6,14 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+  transition: translate 300ms ease-in-out;
 
   @include breakpoint-up(md) {
     background-color: var(--bg-100);
+  }
+
+  &.hidden {
+    translate: 0 -100%;
   }
 
   &__content {
