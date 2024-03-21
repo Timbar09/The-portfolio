@@ -1,12 +1,8 @@
 import { useEffect, useState, createContext } from "react";
 import useLocalStorage from "use-local-storage";
 
-import Navbar from "./Navbar";
 import Overlay from "./Overlay";
-import Button from "./Button";
-import HomeSection from "../sections/HomeSection";
-import ProjectsSection from "../sections/ProjectsSection";
-import AboutSection from "../sections/AboutSection";
+import Layout from "../layout";
 
 import "../assets/scss/components/App.scss";
 
@@ -68,43 +64,7 @@ const App = () => {
           <div className="app">
             <Overlay />
 
-            <header className="header">
-              <Navbar />
-            </header>
-
-            <main className="main">
-              <HomeSection />
-
-              <ProjectsSection />
-
-              <AboutSection />
-
-              <section
-                name="contact"
-                id="contact"
-                className="container px-2 py-3"
-              >
-                <h2>Contact Me</h2>
-
-                <p>
-                  If you have any questions or suggestions, feel free to contact
-                  me. I am always looking for new opportunities to learn and
-                  grow as a developer. I am open to freelance work and other
-                  opportunities. If you have a project that you would like to
-                  discuss, feel free to contact me. I would love to hear from
-                  you! 😊
-                </p>
-              </section>
-            </main>
-
-            <footer className="footer container px-2 py-3">
-              <p>
-                Made with ❤️ by{" "}
-                <a href="" target="_blank" rel="noreferrer">
-                  Miles Mosweu
-                </a>
-              </p>
-            </footer>
+            <Layout />
           </div>
         </ProjectModalContext.Provider>
       </MenuContext.Provider>
