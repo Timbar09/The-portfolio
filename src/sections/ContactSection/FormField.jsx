@@ -34,7 +34,9 @@ const FormField = ({
         <textarea
           id={name}
           name={name}
-          placeholder={label}
+          placeholder={`Enter your ${
+            label.toLowerCase().split(" ")[0]
+          } here...`}
           required={required}
           minLength="3"
           maxLength="50"
@@ -49,7 +51,9 @@ const FormField = ({
           }
           id={name}
           name={name}
-          placeholder={label}
+          placeholder={`Enter your ${
+            label.toLowerCase().split(" ")[0]
+          } here...`}
           required={required}
           minLength="3"
           maxLength="50"

@@ -1,7 +1,7 @@
 @use "../utils/" as *;
 
 .footer {
-  padding: 2em 0 4em;
+  padding: 2em 0 15em;
   font-size: 0.85em;
   color: var(--opaque-200);
 
@@ -11,5 +11,12 @@
 
   a {
     color: inherit;
+  }
+
+  &__author {
+    span {
+      cursor: default;
+      color: var(--text-400);
+    }
   }
 }
