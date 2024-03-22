@@ -7,6 +7,8 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 import Logo from "../Logo";
 import ThemeToggle from "./ThemeToggle";
 import Button from "../Button";
+import SocialLinkTree from "../SocialLinkTree";
+import MenuSettings from "./MenuSettings";
 
 const menuItems = [
   {
@@ -42,6 +44,12 @@ const NavContent = () => {
       }
     : {};
 
+  const settingsAnimationProps = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.3 },
+  };
+
   return (
     <motion.div
       {...animationProps}
@@ -51,6 +59,17 @@ const NavContent = () => {
         <div className="nav__content--logo grid grid-pi-c">
           <Logo />
         </div>
+      )}
+
+      {isMobile && (
+        <motion.div
+          className="nav__menu--settings px-1 flex flex-ai-c flex-jc-fe"
+          {...settingsAnimationProps}
+        >
+          <SocialLinkTree />
+          <div className="nav__menu--settings__separator" />
+          <MenuSettings />
+        </motion.div>
       )}
 
       <ul className="nav__menu flex-ai-c gap-1">
@@ -71,14 +90,14 @@ const NavContent = () => {
           </li>
         ))}
 
-        <li className="py-1 flex flex-ai-c flex-jc-c flex-col gap-2">
+        <li className="">
           {isMobile && (
             <div>
               <Button name="Contact Me" linkTo="#contact" func={toggleMenu} />
             </div>
           )}
 
-          <ThemeToggle />
+          {!isMobile && <ThemeToggle />}
         </li>
       </ul>
 

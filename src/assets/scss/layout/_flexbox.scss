@@ -10,6 +10,14 @@
     &-c {
       justify-content: center;
     }
+
+    &-fs {
+      justify-content: flex-start;
+    }
+
+    &-fe {
+      justify-content: flex-end;
+    }
   }
 
   &-ai {
@@ -60,6 +68,11 @@
       &-fs {
         @include breakpoint-up(md) {
           justify-content: flex-start;
+        }
+      }
+      &-fe {
+        @include breakpoint-up(md) {
+          justify-content: flex-end;
         }
       }
     }
@@ -125,6 +138,11 @@
       &-fs {
         @include breakpoint-up(lg) {
           justify-content: flex-start;
+        }
+      }
+      &-fe {
+        @include breakpoint-up(lg) {
+          justify-content: flex-end;
         }
       }
     }

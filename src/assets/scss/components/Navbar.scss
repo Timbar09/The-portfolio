@@ -65,6 +65,7 @@
           position: absolute;
           inset: 0;
           background-color: var(--bg-100);
+          border-radius: inherit;
           opacity: 1;
           transition: opacity 150ms ease-in-out;
         }
@@ -83,6 +84,62 @@
       }
     }
 
+    &--settings {
+      color: var(--text-300);
+
+      .social__list {
+        padding: 0 0.25em;
+        gap: 0.5em;
+
+        li {
+          margin: 0;
+          opacity: 1;
+          scale: 1;
+
+          span {
+            text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200),
+              -1px 1px 0 var(--bg-200), 1px 1px 0 var(--bg-200);
+          }
+        }
+      }
+
+      &__separator {
+        width: 0.15em;
+        height: 1.5em;
+        background-color: var(--opaque-100);
+      }
+
+      &__content {
+        position: relative;
+        font-size: 1em;
+      }
+
+      &__button {
+        font-size: 1.75em;
+        color: inherit;
+        transition: color 150ms ease-in-out, rotate 300ms ease-in-out;
+
+        &:hover,
+        &:focus-visible {
+          color: var(--primary-100);
+        }
+
+        &.open {
+          rotate: 45deg;
+        }
+      }
+
+      &__popup {
+        position: absolute;
+        right: 0;
+        width: max-content;
+        border-radius: var(--radius-200);
+        background-color: var(--opaque-100);
+        border: solid 0.125em var(--opaque-200);
+        z-index: 1;
+      }
+    }
+
     li {
       position: relative;
       border-radius: var(--radius-200);
@@ -90,6 +147,18 @@
 
       &:not(:first-child) {
         margin-top: 0.25rem;
+      }
+
+      &:last-child {
+        @include breakpoint-down(sm) {
+          background-color: transparent;
+
+          .button {
+            width: 100%;
+            padding: 0.5em;
+            font-size: 1.25em;
+          }
+        }
       }
 
       @include breakpoint-up(md) {
