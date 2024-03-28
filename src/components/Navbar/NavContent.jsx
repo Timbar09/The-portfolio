@@ -82,7 +82,7 @@ const NavContent = () => {
               to={item.link.toLocaleLowerCase()}
               spy={true}
               smooth={true}
-              offset={-100}
+              offset={-50}
               duration={500}
             >
               {item.link}
