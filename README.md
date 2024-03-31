@@ -43,7 +43,11 @@ While this is a personal project, if you find any bugs or ways to improve the co
 
 ## Acknowledgements
 
-Bio Image by <a href="https://www.freepik.com/free-vector/bangkok-thailand-may-12-2023-caricature-tiger-woods-smilin_48121667.htm#fromView=search&page=1&position=4&uuid=769c45c3-a74a-40c9-aa87-1752943877cc">brgfx on Freepik</a>
+**Images**
+
+- Bio Image by <a href="https://www.freepik.com/free-vector/bangkok-thailand-may-12-2023-caricature-tiger-woods-smilin_48121667.htm#fromView=search&page=1&position=4&uuid=769c45c3-a74a-40c9-aa87-1752943877cc">brgfx on Freepik</a>
+- Light hero background image by <a href="https://unsplash.com/@alexacea?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alexandru Acea</a> on <a href="https://unsplash.com/photos/turned-on-flat-screen-tv--WBYxmW4yuw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+- Dark hero background image by <a href="https://unsplash.com/@alexacea?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alexandru Acea</a> on <a href="https://unsplash.com/photos/turned-on-flat-screen-monitor-and-black-laptop-computer-on-table-TMkrN9QZERw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 ## License
 
