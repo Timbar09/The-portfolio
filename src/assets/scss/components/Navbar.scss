@@ -17,13 +17,13 @@
   }
 
   &__content {
-    visibility: hidden;
+    // visibility: hidden;
 
     @include breakpoint-up(md) {
       position: relative;
       display: flex;
-      opacity: 1 !important;
-      visibility: visible !important;
+      // opacity: 1;
+      // visibility: visible;
 
       &::before {
         content: "";
@@ -254,13 +254,6 @@
             }
           }
         }
-
-        li {
-          &:not(:first-child) {
-            margin-top: 0.25rem;
-            transition: margin-top 500ms ease;
-          }
-        }
       }
     }
   }
@@ -286,13 +279,6 @@
               top: 0;
               rotate: 0;
             }
-          }
-        }
-
-        li {
-          &:not(:first-child) {
-            margin-top: -42px;
-            transition: margin-top 300ms ease-in-out;
           }
         }
       }

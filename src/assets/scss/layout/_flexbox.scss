@@ -3,6 +3,10 @@
 .flex {
   display: flex !important;
 
+  &-inline {
+    display: inline-flex !important;
+  }
+
   &-jc {
     &-sb {
       justify-content: space-between;

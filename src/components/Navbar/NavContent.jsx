@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MenuContext } from "../App";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-scroll";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
@@ -23,26 +23,24 @@ const menuItems = [
 ];
 
 const NavContent = () => {
-  const { isMenuOpen, toggleMenu } = useContext(MenuContext);
+  const { toggleMenu } = useContext(MenuContext);
   const isMobile = useMediaQuery("sm", "down");
 
-  const navContentVariants = {
-    open: { opacity: 1, visibility: "visible" },
-    closed: {
+  const menuToggleAnimationProps = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.3 } },
+    exit: {
       opacity: 0,
-      transitionEnd: { visibility: "hidden" },
-      transition: { delay: 0.2 },
+      transition: { delay: 0.3, duration: 0.1 },
     },
   };
 
-  const animationProps = isMobile
-    ? {
-        initial: "closed",
-        animate: isMenuOpen ? "open" : "closed",
-        variants: navContentVariants,
-        transition: { duration: 0.2, ease: "easeInOut" },
-      }
-    : {};
+  const menuItemAnimationProps = {
+    initial: { marginTop: "-2.625rem" },
+    animate: { marginTop: "0.25rem" },
+    exit: { marginTop: "-2.625rem" },
+    transition: { duration: 0.4 },
+  };
 
   const settingsAnimationProps = {
     initial: { opacity: 0, y: 20 },
@@ -52,7 +50,7 @@ const NavContent = () => {
 
   return (
     <motion.div
-      {...animationProps}
+      {...menuToggleAnimationProps}
       className="nav__content flex-ai-c flex-jc-sb gap-1"
     >
       {!isMobile && (
@@ -74,7 +72,11 @@ const NavContent = () => {
 
       <ul className="nav__menu flex-ai-c gap-1">
         {menuItems.map((item, index) => (
-          <li key={index} className="nav__menu-item">
+          <motion.li
+            key={index}
+            className="nav__menu-item"
+            {...(index === 0 && isMobile ? {} : menuItemAnimationProps)}
+          >
             <Link
               tabIndex="0"
               className="py-1"
@@ -87,10 +89,10 @@ const NavContent = () => {
             >
               {item.link}
             </Link>
-          </li>
+          </motion.li>
         ))}
 
-        <li className="">
+        <motion.li {...(isMobile ? menuItemAnimationProps : {})}>
           {isMobile && (
             <div>
               <Button name="Contact Me" linkTo="#contact" func={toggleMenu} />
@@ -98,7 +100,7 @@ const NavContent = () => {
           )}
 
           {!isMobile && <ThemeToggle />}
-        </li>
+        </motion.li>
       </ul>
 
       {!isMobile && (
