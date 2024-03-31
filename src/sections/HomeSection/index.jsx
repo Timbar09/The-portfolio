@@ -1,12 +1,25 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../components/App";
+
 import Button from "../../components/Button";
 import SocialLinkTree from "../../components/SocialLinkTree";
 
 import "../../assets/scss/sections/HomeSection.scss";
 
+import darkBgImg from "../../assets/images/hero-bg-dark.jpg";
+import lightBgImg from "../../assets/images/hero-bg-light.jpg";
+
 const HomeSection = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <section name="home" id="home" className="home__section section">
-      <div className="home__content container flex flex-col flex-jc-c gap-3">
+      <div
+        className="home__content container flex flex-col flex-jc-c gap-3"
+        style={{
+          backgroundImage: `url(${theme === "light" ? lightBgImg : darkBgImg})`,
+        }}
+      >
         <div className="home__group">
           <h1 className="title">
             <span className="title__greeting">

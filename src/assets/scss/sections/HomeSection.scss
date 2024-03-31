@@ -5,6 +5,7 @@
     background-color: var(--bg-100);
 
     .title {
+      position: relative;
       font-size: clamp(2.75rem, 6.5vw, 4.5rem);
       font-weight: 500;
       margin-bottom: 0;
@@ -22,15 +23,45 @@
   }
 
   &__content {
+    position: relative;
     height: clamp(30em, 100vh, 60em);
     text-align: center;
+    // background-image: url("../../images/hero-bg-dark.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        180deg,
+        var(--hero-opaque-bg-200) 65%,
+        var(--bg-200)
+      );
+    }
 
     @include breakpoint-up(md) {
       text-align: left;
+      background-size: contain;
+      background-position: right;
+
+      &::before {
+        background: linear-gradient(
+          90deg,
+          var(--bg-100) 55%,
+          var(--hero-opaque-bg-100),
+          var(--bg-100)
+        );
+      }
     }
   }
 
   &__description {
+    position: relative;
     max-width: 30em;
     margin: auto;
     font-size: 1.15em;
