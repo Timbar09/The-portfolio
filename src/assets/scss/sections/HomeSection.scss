@@ -5,7 +5,6 @@
     background-color: var(--bg-100);
 
     .title {
-      position: relative;
       font-size: clamp(2.75rem, 6.5vw, 4.5rem);
       font-weight: 500;
       margin-bottom: 0;
@@ -26,7 +25,6 @@
     position: relative;
     height: clamp(30em, 100vh, 60em);
     text-align: center;
-    // background-image: url("../../images/hero-bg-dark.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -60,14 +58,20 @@
     }
   }
 
-  &__description {
+  &__group {
     position: relative;
-    max-width: 30em;
+
+    @include breakpoint-up(md) {
+      padding: 0 3em;
+    }
+  }
+
+  &__description {
+    max-width: 25em;
     margin: auto;
     font-size: 1.15em;
 
     @include breakpoint-up(md) {
-      max-width: 40rem;
       margin: 0;
     }
   }

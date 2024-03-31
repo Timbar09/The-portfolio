@@ -36,6 +36,11 @@ const MenuSettings = () => {
           <motion.div
             className="nav__menu--settings__popup p-1"
             {...popupAnimationProps}
+            onHoverEnd={() =>
+              setTimeout(() => {
+                togglePopup();
+              }, 500)
+            }
           >
             <ul>
               <li>
