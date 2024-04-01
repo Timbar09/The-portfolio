@@ -23,16 +23,13 @@
       aspect-ratio: 16 / 8;
     }
 
-    &--main-project {
+    &:first-child {
       @include breakpoint-up(md) {
         grid-column: span 12;
       }
     }
 
-    &--project-2,
-    &--project-3,
-    &--project-4,
-    &--project-5 {
+    &:not(:first-child) {
       @include breakpoint-up(md) {
         grid-column: span 6;
       }
