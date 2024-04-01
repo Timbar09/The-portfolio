@@ -4,6 +4,8 @@ import { ProjectModalContext } from "../../components/App";
 import TechItem from "./TechItem";
 import Button from "../../components/Button";
 
+import { loadImg } from "./loadImageModule";
+
 const ProjectCard = ({ data }) => {
   const { toggleProjectModal, setSelectedProject } =
     useContext(ProjectModalContext);
@@ -11,14 +13,7 @@ const ProjectCard = ({ data }) => {
   const briefDescription = data.description.brief;
 
   useEffect(() => {
-    const loadImg = async () => {
-      const imgModule = await import(
-        /* @vite-ignore */
-        `/src/assets/images/projects/${data.image}`
-      );
-      setBgImage(imgModule.default);
-    };
-    loadImg();
+    loadImg(data, setBgImage);
   }, [data.image]);
 
   const cardStyle = {

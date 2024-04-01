@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ProjectModalContext } from "../../components/App";
 
 import Button from "../../components/Button";
@@ -7,15 +7,18 @@ import TechItem from "./TechItem";
 import { IoCloseCircle as CloseModalIcon } from "react-icons/io5";
 import { FaGitAlt as SourceCodeIcon } from "react-icons/fa6";
 
+import { loadImg } from "./loadImageModule";
+
 const ProjectModal = () => {
   const modalRef = useRef();
   const { toggleProjectModal, selectedProject, isProjectModalOpen } =
     useContext(ProjectModalContext);
+  const [bgImage, setBgImage] = useState("");
 
   const { overview, problem, features, summary } = selectedProject.description;
 
-  // When the modal is open, add a keydown event listener to trap the focus
   useEffect(() => {
+    // When the modal is open, add a keydown event listener to trap the focus
     if (isProjectModalOpen) {
       // Get all focusable elements within the modal
       const focusableElements = modalRef.current.querySelectorAll(
@@ -58,6 +61,10 @@ const ProjectModal = () => {
     }
   }, [isProjectModalOpen]);
 
+  useEffect(() => {
+    loadImg(selectedProject, setBgImage);
+  }, [selectedProject.image]);
+
   return (
     <div
       ref={modalRef}
@@ -94,10 +101,7 @@ const ProjectModal = () => {
 
         <div className="project__modal--body">
           <div className="project__modal--body__image">
-            <img
-              src={selectedProject.image}
-              alt={`${selectedProject.title} project image`}
-            />
+            <img src={bgImage} alt={`${selectedProject.title} project image`} />
           </div>
 
           <div className="project__modal--body__text p-2 grid grid-gap-2">
