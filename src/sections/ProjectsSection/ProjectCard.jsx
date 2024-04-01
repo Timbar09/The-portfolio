@@ -31,7 +31,7 @@ const ProjectCard = ({ data }) => {
         <div className="project__card--info flex flex-col gap-2">
           <h3>{data.title}</h3>
 
-          <p>{briefDescription}</p>
+          <p className="pl-1">{briefDescription}</p>
 
           <div className="project__card--details flex flex-jc-sb flex-wrap gap-1">
             <ul className="project__card--tech__list flex flex-ai-c flex-jc-sb gap-1">

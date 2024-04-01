@@ -2,7 +2,9 @@
 
 .project {
   &__list {
-    background: var(--primary-radial-gradient);
+    @include breakpoint-up(md) {
+      background: var(--primary-radial-gradient);
+    }
   }
 
   &__card {
@@ -78,6 +80,7 @@
 
     p {
       margin-bottom: -3.5em;
+      font-size: 0.9em;
       color: var(--text-300);
       opacity: 0;
       transition: margin-bottom 300ms ease-in-out,
