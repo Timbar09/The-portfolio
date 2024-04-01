@@ -192,6 +192,7 @@
 
       &__image {
         aspect-ratio: 16 / 10;
+        background-color: var(--opaque-light-100);
 
         @include breakpoint-up(md) {
           aspect-ratio: 16 / 8;
@@ -208,18 +209,53 @@
       &__text {
         border-radius: var(--radius-200);
         background-color: var(--bg-100);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "overview"
+          "tech"
+          "problem"
+          "features"
+          "summary";
 
-        &--description {
-          @include breakpoint-up(md) {
-            width: 65%;
+        @include breakpoint-up(md) {
+          grid-template-columns: repeat(6, 1fr);
+          grid-template-areas:
+            "overview overview overview tech tech tech"
+            "problem problem problem tech tech tech"
+            "features features features features features features"
+            "summary summary summary summary summary summary";
+        }
+
+        &--overview {
+          grid-area: overview;
+        }
+
+        &--problem {
+          grid-area: problem;
+        }
+
+        &--features {
+          grid-area: features;
+
+          ul {
+            list-style: disclosure-closed;
+
+            span {
+              font-weight: bold;
+              color: var(--text-200);
+            }
           }
         }
 
-        &--tech {
-          font-size: 0.75em;
+        &--summary {
+          grid-area: summary;
+        }
 
-          @include breakpoint-up(md) {
-            flex: 1;
+        &--tech {
+          grid-area: tech;
+
+          ul {
+            font-size: 0.75em;
           }
         }
       }

@@ -12,6 +12,8 @@ const ProjectModal = () => {
   const { toggleProjectModal, selectedProject, isProjectModalOpen } =
     useContext(ProjectModalContext);
 
+  const { overview, problem, features, summary } = selectedProject.description;
+
   // When the modal is open, add a keydown event listener to trap the focus
   useEffect(() => {
     if (isProjectModalOpen) {
@@ -92,22 +94,48 @@ const ProjectModal = () => {
 
         <div className="project__modal--body">
           <div className="project__modal--body__image">
-            <img src={selectedProject.bgImage} alt={selectedProject.title} />
+            <img
+              src={selectedProject.image}
+              alt={`${selectedProject.title} project image`}
+            />
           </div>
 
-          <div className="project__modal--body__text p-2 flex_md flex-ai-fs gap-2">
-            <div className="project__modal--body__text--description">
-              <p>{selectedProject.description}</p>
-              <p>{selectedProject.description}</p>
-              <p>{selectedProject.description}</p>
-              <p>{selectedProject.description}</p>
+          <div className="project__modal--body__text p-2 grid grid-gap-2">
+            <div className="project__modal--body__text--overview">
+              <h3>Overview</h3>
+              <p> {overview} </p>
             </div>
 
-            <ul className="project__modal--body__text--tech flex flex-ai-c flex-wrap gap-1">
-              {selectedProject.tech.map((item, index) => (
-                <TechItem key={index} item={item} />
-              ))}
-            </ul>
+            <div className="project__modal--body__text--problem">
+              <h3>Problem Statement</h3>
+              <p> {problem} </p>
+            </div>
+
+            <div className="project__modal--body__text--features">
+              <h3>Features & Functionalities</h3>
+              <ul className="pl-3">
+                {features.map((item, index) => (
+                  <li key={index}>
+                    <span>{`${item.split(":")[0]}: `}</span>
+                    {item.split(":")[1]}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="project__modal--body__text--summary">
+              <h3>Summary</h3>
+              <p> {summary} </p>
+            </div>
+
+            <div className="project__modal--body__text--tech">
+              <h3>Technologies Used</h3>
+              <ul className="flex flex-ai-fs flex-wrap gap-1">
+                {selectedProject.tech.map((item, index) => (
+                  <TechItem key={index} item={item} />
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
