@@ -85,7 +85,11 @@
     }
 
     &--settings {
+      margin: 0 0 0.25em auto;
+      width: max-content;
       color: var(--text-300);
+      background-color: var(--opaque-light-100);
+      border-radius: var(--radius-200);
 
       .social__list {
         padding: 0 0.25em;
@@ -132,9 +136,10 @@
       &__popup {
         position: absolute;
         right: 0;
+        top: 105%;
         width: max-content;
         border-radius: var(--radius-200);
-        background-color: var(--opaque-100);
+        background-color: var(--opaque-300);
         border: solid 0.125em var(--opaque-200);
         z-index: 1;
       }
