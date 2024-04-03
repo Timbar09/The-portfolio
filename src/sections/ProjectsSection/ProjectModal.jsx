@@ -105,17 +105,26 @@ const ProjectModal = () => {
           </div>
 
           <div className="project__modal--body__text p-2 grid grid-gap-2">
-            <div className="project__modal--body__text--overview">
+            <section className="project__modal--body__text--overview">
               <h3>Overview</h3>
               <p> {overview} </p>
-            </div>
+            </section>
 
-            <div className="project__modal--body__text--problem">
+            <section className="project__modal--body__text--tech">
+              <h3>Technologies Used</h3>
+              <ul className="flex flex-ai-fs flex-wrap gap-1">
+                {selectedProject.tech.map((item, index) => (
+                  <TechItem key={index} item={item} />
+                ))}
+              </ul>
+            </section>
+
+            <section className="project__modal--body__text--problem">
               <h3>Problem Statement</h3>
               <p> {problem} </p>
-            </div>
+            </section>
 
-            <div className="project__modal--body__text--features">
+            <section className="project__modal--body__text--features">
               <h3>Features & Functionalities</h3>
               <ul className="pl-3">
                 {features.map((item, index) => (
@@ -125,21 +134,12 @@ const ProjectModal = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </section>
 
-            <div className="project__modal--body__text--summary">
+            <section className="project__modal--body__text--summary">
               <h3>Summary</h3>
               <p> {summary} </p>
-            </div>
-
-            <div className="project__modal--body__text--tech">
-              <h3>Technologies Used</h3>
-              <ul className="flex flex-ai-fs flex-wrap gap-1">
-                {selectedProject.tech.map((item, index) => (
-                  <TechItem key={index} item={item} />
-                ))}
-              </ul>
-            </div>
+            </section>
           </div>
         </div>
       </div>

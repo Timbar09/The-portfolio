@@ -140,7 +140,7 @@
   &__modal {
     position: fixed;
     inset: 5%;
-    max-width: 50em;
+    max-width: 55em;
     min-width: 16.5625rem;
     margin: 0 auto;
     z-index: 1010;
@@ -223,8 +223,8 @@
         @include breakpoint-up(md) {
           grid-template-columns: repeat(6, 1fr);
           grid-template-areas:
-            "overview overview overview tech tech tech"
-            "problem problem problem tech tech tech"
+            "overview overview overview overview tech tech"
+            "problem problem problem problem problem problem"
             "features features features features features features"
             "summary summary summary summary summary summary";
         }
