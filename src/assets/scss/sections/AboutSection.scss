@@ -3,6 +3,10 @@
 .about {
   &__section {
     background-color: var(--bg-100);
+
+    section {
+      padding-bottom: 4em;
+    }
   }
 
   &__subtitle {
@@ -133,6 +137,43 @@
 
           svg {
             background-color: var(--bg-400);
+          }
+        }
+
+        &--quote {
+          margin-top: 1em;
+          position: relative;
+          border: solid 0.125em var(--bg-400);
+          border-radius: var(--radius-200);
+          background-color: var(--quote-bg);
+          overflow: hidden;
+
+          blockquote {
+            margin: 0.5em 0;
+            font-size: 0.95em;
+          }
+
+          cite {
+            font-size: 0.75em;
+            color: var(--text-200);
+          }
+
+          .quotation {
+            position: absolute;
+            font-size: 2.5em;
+            rotate: -20deg;
+            color: var(--quotation);
+            z-index: -1;
+
+            &__open {
+              bottom: -0.25em;
+              left: -0.25em;
+            }
+
+            &__close {
+              top: -0.25em;
+              right: -0.25em;
+            }
           }
         }
       }

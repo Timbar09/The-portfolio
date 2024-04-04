@@ -32,30 +32,32 @@ const techItemAnimationProps = {
 
 const RenderTechItems = ({ data, activeTab }) => {
   return (
-    <ul className="about__tech--list grid grid-col grid-gap-1">
-      {data
-        .filter((item) => {
-          if (activeTab === "all") {
-            return item;
-          } else if (item.category === activeTab) {
-            return item;
-          }
-        })
-        .map((item) => (
-          <motion.li
-            className="about__tech--list__item p-1 flex gap-1 flex-ai-c"
-            key={item.id}
-            {...techItemAnimationProps}
-          >
-            {item.icon}
+    <section>
+      <ul className="about__tech--list grid grid-col grid-gap-1">
+        {data
+          .filter((item) => {
+            if (activeTab === "all") {
+              return item;
+            } else if (item.category === activeTab) {
+              return item;
+            }
+          })
+          .map((item) => (
+            <motion.li
+              className="about__tech--list__item p-1 flex gap-1 flex-ai-c"
+              key={item.id}
+              {...techItemAnimationProps}
+            >
+              {item.icon}
 
-            <div className="">
-              <h4>{item.name}</h4>
-              <p>{item.description}</p>
-            </div>
-          </motion.li>
-        ))}
-    </ul>
+              <div className="">
+                <h4>{item.name}</h4>
+                <p>{item.description}</p>
+              </div>
+            </motion.li>
+          ))}
+      </ul>
+    </section>
   );
 };
 

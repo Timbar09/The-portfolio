@@ -4,7 +4,7 @@ import AboutBioInfo from "./AboutBioInfo";
 
 const AboutBio = () => {
   return (
-    <div className="about__bio grid grid-gap-3">
+    <section className="about__bio grid grid-gap-3">
       <h3 className="about__subtitle">
         I'm Miles Mosweu, a self-driven fullstack web developer based in{" "}
         <MyLink
@@ -46,7 +46,7 @@ const AboutBio = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

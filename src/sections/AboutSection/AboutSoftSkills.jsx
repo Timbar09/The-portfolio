@@ -34,7 +34,7 @@ const softSkills = [
 
 const AboutSoftSkills = () => {
   return (
-    <div className="about__soft-skills">
+    <section className="about__soft-skills">
       <h3 className="about__subtitle">
         I have honed essential soft skills applicable to both life and the
         workplace, particularly during my time at{" "}
@@ -52,7 +52,7 @@ const AboutSoftSkills = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 
