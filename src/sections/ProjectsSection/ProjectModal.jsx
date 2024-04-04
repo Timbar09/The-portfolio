@@ -101,7 +101,11 @@ const ProjectModal = () => {
 
         <div className="project__modal--body">
           <div className="project__modal--body__image">
-            <img src={bgImage} alt={`${selectedProject.title} project image`} />
+            <img
+              src={bgImage}
+              alt={`${selectedProject.title} project image`}
+              className="grid"
+            />
           </div>
 
           <div className="project__modal--body__text p-2 grid grid-gap-2">

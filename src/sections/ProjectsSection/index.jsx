@@ -1,4 +1,4 @@
-import Link from "../../components/MyLink";
+import { Link } from "react-scroll";
 
 import SectionTitle from "../SectionTitle";
 import ProjectList from "./ProjectList";
@@ -16,8 +16,10 @@ const ProjectsSection = () => {
             I've worked on numerous projects, many open-source. Feel free to
             explore and contribute to any that interest you. I'm always seeking
             new challenges and collaborations, so if you have an idea,{" "}
-            <Link linkText="reach out" linkTo="#contact" />. Excited to hear
-            from you. 😎
+            <Link to="contact" smooth={true} duration={500} className="link">
+              let's talk
+            </Link>
+            ! Excited to hear from you. 😎
           </p>
         </header>
 
