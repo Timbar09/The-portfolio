@@ -108,8 +108,7 @@ ul {
       position: relative;
       display: inline-block;
       padding-bottom: 0.5rem;
-      color: var(--text-400);
-      font-weight: 200;
+      color: var(--opaque-100);
 
       &::before {
         content: "";
