@@ -7,7 +7,7 @@ import { IoMdDownload as DownloadIcon } from "react-icons/io";
 import { BiSolidQuoteLeft as OpenQuotationIcon } from "react-icons/bi";
 import { BiSolidQuoteRight as CloseQuotationIcon } from "react-icons/bi";
 
-import bioImage from "../../assets/images/animated-bio.jpg";
+import bioImage from "../../assets/images/miles.jpg";
 
 const AboutBioInfo = () => {
   const [quote, setQuote] = useState({
@@ -18,7 +18,7 @@ const AboutBioInfo = () => {
   const fetchQuote = async () => {
     try {
       const response = await fetch(
-        "https://api.quotable.io/quotes/random?maxLength=50"
+        "https://api.quotable.io/quotes/random?maxLength=100"
       );
       const data = await response.json();
       const [obj] = data;

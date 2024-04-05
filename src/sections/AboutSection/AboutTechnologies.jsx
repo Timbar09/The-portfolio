@@ -32,32 +32,30 @@ const techItemAnimationProps = {
 
 const RenderTechItems = ({ data, activeTab }) => {
   return (
-    <section>
-      <ul className="about__tech--list grid grid-col grid-gap-1">
-        {data
-          .filter((item) => {
-            if (activeTab === "all") {
-              return item;
-            } else if (item.category === activeTab) {
-              return item;
-            }
-          })
-          .map((item) => (
-            <motion.li
-              className="about__tech--list__item p-1 flex gap-1 flex-ai-c"
-              key={item.id}
-              {...techItemAnimationProps}
-            >
-              {item.icon}
+    <ul className="about__tech--list grid grid-col grid-gap-1">
+      {data
+        .filter((item) => {
+          if (activeTab === "all") {
+            return item;
+          } else if (item.category === activeTab) {
+            return item;
+          }
+        })
+        .map((item) => (
+          <motion.li
+            className="about__tech--list__item p-1 flex gap-1 flex-ai-c"
+            key={item.id}
+            {...techItemAnimationProps}
+          >
+            {item.icon}
 
-              <div className="">
-                <h4>{item.name}</h4>
-                <p>{item.description}</p>
-              </div>
-            </motion.li>
-          ))}
-      </ul>
-    </section>
+            <div className="">
+              <h4>{item.name}</h4>
+              <p>{item.description}</p>
+            </div>
+          </motion.li>
+        ))}
+    </ul>
   );
 };
 
@@ -168,7 +166,7 @@ const AboutTechnologies = () => {
   ];
 
   return (
-    <div className="about__tech">
+    <section className="about__tech">
       <h3 className="about__subtitle">
         I use a variety of technologies and tools to build projects, including
         but not limited to:
@@ -187,7 +185,7 @@ const AboutTechnologies = () => {
           Component={RenderTechItems}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
