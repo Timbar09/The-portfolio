@@ -59,8 +59,12 @@
     &--letter {
       position: relative;
       top: 0;
-      opacity: 0;
-      transition: top 300ms ease, opacity 300ms ease;
+      opacity: 0.75;
+      transition: top 300ms ease-in-out, opacity 300ms ease-in-out;
+
+      &:last-child {
+        opacity: 0;
+      }
     }
   }
 
@@ -116,10 +120,14 @@
   &:focus-within {
     .form-field {
       &__label {
-        color: var(--text-200);
+        color: var(--text-300);
 
         &--letter {
           top: -2em;
+          opacity: 0.75;
+        }
+
+        &:last-child {
           opacity: 1;
         }
       }
