@@ -22,8 +22,20 @@
     max-width: 40em;
     margin: 2em auto 0;
 
-    button {
-      grid-column: span 3;
+    &:invalid {
+      button {
+        background: var(--opaque-100);
+        box-shadow: none;
+        pointer-events: none;
+
+        &:focus {
+          top: 0;
+
+          svg {
+            left: 0;
+          }
+        }
+      }
     }
   }
 }
@@ -99,14 +111,6 @@
       border-radius: 0 0 var(--radius-200) var(--radius-200);
       transition: opacity 300ms ease;
     }
-
-    &.valid {
-      width: 99.5%;
-
-      &::before {
-        opacity: 1;
-      }
-    }
   }
 
   &:focus-within {
@@ -124,5 +128,10 @@
         width: 99.5%;
       }
     }
+  }
+
+  &__submit {
+    grid-column: 12;
+    text-align: right;
   }
 }

@@ -20,21 +20,25 @@ const ContactForm = () => {
       )
       .catch(() => alert("Oops! Something went wrong. Please try again."));
   };
+
+  const fields = [
+    { label: "Name *", type: "text", name: "name", required: true },
+    { label: "Email *", type: "email", name: "email", required: true },
+    { label: "Message *", type: "textarea", name: "message", required: true },
+  ];
+
   return (
     <form
       onSubmit={handleSubmit}
       className="contact__form p-2 grid grid-col grid-gap-2"
     >
-      <FormField label="Name *" name="name" required={true} />
-      <FormField label="Email *" type="email" name="email" required={true} />
-      <FormField
-        label="Message *"
-        type="textarea"
-        name="message"
-        required={true}
-      />
+      {fields.map((field, index) => (
+        <FormField key={index} {...field} />
+      ))}
 
-      <Button type="primary" name="Send" form={true} />
+      <div className="form-field__submit">
+        <Button type="primary" name="Send" form={true} />
+      </div>
     </form>
   );
 };
