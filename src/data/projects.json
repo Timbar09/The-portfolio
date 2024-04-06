@@ -21,7 +21,7 @@
       "Redux",
       "PostgreSQL",
       "Devise",
-      "Rspec-rails"
+      "Rspec"
     ],
     "source": "https://github.com/stephenkati/gaming_console_reservation_front_end",
     "live": "https://console-hub.netlify.app/"
@@ -46,10 +46,10 @@
       "PostgreSQL",
       "SASS",
       "Devise",
-      "Rspec-rails",
+      "Rspec",
       "Capybara",
       "Rubocop",
-      "Github",
+      "GitHub",
       "Terminal"
     ],
     "source": "https://github.com/Timbar09/BudgetTrail",
@@ -96,11 +96,11 @@
       "PostgreSQL",
       "SASS",
       "Devise",
-      "Rspec-rails",
+      "Rspec",
       "CanCanCan",
       "Capybara",
       "Rubocop",
-      "Github",
+      "GitHub",
       "Terminal"
     ],
     "source": "https://github.com/Timbar09/Blogister",
@@ -165,7 +165,7 @@
       "summary": "In summary, Awesome Books is a powerful yet user-friendly solution for book lovers, providing an efficient way to manage and organize personalized book collections. With its dynamic features, seamless integration with local storage, and intuitive user interface, Awesome Books aims to redefine the way users interact with their books online."
     },
     "image": "../../images/projects/awesomebooks.png",
-    "tech": ["JavaScript", "CSS3", "HTML5", "Luxon", "Github", "Terminal"],
+    "tech": ["JavaScript", "CSS3", "HTML5", "Luxon", "GitHub", "Terminal"],
     "source": "https://github.com/Timbar09/Awesome-books-vol-2",
     "live": "https://timbar09.github.io/Awesome-books-vol-2/"
   }
