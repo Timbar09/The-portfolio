@@ -35,7 +35,7 @@ const AboutBioInfo = () => {
 
   return (
     <div className="about__bio--info grid grid-pi-c">
-      <div className="about__bio--info__container">
+      <div className="about__bio--info__container" onMouseLeave={fetchQuote}>
         <div className="about__bio--info__image">
           <img
             src={bioImage}
@@ -44,10 +44,7 @@ const AboutBioInfo = () => {
           />
 
           <div className="about__bio--info__contact">
-            <div
-              className="about__bio--info__contact--content p-2"
-              onMouseLeave={fetchQuote}
-            >
+            <div className="about__bio--info__contact--content p-2">
               <p className="about__bio--info__contact--name">Miles Mosweu</p>
               <p className="about__bio--info__contact--title">
                 Full Stack Developer

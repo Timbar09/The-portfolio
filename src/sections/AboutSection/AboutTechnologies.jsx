@@ -57,16 +57,20 @@ const RenderTechItems = ({ data, activeTab }) => {
         })
         .map((item) => (
           <motion.li
-            className="about__tech--list__item p-1 flex gap-1 flex-ai-c"
+            className="about__tech--list__item"
             key={item.id}
             {...techItemAnimationProps}
-            tabIndex={0}
-            onMouseEnter={() => setHoveredItemId(item.id)}
-            onMouseLeave={() => setHoveredItemId(null)}
           >
-            {item.icon}
+            <div
+              className="about__tech--list__item--content p-1 flex gap-1 flex-ai-c"
+              tabIndex={0}
+              onMouseEnter={() => setHoveredItemId(item.id)}
+              onMouseLeave={() => setHoveredItemId(null)}
+            >
+              {item.icon}
 
-            <h4>{item.name}</h4>
+              <h4>{item.name}</h4>
+            </div>
 
             <AnimatePresence>
               {hoveredItemId === item.id && (
