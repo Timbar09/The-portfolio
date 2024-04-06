@@ -7,7 +7,7 @@ import { IoMdDownload as DownloadIcon } from "react-icons/io";
 import { BiSolidQuoteLeft as OpenQuotationIcon } from "react-icons/bi";
 import { BiSolidQuoteRight as CloseQuotationIcon } from "react-icons/bi";
 
-import bioImage from "../../assets/images/miles.jpg";
+import bioImage from "../../assets/images/miles_processed.png";
 
 const AboutBioInfo = () => {
   const [quote, setQuote] = useState({
