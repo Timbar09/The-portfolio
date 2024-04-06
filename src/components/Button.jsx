@@ -71,7 +71,9 @@ const Button = ({
         )
       ) : (
         <button
-          className={`button button__${type}`}
+          className={`button button__${type} ${
+            form ? "button__" + type + "--form" : ""
+          }`}
           type={form ? "submit" : "button"}
           onClick={handleClick}
           title={title}

@@ -28,6 +28,23 @@
       box-shadow: var(--shadow-100);
       top: -1px;
     }
+
+    &--form {
+      svg {
+        position: relative;
+        left: 0;
+        transition: left 200ms ease-in-out;
+      }
+
+      &:hover,
+      &:focus {
+        top: 0;
+
+        svg {
+          left: 0.25rem;
+        }
+      }
+    }
   }
 
   &__secondary {
