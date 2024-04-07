@@ -49,6 +49,10 @@ While this is a personal project, if you find any bugs or ways to improve the co
 
 - Project modal palceholder photo by <a href="https://unsplash.com/@kellysikkema?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kelly Sikkema</a> on <a href="https://unsplash.com/photos/black-pencil-on-black-surface-VX0bsbyBxpM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
+- Contact section dark background image by <a href="https://unsplash.com/@nattgw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Nat</a> on <a href="https://unsplash.com/photos/a-futuristic-city-at-night-with-neon-lights-dA0-qxdbyyY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+- Contact section light background image by <a href="https://unsplash.com/@wirhabenzeit?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dominik Schröder</a> on <a href="https://unsplash.com/photos/white-clouds-during-daytime-FIKD9t5_5zQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).

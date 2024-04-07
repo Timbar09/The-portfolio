@@ -1,13 +1,39 @@
 @use "../utils/" as *;
 
 .contact {
+  &__section {
+    .container {
+      position: relative;
+      background: center/cover no-repeat;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to right,
+          var(--bg-200),
+          var(--contact-opaque-bg-100),
+          var(--bg-200)
+        );
+      }
+
+      > div {
+        position: relative;
+      }
+    }
+  }
+
   &__title {
     order: 2;
     text-align: center;
     margin-bottom: 0;
     font-size: clamp(3.5em, 13vw, 6.5em);
     font-weight: 700;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: var(--contact-opaque-bg-100);
     -webkit-text-stroke: thin var(--primary-100);
   }
 
@@ -84,6 +110,11 @@
 
     &:focus {
       outline: none;
+      background-color: var(--contact-opaque-bg-100);
+    }
+
+    &:valid {
+      background-color: var(--contact-opaque-bg-100);
     }
   }
 
