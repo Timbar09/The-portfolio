@@ -59,7 +59,7 @@
     &--letter {
       position: relative;
       top: 0;
-      opacity: 0.75;
+      opacity: 0;
       transition: top 300ms ease-in-out, opacity 300ms ease-in-out;
 
       &:last-child {
@@ -69,7 +69,8 @@
   }
 
   input,
-  textarea {
+  textarea,
+  select {
     margin: 0;
     position: relative;
     display: block;
@@ -91,9 +92,19 @@
     min-height: 5em;
   }
 
+  select {
+    &:invalid {
+      color: var(--opaque-200);
+    }
+
+    &:valid {
+      color: var(--text-400);
+    }
+  }
+
   &__indicator {
     position: absolute;
-    bottom: 0;
+    bottom: -0.5px;
     left: 50%;
     translate: -50%;
     height: 0.105em;

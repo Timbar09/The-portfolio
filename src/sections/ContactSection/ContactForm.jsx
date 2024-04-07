@@ -24,6 +24,7 @@ const ContactForm = () => {
   const fields = [
     { label: "Name *", type: "text", name: "name", required: true },
     { label: "Email *", type: "email", name: "email", required: true },
+    { label: "Subject *", type: "select", name: "subject", required: true },
     { label: "Message *", type: "textarea", name: "message", required: true },
   ];
 
