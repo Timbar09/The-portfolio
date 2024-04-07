@@ -1,20 +1,30 @@
 import { useState } from "react";
 
-import { FaChevronDown as ChevronIcon } from "react-icons/fa6";
+import { IoChevronDownOutline as ChevronIcon } from "react-icons/io5";
 
-const Label = ({ label }) => (
-  <label htmlFor={label} className="form-field__label">
-    {label.split("").map((letter, index) => (
-      <span
-        key={index}
-        style={{ transitionDelay: `${index * 50}ms` }}
-        className="form-field__label--letter"
-      >
-        {letter}
-      </span>
-    ))}
-  </label>
-);
+const Label = ({ label, name }) => {
+  const actualLabel = label.split(" *")[0];
+  const extraInfo = " *" + label.split(" *")[1];
+
+  const finalLabel =
+    extraInfo.length > 2
+      ? [...actualLabel.split(""), extraInfo]
+      : [...actualLabel.split(""), " *"];
+
+  return (
+    <label htmlFor={name} className="form-field__label">
+      {finalLabel.map((letter, index) => (
+        <span
+          key={index}
+          style={{ transitionDelay: `${index * 50}ms` }}
+          className="form-field__label--letter"
+        >
+          {letter}
+        </span>
+      ))}
+    </label>
+  );
+};
 
 const Input = ({
   type,
@@ -111,7 +121,7 @@ const FormField = ({
 
   return (
     <div className="form-field">
-      <Label label={label} />
+      <Label label={label} name={name} />
 
       {type === "textarea" ? (
         <Textarea

@@ -63,7 +63,7 @@
       translate: -50% -50%;
       rotate: 45deg;
       width: 0;
-      height: 12rem;
+      height: 15rem;
       z-index: -1;
       background: var(--primary-gradient);
       transition: width 300ms ease-in-out;
@@ -80,7 +80,7 @@
       color: var(--bg-100);
 
       &::before {
-        width: 105%;
+        width: 125%;
       }
     }
 

@@ -32,7 +32,7 @@ const ContactForm = () => {
     { label: "Name *", type: "text", name: "name", required: true },
     { label: "Email *", type: "email", name: "email", required: true },
     {
-      label: "Subject *",
+      label: "Subject * (select one from the list below)",
       type: "select",
       name: "subject",
       required: true,
