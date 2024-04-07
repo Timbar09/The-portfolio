@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { FaChevronDown as ChevronIcon } from "react-icons/fa6";
+
 const Label = ({ label }) => (
   <label htmlFor={label} className="form-field__label">
     {label.split("").map((letter, index) => (
@@ -49,7 +51,18 @@ const Textarea = ({ name, placeholder, required, handleBlur, handleFocus }) => (
   />
 );
 
-const Select = ({ name, label, required, handleBlur, handleFocus }) => {
+const Select = ({
+  name,
+  label,
+  required,
+  handleBlur,
+  handleFocus,
+  options,
+}) => {
+  const handleSelectClick = (e) => {
+    e.target.classList.toggle("active");
+  };
+
   return (
     <>
       <select
@@ -59,15 +72,22 @@ const Select = ({ name, label, required, handleBlur, handleFocus }) => {
         className="form-field__input p-1"
         onBlur={handleBlur}
         onFocus={handleFocus}
+        onClick={handleSelectClick}
       >
         <option value="" disabled selected>
           {label.split(" *")[0]}
         </option>
-        <option value="generalInquiry">General Inquiry</option>
-        <option value="projectProposal">Project Proposal</option>
-        <option value="technicalSupport">Technical Support</option>
-        <option value="websiteDevelopment">Website Development</option>
+
+        {options.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
       </select>
+
+      <span className="grid grid-pi-c px-1">
+        <ChevronIcon />
+      </span>
     </>
   );
 };
@@ -77,6 +97,7 @@ const FormField = ({
   type = "text",
   name,
   required = false,
+  options = ["Option 1", "Option 2", "Option 3"],
 }) => {
   const [placeholder, setPlaceholder] = useState(label.split(" *")[0]);
 
@@ -109,6 +130,7 @@ const FormField = ({
           placeholder={"Subject"}
           handleBlur={handleBlur}
           handleFocus={handleFocus}
+          options={options}
         />
       ) : (
         <Input

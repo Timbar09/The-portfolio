@@ -93,6 +93,28 @@
   }
 
   select {
+    appearance: none;
+
+    &.active {
+      + span {
+        rotate: 180deg;
+      }
+    }
+
+    option {
+      background-color: var(--bg-300);
+    }
+
+    + span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      font-size: 1.25em;
+      color: var(--opaque-200);
+      transition: rotate 50ms ease-in-out;
+    }
+
     &:invalid {
       color: var(--opaque-200);
     }

@@ -21,10 +21,23 @@ const ContactForm = () => {
       .catch(() => alert("Oops! Something went wrong. Please try again."));
   };
 
+  const selectOptions = [
+    "General Inquiry",
+    "Project Proposal",
+    "Technical Support",
+    "Website Development",
+  ];
+
   const fields = [
     { label: "Name *", type: "text", name: "name", required: true },
     { label: "Email *", type: "email", name: "email", required: true },
-    { label: "Subject *", type: "select", name: "subject", required: true },
+    {
+      label: "Subject *",
+      type: "select",
+      name: "subject",
+      required: true,
+      options: selectOptions,
+    },
     { label: "Message *", type: "textarea", name: "message", required: true },
   ];
 
