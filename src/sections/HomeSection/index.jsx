@@ -31,9 +31,8 @@ const HomeSection = () => {
 
         <div className="home__group">
           <p className="home__description">
-            I craft unique, modern websites that captivate and invite
-            engagement, enhancing your business or product&apos;s online
-            presence.
+            I craft unique, functional and modern websites that captivate and
+            invite engagement.
           </p>
         </div>
 

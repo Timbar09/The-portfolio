@@ -10,9 +10,15 @@
   }
 
   &__subtitle {
-    margin: 1em 0;
+    margin: 1em auto;
+    text-align: center;
     font-size: 2em;
     font-weight: 200;
+
+    @include breakpoint-up(lg) {
+      margin: 1em 0;
+      text-align: left;
+    }
   }
 
   &__bio {
