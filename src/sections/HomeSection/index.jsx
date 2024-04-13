@@ -13,7 +13,7 @@ const HomeSection = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <section name="home" id="home" className="home__section section">
+    <section name="home" id="home" className="home__section">
       <div
         className="home__content container flex flex-col flex-jc-c gap-3"
         style={{
