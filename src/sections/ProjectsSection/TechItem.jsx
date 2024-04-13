@@ -63,7 +63,13 @@ const TechItem = ({ item, isCardHovered }) => {
     ),
     Git: <GitIcon style={{ color: `${isCardHovered ? "#f34f29" : ""}` }} />,
     GitHub: (
-      <GitHubIcon style={{ color: `${isCardHovered ? "#181717" : ""}` }} />
+      <GitHubIcon
+        style={{
+          color: `${
+            isCardHovered ? (theme === "light" ? "#000" : "#fff") : ""
+          }`,
+        }}
+      />
     ),
     Terminal: (
       <TerminalIcon style={{ color: `${isCardHovered ? "#000" : ""}` }} />
