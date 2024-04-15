@@ -87,13 +87,13 @@ const ProjectModal = () => {
             <Button
               type="primary"
               name="Live Demo"
-              linkTo="https://www.google.com"
+              linkTo={selectedProject.live}
             />
 
             <Button
               type="secondary"
               name="Source Code"
-              linkTo="https://github.com"
+              linkTo={selectedProject.source}
               icon={<SourceCodeIcon />}
             />
           </div>
