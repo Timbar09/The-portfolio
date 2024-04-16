@@ -43,7 +43,9 @@ While this is a personal project, if you find any bugs or ways to improve the co
 
 ## Acknowledgements
 
-**Images**
+> **Quotes from the <a href="https://github.com/lukePeavey/quotable">Quotable API</a>.**
+
+> **Images**
 
 - Hero background images by <a href="https://unsplash.com/@alexacea?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alexandru Acea</a> on <a href="https://unsplash.com/photos/turned-on-flat-screen-monitor-and-black-laptop-computer-on-table-TMkrN9QZERw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
