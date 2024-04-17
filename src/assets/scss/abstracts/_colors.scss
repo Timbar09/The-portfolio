@@ -1,77 +1,96 @@
 :root {
   // COLORS
-  --primary-100: hsl(9, 100%, 64%);
-  --primary-200: hsl(32, 100%, 64%);
-  --primary-300: hsl(60, 100%, 82%);
-  --primary-gradient: linear-gradient(
-    65deg,
-    var(--primary-100),
-    var(--primary-200)
-  );
-  --primary-radial-gradient: radial-gradient(
-    circle at 50% 50%,
-    var(--primary-100),
-    transparent 50%
-  );
+  --tomato: hsl(9, 100%, 64%);
+  --orange: hsl(32, 100%, 64%);
+  --yellow: hsl(60, 100%, 82%);
 
-  --accent-100: hsl(214, 35%, 37%);
-  --accent-200: hsl(208, 100%, 90%);
+  --white: hsl(0, 0%, 100%);
+  --lightest-gray: hsl(0, 0%, 98%);
+  --lighter-gray: hsl(0, 0%, 96%);
+  --light-gray: hsl(0, 0%, 94%);
+  --upper-mid-gray: hsl(0, 0%, 88%);
+  --mid-gray: hsl(0, 1%, 64%);
 
-  --text-100: hsl(0, 0%, 100%);
-  --text-200: hsl(0, 0%, 96%);
-  --text-300: hsl(0, 0%, 88%);
-  --text-400: hsl(0, 1%, 64%);
+  --deep-blue: hsl(210, 56%, 4%);
+  --midnight-blue: hsl(213, 31%, 6%);
+  --charcoal-blue: hsl(216, 20%, 10%);
+  --slate-blue: hsl(220, 14%, 12%);
+  --navy-blue: hsl(218, 16%, 14%);
+  --dark-blue: hsl(213, 39%, 9%);
+  --blue-gray: hsl(220, 23%, 38%);
 
-  --bg-100: hsl(210, 56%, 4%);
-  --bg-200: hsl(213, 31%, 6%);
-  --bg-300: hsl(216, 20%, 10%);
-  --bg-400: hsl(220, 14%, 12%);
+  --opaque-10: hsla(0, 0%, 100%, 0.01);
+  --opaque-20: hsla(0, 0%, 100%, 0.03);
+  --opaque-30: hsla(0, 0%, 100%, 0.05);
+  --opaque-40: hsla(0, 0%, 100%, 0.07);
+  --opaque-100: hsla(0, 0%, 100%, 0.1);
+  --opaque-200: hsla(0, 0%, 100%, 0.3);
+  --opaque-300: hsla(0, 0%, 100%, 0.5);
+  --opaque-400: hsla(0, 0%, 100%, 0.7);
 
-  --opaque-100: hsla(0, 0%, 100%, 0.2);
-  --opaque-200: hsla(0, 0%, 100%, 0.4);
-  --opaque-300: hsla(0, 0%, 100%, 0.6);
-  --opaque-400: hsla(0, 0%, 100%, 0.8);
-
-  --opaque-light-100: hsla(0, 0%, 0%, 0.3);
-  --opaque-light-200: hsla(0, 0%, 0%, 0.6);
+  --opaque-light-100: hsla(0, 0%, 0%, 0.1);
+  --opaque-light-200: hsla(0, 0%, 0%, 0.3);
+  --opaque-light-300: hsla(0, 0%, 0%, 0.5);
+  --opaque-light-400: hsla(0, 0%, 0%, 0.7);
 
   --hero-opaque-bg-100: hsla(210, 60%, 4%, 0.4);
   --hero-opaque-bg-200: hsla(210, 60%, 4%, 0.85);
   --contact-opaque-bg-100: hsla(213, 29%, 6%, 0.25);
-
-  --quote-bg: hsla(0, 0%, 100%, 0.01);
-  --quotation: hsla(0, 0%, 100%, 0.03);
 
   // SHADOWS
   --shadow-100: 0px 8px 20px rgba(255, 99, 71, 0.55);
   --shadow-200: 0px 14px 36px rgba(255, 99, 71, 0.65);
 }
 
+body {
+  // COLORS
+  --primary-100: var(--tomato);
+  --primary-gradient: linear-gradient(65deg, var(--primary-100), var(--orange));
+  --primary-radial-gradient: radial-gradient(
+    circle at 50% 50%,
+    var(--primary-100),
+    transparent 50%
+  );
+
+  --text-100: var(--white);
+  --text-200: var(--lighter-gray);
+  --text-300: var(--upper-mid-gray);
+  --text-400: var(--mid-gray);
+
+  --bg-100: var(--deep-blue);
+  --bg-200: var(--midnight-blue);
+  --bg-300: var(--charcoal-blue);
+  --bg-400: var(--slate-blue);
+}
+
 [data-theme="light"] {
-  --text-100: hsl(210, 56%, 4%);
-  --text-200: hsl(213, 39%, 9%);
-  --text-300: hsl(218, 16%, 14%);
-  --text-400: hsl(220, 23%, 38%);
+  --text-100: var(--deep-blue);
+  --text-200: var(--dark-blue);
+  --text-300: var(--navy-blue);
+  --text-400: var(--blue-gray);
 
-  --bg-100: hsl(0, 0%, 100%);
-  --bg-200: hsl(0, 0%, 98%);
-  --bg-300: hsl(0, 5%, 96%);
-  --bg-400: hsl(0, 0%, 94%);
+  --bg-100: var(--white);
+  --bg-200: var(--lightest-gray);
+  --bg-300: var(--lighter-gray);
+  --bg-400: var(--light-gray);
 
-  --opaque-100: hsla(0, 0%, 0%, 0.2);
-  --opaque-200: hsla(0, 0%, 0%, 0.4);
-  --opaque-300: hsla(0, 0%, 0%, 0.6);
-  --opaque-400: hsla(0, 0%, 0%, 0.8);
+  --opaque-10: hsla(0, 0%, 0%, 0.01);
+  --opaque-20: hsla(0, 0%, 0%, 0.03);
+  --opaque-30: hsla(0, 0%, 0%, 0.05);
+  --opaque-40: hsla(0, 0%, 0%, 0.07);
+  --opaque-100: hsla(0, 0%, 0%, 0.1);
+  --opaque-200: hsla(0, 0%, 0%, 0.3);
+  --opaque-300: hsla(0, 0%, 0%, 0.5);
+  --opaque-400: hsla(0, 0%, 0%, 0.7);
 
-  --opaque-light-100: hsla(0, 0%, 100%, 0.2);
-  --opaque-light-200: hsla(0, 0%, 100%, 0.5);
+  --opaque-light-100: hsla(0, 0%, 100%, 0.1);
+  --opaque-light-200: hsla(0, 0%, 100%, 0.3);
+  --opaque-light-300: hsla(0, 0%, 100%, 0.5);
+  --opaque-light-400: hsla(0, 0%, 100%, 0.7);
 
   --hero-opaque-bg-100: hsla(0, 0%, 100%, 0.4);
   --hero-opaque-bg-200: hsla(0, 0%, 100%, 0.85);
   --contact-opaque-bg-100: hsla(0, 0%, 100%, 0.25);
-
-  --quote-bg: hsla(0, 0%, 0%, 0.01);
-  --quotation: hsla(0, 0%, 0%, 0.03);
 
   --shadow-100: 0px 8px 20px hsla(0, 0%, 0%, 0.25);
   --shadow-200: 0px 14px 36px hsla(0, 0%, 0%, 0.35);

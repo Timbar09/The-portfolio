@@ -9,13 +9,14 @@
 
   &__card {
     background-color: var(--bg-200);
-    background-size: 115% auto;
+    background-size: 140% auto;
     background-position: center;
     background-repeat: no-repeat;
+    border: solid 0.125em transparent;
     border-radius: var(--radius-300);
     aspect-ratio: 16 / 12;
     overflow: hidden;
-    transition: background-size 500ms linear;
+    transition: background-size 500ms linear, border 300ms ease-in-out;
 
     @include breakpoint-up(sm) {
       aspect-ratio: 16 / 10;
@@ -54,7 +55,8 @@
 
     &:hover,
     &:focus-within {
-      background-size: 110% auto;
+      background-size: 130% auto;
+      border: solid 0.125em var(--bg-200);
 
       .project__card {
         &--container {

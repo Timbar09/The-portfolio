@@ -93,6 +93,7 @@
     color: var(--text-400);
     font-weight: 400;
     border: solid 0.115em var(--bg-400);
+    background-color: var(--opaque-light-100);
     transition: color 150ms ease-in-out;
 
     &:hover,
@@ -102,7 +103,7 @@
     }
 
     &:active {
-      background-color: var(--bg-300);
+      background-color: var(--bg-200);
     }
   }
 }
