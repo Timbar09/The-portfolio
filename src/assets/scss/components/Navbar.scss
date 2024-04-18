@@ -292,12 +292,12 @@
     border: solid 0.15rem var(--bg-300);
     border-radius: var(--radius-pill);
     background-color: var(--bg-300);
-    outline: solid 0.125rem transparent;
+    outline: solid 0.1rem transparent;
     cursor: pointer;
     transition: outline 100ms ease-in-out;
 
     &:hover {
-      outline: solid 0.125rem var(--opaque-200);
+      outline: solid 0.1rem var(--opaque-200);
     }
 
     .light,

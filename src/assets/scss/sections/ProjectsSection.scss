@@ -1,6 +1,10 @@
 @use "../utils/" as *;
 
 .project {
+  &__section {
+    background-color: var(--bg-200);
+  }
+
   &__list {
     @include breakpoint-up(md) {
       background: var(--primary-radial-gradient);
@@ -12,7 +16,7 @@
     background-size: 140% auto;
     background-position: center;
     background-repeat: no-repeat;
-    border: solid 0.125em transparent;
+    outline: solid 0.125em transparent;
     border-radius: var(--radius-300);
     aspect-ratio: 16 / 12;
     overflow: hidden;
@@ -56,7 +60,7 @@
     &:hover,
     &:focus-within {
       background-size: 130% auto;
-      border: solid 0.125em var(--bg-200);
+      outline: solid 0.125em var(--bg-200);
 
       .project__card {
         &--container {

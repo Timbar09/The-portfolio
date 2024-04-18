@@ -2,6 +2,8 @@
 
 .contact {
   &__section {
+    // background-color: var(--bg-200);
+
     .container {
       position: relative;
       background: center/cover no-repeat;
@@ -50,7 +52,7 @@
 
     &:invalid {
       button {
-        background: var(--opaque-100);
+        background: var(--opaque-200);
         box-shadow: none;
         pointer-events: none;
 
@@ -105,7 +107,7 @@
     min-width: 100%;
     color: inherit;
     background-color: transparent;
-    border: solid 0.125em var(--opaque-100);
+    border: solid 0.125em var(--opaque-200);
     border-radius: var(--radius-200);
 
     &:focus {

@@ -3,7 +3,8 @@
 .footer {
   padding: 2em 0 15em;
   font-size: 0.85em;
-  color: var(--opaque-200);
+  color: var(--lower-mid-gray);
+  background-color: var(--midnight-blue);
 
   @include breakpoint-down(sm) {
     text-align: center;
