@@ -1,0 +1,10 @@
+@use "../utils/" as *;
+
+.logo {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-family: $ff-mitr;
+  font-weight: 600;
+  color: var(--text-400);
+}

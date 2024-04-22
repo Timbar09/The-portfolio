@@ -1,0 +1,327 @@
+@use "../utils/" as *;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: translate 300ms ease-in-out;
+
+  @include breakpoint-up(md) {
+    background-color: var(--bg-100);
+  }
+
+  &.hidden {
+    translate: 0 -100%;
+  }
+
+  &__content {
+    @include breakpoint-up(md) {
+      position: relative;
+      display: flex;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: var(--opaque-100);
+        width: 100%;
+        height: 0.125em;
+        border-radius: 5rem;
+      }
+    }
+  }
+
+  &__menu {
+    text-align: center;
+
+    @include breakpoint-up(md) {
+      display: flex;
+    }
+
+    &-toggle {
+      flex-direction: column;
+      gap: 0.25rem;
+      border-radius: var(--radius-100);
+      background-color: transparent;
+
+      &--stroke {
+        position: relative;
+        display: inline-block;
+        height: 0.45rem;
+        width: 2.75rem;
+        background: var(--primary-gradient);
+        border-radius: var(--radius-pill);
+        border: solid 2px var(--text-100);
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-color: var(--bg-100);
+          border-radius: inherit;
+          opacity: 1;
+          transition: opacity 150ms ease-in-out;
+        }
+      }
+
+      @include breakpoint-up(large) {
+        display: none;
+      }
+
+      &:hover {
+        .nav__menu-toggle--stroke {
+          &::before {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    &--settings {
+      margin: 0 0 0.25em auto;
+      width: max-content;
+      background-color: var(--opaque-light-200);
+      border-radius: var(--radius-200);
+
+      .social__list {
+        padding: 0 0.25em;
+        gap: 0.5em;
+
+        li {
+          margin: 0;
+          opacity: 1;
+          scale: 1;
+
+          span {
+            text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200),
+              -1px 1px 0 var(--bg-200), 1px 1px 0 var(--bg-200);
+          }
+        }
+      }
+
+      &__separator {
+        width: 0.15em;
+        height: 1.5em;
+        background-color: var(--opaque-100);
+      }
+
+      &__content {
+        position: relative;
+        font-size: 1em;
+      }
+
+      &__button {
+        font-size: 1.75em;
+        color: inherit;
+        transition: color 150ms ease-in-out, rotate 300ms ease-in-out;
+
+        &:hover,
+        &:focus-visible {
+          color: var(--primary-100);
+        }
+
+        &.open {
+          rotate: 45deg;
+        }
+      }
+
+      &__popup {
+        position: absolute;
+        right: 0;
+        top: 105%;
+        width: max-content;
+        border-radius: var(--radius-200);
+        background-color: var(--opaque-300);
+        border: solid 0.125em var(--opaque-200);
+        z-index: 1;
+      }
+    }
+
+    li {
+      position: relative;
+      border-radius: var(--radius-200);
+      background-color: var(--bg-200);
+
+      &:not(:first-child) {
+        margin-top: 0.25rem;
+      }
+
+      &:last-child {
+        @include breakpoint-down(sm) {
+          background-color: transparent;
+
+          .button {
+            width: 100%;
+            padding: 0.5em;
+            font-size: 1.25em;
+          }
+        }
+      }
+
+      @include breakpoint-up(md) {
+        background-color: transparent;
+        margin-top: 0 !important;
+      }
+    }
+
+    &-item {
+      a {
+        display: block;
+        color: var(--text-400);
+        cursor: pointer;
+
+        letter-spacing: 3.5px;
+        transition: color 100ms ease-in-out, background-color 100ms ease-in-out;
+
+        &:hover {
+          color: var(--text-100);
+          background-color: var(--bg-300);
+        }
+
+        &:active {
+          color: var(--text-400);
+          background-color: var(--bg-400);
+        }
+
+        @include breakpoint-down(sm) {
+          font-size: 1.25rem;
+        }
+
+        @include breakpoint-up(md) {
+          padding: 2rem 0.5rem;
+          font-size: clamp(0.75em, 2.5vw, 1em);
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 2em;
+            width: 0.1875em;
+            height: 0.1875em;
+            background-color: var(--primary-100);
+            opacity: 0;
+            border-radius: 10px 10px 0 0;
+            transition: bottom 200ms ease-in-out, opacity 200ms ease-in-out,
+              width 200ms 200ms ease-in-out;
+          }
+
+          &:hover {
+            color: var(--text-100);
+            background-color: transparent;
+
+            &::before {
+              opacity: 1;
+              height: 0.15em;
+              width: 100%;
+              bottom: 0.05em;
+              background-color: var(--text-100);
+            }
+          }
+
+          &:active {
+            color: var(--text-100);
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  &.open {
+    .nav {
+      &__menu {
+        &-toggle {
+          &--stroke {
+            border: solid 2px var(--text-200);
+            transition: opacity 0ms 100ms ease-in-out, top 100ms ease-in-out,
+              rotate 100ms 200ms ease-in-out;
+
+            &-top {
+              top: 11px;
+              rotate: 45deg;
+            }
+
+            &-mid {
+              opacity: 0;
+            }
+
+            &-bottom {
+              top: -11px;
+              rotate: -45deg;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.closed {
+    .nav {
+      &__menu {
+        &-toggle {
+          &--stroke {
+            transition: opacity 100ms 100ms ease-in-out,
+              top 100ms 300ms ease-in-out, rotate 100ms ease-in-out;
+
+            &-top {
+              top: 0;
+              rotate: 0;
+            }
+
+            &-mid {
+              opacity: 1;
+            }
+
+            &-bottom {
+              top: 0;
+              rotate: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__theme-toggle {
+    padding: 0;
+    font-size: 0.675rem;
+    position: relative;
+    border: solid 0.15rem var(--bg-300);
+    border-radius: var(--radius-pill);
+    background-color: var(--bg-300);
+    outline: solid 0.1rem transparent;
+    cursor: pointer;
+    transition: outline 100ms ease-in-out;
+
+    &:hover {
+      outline: solid 0.1rem var(--opaque-200);
+    }
+
+    .light,
+    .dark {
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      color: var(--text-400);
+    }
+
+    &--slider {
+      position: absolute;
+      padding: 0.25rem 0.5rem;
+      top: 0;
+      left: 0;
+      border-radius: 1rem;
+      color: var(--text-300);
+      background-color: var(--bg-100);
+      box-shadow: 0px 0px 5px 0px hsla(0, 0%, 100%, 0.15);
+      transition: left 100ms ease-in-out;
+
+      &.lightmode {
+        box-shadow: var(--shadow-100);
+        left: 3.25rem;
+      }
+    }
+  }
+}

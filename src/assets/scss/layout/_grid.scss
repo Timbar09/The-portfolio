@@ -1,0 +1,90 @@
+@use "../utils/" as *;
+
+.grid {
+  display: grid;
+
+  &-col {
+    grid-template-columns: repeat(12, 1fr);
+
+    &-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &-pi {
+    &-c {
+      place-items: center;
+    }
+  }
+
+  &-gap {
+    &-0 {
+      grid-gap: 0;
+    }
+
+    &-1 {
+      grid-gap: 0.5rem;
+    }
+
+    &-2 {
+      grid-gap: 1rem;
+    }
+
+    &-3 {
+      grid-gap: 1.75rem;
+    }
+  }
+
+  // Breakpoints
+  &_md {
+    @include breakpoint-up("md") {
+      display: grid;
+    }
+
+    &-col {
+      @include breakpoint-up("md") {
+        grid-template-columns: repeat(12, 1fr);
+      }
+
+      &-5 {
+        @include breakpoint-up("md") {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+    }
+
+    &-pi {
+      &-c {
+        @include breakpoint-up("md") {
+          place-items: center;
+        }
+      }
+    }
+
+    &-gap {
+      &-0 {
+        @include breakpoint-up("md") {
+          grid-gap: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("md") {
+          grid-gap: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("md") {
+          grid-gap: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("md") {
+          grid-gap: 1.75rem;
+        }
+      }
+    }
+  }
+}

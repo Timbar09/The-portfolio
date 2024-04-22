@@ -1,0 +1,109 @@
+@use "../utils/" as *;
+
+.button {
+  position: relative;
+  display: inline-block;
+  border-radius: var(--radius-200);
+  color: var(--bg-100);
+  font-family: $ff-titillium;
+  font-size: inherit;
+  font-weight: 600;
+  padding: 0.375rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 150ms ease-in-out, border 150ms ease-in-out,
+    box-shadow 150ms ease-in-out, top 150ms ease-in-out;
+
+  &__primary {
+    background: var(--primary-gradient);
+    box-shadow: var(--shadow-100);
+    top: 0;
+
+    &:hover,
+    &:focus {
+      box-shadow: var(--shadow-200);
+      top: -3px;
+    }
+
+    &:active {
+      box-shadow: var(--shadow-100);
+      top: -1px;
+    }
+
+    &--form {
+      svg {
+        position: relative;
+        left: 0;
+        transition: left 200ms ease-in-out;
+      }
+
+      &:hover,
+      &:focus {
+        top: 0;
+
+        svg {
+          left: 0.25rem;
+        }
+      }
+    }
+  }
+
+  &__secondary {
+    color: var(--primary-100);
+    border: solid 0.115em var(--primary-100);
+    padding: 0;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 300ms ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      rotate: 45deg;
+      width: 0;
+      height: 15rem;
+      z-index: -1;
+      background: var(--primary-gradient);
+      transition: width 300ms ease-in-out;
+    }
+
+    span {
+      display: inline-block;
+      padding: 0.25rem 1.5rem;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: var(--shadow-200);
+      color: var(--bg-100);
+
+      &::before {
+        width: 125%;
+      }
+    }
+
+    &:active {
+      box-shadow: var(--shadow-100);
+    }
+  }
+
+  &__tertiary {
+    color: var(--text-400);
+    font-weight: 400;
+    border: solid 0.115em var(--bg-400);
+    background-color: var(--opaque-light-100);
+    transition: color 150ms ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: var(--bg-300);
+      color: var(--text-300);
+    }
+
+    &:active {
+      background-color: var(--bg-200);
+    }
+  }
+}

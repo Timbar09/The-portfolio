@@ -1,0 +1,94 @@
+@use "../utils/" as *;
+
+.social {
+  &__list {
+    width: max-content;
+
+    &:hover,
+    &:focus-within {
+      .social__item {
+        margin-left: 0;
+        opacity: 1;
+        scale: 1;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    font-size: 1.5em;
+    padding: 0.25em;
+
+    &:hover,
+    &:focus-within {
+      .social__item {
+        &--link {
+          color: var(--primary-100);
+          bottom: -0.15em;
+
+          svg {
+            scale: 0.925;
+          }
+        }
+
+        &--name {
+          top: -80%;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: -2.25em;
+      opacity: 0;
+      scale: 0.75;
+      transition: margin-left 200ms ease-in-out, opacity 200ms ease-in-out,
+        scale 200ms ease-in-out;
+
+      @include touch {
+        margin-left: 0;
+        opacity: 1;
+        scale: 1;
+      }
+    }
+
+    &:first-child {
+      z-index: 3;
+    }
+
+    &:nth-child(2) {
+      z-index: 2;
+    }
+
+    &:last-child {
+      z-index: 1;
+      transition-delay: 100ms;
+    }
+
+    &--link {
+      position: relative;
+      bottom: 0;
+      color: currentColor;
+      transition: bottom 200ms ease-in-out;
+
+      svg {
+        transition: scale 200ms ease-in-out;
+      }
+    }
+
+    &--name {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      translate: -50% 0;
+      width: max-content;
+      font-size: 0.5em;
+      font-weight: 600;
+      color: var(--text-200);
+      opacity: 0;
+      visibility: hidden;
+      transition: top 200ms ease-in-out, opacity 200ms ease-in-out;
+    }
+  }
+}

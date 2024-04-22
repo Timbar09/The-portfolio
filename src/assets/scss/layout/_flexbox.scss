@@ -1,0 +1,266 @@
+@use "../utils/" as *;
+
+.flex {
+  display: flex !important;
+
+  &-inline {
+    display: inline-flex !important;
+  }
+
+  &-jc {
+    &-sb {
+      justify-content: space-between;
+    }
+    &-c {
+      justify-content: center;
+    }
+
+    &-fs {
+      justify-content: flex-start;
+    }
+
+    &-fe {
+      justify-content: flex-end;
+    }
+  }
+
+  &-ai {
+    &-c {
+      align-items: center;
+    }
+
+    &-fs {
+      align-items: flex-start;
+    }
+
+    &-fe {
+      align-items: flex-end;
+    }
+  }
+
+  &-row {
+    flex-direction: row;
+  }
+
+  &-col {
+    flex-direction: column;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  // MEDIUM SCREENS
+
+  &_md {
+    @include breakpoint-up(md) {
+      display: flex !important;
+    }
+
+    &-jc {
+      &-sb {
+        @include breakpoint-up(md) {
+          justify-content: space-between;
+        }
+      }
+      &-c {
+        @include breakpoint-up(md) {
+          justify-content: center;
+        }
+      }
+
+      &-fs {
+        @include breakpoint-up(md) {
+          justify-content: flex-start;
+        }
+      }
+      &-fe {
+        @include breakpoint-up(md) {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    &-ai {
+      &-c {
+        @include breakpoint-up(md) {
+          align-items: center;
+        }
+      }
+
+      &-fs {
+        @include breakpoint-up(md) {
+          align-items: flex-start;
+        }
+      }
+
+      &-fe {
+        @include breakpoint-up(md) {
+          align-items: flex-end;
+        }
+      }
+    }
+
+    &-row {
+      @include breakpoint-up(md) {
+        flex-direction: row;
+      }
+    }
+
+    &-col {
+      @include breakpoint-up(md) {
+        flex-direction: column;
+      }
+    }
+
+    &-wrap {
+      @include breakpoint-up(md) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  // LARGE SCREENS
+
+  &_lg {
+    @include breakpoint-up(lg) {
+      display: flex !important;
+    }
+
+    &-jc {
+      &-sb {
+        @include breakpoint-up(lg) {
+          justify-content: space-between;
+        }
+      }
+      &-c {
+        @include breakpoint-up(lg) {
+          justify-content: center;
+        }
+      }
+
+      &-fs {
+        @include breakpoint-up(lg) {
+          justify-content: flex-start;
+        }
+      }
+      &-fe {
+        @include breakpoint-up(lg) {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    &-ai {
+      &-c {
+        @include breakpoint-up(lg) {
+          align-items: center;
+        }
+      }
+
+      &-fs {
+        @include breakpoint-up(lg) {
+          align-items: flex-start;
+        }
+      }
+
+      &-fe {
+        @include breakpoint-up(lg) {
+          align-items: flex-end;
+        }
+      }
+    }
+
+    &-row {
+      @include breakpoint-up(lg) {
+        flex-direction: row;
+      }
+    }
+
+    &-col {
+      @include breakpoint-up(lg) {
+        flex-direction: column;
+      }
+    }
+
+    &-wrap {
+      @include breakpoint-up(lg) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+.gap {
+  &-0 {
+    gap: 0;
+  }
+  &-1 {
+    gap: 0.5rem;
+  }
+  &-2 {
+    gap: 1rem;
+  }
+  &-3 {
+    gap: 1.75rem;
+  }
+
+  &-4 {
+    gap: 2.5rem;
+  }
+
+  // GAP MEDIA QUERIES
+  &_md {
+    @include breakpoint-up(md) {
+      gap: 0;
+    }
+    &-1 {
+      @include breakpoint-up(md) {
+        gap: 0.5rem;
+      }
+    }
+    &-2 {
+      @include breakpoint-up(md) {
+        gap: 1rem;
+      }
+    }
+    &-3 {
+      @include breakpoint-up(md) {
+        gap: 1.75rem;
+      }
+    }
+
+    &-4 {
+      @include breakpoint-up(md) {
+        gap: 2.5rem;
+      }
+    }
+  }
+
+  &_lg {
+    @include breakpoint-up(lg) {
+      gap: 0;
+    }
+    &-1 {
+      @include breakpoint-up(lg) {
+        gap: 0.5rem;
+      }
+    }
+    &-2 {
+      @include breakpoint-up(lg) {
+        gap: 1rem;
+      }
+    }
+    &-3 {
+      @include breakpoint-up(lg) {
+        gap: 1.75rem;
+      }
+    }
+
+    &-4 {
+      @include breakpoint-up(lg) {
+        gap: 2.5rem;
+      }
+    }
+  }
+}

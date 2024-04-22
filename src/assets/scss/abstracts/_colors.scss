@@ -1,0 +1,98 @@
+:root {
+  // COLORS
+  --tomato: hsl(9, 100%, 64%);
+  --orange: hsl(32, 100%, 64%);
+  --yellow: hsl(60, 100%, 82%);
+
+  --white: hsl(0, 0%, 100%);
+  --lightest-gray: hsl(0, 0%, 98%);
+  --lighter-gray: hsl(0, 0%, 96%);
+  --light-gray: hsl(0, 0%, 94%);
+  --upper-mid-gray: hsl(0, 0%, 88%);
+  --mid-gray: hsl(0, 1%, 64%);
+  --lower-mid-gray: hsl(0, 1%, 48%);
+
+  --deep-blue: hsl(210, 56%, 4%);
+  --midnight-blue: hsl(213, 31%, 6%);
+  --charcoal-blue: hsl(216, 20%, 10%);
+  --slate-blue: hsl(220, 14%, 12%);
+  --navy-blue: hsl(218, 16%, 14%);
+  --dark-blue: hsl(213, 39%, 9%);
+  --blue-gray: hsl(220, 23%, 38%);
+
+  --opaque-10: hsla(0, 0%, 100%, 0.01);
+  --opaque-20: hsla(0, 0%, 100%, 0.03);
+  --opaque-30: hsla(0, 0%, 100%, 0.05);
+  --opaque-40: hsla(0, 0%, 100%, 0.07);
+  --opaque-100: hsla(0, 0%, 100%, 0.1);
+  --opaque-200: hsla(0, 0%, 100%, 0.3);
+  --opaque-300: hsla(0, 0%, 100%, 0.5);
+  --opaque-400: hsla(0, 0%, 100%, 0.7);
+
+  --opaque-light-100: hsla(0, 0%, 0%, 0.1);
+  --opaque-light-200: hsla(0, 0%, 0%, 0.3);
+  --opaque-light-300: hsla(0, 0%, 0%, 0.5);
+  --opaque-light-400: hsla(0, 0%, 0%, 0.7);
+
+  --hero-opaque-bg-100: hsla(210, 60%, 4%, 0.4);
+  --hero-opaque-bg-200: hsla(210, 60%, 4%, 0.85);
+  --contact-opaque-bg-100: hsla(213, 29%, 6%, 0.25);
+
+  // SHADOWS
+  --shadow-100: 0px 8px 20px rgba(255, 99, 71, 0.55);
+  --shadow-200: 0px 14px 36px rgba(255, 99, 71, 0.65);
+}
+
+body {
+  // COLORS
+  --primary-100: var(--tomato);
+  --primary-gradient: linear-gradient(65deg, var(--primary-100), var(--orange));
+  --primary-radial-gradient: radial-gradient(
+    circle at 50% 50%,
+    var(--primary-100),
+    transparent 50%
+  );
+
+  --text-100: var(--white);
+  --text-200: var(--lighter-gray);
+  --text-300: var(--upper-mid-gray);
+  --text-400: var(--mid-gray);
+
+  --bg-100: var(--deep-blue);
+  --bg-200: var(--midnight-blue);
+  --bg-300: var(--charcoal-blue);
+  --bg-400: var(--slate-blue);
+}
+
+[data-theme="light"] {
+  --text-100: var(--deep-blue);
+  --text-200: var(--dark-blue);
+  --text-300: var(--navy-blue);
+  --text-400: var(--blue-gray);
+
+  --bg-100: var(--white);
+  --bg-200: var(--lightest-gray);
+  --bg-300: var(--lighter-gray);
+  --bg-400: var(--light-gray);
+
+  --opaque-10: hsla(0, 0%, 0%, 0.01);
+  --opaque-20: hsla(0, 0%, 0%, 0.03);
+  --opaque-30: hsla(0, 0%, 0%, 0.05);
+  --opaque-40: hsla(0, 0%, 0%, 0.07);
+  --opaque-100: hsla(0, 0%, 0%, 0.1);
+  --opaque-200: hsla(0, 0%, 0%, 0.3);
+  --opaque-300: hsla(0, 0%, 0%, 0.5);
+  --opaque-400: hsla(0, 0%, 0%, 0.7);
+
+  --opaque-light-100: hsla(0, 0%, 100%, 0.1);
+  --opaque-light-200: hsla(0, 0%, 100%, 0.3);
+  --opaque-light-300: hsla(0, 0%, 100%, 0.5);
+  --opaque-light-400: hsla(0, 0%, 100%, 0.7);
+
+  --hero-opaque-bg-100: hsla(0, 0%, 100%, 0.4);
+  --hero-opaque-bg-200: hsla(0, 0%, 100%, 0.85);
+  --contact-opaque-bg-100: hsla(0, 0%, 100%, 0.25);
+
+  --shadow-100: 0px 8px 20px hsla(0, 0%, 0%, 0.25);
+  --shadow-200: 0px 14px 36px hsla(0, 0%, 0%, 0.35);
+}
