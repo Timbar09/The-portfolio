@@ -1,0 +1,172 @@
+[
+  {
+    "title": "ConsoleHub",
+    "description": {
+      "brief": "ConsoleHub lets users book gaming console at a time that works for them.",
+      "overview": "ConsoleHub simplifies the process of scheduling gaming sessions by allowing users to reserve their preferred gaming console at a convenient time slot. With an extensive library of gaming consoles, ConsoleHub offers users a wide variety of choices to suit their gaming preferences.",
+      "problem": "The creation of ConsoleHub was motivated by the need for a streamlined solution for scheduling gaming sessions. Additionally, there was a lack of comprehensive resources on utilizing React and Ruby on Rails together for web development projects.",
+      "features": [
+        "User-friendly Interface: Utilizes React for a responsive and intuitive user experience.",
+        "Robust Backend: Relies on Ruby on Rails for efficient data management and security.",
+        "Secure Authentication: Implements Devise for secure and manageable user authentication.",
+        "Stylish Design: Utilizes Tailwind CSS for visually appealing and customizable layouts."
+      ],
+      "summary": "In summary, ConsoleHub is a well-crafted web application that streamlines the booking of gaming consoles. It leverages React and Ruby on Rails for its frontend and backend respectively, with Devise for authentication and Tailwind CSS for stylish design. The combination of these technologies ensures a seamless and enjoyable user experience for users."
+    },
+    "image": "consolehub.png",
+    "tech": [
+      "Ruby on Rails",
+      "React",
+      "Tailwind CSS",
+      "Redux",
+      "PostgreSQL",
+      "Devise",
+      "Rspec"
+    ],
+    "source": "https://github.com/stephenkati/gaming_console_reservation_front_end",
+    "live": "https://console-hub.netlify.app/"
+  },
+  {
+    "title": "BudgetTrail",
+    "description": {
+      "brief": "This is a mobile web app for tracking, optimizing and managing users' finances.",
+      "overview": "BudgetTrail is a handy mobile web app meticulously designed for users to track and optimize their finances. It empowers users to take control of their budget by managing their income and expenses comprehensively.",
+      "problem": "The development of BudgetTrail was driven by the necessity for a simplified approach to financial management. Moreover, there was a notable scarcity of comprehensive resources on effectively utilizing Ruby on Rails, PostgreSQL, and SASS in tandem for web development projects.",
+      "features": [
+        "Comprehensive Financial Management: Users can effortlessly input and monitor their day-to-day transactions, gaining unparalleled clarity into their spending patterns.",
+        "Robust Architecture: Built on a robust architecture combining Ruby on Rails, PostgreSQL, and SASS, BudgetTrail ensures a seamless and responsive user experience.",
+        "Secure Authentication: The backbone of BudgetTrail's user experience is fortified by Devise, ensuring the security of user data and a hassle-free login process.",
+        "Rigorous Testing: Implementation of Rspec-rails and Capybara guarantees the reliability of BudgetTrail's functionalities, minimizing potential disruptions."
+      ],
+      "summary": "BudgetTrail is a powerful mobile web application that transforms financial prudence into a reachable goal. Offering comprehensive financial management, organized categorization, and insights driven by data, BudgetTrail prioritizes user experience while ensuring security and functionality are not compromised."
+    },
+    "image": "budgettrail.png",
+    "tech": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "SASS",
+      "Devise",
+      "Rspec",
+      "Capybara",
+      "Rubocop",
+      "GitHub",
+      "Terminal"
+    ],
+    "source": "https://github.com/Timbar09/BudgetTrail",
+    "live": "https://budgettrail.onrender.com/"
+  },
+  {
+    "title": "Space Traveler's Hub",
+    "description": {
+      "brief": "This web app showcases space travel services using real-time data from the SpaceX API.",
+      "overview": "Space Traveler's Hub is a web application that showcases a comprehensive array of commercial and scientific space travel services. It provides users with up-to-date information on space exploration opportunities by fetching real-time data from the SpaceX API.",
+      "problem": "The development of Space Traveler's Hub was fueled by the need for a platform that offers users immersive engagement with space travel opportunities. Additionally, there was a desire to create a space exploration platform using advanced technologies like React.js and Redux-toolkit.",
+      "features": [
+        "Immersive Engagement: Users can actively engage with the application by booking rockets for their space journeys and participating in selected space missions, adding an immersive dimension to the user experience.",
+        "Dynamic User Interface: Built on React.js, Space Traveler's Hub offers a dynamic and responsive user interface that ensures a smooth and enjoyable browsing experience.",
+        "Efficient State Management: Redux-toolkit enhances state management, making the application more efficient and user-friendly.",
+        "Stylish Layouts: Bootstrap is employed to craft stylish and responsive layouts, enhancing the visual appeal and user experience.",
+        "Seamless Data Retrieval: Leveraging REST APIs, the application seamlessly connects and retrieves data, ensuring users have access to the most accurate and relevant information."
+      ],
+      "summary": "Space Traveler's Hub serves as a gateway to the universe of commercial and scientific space travel. With its utilization of advanced technologies like React.js, Redux-toolkit, Bootstrap, and REST APIs, the platform offers a sophisticated and engaging space exploration experience where users can explore, book, and embark on space adventures."
+    },
+    "image": "spacetravelershub.png",
+    "tech": ["React", "Redux", "Bootstrap", "REST API"],
+    "source": "https://github.com/Timbar09/React-Redux-Group-Project-Space-Travelers-Hub",
+    "live": "https://spacetravelershub-react.onrender.com/"
+  },
+  {
+    "title": "Blogister",
+    "description": {
+      "brief": "Blogister is a social media platform for users to intreract and share ideas and experiences.",
+      "overview": "Blogister is a seamlessly operational web application that serves as an interactive canvas for users to actively engage in conversations, append comments, and express appreciation through likes. It provides a platform for bloggers to share thoughts, concepts, and personal experiences with an interested audience.",
+      "problem": "The development of Blogister stemmed from the need for a platform that fosters active engagement and discourse among users. Additionally, there was a desire to create a user-friendly environment that promotes exploration and interaction with carefully curated content.",
+      "features": [
+        "Interactive Canvas: Users can actively participate in conversations, append comments, and express appreciation through likes, fostering a thriving community of discourse.",
+        "Seamless Environment: Built on a combination of technologies including Ruby on Rails, PostgreSQL, and SASS, Blogister offers a seamless, responsive, and secure application environment.",
+        "Carefully Curated Content: Users encounter a carefully selected collection of posts, encouraging exploration of stories that align with their interests.",
+        "Secure Authentication: Powered by Devise, Blogister ensures user data remains shielded, guaranteeing a secure and trustworthy platform.",
+        "Meticulous Validation: The confluence of Rspec-rails and Capybara guarantees meticulous validation of functionalities, minimizing potential disruptions."
+      ],
+      "summary": "In essence, Blogister is an immersive web application that fosters a thriving community of discourse. It offers bloggers an avenue to broadcast their insights, opinions, and stories to an enthusiastic audience while promoting active engagement and interaction. Through its seamless environment, carefully curated content, and secure authentication, Blogister stands as a reminder of the impact of connectivity and the art of digital expression."
+    },
+    "image": "blogister.png",
+    "tech": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "SASS",
+      "Devise",
+      "Rspec",
+      "CanCanCan",
+      "Capybara",
+      "Rubocop",
+      "GitHub",
+      "Terminal"
+    ],
+    "source": "https://github.com/Timbar09/Blogister",
+    "live": "https://github.com/Timbar09/Blogister"
+  },
+  {
+    "title": "Africa's Leading Tech Confrence 2023",
+    "description": {
+      "brief": "This website is a dynamic, responsive site, with multiple pages and a great user experience.",
+      "overview": "Africa's Leading Tech Conference 2023 is a responsive website consisting of multiple pages, including a home page and an about page. It is meticulously designed and developed to provide an optimal viewing experience on both mobile and desktop devices, ensuring seamless navigation and functionality.",
+      "problem": "The creation of Africa's Leading Tech Conference 2023 was driven by the need to provide attendees with a user-friendly and immersive online experience. Additionally, there was a desire to ensure that the website adapts seamlessly to different screen sizes and devices.",
+      "features": [
+        "Responsive Design: The website layout and content are optimized for different screen sizes and devices, providing users with a visually appealing and user-friendly experience.",
+        "Cohesive Navigation: A central hub home page featuring a menu with links to other sections ensures easy navigation throughout the website.",
+        "Dynamic Content Generation: The 'Featured speakers' section utilizes a dynamic approach to generate HTML content, allowing for easy updating and modification of speaker information.",
+        "Mobile Menu: A mobile menu is implemented for smaller screen sizes, providing easy access to different sections and pages while maintaining visual consistency with the overall website design.",
+        "Strategic Logo Placement: The logo is strategically placed in the header section, linking back to the home page and allowing users to quickly return to the main content.",
+        "Dynamic Page Feature: A dynamic page feature is implemented to dynamically generate HTML content for the 'Featured speakers' section, enhancing user engagement and interaction."
+      ],
+      "summary": "In summary, Africa's Leading Tech Conference 2023 is a responsive website designed to provide an immersive online experience for attendees. It features a cohesive navigation system, dynamic content generation, and a mobile menu for easy access on smaller screen sizes. With its responsive design and dynamic features, the website ensures a seamless and enjoyable browsing experience for users on both mobile and desktop devices."
+    },
+    "image": "conference.png",
+    "tech": ["JavaScript", "CSS3", "HTML5", "GitHub", "Terminal"],
+    "source": "https://github.com/Timbar09/Africas-Leading-Tech-Conference",
+    "live": "https://timbar09.github.io/Africas-Leading-Tech-Conference/"
+  },
+  {
+    "title": "Todo App",
+    "description": {
+      "brief": "Todo App aids in managing tasks, featuring a user-friendly interface.",
+      "overview": "Todo App is a web application designed to help users manage their tasks effectively. It provides a user-friendly interface for displaying a list of tasks and allows users to add new tasks and remove existing ones.",
+      "problem": "The creation of Todo App was driven by the need to provide users with a simple and efficient tool for organizing their tasks. Additionally, there was a desire to showcase the utilization of essential web development technologies and techniques in creating a functional and user-friendly to-do list web app.",
+      "features": [
+        "Task Management: Allows users to add new tasks, remove existing tasks, and view their task list.",
+        "User-Friendly Interface: Provides a visually appealing and intuitive interface for seamless task management.",
+        "Essential Web Technologies: Utilizes Webpack, JavaScript, CSS, and HTML for efficient module bundling, dynamic functionality, styling, and structure/layout respectively.",
+        "Optimized Build Process: Uses Webpack as the module bundler to manage dependencies and optimize the build process, ensuring efficient performance.",
+        "Interactive Functionality: Implements JavaScript for interactive functionality such as adding and removing tasks dynamically.",
+        "Stylish Design: Utilizes CSS for styling the user interface, ensuring a visually appealing design."
+      ],
+      "summary": "In summary, Todo App is a web application that showcases the utilization of essential web development technologies and techniques to create a functional and user-friendly to-do list. With its user-friendly interface, task management features, and optimized build process, Todo App provides users with an efficient tool for organizing their tasks."
+    },
+    "image": "../../images/projects/todo.png",
+    "tech": ["React", "CSS3", "Git", "Github", "HTML5", "Terminal"],
+    "source": "https://github.com/Timbar09/Todo-list-vol-2",
+    "live": "https://timbar09.github.io/Todo-list-vol-2/dist/"
+  },
+  {
+    "title": "Awesome books",
+    "description": {
+      "brief": "Awesome Books is a feature-rich web app for managing books interactively.",
+      "overview": "Awesome Books is a feature-rich single-page web application designed to provide an interactive and user-friendly platform for managing a list of books. With its dynamic functionality, users can effortlessly add and remove books from the list, creating a personalized library experience.",
+      "problem": "The creation of Awesome Books stemmed from the need to provide users with a powerful yet user-friendly solution for managing their book collections online. Additionally, there was a desire to redefine the way users interact with their books online by offering dynamic features and seamless integration with local storage.",
+      "features": [
+        "Dynamic Book Management: Allows users to add and remove books from the list, providing a personalized book library experience.",
+        "Object-Oriented Programming: Utilizes classes and helper functions to encapsulate book-related data and behaviors, ensuring efficient manipulation and organization of book information.",
+        "Persistent Data Storage: Seamlessly integrates with the browser's local storage, ensuring that user book collections are securely stored and preserved across sessions.",
+        "User-Centric Design: Offers a clean and intuitive user interface for effortless browsing and management of book collections.",
+        "Efficient Implementation: Provides a streamlined way to manage book collections based on individual preferences and reading habits, enhancing the book management experience.",
+        "Enhanced Book Management: Aims to cater to the needs of book lovers by offering an efficient way to manage and organize personalized book collections."
+      ],
+      "summary": "In summary, Awesome Books is a powerful yet user-friendly solution for book lovers, providing an efficient way to manage and organize personalized book collections. With its dynamic features, seamless integration with local storage, and intuitive user interface, Awesome Books aims to redefine the way users interact with their books online."
+    },
+    "image": "../../images/projects/awesomebooks.png",
+    "tech": ["JavaScript", "CSS3", "HTML5", "Luxon", "GitHub", "Terminal"],
+    "source": "https://github.com/Timbar09/Awesome-books-vol-2",
+    "live": "https://timbar09.github.io/Awesome-books-vol-2/"
+  }
+]

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useContext } from "react";
 import { ThemeContext } from "../../components/App";
 
@@ -30,9 +30,23 @@ const techItemAnimationProps = {
   transition: { duration: 0.6 },
 };
 
+// Add bell shake animation
+const tooltipAnimationProps = {
+  initial: { opacity: 0, y: -10, rotate: 0 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    rotate: [0, -7, 7, -7, 0],
+  },
+  exit: { opacity: 0, y: -10 },
+  transition: { duration: 0.4 },
+};
+
 const RenderTechItems = ({ data, activeTab }) => {
+  const [hoveredItemId, setHoveredItemId] = useState(null);
+
   return (
-    <ul className="about__tech--list grid grid-col grid-gap-1">
+    <ul className="about__tech--list flex flex-wrap gap-1">
       {data
         .filter((item) => {
           if (activeTab === "all") {
@@ -43,16 +57,31 @@ const RenderTechItems = ({ data, activeTab }) => {
         })
         .map((item) => (
           <motion.li
-            className="about__tech--list__item p-1 flex gap-1 flex-ai-c"
+            className="about__tech--list__item"
             key={item.id}
             {...techItemAnimationProps}
           >
-            {item.icon}
+            <div
+              className="about__tech--list__item--content p-1 flex gap-1 flex-ai-c"
+              tabIndex={0}
+              onMouseEnter={() => setHoveredItemId(item.id)}
+              onMouseLeave={() => setHoveredItemId(null)}
+            >
+              {item.icon}
 
-            <div className="">
               <h4>{item.name}</h4>
-              <p>{item.description}</p>
             </div>
+
+            <AnimatePresence>
+              {hoveredItemId === item.id && (
+                <motion.div
+                  className="about__tech--list__item--tooltip"
+                  {...tooltipAnimationProps}
+                >
+                  <p>{item.description}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.li>
         ))}
     </ul>
@@ -166,7 +195,7 @@ const AboutTechnologies = () => {
   ];
 
   return (
-    <div className="about__tech">
+    <section className="about__tech">
       <h3 className="about__subtitle">
         I use a variety of technologies and tools to build projects, including
         but not limited to:
@@ -185,7 +214,7 @@ const AboutTechnologies = () => {
           Component={RenderTechItems}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

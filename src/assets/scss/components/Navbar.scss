@@ -6,28 +6,29 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+  transition: translate 300ms ease-in-out;
 
   @include breakpoint-up(md) {
     background-color: var(--bg-100);
   }
 
-  &__content {
-    visibility: hidden;
+  &.hidden {
+    translate: 0 -100%;
+  }
 
+  &__content {
     @include breakpoint-up(md) {
       position: relative;
       display: flex;
-      opacity: 1 !important;
-      visibility: visible !important;
 
       &::before {
         content: "";
         position: absolute;
         left: 0;
         bottom: 0;
-        background-color: hsla(0, 0%, 60%, 0.2);
+        background-color: var(--opaque-100);
         width: 100%;
-        height: 0.15em;
+        height: 0.125em;
         border-radius: 5rem;
       }
     }
@@ -60,6 +61,7 @@
           position: absolute;
           inset: 0;
           background-color: var(--bg-100);
+          border-radius: inherit;
           opacity: 1;
           transition: opacity 150ms ease-in-out;
         }
@@ -78,6 +80,66 @@
       }
     }
 
+    &--settings {
+      margin: 0 0 0.25em auto;
+      width: max-content;
+      background-color: var(--opaque-light-200);
+      border-radius: var(--radius-200);
+
+      .social__list {
+        padding: 0 0.25em;
+        gap: 0.5em;
+
+        li {
+          margin: 0;
+          opacity: 1;
+          scale: 1;
+
+          span {
+            text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200),
+              -1px 1px 0 var(--bg-200), 1px 1px 0 var(--bg-200);
+          }
+        }
+      }
+
+      &__separator {
+        width: 0.15em;
+        height: 1.5em;
+        background-color: var(--opaque-100);
+      }
+
+      &__content {
+        position: relative;
+        font-size: 1em;
+      }
+
+      &__button {
+        font-size: 1.75em;
+        color: inherit;
+        transition: color 150ms ease-in-out, rotate 300ms ease-in-out;
+
+        &:hover,
+        &:focus-visible {
+          color: var(--primary-100);
+        }
+
+        &.open {
+          rotate: 45deg;
+        }
+      }
+
+      &__popup {
+        position: absolute;
+        right: 0;
+        top: 105%;
+        width: max-content;
+        border-radius: var(--radius-200);
+        background-color: var(--opaque-300);
+        border: solid 0.125em var(--opaque-200);
+        z-index: 1;
+      }
+    }
+
     li {
       position: relative;
       border-radius: var(--radius-200);
@@ -85,6 +147,18 @@
 
       &:not(:first-child) {
         margin-top: 0.25rem;
+      }
+
+      &:last-child {
+        @include breakpoint-down(sm) {
+          background-color: transparent;
+
+          .button {
+            width: 100%;
+            padding: 0.5em;
+            font-size: 1.25em;
+          }
+        }
       }
 
       @include breakpoint-up(md) {
@@ -180,13 +254,6 @@
             }
           }
         }
-
-        li {
-          &:not(:first-child) {
-            margin-top: 0.25rem;
-            transition: margin-top 500ms ease;
-          }
-        }
       }
     }
   }
@@ -214,13 +281,6 @@
             }
           }
         }
-
-        li {
-          &:not(:first-child) {
-            margin-top: -42px;
-            transition: margin-top 300ms ease-in-out;
-          }
-        }
       }
     }
   }
@@ -232,7 +292,13 @@
     border: solid 0.15rem var(--bg-300);
     border-radius: var(--radius-pill);
     background-color: var(--bg-300);
+    outline: solid 0.1rem transparent;
     cursor: pointer;
+    transition: outline 100ms ease-in-out;
+
+    &:hover {
+      outline: solid 0.1rem var(--opaque-200);
+    }
 
     .light,
     .dark {

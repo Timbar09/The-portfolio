@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import '../assets/scss/components/Logo.scss';
+import "../assets/scss/components/Logo.scss";
 
-const Logo = ({ className = 'logo__header' }) => {
+const Logo = ({ className = "logo__header" }) => {
   return (
     <a href="/" className={`logo ${className}`}>
-      Miles <span>Mosweu</span>
+      <span>{"{"}</span> MILES <span>{"}"}</span>
     </a>
   );
 };

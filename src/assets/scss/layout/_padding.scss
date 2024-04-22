@@ -1,4 +1,4 @@
-@use '../utils/' as *;
+@use "../utils/" as *;
 
 .p {
   &-0 {
@@ -19,25 +19,25 @@
 
   &_sm {
     &-0 {
-      @include breakpoint-up('sm') {
+      @include breakpoint-up("sm") {
         padding: 0;
       }
     }
 
     &-1 {
-      @include breakpoint-up('sm') {
+      @include breakpoint-up("sm") {
         padding: 0.5rem;
       }
     }
 
     &-2 {
-      @include breakpoint-up('sm') {
+      @include breakpoint-up("sm") {
         padding: 1rem;
       }
     }
 
     &-3 {
-      @include breakpoint-up('sm') {
+      @include breakpoint-up("sm") {
         padding: 1.75rem;
       }
     }
@@ -45,25 +45,25 @@
 
   &_md {
     &-0 {
-      @include breakpoint-up('md') {
+      @include breakpoint-up("md") {
         padding: 0;
       }
     }
 
     &-1 {
-      @include breakpoint-up('md') {
+      @include breakpoint-up("md") {
         padding: 0.5rem;
       }
     }
 
     &-2 {
-      @include breakpoint-up('md') {
+      @include breakpoint-up("md") {
         padding: 1rem;
       }
     }
 
     &-3 {
-      @include breakpoint-up('md') {
+      @include breakpoint-up("md") {
         padding: 1.75rem;
       }
     }
@@ -71,25 +71,25 @@
 
   &_lg {
     &-0 {
-      @include breakpoint-up('lg') {
+      @include breakpoint-up("lg") {
         padding: 0;
       }
     }
 
     &-1 {
-      @include breakpoint-up('lg') {
+      @include breakpoint-up("lg") {
         padding: 0.5rem;
       }
     }
 
     &-2 {
-      @include breakpoint-up('lg') {
+      @include breakpoint-up("lg") {
         padding: 1rem;
       }
     }
 
     &-3 {
-      @include breakpoint-up('lg') {
+      @include breakpoint-up("lg") {
         padding: 1.75rem;
       }
     }
@@ -118,28 +118,28 @@
 
     &_sm {
       &-0 {
-        @include breakpoint-up('sm') {
+        @include breakpoint-up("sm") {
           padding-left: 0;
           padding-right: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('sm') {
+        @include breakpoint-up("sm") {
           padding-left: 0.5rem;
           padding-right: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('sm') {
+        @include breakpoint-up("sm") {
           padding-left: 1rem;
           padding-right: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('sm') {
+        @include breakpoint-up("sm") {
           padding-left: 1.75rem;
           padding-right: 1.75rem;
         }
@@ -148,28 +148,28 @@
 
     &_md {
       &-0 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-left: 0;
           padding-right: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-left: 0.5rem;
           padding-right: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-left: 1rem;
           padding-right: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-left: 1.75rem;
           padding-right: 1.75rem;
         }
@@ -178,30 +178,100 @@
 
     &_lg {
       &-0 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-left: 0;
           padding-right: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-left: 0.5rem;
           padding-right: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-left: 1rem;
           padding-right: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-left: 1.75rem;
           padding-right: 1.75rem;
+        }
+      }
+    }
+  }
+
+  &l {
+    &-0 {
+      padding-left: 0;
+    }
+
+    &-1 {
+      padding-left: 0.5rem;
+    }
+
+    &-2 {
+      padding-left: 1rem;
+    }
+
+    &-3 {
+      padding-left: 1.75rem;
+    }
+
+    &_md {
+      &-0 {
+        @include breakpoint-up("md") {
+          padding-left: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("md") {
+          padding-left: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("md") {
+          padding-left: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("md") {
+          padding-left: 1.75rem;
+        }
+      }
+    }
+
+    &_lg {
+      &-0 {
+        @include breakpoint-up("lg") {
+          padding-left: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("lg") {
+          padding-left: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("lg") {
+          padding-left: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("lg") {
+          padding-left: 1.75rem;
         }
       }
     }
@@ -230,28 +300,28 @@
 
     &_sm {
       &-0 {
-        @include breakpoint-up('sm') {
+        @include breakpoint-up("sm") {
           padding-top: 0;
           padding-bottom: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('sm') {
+        @include breakpoint-up("sm") {
           padding-top: 0.5rem;
           padding-bottom: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('sm') {
+        @include breakpoint-up("sm") {
           padding-top: 1rem;
           padding-bottom: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('sm') {
+        @include breakpoint-up("sm") {
           padding-top: 1.75rem;
           padding-bottom: 1.75rem;
         }
@@ -260,28 +330,28 @@
 
     &_md {
       &-0 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-top: 0;
           padding-bottom: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-top: 0.5rem;
           padding-bottom: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-top: 1rem;
           padding-bottom: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-top: 1.75rem;
           padding-bottom: 1.75rem;
         }
@@ -290,28 +360,28 @@
 
     &_lg {
       &-0 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-top: 0;
           padding-bottom: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-top: 0.5rem;
           padding-bottom: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-top: 1rem;
           padding-bottom: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-top: 1.75rem;
           padding-bottom: 1.75rem;
         }
@@ -338,25 +408,25 @@
 
     &_md {
       &-0 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-bottom: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-bottom: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-bottom: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-bottom: 1.75rem;
         }
       }
@@ -364,25 +434,25 @@
 
     &_lg {
       &-0 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-bottom: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-bottom: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-bottom: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-bottom: 1.75rem;
         }
       }
@@ -408,25 +478,25 @@
 
     &_md {
       &-0 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-top: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-top: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-top: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('md') {
+        @include breakpoint-up("md") {
           padding-top: 1.75rem;
         }
       }
@@ -434,25 +504,25 @@
 
     &_lg {
       &-0 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-top: 0;
         }
       }
 
       &-1 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-top: 0.5rem;
         }
       }
 
       &-2 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-top: 1rem;
         }
       }
 
       &-3 {
-        @include breakpoint-up('lg') {
+        @include breakpoint-up("lg") {
           padding-top: 1.75rem;
         }
       }

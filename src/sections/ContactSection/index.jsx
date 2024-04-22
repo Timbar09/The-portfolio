@@ -1,11 +1,26 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../components/App";
+
 import ContactForm from "./ContactForm";
+
+import darkBgImage from "../../assets/images/contact-bg.jpg";
+import lightBgImage from "../../assets/images/contact-bg-light.jpg";
 
 import "../../assets/scss/sections/ContactSection.scss";
 
 const ContactSection = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <section name="contact" id="contact" className="contact__section section">
-      <div className="container">
+      <div
+        className="container"
+        style={{
+          backgroundImage: `url(${
+            theme === "light" ? lightBgImage : darkBgImage
+          })`,
+        }}
+      >
         <div className="flex flex-col gap-2">
           <h2 className="contact__title">Get in touch</h2>
 

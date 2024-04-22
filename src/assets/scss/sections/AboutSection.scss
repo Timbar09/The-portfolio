@@ -2,52 +2,141 @@
 
 .about {
   &__section {
-    background-color: var(--bg-100);
+    background-color: var(--bg-300);
+
+    section {
+      padding-bottom: 4em;
+    }
   }
 
   &__subtitle {
-    margin: 3rem 0;
+    margin: 1em auto;
+    text-align: center;
     font-size: 2em;
     font-weight: 200;
+
+    @include breakpoint-up(lg) {
+      margin: 1em 0;
+      text-align: left;
+    }
   }
 
   &__bio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "subtitle"
+      "description";
+
+    @include breakpoint-up(lg) {
+      grid-template-columns: auto min-content;
+      grid-template-areas:
+        "subtitle subtitle"
+        "description image";
+    }
+
     .about__subtitle {
+      grid-area: subtitle;
+      max-width: 20em;
+
       @include breakpoint-up(lg) {
         margin-top: 0;
       }
     }
 
     &--info {
-      --dimension: 20em;
+      --dimension: 21em;
 
-      position: relative;
-      width: var(--dimension);
-      perspective: 1000px;
+      @include touch {
+        --dimension: 100%;
 
-      &:hover,
-      &:focus-within {
+        max-width: 25em;
+        margin: 0 auto;
+
         .about__bio--info {
           &__image {
-            rotate: y 180deg;
+            img {
+              position: relative;
+              height: 10em;
+              width: 10em;
+              left: 50%;
+              translate: -50% 0;
+              bottom: -5em;
+              background: var(--primary-gradient);
+              border-radius: var(--radius-round);
+              z-index: 1;
+            }
           }
 
           &__contact {
-            opacity: 1;
-            visibility: visible;
+            margin-top: 0;
+            padding-top: 5em;
+          }
+
+          &__buttons {
+            max-width: 18em;
+            margin: 0.75em auto 0;
+          }
+        }
+
+        @include breakpoint-up(lg) {
+          --dimension: 21em;
+
+          max-width: 100%;
+
+          .about__bio--info {
+            &__image {
+              img {
+                bottom: 5em;
+              }
+            }
+
+            &__contact {
+              top: -10em;
+            }
+
+            &__buttons {
+              margin-top: -9em;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+
+      &__container {
+        position: relative;
+        width: var(--dimension);
+        perspective: 1000px;
+
+        &:hover,
+        &:focus-within {
+          .about__bio--info {
+            &__image {
+              rotate: y 180deg;
+            }
+
+            &__contact {
+              opacity: 1;
+              visibility: visible;
+            }
           }
         }
       }
 
       &__image {
+        grid-area: image;
         aspect-ratio: 1 / 1;
         position: relative;
         transition: rotate 1000ms ease;
 
         img {
+          display: grid;
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border: dashed 0.125em var(--opaque-200);
+          background-color: var(--bg-300);
           border-radius: var(--radius-200);
         }
       }
@@ -77,7 +166,6 @@
           visibility: visible;
           opacity: 1;
           margin-top: 0.5em;
-          padding: 0.5em;
           border: solid 0.125em var(--bg-300);
 
           .about__bio--info {
@@ -115,6 +203,43 @@
             background-color: var(--bg-400);
           }
         }
+
+        &--quote {
+          margin-top: 1em;
+          position: relative;
+          border: solid 0.125em var(--bg-400);
+          border-radius: var(--radius-200);
+          background-color: var(--opaque-20);
+          overflow: hidden;
+
+          blockquote {
+            margin: 0.5em 0;
+            font-size: 0.95em;
+          }
+
+          cite {
+            font-size: 0.75em;
+            color: var(--text-200);
+          }
+
+          .quotation {
+            position: absolute;
+            font-size: 2.5em;
+            rotate: -20deg;
+            color: var(--opaque-20);
+            z-index: -1;
+
+            &__open {
+              bottom: -0.25em;
+              left: -0.25em;
+            }
+
+            &__close {
+              top: -0.25em;
+              right: -0.25em;
+            }
+          }
+        }
       }
 
       &__buttons {
@@ -133,6 +258,8 @@
     }
 
     &--description {
+      grid-area: description;
+
       @include breakpoint-up(lg) {
         flex: min-content;
         order: -1;
@@ -148,9 +275,9 @@
 
       &__item {
         grid-column: span 12;
-        background-color: var(--bg-300);
-        border: solid 0.125em var(--bg-400);
+        border: solid 0.125em var(--opaque-20);
         border-radius: var(--radius-200);
+        background-color: var(--opaque-20);
 
         @include breakpoint-up(md) {
           grid-column: span 6;
@@ -161,7 +288,7 @@
           padding-bottom: 0.25em;
           color: var(--text-200);
           font-size: 1.25em;
-          border-bottom: solid 0.125em var(--bg-400);
+          border-bottom: solid 0.105em var(--opaque-40);
 
           svg {
             color: var(--primary-gradient);
@@ -178,32 +305,54 @@
   &__tech {
     &--list {
       &__item {
-        grid-column: span 12;
-        background-color: var(--bg-300);
-        border: solid 0.125em var(--bg-400);
+        position: relative;
+        background-color: var(--opaque-10);
+        border: solid 0.105em var(--opaque-40);
         border-radius: var(--radius-200);
-        grid-column: span 6;
-
-        @include breakpoint-up(md) {
-          grid-column: span 4;
-        }
-
-        @include breakpoint-up(lg) {
-          grid-column: span 3;
-        }
 
         svg {
-          font-size: 3.5em;
+          font-size: 1.5em;
         }
 
         h4 {
-          font-size: 1.25em;
+          font-size: 1em;
           margin-bottom: 0.15em;
         }
 
-        p {
-          font-size: 0.75em;
-          margin: 0;
+        &--tooltip {
+          position: absolute;
+          top: 130%;
+          left: 50%;
+          translate: -50% 0;
+          width: max-content;
+          max-width: 10em;
+          padding: 0.5em;
+          text-align: center;
+          border: solid 0.105em var(--bg-400);
+          border-radius: var(--radius-200);
+          background-color: var(--bg-300);
+          box-shadow: 0px 8px 20px hsla(0, 0%, 0%, 0.25);
+          z-index: 1;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: -0.5em;
+            left: 50%;
+            translate: -50% 0;
+            rotate: 45deg;
+            width: 1em;
+            height: 1em;
+            border-top: solid 0.105em var(--bg-400);
+            border-left: solid 0.105em var(--bg-400);
+            background-color: var(--bg-300);
+            border-radius: var(--radius-100);
+          }
+
+          p {
+            font-size: 0.75em;
+            margin: 0;
+          }
         }
       }
     }

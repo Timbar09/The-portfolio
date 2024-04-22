@@ -43,7 +43,17 @@ While this is a personal project, if you find any bugs or ways to improve the co
 
 ## Acknowledgements
 
-Bio Image by <a href="https://www.freepik.com/free-vector/bangkok-thailand-may-12-2023-caricature-tiger-woods-smilin_48121667.htm#fromView=search&page=1&position=4&uuid=769c45c3-a74a-40c9-aa87-1752943877cc">brgfx on Freepik</a>
+> **Quotes from the <a href="https://github.com/lukePeavey/quotable">Quotable API</a>.**
+
+> **Images**
+
+- Hero background images by <a href="https://unsplash.com/@alexacea?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alexandru Acea</a> on <a href="https://unsplash.com/photos/turned-on-flat-screen-monitor-and-black-laptop-computer-on-table-TMkrN9QZERw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+- Project modal palceholder photo by <a href="https://unsplash.com/@kellysikkema?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kelly Sikkema</a> on <a href="https://unsplash.com/photos/black-pencil-on-black-surface-VX0bsbyBxpM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+- Contact section dark background image by <a href="https://www.pexels.com/photo/starry-sky-over-mountain-ridge-in-valley-5753502/">Skyler Ewing</a>
+
+- Contact section light background image by <a href="https://unsplash.com/@wirhabenzeit?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dominik Schröder</a> on <a href="https://unsplash.com/photos/white-clouds-during-daytime-FIKD9t5_5zQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 ## License
 

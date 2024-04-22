@@ -24,8 +24,9 @@ a:active {
 .link {
   position: relative;
   display: inline-flex;
-  color: var(--text-200);
+  color: hsla(217, 91%, 60%, 0.75);
   text-decoration: none;
+  gap: 0.15em;
   cursor: pointer;
   transition: color 200ms ease-in-out;
 
@@ -40,7 +41,7 @@ a:active {
   }
 
   &::before {
-    background: var(--opaque-100);
+    background: hsla(217, 91%, 60%, 0.75);
     width: 100%;
   }
 
@@ -50,9 +51,11 @@ a:active {
     width: 0;
   }
 
-  &:hover {
-    color: var(--text-400);
+  svg {
+    font-size: 0.75em;
+  }
 
+  &:hover {
     &::after {
       width: 100%;
     }
@@ -92,7 +95,7 @@ ul {
 .section {
   .container {
     padding-top: 4em;
-    padding-bottom: 4em;
+    padding-bottom: 8em;
   }
 
   &__title {
@@ -105,8 +108,7 @@ ul {
       position: relative;
       display: inline-block;
       padding-bottom: 0.5rem;
-      color: var(--text-400);
-      font-weight: 200;
+      color: var(--opaque-100);
 
       &::before {
         content: "";

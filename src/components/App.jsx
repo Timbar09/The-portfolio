@@ -14,10 +14,15 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState({
-    id: 0,
     title: "Dummy Project",
-    description: "This is a dummy project",
-    bgImage: "https://via.placeholder.com/300",
+    description: {
+      brief: "This is a dummy project.",
+      overview: "This is a dummy project.",
+      problem: "This is a dummy project.",
+      features: ["This is a dummy project."],
+      summary: "This is a dummy project.",
+    },
+    image: "project-modal-placeholder.jpg",
     tech: ["HTML", "CSS", "JavaScript"],
   });
   const preference = window.matchMedia("(prefers-color-scheme: light)").matches;

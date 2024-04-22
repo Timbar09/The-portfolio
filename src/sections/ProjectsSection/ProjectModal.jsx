@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ProjectModalContext } from "../../components/App";
 
 import Button from "../../components/Button";
@@ -7,13 +7,18 @@ import TechItem from "./TechItem";
 import { IoCloseCircle as CloseModalIcon } from "react-icons/io5";
 import { FaGitAlt as SourceCodeIcon } from "react-icons/fa6";
 
+import { loadImg } from "./loadImageModule";
+
 const ProjectModal = () => {
   const modalRef = useRef();
   const { toggleProjectModal, selectedProject, isProjectModalOpen } =
     useContext(ProjectModalContext);
+  const [bgImage, setBgImage] = useState("");
 
-  // When the modal is open, add a keydown event listener to trap the focus
+  const { overview, problem, features, summary } = selectedProject.description;
+
   useEffect(() => {
+    // When the modal is open, add a keydown event listener to trap the focus
     if (isProjectModalOpen) {
       // Get all focusable elements within the modal
       const focusableElements = modalRef.current.querySelectorAll(
@@ -56,6 +61,10 @@ const ProjectModal = () => {
     }
   }, [isProjectModalOpen]);
 
+  useEffect(() => {
+    loadImg(selectedProject, setBgImage);
+  }, [selectedProject.image]);
+
   return (
     <div
       ref={modalRef}
@@ -78,13 +87,13 @@ const ProjectModal = () => {
             <Button
               type="primary"
               name="Live Demo"
-              linkTo="https://www.google.com"
+              linkTo={selectedProject.live}
             />
 
             <Button
               type="secondary"
               name="Source Code"
-              linkTo="https://github.com"
+              linkTo={selectedProject.source}
               icon={<SourceCodeIcon />}
             />
           </div>
@@ -92,22 +101,49 @@ const ProjectModal = () => {
 
         <div className="project__modal--body">
           <div className="project__modal--body__image">
-            <img src={selectedProject.bgImage} alt={selectedProject.title} />
+            <img
+              src={bgImage}
+              alt={`${selectedProject.title} project image`}
+              className="grid"
+            />
           </div>
 
-          <div className="project__modal--body__text p-2 flex_md flex-ai-fs gap-2">
-            <div className="project__modal--body__text--description">
-              <p>{selectedProject.description}</p>
-              <p>{selectedProject.description}</p>
-              <p>{selectedProject.description}</p>
-              <p>{selectedProject.description}</p>
-            </div>
+          <div className="project__modal--body__text p-2 grid grid-gap-2">
+            <section className="project__modal--body__text--overview">
+              <h3>Overview</h3>
+              <p> {overview} </p>
+            </section>
 
-            <ul className="project__modal--body__text--tech flex flex-ai-c flex-wrap gap-1">
-              {selectedProject.tech.map((item, index) => (
-                <TechItem key={index} item={item} />
-              ))}
-            </ul>
+            <section className="project__modal--body__text--tech">
+              <h3>Technologies Used</h3>
+              <ul className="flex flex-ai-fs flex-wrap gap-1">
+                {selectedProject.tech.map((item, index) => (
+                  <TechItem key={index} item={item} />
+                ))}
+              </ul>
+            </section>
+
+            <section className="project__modal--body__text--problem">
+              <h3>Problem Statement</h3>
+              <p> {problem} </p>
+            </section>
+
+            <section className="project__modal--body__text--features">
+              <h3>Features & Functionalities</h3>
+              <ul className="pl-3">
+                {features.map((item, index) => (
+                  <li key={index}>
+                    <span>{`${item.split(":")[0]}: `}</span>
+                    {item.split(":")[1]}
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="project__modal--body__text--summary">
+              <h3>Summary</h3>
+              <p> {summary} </p>
+            </section>
           </div>
         </div>
       </div>

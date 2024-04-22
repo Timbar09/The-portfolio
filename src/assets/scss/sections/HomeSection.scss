@@ -11,7 +11,7 @@
 
       &__greeting {
         display: block;
-        font-size: 0.45em;
+        font-size: clamp(0.35em, 2.5vw, 0.375em);
         font-weight: 200;
       }
 
@@ -22,21 +22,56 @@
   }
 
   &__content {
+    position: relative;
     height: clamp(30em, 100vh, 60em);
     text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        180deg,
+        var(--hero-opaque-bg-200) 65%,
+        var(--bg-200)
+      );
+    }
 
     @include breakpoint-up(md) {
       text-align: left;
+      background-size: contain;
+      background-position: right;
+
+      &::before {
+        background: linear-gradient(
+          90deg,
+          var(--bg-100) 55%,
+          var(--hero-opaque-bg-100),
+          var(--bg-100)
+        );
+      }
+    }
+  }
+
+  &__group {
+    position: relative;
+
+    @include breakpoint-up(md) {
+      padding: 0 3em;
     }
   }
 
   &__description {
-    max-width: 30em;
+    max-width: 25em;
     margin: auto;
     font-size: 1.15em;
 
     @include breakpoint-up(md) {
-      max-width: 40rem;
       margin: 0;
     }
   }

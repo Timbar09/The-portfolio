@@ -1,13 +1,41 @@
 @use "../utils/" as *;
 
 .contact {
+  &__section {
+    // background-color: var(--bg-200);
+
+    .container {
+      position: relative;
+      background: center/cover no-repeat;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to right,
+          var(--bg-200),
+          var(--contact-opaque-bg-100),
+          var(--bg-200)
+        );
+      }
+
+      > div {
+        position: relative;
+      }
+    }
+  }
+
   &__title {
     order: 2;
     text-align: center;
     margin-bottom: 0;
     font-size: clamp(3.5em, 13vw, 6.5em);
     font-weight: 700;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: var(--contact-opaque-bg-100);
     -webkit-text-stroke: thin var(--primary-100);
   }
 
@@ -22,8 +50,20 @@
     max-width: 40em;
     margin: 2em auto 0;
 
-    button {
-      grid-column: span 3;
+    &:invalid {
+      button {
+        background: var(--opaque-200);
+        box-shadow: none;
+        pointer-events: none;
+
+        &:focus {
+          top: 0;
+
+          svg {
+            left: 0;
+          }
+        }
+      }
     }
   }
 }
@@ -48,12 +88,17 @@
       position: relative;
       top: 0;
       opacity: 0;
-      transition: top 300ms ease, opacity 300ms ease;
+      transition: top 300ms ease-in-out, opacity 300ms ease-in-out;
+
+      &:last-child {
+        opacity: 0;
+      }
     }
   }
 
   input,
-  textarea {
+  textarea,
+  select {
     margin: 0;
     position: relative;
     display: block;
@@ -62,11 +107,16 @@
     min-width: 100%;
     color: inherit;
     background-color: transparent;
-    border: solid 0.125em var(--opaque-100);
+    border: solid 0.125em var(--opaque-200);
     border-radius: var(--radius-200);
 
     &:focus {
       outline: none;
+      background-color: var(--contact-opaque-bg-100);
+    }
+
+    &:valid {
+      background-color: var(--contact-opaque-bg-100);
     }
   }
 
@@ -75,9 +125,41 @@
     min-height: 5em;
   }
 
+  select {
+    appearance: none;
+
+    &.active {
+      + span {
+        rotate: 180deg;
+      }
+    }
+
+    option {
+      background-color: var(--bg-300);
+    }
+
+    + span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      font-size: 1.25em;
+      color: var(--opaque-200);
+      transition: rotate 50ms ease-in-out;
+    }
+
+    &:invalid {
+      color: var(--opaque-200);
+    }
+
+    &:valid {
+      color: var(--text-400);
+    }
+  }
+
   &__indicator {
     position: absolute;
-    bottom: 0;
+    bottom: -0.5px;
     left: 50%;
     translate: -50%;
     height: 0.105em;
@@ -99,23 +181,19 @@
       border-radius: 0 0 var(--radius-200) var(--radius-200);
       transition: opacity 300ms ease;
     }
-
-    &.valid {
-      width: 99.5%;
-
-      &::before {
-        opacity: 1;
-      }
-    }
   }
 
   &:focus-within {
     .form-field {
       &__label {
-        color: var(--text-200);
+        color: var(--text-300);
 
         &--letter {
           top: -2em;
+          opacity: 0.75;
+        }
+
+        &:last-child {
           opacity: 1;
         }
       }
@@ -124,5 +202,10 @@
         width: 99.5%;
       }
     }
+  }
+
+  &__submit {
+    grid-column: 12;
+    text-align: right;
   }
 }
