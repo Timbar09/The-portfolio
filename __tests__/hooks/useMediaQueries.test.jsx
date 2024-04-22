@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import { useMediaQuery } from '../../src/hooks/useMediaQueries';
+import { render, screen } from "@testing-library/react";
+import { useMediaQuery } from "../../src/hooks/useMediaQuery";
 
 // Test component that uses the hook
 function TestComponent({ breakpoint, direction }) {
   const matches = useMediaQuery(breakpoint, direction);
-  return <div>{matches ? 'Matches' : 'Does not match'}</div>;
+  return <div>{matches ? "Matches" : "Does not match"}</div>;
 }
 
 // Mock window.matchMedia
@@ -17,12 +17,12 @@ globalThis.matchMedia = (query) => ({
   dispatchEvent: () => {},
 });
 
-test('useMediaQuery returns false when the media query does not match', () => {
+test("useMediaQuery returns false when the media query does not match", () => {
   render(<TestComponent breakpoint="md" direction="up" />);
-  expect(screen.getByText('Does not match')).toBeInTheDocument();
+  expect(screen.getByText("Does not match")).toBeInTheDocument();
 });
 
-test('useMediaQuery returns true when the media query matches', () => {
+test("useMediaQuery returns true when the media query matches", () => {
   globalThis.matchMedia = (query) => ({
     matches: true,
     media: query,
@@ -33,5 +33,5 @@ test('useMediaQuery returns true when the media query matches', () => {
   });
 
   render(<TestComponent breakpoint="md" direction="up" />);
-  expect(screen.getByText('Matches')).toBeInTheDocument();
+  expect(screen.getByText("Matches")).toBeInTheDocument();
 });

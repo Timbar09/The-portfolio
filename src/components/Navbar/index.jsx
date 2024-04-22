@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { MenuContext } from "../App";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
@@ -9,19 +9,13 @@ import NavContent from "./NavContent";
 import "../../assets/scss/components/Navbar.scss";
 
 const Navbar = () => {
-  const { isMenuOpen, toggleMenu } = useContext(MenuContext);
+  const { isMenuOpen } = useContext(MenuContext);
   const isMobile = useMediaQuery("sm", "down");
   let lastScrollY = 0;
 
-  // const menuToggleAnimationProps = {
-  //   initial: { opacity: 0 },
-  //   animate: { opacity: 1 },
-  //   exit: { opacity: 0 },
-  //   transition: { duration: 0.3 },
-  // };
-
   const NavAppeareance = () => {
     const nav = document.querySelector(".nav");
+
     if (isMobile) return;
 
     window.scrollY > lastScrollY
