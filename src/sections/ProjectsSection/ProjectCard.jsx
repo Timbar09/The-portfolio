@@ -35,7 +35,9 @@ const ProjectCard = ({ data }) => {
       aria-label={data.title}
       style={cardStyle}
       onMouseEnter={handleMouseEnter}
+      onFocus={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onBlur={handleMouseLeave}
     >
       <div className="project__card--container grid grid-pi-c p-2">
         <div className="project__card--info flex flex-col gap-2">

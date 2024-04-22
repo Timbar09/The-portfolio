@@ -60,7 +60,7 @@
     &:hover,
     &:focus-within {
       background-size: 130% auto;
-      outline: solid 0.125em var(--bg-200);
+      outline: solid 0.125em var(--opaque-100);
 
       .project__card {
         &--container {
