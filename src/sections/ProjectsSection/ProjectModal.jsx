@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ProjectModalContext } from "../../components/App";
 
 import Button from "../../components/Button";
@@ -7,13 +7,12 @@ import TechItem from "./TechItem";
 import { IoCloseCircle as CloseModalIcon } from "react-icons/io5";
 import { FaGitAlt as SourceCodeIcon } from "react-icons/fa6";
 
-import { loadImg } from "./loadImageModule";
+import projectImages from "./projectImages";
 
 const ProjectModal = () => {
   const modalRef = useRef();
   const { toggleProjectModal, selectedProject, isProjectModalOpen } =
     useContext(ProjectModalContext);
-  const [bgImage, setBgImage] = useState("");
 
   const { overview, problem, features, summary } = selectedProject.description;
 
@@ -61,10 +60,6 @@ const ProjectModal = () => {
     }
   }, [isProjectModalOpen]);
 
-  useEffect(() => {
-    loadImg(selectedProject, setBgImage);
-  }, [selectedProject.image]);
-
   return (
     <div
       ref={modalRef}
@@ -102,7 +97,7 @@ const ProjectModal = () => {
         <div className="project__modal--body">
           <div className="project__modal--body__image">
             <img
-              src={bgImage}
+              src={projectImages[selectedProject.image]}
               alt={`${selectedProject.title} project image`}
               className="grid"
             />
