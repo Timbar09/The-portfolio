@@ -1,15 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ProjectModalContext } from "../../components/App";
 
 import TechItem from "./TechItem";
 import Button from "../../components/Button";
 
-import { loadImg } from "./loadImageModule";
+import projectImages from "./projectImages";
 
 const ProjectCard = ({ data }) => {
   const { toggleProjectModal, setSelectedProject } =
     useContext(ProjectModalContext);
-  const [bgImage, setBgImage] = useState("");
   const [isCardHovered, setIsCardHovered] = useState(false);
   const briefDescription = data.description.brief;
 
@@ -21,12 +20,8 @@ const ProjectCard = ({ data }) => {
     setIsCardHovered(false);
   };
 
-  useEffect(() => {
-    loadImg(data, setBgImage);
-  }, [data.image]);
-
   const cardStyle = {
-    backgroundImage: `url(${bgImage})`,
+    backgroundImage: `url(${projectImages[data.image]})`,
   };
 
   return (
