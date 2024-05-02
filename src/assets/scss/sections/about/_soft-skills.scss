@@ -1,0 +1,36 @@
+@use "../../utils/" as *;
+
+.about__soft-skills {
+  margin-top: 1em;
+
+  &--list {
+    margin-top: 2em;
+
+    &__item {
+      grid-column: span 12;
+      border: solid 0.125em var(--opaque-20);
+      border-radius: var(--radius-200);
+      background-color: var(--opaque-20);
+
+      @include breakpoint-up(md) {
+        grid-column: span 6;
+      }
+
+      h4 {
+        margin-bottom: 0.25em;
+        padding-bottom: 0.25em;
+        color: var(--text-200);
+        font-size: 1.25em;
+        border-bottom: solid 0.105em var(--opaque-40);
+
+        svg {
+          color: var(--primary-gradient);
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

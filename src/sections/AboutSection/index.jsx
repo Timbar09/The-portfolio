@@ -3,7 +3,7 @@ import AboutBio from "./AboutBio";
 import AboutSoftSkills from "./AboutSoftSkills";
 import AboutTechnologies from "./AboutTechnologies";
 
-import "../../assets/scss/sections/AboutSection.scss";
+import "../../assets/scss/sections/about/index.scss";
 
 const AboutSection = () => {
   return (
