@@ -1,0 +1,34 @@
+@use "../../utils/" as *;
+
+.project {
+  &__section {
+    background-color: var(--bg-200);
+  }
+
+  &__list {
+    @include breakpoint-up(md) {
+      background: var(--primary-radial-gradient);
+    }
+  }
+
+  &__tech {
+    &--item {
+      gap: 0.25em;
+      padding: 0.5em;
+      border: solid 0.125em var(--opaque-400);
+      color: var(--bg-300);
+      background-color: var(--opaque-400);
+      border-radius: var(--radius-200);
+      cursor: default;
+
+      svg {
+        color: var(--opaque-light-200);
+        transition: color 150ms ease-in-out;
+
+        @include touch {
+          color: var(--text-300);
+        }
+      }
+    }
+  }
+}

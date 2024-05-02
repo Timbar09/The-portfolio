@@ -21,7 +21,7 @@ const ProjectCard = ({ data }) => {
   };
 
   const cardStyle = {
-    backgroundImage: `url(${projectImages[data.image]})`,
+    backgroundImage: `url(${projectImages[data.images.screenshots[0]]})`,
   };
 
   return (
@@ -34,8 +34,8 @@ const ProjectCard = ({ data }) => {
       onMouseLeave={handleMouseLeave}
       onBlur={handleMouseLeave}
     >
-      <div className="project__card--container grid grid-pi-c p-2">
-        <div className="project__card--info flex flex-col gap-2">
+      <div className="project__card--container">
+        <div className="project__card--info flex flex-col gap-2 p-3">
           <h3>{data.title}</h3>
 
           <p className="pl-1">{briefDescription}</p>

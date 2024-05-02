@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import SectionTitle from "../SectionTitle";
 import ProjectList from "./ProjectList";
 
-import "../../assets/scss/sections/ProjectsSection.scss";
+import "../../assets/scss/sections/projects/index.scss";
 
 const ProjectsSection = () => {
   return (

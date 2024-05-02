@@ -16,6 +16,8 @@ const ProjectModal = () => {
 
   const { overview, problem, features, summary } = selectedProject.description;
 
+  const projectImage = selectedProject.images.screenshots[0];
+
   useEffect(() => {
     // When the modal is open, add a keydown event listener to trap the focus
     if (isProjectModalOpen) {
@@ -97,7 +99,7 @@ const ProjectModal = () => {
         <div className="project__modal--body">
           <div className="project__modal--body__image">
             <img
-              src={projectImages[selectedProject.image]}
+              src={projectImages[projectImage]}
               alt={`${selectedProject.title} project image`}
               className="grid"
             />
@@ -113,7 +115,7 @@ const ProjectModal = () => {
               <h3>Technologies Used</h3>
               <ul className="flex flex-ai-fs flex-wrap gap-1">
                 {selectedProject.tech.map((item, index) => (
-                  <TechItem key={index} item={item} />
+                  <TechItem key={index} item={item} isCardHovered={true} />
                 ))}
               </ul>
             </section>

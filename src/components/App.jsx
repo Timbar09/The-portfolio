@@ -22,7 +22,7 @@ const App = () => {
       features: ["This is a dummy project."],
       summary: "This is a dummy project.",
     },
-    image: "project-modal-placeholder.jpg",
+    images: { screenshots: ["project-modal-placeholder"] },
     tech: ["HTML", "CSS", "JavaScript"],
   });
   const preference = window.matchMedia("(prefers-color-scheme: light)").matches;
