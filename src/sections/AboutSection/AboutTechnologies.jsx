@@ -5,24 +5,40 @@ import { ThemeContext } from "../../components/App";
 
 import { TabButtons, TabContent } from "../../components/Tabs";
 
-import { TbBrandVscode as VscodeIcon } from "react-icons/tb";
+import { PiFigmaLogo as FigmaIcon } from "react-icons/pi";
+import { RiNpmjsFill as NpmIcon } from "react-icons/ri";
+import { IoLogoReact as ReactIcon } from "react-icons/io5";
+import {
+  DiRubyRough as RubyIcon,
+  DiPostgresql as PostgresqlIcon,
+} from "react-icons/di";
+import {
+  TbBrandVscode as VscodeIcon,
+  TbBrandVite as ViteIcon,
+  TbSql as SqlIcon,
+} from "react-icons/tb";
+import {
+  FaGitAlt as GitIcon,
+  FaGithub as GithubIcon,
+  FaHtml5 as HtmlIcon,
+  FaCss3Alt as CssIcon,
+} from "react-icons/fa6";
 import {
   BiLogoJavascript as JsIcon,
   BiLogoTailwindCss as TailwindIcon,
   BiLogoSass as SassIcon,
+  BiLogoGitlab as GitlabIcon,
+  BiLogoRedux as ReduxIcon,
 } from "react-icons/bi";
-import { IoLogoReact as ReactIcon } from "react-icons/io5";
-import { DiRubyRough as RubyIcon } from "react-icons/di";
 import {
   SiRubyonrails as RailsIcon,
-  SiPostgresql as PostgresqlIcon,
   SiBootstrap as BootstrapIcon,
+  SiWebpack as WebpackIcon,
+  SiPostman as PostmanIcon,
+  SiMui as MUIIcon,
+  SiLunacy as LunacyIcon,
+  SiYarn as YarnIcon,
 } from "react-icons/si";
-import {
-  FaGitAlt as GitIcon,
-  FaGithub as GithubIcon,
-  FaGitlab as GitlabIcon,
-} from "react-icons/fa6";
 
 const techItemAnimationProps = {
   initial: { opacity: 0, y: 20 },
@@ -30,7 +46,6 @@ const techItemAnimationProps = {
   transition: { duration: 0.6 },
 };
 
-// Add bell shake animation
 const tooltipAnimationProps = {
   initial: { opacity: 0, y: -10, rotate: 0 },
   animate: {
@@ -191,6 +206,102 @@ const AboutTechnologies = () => {
       icon: <VscodeIcon style={{ color: "#007acc" }} />,
       category: "tools",
       description: "Code editor",
+    },
+
+    {
+      id: 13,
+      name: "Vite",
+      icon: <ViteIcon style={{ color: "#646cff" }} />,
+      category: "tools",
+      description: "Build tool for modern web development",
+    },
+
+    {
+      id: 14,
+      name: "Webpack",
+      icon: <WebpackIcon style={{ color: "#8dd6f9" }} />,
+      category: "tools",
+      description: "Module bundler",
+    },
+
+    {
+      id: 15,
+      name: "NPM",
+      icon: <NpmIcon style={{ color: "#cb3837" }} />,
+      category: "tools",
+      description: "Package manager",
+    },
+
+    {
+      id: 16,
+      name: "SQL",
+      icon: <SqlIcon style={{ color: "#336791" }} />,
+      category: "back-end",
+      description: "Structured Query Language",
+    },
+
+    {
+      id: 17,
+      name: "Postman",
+      icon: <PostmanIcon style={{ color: "#ff6c37" }} />,
+      category: "tools",
+      description: "API client",
+    },
+
+    {
+      id: 18,
+      name: "Redux",
+      icon: <ReduxIcon style={{ color: "#764abc" }} />,
+      category: "front-end",
+      description: "State management library",
+    },
+
+    {
+      id: 19,
+      name: "MUI",
+      icon: <MUIIcon style={{ color: "#1976d2" }} />,
+      category: "front-end",
+      description: "React components library",
+    },
+
+    {
+      id: 20,
+      name: "Lunacy",
+      icon: <LunacyIcon style={{ color: "#2ca4e4" }} />,
+      category: "front-end",
+      description: "Sketch editor for Windows",
+    },
+
+    {
+      id: 21,
+      name: "Yarn",
+      icon: <YarnIcon style={{ color: "#2ca4e4" }} />,
+      category: "tools",
+      description: "Package manager",
+    },
+
+    {
+      id: 22,
+      name: "Figma",
+      icon: <FigmaIcon style={{ color: "#f24e1e" }} />,
+      category: "front-end",
+      description: "Online UI design tool",
+    },
+
+    {
+      id: 23,
+      name: "HTML5",
+      icon: <HtmlIcon style={{ color: "#f16529" }} />,
+      category: "front-end",
+      description: "Hypertext Markup Language",
+    },
+
+    {
+      id: 24,
+      name: "CSS3",
+      icon: <CssIcon style={{ color: "#2965f1" }} />,
+      category: "front-end",
+      description: "Cascading Style Sheets",
     },
   ];
 
