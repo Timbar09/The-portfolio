@@ -1,4 +1,5 @@
 import MyLink from "../../components/MyLink";
+import Transition from "../../components/Transition";
 
 import { RiSpeakLine as CommsIcon } from "react-icons/ri";
 import { MdOutlineHandshake as CollabIcon } from "react-icons/md";
@@ -43,13 +44,21 @@ const AboutSoftSkills = () => {
 
       <ul className="about__soft-skills--list grid grid-col grid-gap-2">
         {softSkills.map((skill, index) => (
-          <li key={index} className="about__soft-skills--list__item p-2">
+          <Transition
+            key={index}
+            className="about__soft-skills--list__item p-2"
+            elementTag="li"
+            trigger="whileInView"
+            offset="-25%"
+            duration={1}
+            delay={index * 0.2}
+          >
             <h4 className="flex flex-ai-c gap-1">
               {skill.icon} {skill.title}:
             </h4>
 
             <p>{skill.description}</p>
-          </li>
+          </Transition>
         ))}
       </ul>
     </section>

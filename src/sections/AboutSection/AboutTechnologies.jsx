@@ -5,6 +5,7 @@ import { ThemeContext } from "../../components/App";
 
 import getTechData from "./techData";
 import { TabButtons, TabContent } from "../../components/Tabs";
+import Transition from "../../components/Transition";
 
 const techItemAnimationProps = {
   initial: { opacity: 0, y: 20 },
@@ -82,7 +83,12 @@ const AboutTechnologies = () => {
         but not limited to:
       </h3>
 
-      <div className="about__tech--content">
+      <Transition
+        className="about__tech--content"
+        trigger="whileInView"
+        offset="-25%"
+        duration={1}
+      >
         <TabButtons
           tabData={techData}
           setActiveTab={setActiveTab}
@@ -94,7 +100,7 @@ const AboutTechnologies = () => {
           activeTab={activeTab}
           Component={RenderTechItems}
         />
-      </div>
+      </Transition>
     </section>
   );
 };

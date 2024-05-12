@@ -1,6 +1,10 @@
 @use "../../utils/" as *;
 
 .about__tech {
+  &--content {
+    position: relative;
+  }
+
   &--list {
     &__item {
       position: relative;

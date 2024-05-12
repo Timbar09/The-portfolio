@@ -27,6 +27,8 @@
   &--info {
     --dimension: 21em;
 
+    position: relative;
+
     @include touch {
       --dimension: 100%;
 
@@ -130,7 +132,7 @@
       width: calc(100% + 3px);
       height: calc(var(--dimension) + 3px);
       border-radius: var(--radius-200);
-      background-color: var(--bg-300);
+      background-color: var(--bg-400);
       visibility: hidden;
       opacity: 0;
       transition: visibility 0ms 300ms ease, opacity 100ms 200ms ease,
@@ -243,6 +245,7 @@
 
   &--description {
     grid-area: description;
+    position: relative;
 
     @include breakpoint-up(lg) {
       flex: min-content;

@@ -7,6 +7,7 @@
     margin-top: 2em;
 
     &__item {
+      position: relative;
       grid-column: span 12;
       border: solid 0.125em var(--opaque-20);
       border-radius: var(--radius-200);

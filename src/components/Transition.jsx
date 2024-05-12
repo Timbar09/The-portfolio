@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
  * @param {string} elementTag - The tag of the element to apply the transition effect to (optional). Defaults to "div".
  * @param {string} offset - The offset for the transition effect (optional)
  * @param {number} duration - The duration of the transition effect (optional). Defaults to 0.75.
+ * @param {number} delay - The delay of the transition effect (optional). Defaults to 0.
  *
  * @returns {JSX.Element} - The component with the transition effect
  */
@@ -22,6 +23,7 @@ const Transition = ({
   elementTag = "div",
   offset = "0px",
   duration = 0.75,
+  delay = 0,
 }) => {
   const Tag = motion[elementTag];
 
@@ -36,6 +38,7 @@ const Transition = ({
         top: 0,
         transition: {
           duration: duration,
+          delay: delay,
           ease: "easeInOut",
         },
       },
@@ -50,6 +53,7 @@ const Transition = ({
         left: 0,
         transition: {
           duration: duration,
+          delay: delay,
           ease: "easeInOut",
         },
       },
@@ -66,6 +70,7 @@ const Transition = ({
         scale: 1,
         transition: {
           duration: duration,
+          delay: delay,
           ease: "easeInOut",
         },
       },

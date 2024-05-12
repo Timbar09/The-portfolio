@@ -1,6 +1,6 @@
 import MyLink from "../../components/MyLink";
-
 import AboutBioInfo from "./AboutBioInfo";
+import Transition from "../../components/Transition";
 
 const AboutBio = () => {
   return (
@@ -16,7 +16,13 @@ const AboutBio = () => {
 
       <AboutBioInfo />
 
-      <div className="about__bio--description">
+      <Transition
+        className="about__bio--description"
+        transitionName="fade-in-right"
+        trigger="whileInView"
+        offset="-25%"
+        duration={1}
+      >
         <div className="about__bio--description__text">
           <p>
             I make websites that look great and work well. I am familiar with
@@ -48,7 +54,7 @@ const AboutBio = () => {
             up! I'd love to hear about it! 😊
           </p>
         </div>
-      </div>
+      </Transition>
     </section>
   );
 };

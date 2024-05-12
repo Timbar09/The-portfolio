@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import SocialLinkTree from "../../components/SocialLinkTree";
 import Button from "../../components/Button";
+import Transition from "../../components/Transition";
 
 import { IoMdDownload as DownloadIcon } from "react-icons/io";
 import { BiSolidQuoteLeft as OpenQuotationIcon } from "react-icons/bi";
@@ -34,7 +35,13 @@ const AboutBioInfo = () => {
   };
 
   return (
-    <div className="about__bio--info grid grid-pi-c">
+    <Transition
+      className="about__bio--info grid grid-pi-c"
+      transitionName="fade-in-up"
+      trigger="whileInView"
+      offset="-25%"
+      duration={1}
+    >
       <div className="about__bio--info__container" onMouseLeave={fetchQuote}>
         <div className="about__bio--info__image">
           <img
@@ -81,7 +88,7 @@ const AboutBioInfo = () => {
           />
         </div>
       </div>
-    </div>
+    </Transition>
   );
 };
 
