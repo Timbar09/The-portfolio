@@ -2,7 +2,7 @@ import { Link } from "react-scroll";
 
 import SectionTitle from "../SectionTitle";
 import ProjectList from "./ProjectList";
-import { FadeIn } from "../../components/transitions";
+import Transition from "../../components/Transition";
 
 import "../../assets/scss/sections/projects/index.scss";
 
@@ -13,7 +13,7 @@ const ProjectsSection = () => {
         <header className="project__section--header">
           <SectionTitle firstWord="My" secondWord="Projects" />
 
-          <FadeIn
+          <Transition
             trigger="whileInView"
             elementTag="p"
             className="section__subtitle"
@@ -27,7 +27,7 @@ const ProjectsSection = () => {
               </Link>
               ! Excited to hear from you. 😎
             </>
-          </FadeIn>
+          </Transition>
         </header>
 
         <ProjectList />
