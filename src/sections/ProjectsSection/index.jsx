@@ -17,6 +17,8 @@ const ProjectsSection = () => {
             trigger="whileInView"
             elementTag="p"
             className="section__subtitle"
+            offset="-25%"
+            duration={1.5}
           >
             <>
               I've worked on numerous projects, many open-source. Feel free to

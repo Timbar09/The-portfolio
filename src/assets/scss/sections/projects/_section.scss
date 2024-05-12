@@ -3,9 +3,15 @@
 .project {
   &__section {
     background-color: var(--bg-200);
+
+    .section__subtitle {
+      margin-bottom: 5em;
+    }
   }
 
   &__list {
+    perspective: 1000px;
+
     @include breakpoint-up(md) {
       background: var(--primary-radial-gradient);
     }

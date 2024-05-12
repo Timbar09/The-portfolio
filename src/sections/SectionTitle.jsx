@@ -19,8 +19,8 @@ const Word = ({ underline, children }) => {
           className="underlined-word"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 1.6 }}
+          viewport={{ once: true, margin: "-25%" }}
+          transition={{ duration: 0.8, delay: 1.5 }}
         >
           {children}
         </motion.span>
