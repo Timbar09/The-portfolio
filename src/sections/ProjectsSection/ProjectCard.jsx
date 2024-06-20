@@ -5,7 +5,7 @@ import TechItem from "./TechItem";
 import Button from "../../components/Button";
 // import Transition from "../../components/Transition";
 
-import projectImages from "./projectImages";
+import images from "./projectImages";
 
 const ProjectCard = ({ data }) => {
   const { toggleProjectModal, setSelectedProject } = useContext(ProjectModalContext);
@@ -21,7 +21,7 @@ const ProjectCard = ({ data }) => {
   };
 
   const cardStyle = {
-    backgroundImage: `url(${projectImages[data.images.screenshots[0]]})`,
+    backgroundImage: `url(${images[data.images.screenshots[0]]})`,
   };
 
   return (
@@ -34,7 +34,7 @@ const ProjectCard = ({ data }) => {
     //   duration={1}
     // >
     <div
-      className="project__card--container"
+      className="project__card--container flex flex-ai-fe"
       aria-label={data.title}
       // style={cardStyle}
       onMouseEnter={handleMouseEnter}
@@ -43,13 +43,15 @@ const ProjectCard = ({ data }) => {
       onBlur={handleMouseLeave}
     >
       <div className="project__card--container__content">
-        <div className="project__card--container__content--text flex flex-col gap-2 p-3">
-          <div className="project__card--container__content--text__title">
-            <span className="project__card--container__content--text__title--logo">
-              <img src={projectImages[data.images.logo]} alt={data.title} />
-            </span>
+        <div className="project__card--container__content--text flex flex-col gap-2 px-2">
+          <div className="project__card--container__content--text__title flex gap-2 flex-ai-c">
+            <div className="project__card--container__content--text__title--logo grid">
+              <img src={images.consolehub.logo} alt={data.title} />
+            </div>
 
-            <h3 className="project__card--container__content--text__title--name">{data.title}</h3>
+            {isCardHovered && (
+              <h3 className="project__card--container__content--text__title--name">{data.title}</h3>
+            )}
           </div>
 
           <div className="project__card--container__content--text__body">

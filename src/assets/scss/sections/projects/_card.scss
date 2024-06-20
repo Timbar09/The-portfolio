@@ -3,6 +3,7 @@
 .project__card {
   &--container {
     --height-hover: 15em;
+    --logo-dimension: 2.5em;
 
     // position: relative;
     // background-size: 160% auto;
@@ -11,10 +12,10 @@
     // outline: solid 0.125em transparent;
     // aspect-ratio: 16 / 12;
     // overflow: hidden;
-    height: 8em;
+    height: calc(var(--logo-dimension) * 2);
     background-color: var(--bg-400);
     border-radius: var(--radius-300);
-    transition: background-size 500ms linear, height 300ms ease-in-out;
+    transition: background-size 500ms linear, height 300ms ease-in-out, flex 300ms ease-in-out;
 
     @include breakpoint-up(sm) {
       --height-hover: 20em;
@@ -57,6 +58,7 @@
     // }
 
     &__content {
+      width: 100%;
       // // position: absolute;
       // top: 50%;
       // left: 0;
@@ -74,14 +76,35 @@
       //   background-color: var(--opaque-light-200);
       // }
 
-      @include breakpoint-up(md) {
-        display: none;
+      &--text {
+        margin-bottom: calc(var(--logo-dimension) / 2);
+        &__title {
+          margin-top: auto;
+          border: dashed 0.125em var(--text-300);
+
+          &--logo {
+            > img {
+              width: var(--logo-dimension);
+              height: var(--logo-dimension);
+              border-radius: var(--radius-round);
+              margin-right: 0.5em;
+            }
+          }
+        }
+
+        &__body {
+          display: none;
+        }
       }
     }
 
     &:hover,
     &:focus-within {
       height: var(--height-hover);
+
+      @include breakpoint-up(md) {
+        flex: 7;
+      }
       // background-size: 160% auto;
       // outline: solid 0.125em var(--opaque-100);
 
