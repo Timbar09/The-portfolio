@@ -1,127 +1,146 @@
 @use "../../utils/" as *;
 
 .project__card {
-  position: relative;
-  background-color: var(--bg-200);
-  background-size: 160% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  outline: solid 0.125em transparent;
-  border-radius: var(--radius-300);
-  aspect-ratio: 16 / 12;
-  overflow: hidden;
-  transition: background-size 500ms linear, border 300ms ease-in-out;
-
-  @include breakpoint-up(sm) {
-    aspect-ratio: 16 / 10;
-    background-size: 140% auto;
-  }
-
-  @include breakpoint-up(lg) {
-    aspect-ratio: 16 / 8;
-  }
-
-  &:first-child {
-    .project__card {
-      &--container {
-        justify-content: center;
-      }
-
-      &--info {
-        max-width: 30em;
-      }
-    }
-
-    @include breakpoint-up(md) {
-      grid-column: span 12;
-    }
-  }
-
-  &:not(:first-child) {
-    @include breakpoint-up(md) {
-      grid-column: span 6;
-    }
-  }
-
   &--container {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    background-color: var(--opaque-light-100);
-    backdrop-filter: blur(10px);
-    border-radius: inherit;
-    transition: background-color 300ms ease-in-out,
-      backdrop-filter 300ms ease-in-out, top 300ms ease-in-out;
+    --height-hover: 15em;
 
-    @include touch {
-      background-color: var(--opaque-light-200);
+    // position: relative;
+    // background-size: 160% auto;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // outline: solid 0.125em transparent;
+    // aspect-ratio: 16 / 12;
+    // overflow: hidden;
+    height: 8em;
+    background-color: var(--bg-400);
+    border-radius: var(--radius-300);
+    transition: background-size 500ms linear, height 300ms ease-in-out;
+
+    @include breakpoint-up(sm) {
+      --height-hover: 20em;
+      // aspect-ratio: 16 / 10;
+      // background-size: 140% auto;
     }
-  }
 
-  &:hover,
-  &:focus-within {
-    background-size: 160% auto;
-    outline: solid 0.125em var(--opaque-100);
+    @include breakpoint-up(md) {
+      --height-hover: 25em;
 
-    .project__card {
-      &--container {
-        top: 0;
-        background-color: var(--opaque-light-300);
+      height: var(--height-hover);
+      flex: 1;
+      // aspect-ratio: 16 / 8;
+    }
+
+    // @include breakpoint-up(lg) {
+    //   aspect-ratio: 16 / 8;
+    // }
+
+    // &:first-child {
+    //   .project__card {
+    //     &--container {
+    //       justify-content: center;
+    //     }
+
+    //     &--info {
+    //       max-width: 30em;
+    //     }
+    //   }
+
+    //   @include breakpoint-up(md) {
+    //     grid-column: span 12;
+    //   }
+    // }
+
+    // &:not(:first-child) {
+    //   @include breakpoint-up(md) {
+    //     grid-column: span 6;
+    //   }
+    // }
+
+    &__content {
+      // // position: absolute;
+      // top: 50%;
+      // left: 0;
+      // right: 0;
+      // bottom: 0;
+      // display: flex;
+      // align-items: center;
+      // background-color: var(--opaque-light-100);
+      // backdrop-filter: blur(10px);
+      // border-radius: inherit;
+      // transition: background-color 300ms ease-in-out, backdrop-filter 300ms ease-in-out,
+      //   top 300ms ease-in-out;
+
+      // @include touch {
+      //   background-color: var(--opaque-light-200);
+      // }
+
+      @include breakpoint-up(md) {
+        display: none;
       }
+    }
 
-      &--button {
-        opacity: 1;
-        left: 0;
-      }
+    &:hover,
+    &:focus-within {
+      height: var(--height-hover);
+      // background-size: 160% auto;
+      // outline: solid 0.125em var(--opaque-100);
+
+      // .project__card {
+      //   &--container {
+      //     top: 0;
+      //     background-color: var(--opaque-light-300);
+      //   }
+
+      //   &--button {
+      //     opacity: 1;
+      //     left: 0;
+      //   }
+      // }
+
+      // p {
+      //   opacity: 1;
+      //   margin-bottom: 0;
+      // }
+
+      // .project__tech--item {
+      //   background-color: var(--text-300);
+      // }
+    }
+
+    h3 {
+      margin: 0;
+      text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200), -1px 1px 0 var(--bg-200),
+        1px 1px 0 var(--bg-200);
     }
 
     p {
-      opacity: 1;
-      margin-bottom: 0;
+      margin-bottom: -3.5em;
+      font-size: 0.9em;
+      color: var(--text-300);
+      opacity: 0;
+      transition: margin-bottom 300ms ease-in-out, opacity 300ms 100ms ease-in-out;
+
+      @include touch {
+        opacity: 1;
+        margin-bottom: 0;
+      }
     }
 
-    .project__tech--item {
-      background-color: var(--text-300);
+    &--details {
+      font-size: 0.75em;
+      z-index: 1;
     }
-  }
 
-  h3 {
-    margin: 0;
-    text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200),
-      -1px 1px 0 var(--bg-200), 1px 1px 0 var(--bg-200);
-  }
+    &--button {
+      position: relative;
+      left: 2em;
+      opacity: 0;
+      transition: left 400ms 300ms ease-in-out, opacity 300ms 400ms ease-in-out;
 
-  p {
-    margin-bottom: -3.5em;
-    font-size: 0.9em;
-    color: var(--text-300);
-    opacity: 0;
-    transition: margin-bottom 300ms ease-in-out, opacity 300ms 100ms ease-in-out;
-
-    @include touch {
-      opacity: 1;
-      margin-bottom: 0;
-    }
-  }
-
-  &--details {
-    font-size: 0.75em;
-    z-index: 1;
-  }
-
-  &--button {
-    position: relative;
-    left: 2em;
-    opacity: 0;
-    transition: left 400ms 300ms ease-in-out, opacity 300ms 400ms ease-in-out;
-
-    @include touch {
-      opacity: 1;
-      left: 0;
+      @include touch {
+        opacity: 1;
+        left: 0;
+      }
     }
   }
 }

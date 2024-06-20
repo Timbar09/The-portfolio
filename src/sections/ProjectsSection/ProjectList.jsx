@@ -6,7 +6,7 @@ const ProjectList = () => {
   const data = ProjectData.slice(0, 5);
 
   return (
-    <ul className="project__list grid grid_md-col grid-gap-1">
+    <ul className="project__list flex flex-col gap-1 flex_md-row">
       {data.map((item, index) => (
         <ProjectCard key={index} data={item} />
       ))}
