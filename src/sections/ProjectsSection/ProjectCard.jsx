@@ -1,4 +1,6 @@
 import { useContext, useState } from "react";
+import { motion } from "framer-motion";
+
 import { ProjectModalContext } from "../../components/App";
 
 import TechItem from "./TechItem";
@@ -22,6 +24,11 @@ const ProjectCard = ({ data }) => {
 
   const cardStyle = {
     backgroundImage: `url(${images[data.images.screenshots[0]]})`,
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
   };
 
   return (
@@ -50,7 +57,15 @@ const ProjectCard = ({ data }) => {
             </div>
 
             {isCardHovered && (
-              <h3 className="project__card--container__content--text__title--name">{data.title}</h3>
+              <motion.h3
+                className="project__card--container__content--text__title--name"
+                initial="hidden"
+                animate="visible"
+                variants={titleVariants}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                {data.title}
+              </motion.h3>
             )}
           </div>
 
