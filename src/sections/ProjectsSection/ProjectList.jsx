@@ -1,5 +1,4 @@
 import ProjectCard from "./ProjectCard";
-import ProjectModal from "./ProjectModal";
 
 import ProjectData from "../../data/projects.json";
 
@@ -11,8 +10,6 @@ const ProjectList = () => {
       {data.map((item, index) => (
         <ProjectCard key={index} data={item} />
       ))}
-
-      <ProjectModal />
     </ul>
   );
 };

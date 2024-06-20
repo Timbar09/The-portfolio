@@ -42,8 +42,8 @@
 
     h2 {
       margin: 0;
-      text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200),
-        -1px 1px 0 var(--bg-200), 1px 1px 0 var(--bg-200);
+      text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200), -1px 1px 0 var(--bg-200),
+        1px 1px 0 var(--bg-200);
     }
 
     &__buttons {
