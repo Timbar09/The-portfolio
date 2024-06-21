@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import { ProjectModalContext } from "../../components/App";
@@ -12,7 +12,15 @@ import images from "./projectImages";
 const ProjectCard = ({ data }) => {
   const { toggleProjectModal, setSelectedProject } = useContext(ProjectModalContext);
   const [isCardHovered, setIsCardHovered] = useState(false);
+  const [textBodyHeight, setTextBodyHeight] = useState(0);
+  const textBodyRef = useRef(null);
   const briefDescription = data.description.brief;
+
+  useEffect(() => {
+    if (textBodyRef.current) {
+      setTextBodyHeight(`${textBodyRef.current.scrollHeight}px`);
+    }
+  }, [isCardHovered]);
 
   const handleMouseEnter = () => {
     setIsCardHovered(true);
@@ -50,7 +58,7 @@ const ProjectCard = ({ data }) => {
       onBlur={handleMouseLeave}
     >
       <div className="project__card--container__content">
-        <div className="project__card--container__content--text flex flex-col gap-2 px-2">
+        <div className="project__card--container__content--text flex flex-col px-2">
           <div className="project__card--container__content--text__title flex gap-2 flex-ai-c">
             <div className="project__card--container__content--text__title--logo grid">
               <img src={images.consolehub.logo} alt={data.title} />
@@ -62,15 +70,19 @@ const ProjectCard = ({ data }) => {
                 initial="hidden"
                 animate="visible"
                 variants={titleVariants}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.75 }}
               >
                 {data.title}
               </motion.h3>
             )}
           </div>
-
-          <div className="project__card--container__content--text__body">
-            <p className="project__card--container__content--text__body--description pl-1">
+          {/* {isCardHovered && ( */}
+          <div
+            className="project__card--container__content--text__body"
+            ref={textBodyRef}
+            style={{ height: isCardHovered ? textBodyHeight : "0" }}
+          >
+            <p className="project__card--container__content--text__body--description">
               {briefDescription}
             </p>
 
@@ -93,6 +105,7 @@ const ProjectCard = ({ data }) => {
               </div>
             </div>
           </div>
+          {/* )} */}
         </div>
       </div>
     </div>

@@ -15,6 +15,7 @@
     height: calc(var(--logo-dimension) * 2);
     background-color: var(--bg-400);
     border-radius: var(--radius-300);
+    overflow: hidden;
     transition: background-size 500ms linear, height 300ms ease-in-out, flex 300ms ease-in-out;
 
     @include breakpoint-up(sm) {
@@ -79,8 +80,6 @@
       &--text {
         margin-bottom: calc(var(--logo-dimension) / 2);
         &__title {
-          border: dashed 0.125em var(--text-300);
-
           &--logo {
             > img {
               width: var(--logo-dimension);
@@ -89,10 +88,22 @@
               margin-right: 0.5em;
             }
           }
+
+          &--name {
+            margin: 0;
+          }
         }
 
         &__body {
-          display: none;
+          height: 0;
+          overflow: hidden;
+          // display: none;
+          // outline: solid 0.125em var(--text-300);
+          transition: height 300ms 300ms ease-in-out;
+
+          &--description {
+            margin: 1em 0;
+          }
         }
       }
     }
@@ -129,40 +140,40 @@
       // }
     }
 
-    h3 {
-      margin: 0;
-      text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200), -1px 1px 0 var(--bg-200),
-        1px 1px 0 var(--bg-200);
-    }
+    // h3 {
+    //   margin: 0;
+    //   text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200), -1px 1px 0 var(--bg-200),
+    //     1px 1px 0 var(--bg-200);
+    // }
 
-    p {
-      margin-bottom: -3.5em;
-      font-size: 0.9em;
-      color: var(--text-300);
-      opacity: 0;
-      transition: margin-bottom 300ms ease-in-out, opacity 300ms 100ms ease-in-out;
+    // p {
+    //   // margin-bottom: -3.5em;
+    //   font-size: 0.9em;
+    //   color: var(--text-300);
+    //   opacity: 0;
+    //   transition: margin-bottom 300ms ease-in-out, opacity 300ms 100ms ease-in-out;
 
-      @include touch {
-        opacity: 1;
-        margin-bottom: 0;
-      }
-    }
+    //   @include touch {
+    //     opacity: 1;
+    //     margin-bottom: 0;
+    //   }
+    // }
 
-    &--details {
-      font-size: 0.75em;
-      z-index: 1;
-    }
+    // &--details {
+    //   font-size: 0.75em;
+    //   z-index: 1;
+    // }
 
-    &--button {
-      position: relative;
-      left: 2em;
-      opacity: 0;
-      transition: left 400ms 300ms ease-in-out, opacity 300ms 400ms ease-in-out;
+    // &--button {
+    //   position: relative;
+    //   left: 2em;
+    //   opacity: 0;
+    //   transition: left 400ms 300ms ease-in-out, opacity 300ms 400ms ease-in-out;
 
-      @include touch {
-        opacity: 1;
-        left: 0;
-      }
-    }
+    //   @include touch {
+    //     opacity: 1;
+    //     left: 0;
+    //   }
+    // }
   }
 }
