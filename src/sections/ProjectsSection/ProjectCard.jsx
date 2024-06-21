@@ -12,15 +12,7 @@ import images from "./projectImages";
 const ProjectCard = ({ data }) => {
   const { toggleProjectModal, setSelectedProject } = useContext(ProjectModalContext);
   const [isCardHovered, setIsCardHovered] = useState(false);
-  const [textBodyHeight, setTextBodyHeight] = useState(0);
-  const textBodyRef = useRef(null);
   const briefDescription = data.description.brief;
-
-  useEffect(() => {
-    if (textBodyRef.current) {
-      setTextBodyHeight(`${textBodyRef.current.scrollHeight}px`);
-    }
-  }, [isCardHovered]);
 
   const handleMouseEnter = () => {
     setIsCardHovered(true);
@@ -58,8 +50,8 @@ const ProjectCard = ({ data }) => {
       onBlur={handleMouseLeave}
     >
       <div className="project__card--container__content">
-        <div className="project__card--container__content--text flex flex-col px-2">
-          <div className="project__card--container__content--text__title flex gap-2 flex-ai-c">
+        <div className="project__card--container__content--text flex flex-col">
+          <div className="project__card--container__content--text__title flex gap-2 flex-ai-c px-2">
             <div className="project__card--container__content--text__title--logo grid">
               <img src={images.consolehub.logo} alt={data.title} />
             </div>
@@ -77,17 +69,13 @@ const ProjectCard = ({ data }) => {
             )}
           </div>
           {/* {isCardHovered && ( */}
-          <div
-            className="project__card--container__content--text__body"
-            ref={textBodyRef}
-            style={{ height: isCardHovered ? textBodyHeight : "0" }}
-          >
+          <div className="project__card--container__content--text__body px-2">
             <p className="project__card--container__content--text__body--description">
               {briefDescription}
             </p>
 
             <div className="project__card--details flex flex-jc-sb flex-wrap gap-1">
-              <ul className="project__card--tech__list flex flex-ai-c flex-jc-sb gap-1">
+              <ul className="project__card--tech__list flex flex-wrap flex-ai-c flex-jc-sb gap-1">
                 {data.tech.slice(0, 3).map((item, index) => (
                   <TechItem key={index} item={item} isCardHovered={isCardHovered} />
                 ))}

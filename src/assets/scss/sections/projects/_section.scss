@@ -21,9 +21,10 @@
     &--item {
       gap: 0.25em;
       padding: 0.5em;
+      font-size: 0.75em;
       border: solid 0.125em var(--opaque-400);
       color: var(--bg-300);
-      background-color: var(--opaque-400);
+      background-color: var(--text-300);
       border-radius: var(--radius-200);
       cursor: default;
 

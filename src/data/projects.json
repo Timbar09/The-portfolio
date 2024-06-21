@@ -16,15 +16,7 @@
     "images": {
       "screenshots": ["consolehub"]
     },
-    "tech": [
-      "Ruby on Rails",
-      "React",
-      "Tailwind CSS",
-      "Redux",
-      "PostgreSQL",
-      "Devise",
-      "Rspec"
-    ],
+    "tech": ["Ruby on Rails", "React", "Tailwind CSS", "Redux", "PostgreSQL", "Devise", "Rspec"],
     "source": "https://github.com/stephenkati/gaming_console_reservation_front_end",
     "live": "https://console-hub.netlify.app/"
   },
@@ -115,7 +107,7 @@
     "live": "https://github.com/Timbar09/Blogister"
   },
   {
-    "title": "Africa's Leading Tech Confrence 2023",
+    "title": "ALT Confrence 2023",
     "description": {
       "brief": "This website is a dynamic, responsive site, with multiple pages and a great user experience.",
       "overview": "Africa's Leading Tech Conference 2023 is a responsive website consisting of multiple pages, including a home page and an about page. It is meticulously designed and developed to provide an optimal viewing experience on both mobile and desktop devices, ensuring seamless navigation and functionality.",
