@@ -6,6 +6,10 @@ import blogisterBgImage from "../../assets/images/projects/blogister.png";
 import conferenceBgImage from "../../assets/images/projects/conference.png";
 
 export default {
+  dummy: {
+    bgImage: placeHolderLogo,
+    logo: placeHolderLogo,
+  },
   consolehub: {
     bgImage: consoleHubBgImage,
     logo: placeHolderLogo,
