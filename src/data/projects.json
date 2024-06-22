@@ -13,9 +13,7 @@
       ],
       "summary": "In summary, ConsoleHub is a well-crafted web application that streamlines the booking of gaming consoles. It leverages React and Ruby on Rails for its frontend and backend respectively, with Devise for authentication and Tailwind CSS for stylish design. The combination of these technologies ensures a seamless and enjoyable user experience for users."
     },
-    "images": {
-      "screenshots": ["consolehub"]
-    },
+    "imagesFile": "consolehub",
     "tech": ["Ruby on Rails", "React", "Tailwind CSS", "Redux", "PostgreSQL", "Devise", "Rspec"],
     "source": "https://github.com/stephenkati/gaming_console_reservation_front_end",
     "live": "https://console-hub.netlify.app/"
@@ -34,9 +32,7 @@
       ],
       "summary": "BudgetTrail is a powerful mobile web application that transforms financial prudence into a reachable goal. Offering comprehensive financial management, organized categorization, and insights driven by data, BudgetTrail prioritizes user experience while ensuring security and functionality are not compromised."
     },
-    "images": {
-      "screenshots": ["budgettrail"]
-    },
+    "imagesFile": "budgettrail",
     "tech": [
       "Ruby on Rails",
       "PostgreSQL",
@@ -66,9 +62,7 @@
       ],
       "summary": "Space Traveler's Hub serves as a gateway to the universe of commercial and scientific space travel. With its utilization of advanced technologies like React.js, Redux-toolkit, Bootstrap, and REST APIs, the platform offers a sophisticated and engaging space exploration experience where users can explore, book, and embark on space adventures."
     },
-    "images": {
-      "screenshots": ["spacetravelershub"]
-    },
+    "imagesFile": "spacetravelershub",
     "tech": ["React", "Redux", "Bootstrap", "REST API"],
     "source": "https://github.com/Timbar09/React-Redux-Group-Project-Space-Travelers-Hub",
     "live": "https://spacetravelershub-react.onrender.com/"
@@ -88,9 +82,7 @@
       ],
       "summary": "In essence, Blogister is an immersive web application that fosters a thriving community of discourse. It offers bloggers an avenue to broadcast their insights, opinions, and stories to an enthusiastic audience while promoting active engagement and interaction. Through its seamless environment, carefully curated content, and secure authentication, Blogister stands as a reminder of the impact of connectivity and the art of digital expression."
     },
-    "images": {
-      "screenshots": ["blogister"]
-    },
+    "imagesFile": "blogister",
     "tech": [
       "Ruby on Rails",
       "PostgreSQL",
@@ -122,9 +114,7 @@
       ],
       "summary": "In summary, Africa's Leading Tech Conference 2023 is a responsive website designed to provide an immersive online experience for attendees. It features a cohesive navigation system, dynamic content generation, and a mobile menu for easy access on smaller screen sizes. With its responsive design and dynamic features, the website ensures a seamless and enjoyable browsing experience for users on both mobile and desktop devices."
     },
-    "images": {
-      "screenshots": ["conference"]
-    },
+    "imagesFile": "conference",
     "tech": ["JavaScript", "CSS3", "HTML5", "GitHub", "Terminal"],
     "source": "https://github.com/Timbar09/Africas-Leading-Tech-Conference",
     "live": "https://timbar09.github.io/Africas-Leading-Tech-Conference/"
@@ -145,9 +135,7 @@
       ],
       "summary": "In summary, Todo App is a web application that showcases the utilization of essential web development technologies and techniques to create a functional and user-friendly to-do list. With its user-friendly interface, task management features, and optimized build process, Todo App provides users with an efficient tool for organizing their tasks."
     },
-    "images": {
-      "screenshots": ["todoapp"]
-    },
+    "imagesFile": "todoapp",
     "tech": ["React", "CSS3", "Git", "Github", "HTML5", "Terminal"],
     "source": "https://github.com/Timbar09/Todo-list-vol-2",
     "live": "https://timbar09.github.io/Todo-list-vol-2/dist/"
@@ -168,9 +156,7 @@
       ],
       "summary": "In summary, Awesome Books is a powerful yet user-friendly solution for book lovers, providing an efficient way to manage and organize personalized book collections. With its dynamic features, seamless integration with local storage, and intuitive user interface, Awesome Books aims to redefine the way users interact with their books online."
     },
-    "images": {
-      "screenshots": ["awesomebooks"]
-    },
+    "imagesFile": "awesomebooks",
     "tech": ["JavaScript", "CSS3", "HTML5", "Luxon", "GitHub", "Terminal"],
     "source": "https://github.com/Timbar09/Awesome-books-vol-2",
     "live": "https://timbar09.github.io/Awesome-books-vol-2/"

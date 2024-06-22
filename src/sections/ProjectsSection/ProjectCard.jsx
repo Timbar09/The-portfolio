@@ -9,27 +9,23 @@ import Button from "../../components/Button";
 
 import { IoSearch as ViewMoreIcon } from "react-icons/io5";
 
-import images from "./projectImages";
+import imagesObj from "./projectImages";
 
 const ProjectCard = ({ data, onHoverOrFocus, isActive }) => {
   const { toggleProjectModal, setSelectedProject } = useContext(ProjectModalContext);
-  // const [isCardHovered, setIsCardHovered] = useState(false);
+
   const briefDescription = data.description.brief;
+  const { logo } = imagesObj[data.imagesFile];
 
   const handleMouseEnter = () => {
-    // setIsCardHovered(true);
     onHoverOrFocus();
   };
 
   const activeClass = isActive ? "active" : "";
 
-  const handleMouseLeave = () => {
-    // setIsCardHovered(false);
-  };
-
-  const cardStyle = {
-    backgroundImage: `url(${images[data.images.screenshots[0]]})`,
-  };
+  // const cardStyle = {
+  //   backgroundImage: `url(${imagesObj[data.imagesObj.screenshots[0]]})`,
+  // };
 
   const titleVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -58,7 +54,7 @@ const ProjectCard = ({ data, onHoverOrFocus, isActive }) => {
         <div className="project__card--container__content--text flex flex-col">
           <div className="project__card--container__content--text__title flex gap-2 flex-ai-c px-2">
             <div className="project__card--container__content--text__title--logo grid">
-              <img src={images.consolehub.logo} alt={data.title} />
+              <img src={logo} alt={data.title} />
             </div>
 
             {isActive && (
