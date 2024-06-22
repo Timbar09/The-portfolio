@@ -15,7 +15,7 @@ const ProjectCard = ({ data, onHoverOrFocus, isActive }) => {
   const { toggleProjectModal, setSelectedProject } = useContext(ProjectModalContext);
 
   const briefDescription = data.description.brief;
-  const { logo } = imagesObj[data.imagesFile];
+  const { logo, bgImage } = imagesObj[data.imagesFile];
 
   const handleMouseEnter = () => {
     onHoverOrFocus();
@@ -23,9 +23,9 @@ const ProjectCard = ({ data, onHoverOrFocus, isActive }) => {
 
   const activeClass = isActive ? "active" : "";
 
-  // const cardStyle = {
-  //   backgroundImage: `url(${imagesObj[data.imagesObj.screenshots[0]]})`,
-  // };
+  const cardStyle = {
+    backgroundImage: `url(${bgImage})`,
+  };
 
   const titleVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -44,7 +44,7 @@ const ProjectCard = ({ data, onHoverOrFocus, isActive }) => {
     <div
       className={`project__card--container${` ${activeClass}`} flex flex-ai-fe`}
       aria-label={data.title}
-      // style={cardStyle}
+      style={isActive ? cardStyle : {}}
       onMouseEnter={handleMouseEnter}
       // onFocus={handleMouseEnter}
       // onMouseLeave={handleMouseLeave}
