@@ -186,16 +186,13 @@
     //   z-index: 1;
     // }
 
-    // &--button {
-    //   position: relative;
-    //   left: 2em;
-    //   opacity: 0;
-    //   transition: left 400ms 300ms ease-in-out, opacity 300ms 400ms ease-in-out;
+    &__button {
+      font-size: 0.85em;
 
-    //   @include touch {
-    //     opacity: 1;
-    //     left: 0;
-    //   }
-    // }
+      // @include touch {
+      //   opacity: 1;
+      //   left: 0;
+      // }
+    }
   }
 }

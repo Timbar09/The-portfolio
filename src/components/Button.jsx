@@ -71,16 +71,14 @@ const Button = ({
         )
       ) : (
         <button
-          className={`button button__${type} ${
-            form ? "button__" + type + "--form" : ""
-          }`}
+          className={`button button__${type} ${form ? "button__" + type + "--form" : ""}`}
           type={form ? "submit" : "button"}
           onClick={handleClick}
           title={title}
         >
           <span className="flex flex-jc-c flex-ai-c gap-1">
             {name}
-            {form && <SendIcon />}
+            {form ? <SendIcon /> : icon}
           </span>
         </button>
       )}

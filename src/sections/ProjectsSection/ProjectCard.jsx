@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect, useRef } from "react";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 
 import { ProjectModalContext } from "../../components/App";
@@ -6,6 +6,8 @@ import { ProjectModalContext } from "../../components/App";
 import TechItem from "./TechItem";
 import Button from "../../components/Button";
 // import Transition from "../../components/Transition";
+
+import { IoSearch as ViewMoreIcon } from "react-icons/io5";
 
 import images from "./projectImages";
 
@@ -81,10 +83,11 @@ const ProjectCard = ({ data }) => {
                 ))}
               </ul>
 
-              <div className="project__card--button">
+              <div className="project__card--container__button">
                 <Button
                   type="secondary"
                   name="View more"
+                  icon={<ViewMoreIcon />}
                   func={() => {
                     setSelectedProject(data);
                     toggleProjectModal();
