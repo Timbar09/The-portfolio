@@ -5,115 +5,20 @@
     --height-hover: 20em;
     --logo-dimension: 2.5em;
 
-    // position: relative;
-    // background-size: 160% auto;
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // outline: solid 0.125em transparent;
-    // aspect-ratio: 16 / 12;
-    // overflow: hidden;
     height: calc(var(--logo-dimension) * 2);
     background-color: var(--bg-400);
     border-radius: var(--radius-300);
     overflow: hidden;
     transition: background-size 500ms linear, height 300ms ease-in-out, flex 300ms ease-in-out;
 
-    // @include breakpoint-up(sm) {
-    //   --height-hover: 20em;
-    //   // aspect-ratio: 16 / 10;
-    //   // background-size: 140% auto;
-    // }
-
     @include breakpoint-up(md) {
       --height-hover: 25em;
 
       height: var(--height-hover);
       flex: 1;
-      // aspect-ratio: 16 / 8;
     }
 
-    // @include breakpoint-up(lg) {
-    //   aspect-ratio: 16 / 8;
-    // }
-
-    // &:first-child {
-    //   .project__card {
-    //     &--container {
-    //       justify-content: center;
-    //     }
-
-    //     &--info {
-    //       max-width: 30em;
-    //     }
-    //   }
-
-    //   @include breakpoint-up(md) {
-    //     grid-column: span 12;
-    //   }
-    // }
-
-    // &:not(:first-child) {
-    //   @include breakpoint-up(md) {
-    //     grid-column: span 6;
-    //   }
-    // }
-
-    &__content {
-      width: 100%;
-      // // position: absolute;
-      // top: 50%;
-      // left: 0;
-      // right: 0;
-      // bottom: 0;
-      // display: flex;
-      // align-items: center;
-      // background-color: var(--opaque-light-100);
-      // backdrop-filter: blur(10px);
-      // border-radius: inherit;
-      // transition: background-color 300ms ease-in-out, backdrop-filter 300ms ease-in-out,
-      //   top 300ms ease-in-out;
-
-      // @include touch {
-      //   background-color: var(--opaque-light-200);
-      // }
-
-      &--text {
-        padding-bottom: calc(var(--logo-dimension) / 2);
-
-        &__title {
-          &--logo {
-            > img {
-              width: var(--logo-dimension);
-              height: var(--logo-dimension);
-              border-radius: var(--radius-round);
-              outline: solid 0.125em var(--bg-300);
-              margin-right: 0.5em;
-            }
-          }
-
-          &--name {
-            margin: 0;
-          }
-        }
-
-        &__body {
-          height: 0;
-          overflow: hidden;
-          padding-bottom: 0.25em;
-          opacity: 0;
-          // display: none;
-          // outline: solid 0.125em var(--text-300);
-          transition: height 500ms 300ms ease-in-out, opacity 300ms 300ms ease-in-out;
-
-          &--description {
-            margin: 1em 0;
-          }
-        }
-      }
-    }
-
-    &:hover,
-    &:focus-within {
+    &.active {
       height: var(--height-hover);
 
       @include breakpoint-up(md) {
@@ -141,58 +46,51 @@
           }
         }
       }
-      // background-size: 160% auto;
-      // outline: solid 0.125em var(--opaque-100);
-
-      // .project__card {
-      //   &--container {
-      //     top: 0;
-      //     background-color: var(--opaque-light-300);
-      //   }
-
-      //   &--button {
-      //     opacity: 1;
-      //     left: 0;
-      //   }
-      // }
-
-      // p {
-      //   opacity: 1;
-      //   margin-bottom: 0;
-      // }
     }
 
-    // h3 {
-    //   margin: 0;
-    //   text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200), -1px 1px 0 var(--bg-200),
-    //     1px 1px 0 var(--bg-200);
-    // }
+    &__content {
+      width: 100%;
 
-    // p {
-    //   // margin-bottom: -3.5em;
-    //   font-size: 0.9em;
-    //   color: var(--text-300);
-    //   opacity: 0;
-    //   transition: margin-bottom 300ms ease-in-out, opacity 300ms 100ms ease-in-out;
+      &--text {
+        padding-bottom: calc(var(--logo-dimension) / 2);
 
-    //   @include touch {
-    //     opacity: 1;
-    //     margin-bottom: 0;
-    //   }
-    // }
+        &__title {
+          &--logo {
+            > img {
+              width: var(--logo-dimension);
+              height: var(--logo-dimension);
+              border-radius: var(--radius-round);
+              outline: solid 0.125em var(--bg-300);
+              margin-right: 0.5em;
+            }
+          }
 
-    // &--details {
-    //   font-size: 0.75em;
-    //   z-index: 1;
-    // }
+          &--name {
+            margin: 0;
+          }
+        }
+
+        &__body {
+          height: 0;
+          overflow: hidden;
+          padding-bottom: 0.25em;
+          opacity: 0;
+          transition: height 500ms 300ms ease-in-out, opacity 300ms 300ms ease-in-out;
+
+          &--description {
+            margin: 1em 0;
+          }
+        }
+      }
+    }
 
     &__button {
       font-size: 0.85em;
 
-      // @include touch {
-      //   opacity: 1;
-      //   left: 0;
-      // }
+      button span {
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+      }
     }
   }
 }

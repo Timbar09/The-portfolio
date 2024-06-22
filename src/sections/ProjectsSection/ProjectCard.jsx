@@ -11,17 +11,20 @@ import { IoSearch as ViewMoreIcon } from "react-icons/io5";
 
 import images from "./projectImages";
 
-const ProjectCard = ({ data }) => {
+const ProjectCard = ({ data, onHoverOrFocus, isActive }) => {
   const { toggleProjectModal, setSelectedProject } = useContext(ProjectModalContext);
-  const [isCardHovered, setIsCardHovered] = useState(false);
+  // const [isCardHovered, setIsCardHovered] = useState(false);
   const briefDescription = data.description.brief;
 
   const handleMouseEnter = () => {
-    setIsCardHovered(true);
+    // setIsCardHovered(true);
+    onHoverOrFocus();
   };
 
+  const activeClass = isActive ? "active" : "";
+
   const handleMouseLeave = () => {
-    setIsCardHovered(false);
+    // setIsCardHovered(false);
   };
 
   const cardStyle = {
@@ -43,13 +46,13 @@ const ProjectCard = ({ data }) => {
     //   duration={1}
     // >
     <div
-      className="project__card--container flex flex-ai-fe"
+      className={`project__card--container${` ${activeClass}`} flex flex-ai-fe`}
       aria-label={data.title}
       // style={cardStyle}
       onMouseEnter={handleMouseEnter}
-      onFocus={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onBlur={handleMouseLeave}
+      // onFocus={handleMouseEnter}
+      // onMouseLeave={handleMouseLeave}
+      // onBlur={handleMouseLeave}
     >
       <div className="project__card--container__content">
         <div className="project__card--container__content--text flex flex-col">
@@ -58,7 +61,7 @@ const ProjectCard = ({ data }) => {
               <img src={images.consolehub.logo} alt={data.title} />
             </div>
 
-            {isCardHovered && (
+            {isActive && (
               <motion.h3
                 className="project__card--container__content--text__title--name"
                 initial="hidden"
@@ -79,7 +82,7 @@ const ProjectCard = ({ data }) => {
             <div className="project__card--details flex flex-jc-sb flex-wrap gap-1">
               <ul className="project__card--tech__list flex flex-wrap flex-ai-c flex-jc-sb gap-1">
                 {data.tech.slice(0, 3).map((item, index) => (
-                  <TechItem key={index} item={item} isCardHovered={isCardHovered} />
+                  <TechItem key={index} item={item} isCardHovered={isActive} />
                 ))}
               </ul>
 

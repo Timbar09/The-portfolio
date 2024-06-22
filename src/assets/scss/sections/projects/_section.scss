@@ -9,14 +9,6 @@
     }
   }
 
-  &__list {
-    perspective: 1000px;
-
-    @include breakpoint-up(md) {
-      background: var(--primary-radial-gradient);
-    }
-  }
-
   &__tech {
     &--item {
       gap: 0.25em;
