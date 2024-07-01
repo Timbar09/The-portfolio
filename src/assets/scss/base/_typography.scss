@@ -104,14 +104,14 @@ ul {
     font-size: 1.75em;
     font-weight: 300;
 
-    .underlined {
+    &--word {
       position: relative;
-      display: inline-block;
-      padding-bottom: 0.5rem;
-      color: var(--opaque-100);
 
-      &::before {
-        content: "";
+      .underlined-word {
+        color: var(--opaque-100);
+      }
+
+      .underline {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -124,6 +124,7 @@ ul {
   }
 
   &__subtitle {
+    position: relative;
     max-width: 50em;
     margin: 0 auto 2em;
   }

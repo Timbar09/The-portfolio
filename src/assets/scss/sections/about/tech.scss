@@ -1,0 +1,62 @@
+@use "../../utils/" as *;
+
+.about__tech {
+  &--content {
+    position: relative;
+  }
+
+  &--list {
+    &__item {
+      position: relative;
+      background-color: var(--opaque-10);
+      border: solid 0.105em var(--opaque-40);
+      border-radius: var(--radius-200);
+      cursor: default;
+
+      svg {
+        font-size: 1.5em;
+      }
+
+      h4 {
+        font-size: 1em;
+        margin-bottom: 0.15em;
+      }
+
+      &--tooltip {
+        position: absolute;
+        top: 130%;
+        left: 50%;
+        translate: -50% 0;
+        width: max-content;
+        max-width: 10em;
+        padding: 0.5em;
+        text-align: center;
+        border: solid 0.105em var(--opaque-100);
+        border-radius: var(--radius-200);
+        background-color: var(--bg-300);
+        box-shadow: 0px 8px 20px hsla(0, 0%, 0%, 0.25);
+        z-index: 1;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -0.5em;
+          left: 50%;
+          translate: -50% 0;
+          rotate: 45deg;
+          width: 1em;
+          height: 1em;
+          border-top: solid 0.105em var(--opaque-100);
+          border-left: solid 0.105em var(--opaque-100);
+          background-color: var(--bg-300);
+          border-radius: var(--radius-100);
+        }
+
+        p {
+          font-size: 0.75em;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

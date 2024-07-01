@@ -6,8 +6,7 @@ import { useMediaQuery } from "../hooks/useMediaQuery";
 
 const Overlay = () => {
   const { isMenuOpen, toggleMenu } = useContext(MenuContext);
-  const { isProjectModalOpen, toggleProjectModal } =
-    useContext(ProjectModalContext);
+  const { isProjectModalOpen, toggleProjectModal } = useContext(ProjectModalContext);
   const isMobile = useMediaQuery("sm", "down");
 
   const overlayVariants = {
@@ -29,8 +28,7 @@ const Overlay = () => {
         <motion.div
           className="overlay"
           style={{
-            zIndex:
-              isMobile && isProjectModalOpen ? 1001 : isMobile ? 999 : 1005,
+            zIndex: isMobile && isProjectModalOpen ? 1001 : isMobile ? 999 : 1005,
           }}
           onClick={isMenuOpen ? toggleMenu : toggleProjectModal}
           initial="closed"

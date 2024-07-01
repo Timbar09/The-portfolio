@@ -83,7 +83,7 @@
     &--settings {
       margin: 0 0 0.25em auto;
       width: max-content;
-      background-color: var(--opaque-light-200);
+      background-color: var(--bg-200);
       border-radius: var(--radius-200);
 
       .social__list {
@@ -263,8 +263,8 @@
       &__menu {
         &-toggle {
           &--stroke {
-            transition: opacity 100ms 100ms ease-in-out,
-              top 100ms 300ms ease-in-out, rotate 100ms ease-in-out;
+            transition: opacity 100ms 100ms ease-in-out, top 100ms 300ms ease-in-out,
+              rotate 100ms ease-in-out;
 
             &-top {
               top: 0;

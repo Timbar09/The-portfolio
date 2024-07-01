@@ -7,7 +7,7 @@ import TechItem from "./TechItem";
 import { IoCloseCircle as CloseModalIcon } from "react-icons/io5";
 import { FaGitAlt as SourceCodeIcon } from "react-icons/fa6";
 
-import projectImages from "./projectImages";
+import imagesObj from "./projectImages";
 
 const ProjectModal = () => {
   const modalRef = useRef();
@@ -15,6 +15,8 @@ const ProjectModal = () => {
     useContext(ProjectModalContext);
 
   const { overview, problem, features, summary } = selectedProject.description;
+
+  const { bgImage } = imagesObj[selectedProject.imagesFile];
 
   useEffect(() => {
     // When the modal is open, add a keydown event listener to trap the focus
@@ -24,24 +26,17 @@ const ProjectModal = () => {
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       );
       const firstFocusableElement = focusableElements[0];
-      const lastFocusableElement =
-        focusableElements[focusableElements.length - 1];
+      const lastFocusableElement = focusableElements[focusableElements.length - 1];
 
       const handleKeyDown = (event) => {
         if (event.key === "Tab") {
           // If the shift key is held down and the first focusable element is focused, move the focus to the last focusable element
-          if (
-            event.shiftKey &&
-            document.activeElement === firstFocusableElement
-          ) {
+          if (event.shiftKey && document.activeElement === firstFocusableElement) {
             lastFocusableElement.focus();
             event.preventDefault();
           }
           // If the shift key is not held down and the last focusable element is focused, move the focus to the first focusable element
-          else if (
-            !event.shiftKey &&
-            document.activeElement === lastFocusableElement
-          ) {
+          else if (!event.shiftKey && document.activeElement === lastFocusableElement) {
             firstFocusableElement.focus();
             event.preventDefault();
           }
@@ -61,10 +56,7 @@ const ProjectModal = () => {
   }, [isProjectModalOpen]);
 
   return (
-    <div
-      ref={modalRef}
-      className={`project__modal p-2 ${isProjectModalOpen ? "open" : "closed"}`}
-    >
+    <div ref={modalRef} className={`project__modal p-2 ${isProjectModalOpen ? "open" : "closed"}`}>
       <div className="project__modal--container flex flex-col">
         <header className="project__modal--header flex flex-jc-sb flex-wrap gap-2 py-2">
           <button
@@ -79,11 +71,7 @@ const ProjectModal = () => {
           <h2>{selectedProject.title}</h2>
 
           <div className="project__modal--header__buttons flex flex-wrap gap-2">
-            <Button
-              type="primary"
-              name="Live Demo"
-              linkTo={selectedProject.live}
-            />
+            <Button type="primary" name="Live Demo" linkTo={selectedProject.live} />
 
             <Button
               type="secondary"
@@ -96,11 +84,7 @@ const ProjectModal = () => {
 
         <div className="project__modal--body">
           <div className="project__modal--body__image">
-            <img
-              src={projectImages[selectedProject.image]}
-              alt={`${selectedProject.title} project image`}
-              className="grid"
-            />
+            <img src={bgImage} alt={`${selectedProject.title} project image`} className="grid" />
           </div>
 
           <div className="project__modal--body__text p-2 grid grid-gap-2">
@@ -113,7 +97,7 @@ const ProjectModal = () => {
               <h3>Technologies Used</h3>
               <ul className="flex flex-ai-fs flex-wrap gap-1">
                 {selectedProject.tech.map((item, index) => (
-                  <TechItem key={index} item={item} />
+                  <TechItem key={index} item={item} isCardHovered={true} />
                 ))}
               </ul>
             </section>
