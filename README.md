@@ -1,5 +1,11 @@
 # Miles Mosweu | Portfolio
 
+<div align="center">
+  <img src="src/assets/images/logo-icon.png" alt="Todo X Factr Logo" width="200" height="200" />
+</div>
+
+<a name="readme-top"></a>
+
 ## 📗 Table of Contents
 
 [![📖 Overview](https://img.shields.io/badge/📖_Overview-blue)](#overview)
@@ -47,6 +53,8 @@ This repository contains the source code for my personal portfolio website that 
 - **Performance Optimizations**: Ensures fast loading times and a smooth user experience. -->
 - **Deployment**: Hosted on Netlify for continuous deployment and easy management.
 
+<p align="right">(<a href="#readme-top">back to top ⬆️</a>)</p>
+
 ## 🚀 Live Demo <a name='live-demo'></a>
 
 The website is live at [milesmosweu.netlify.app](https://milesmosweu.netlify.app/).
@@ -59,7 +67,7 @@ The website is live at [milesmosweu.netlify.app](https://milesmosweu.netlify.app
 - **Performance Improvements**: Optimize performance for faster loading times.
 - **Accessibility Improvements**: Enhance accessibility for users with disabilities.
 
-## 💻 Running Locally <a name='run-locally'></a>
+## 💻 Running Locally <a name='running-locally'></a>
 
 To run this project locally, follow these steps:
 
@@ -84,6 +92,8 @@ npm run dev
 
 The site will be available at `http://localhost:5173`.
 
+<p align="right">(<a href="#readme-top">back to top ⬆️</a>)</p>
+
 ## 🤝 Contributing <a name='contributing'></a>
 
 While this is a personal project, if you find any bugs or ways to improve the code, your contributions are welcome. Please open an issue or submit a pull request.
@@ -105,3 +115,5 @@ While this is a personal project, if you find any bugs or ways to improve the co
 ## 📝 License <a name="license"></a>
 
 This project is open source and available under the [MIT License](LICENSE).
+
+<p align="right">(<a href="#readme-top">back to top ⬆️</a>)</p>
