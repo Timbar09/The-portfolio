@@ -75,6 +75,11 @@ To run this project locally, follow these steps:
 
 - A code editor. I personally use [VS Code](https://code.visualstudio.com/).
 - [Node.js](https://nodejs.org/en/) installed on your machine.
+- [Vite](https://vitejs.dev/) build tool installed globally.
+
+```bash
+npm install -g create-vite
+```
 
 ### Steps
 
