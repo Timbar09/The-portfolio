@@ -1,6 +1,7 @@
 import { FaGithub as GithubIcon } from "react-icons/fa";
 import { FaLinkedin as LinkedInIcon } from "react-icons/fa";
 import { FaXTwitter as XIcon } from "react-icons/fa6";
+import { FaCodepen as CodePenIcon } from "react-icons/fa";
 
 import "../assets/scss/components/SocialLinkTree.scss";
 
@@ -21,6 +22,11 @@ const socialLinks = [
     name: "X / Twitter",
     url: `https://twitter.com/Milez09${ref}`,
     icon: <XIcon />,
+  },
+  {
+    name: "CodePen",
+    url: `https://codepen.io/Timbar09${ref}`,
+    icon: <CodePenIcon />,
   },
 ];
 
