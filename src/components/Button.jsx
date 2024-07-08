@@ -12,7 +12,7 @@ import "../assets/scss/components/Button.scss";
  * @param {string} type - The type of button to display e.g. primary, secondary, tertiary
  * @param {string} name - The name of the button
  * @param {string} linkTo - The linkTo to navigate to when the button is clicked (optional)
- * @param {string} form - The form to submit when the button is inside a form (optional)
+ * @param {boolean} isFormButton - If the button is a form submit button (optional)
  * @param {JSX.Element} icon - The icon to display next to the button name (optional)
  * @param {string} title - The title of the button (optional)
  * @param {function} func - The function to execute when the button is clicked (optional)
@@ -24,7 +24,7 @@ const Button = ({
   type = "primary",
   name = "Primary",
   linkTo = null,
-  form = false,
+  isFormButton = false,
   icon = <ExternalLinkIcon />,
   func = null,
   title = null,
@@ -71,14 +71,14 @@ const Button = ({
         )
       ) : (
         <button
-          className={`button button__${type} ${form ? "button__" + type + "--form" : ""}`}
-          type={form ? "submit" : "button"}
+          className={`button button__${type} ${isFormButton ? "button__" + type + "--form" : ""}`}
+          type={isFormButton ? "submit" : "button"}
           onClick={handleClick}
           title={title}
         >
           <span className="flex flex-jc-c flex-ai-c gap-1">
             {name}
-            {form ? <SendIcon /> : icon}
+            {isFormButton ? <SendIcon /> : icon}
           </span>
         </button>
       )}

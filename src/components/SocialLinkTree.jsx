@@ -33,11 +33,11 @@ const socialLinks = [
 const SocialLinkTree = () => {
   return (
     <ul className="social__list flex gap-2 p-1">
-      {socialLinks.map((link, index) => (
+      {socialLinks.map(({ name, url, icon }, index) => (
         <li key={index} className="social__item">
-          <a href={link.url} target="_blank" rel="noreferrer" className="social__item--link grid">
-            {link.icon}
-            <span className="social__item--name">{link.name}</span>
+          <a href={url} target="_blank" rel="noreferrer" className="social__item--link grid">
+            {icon}
+            <span className="social__item--name">{name}</span>
           </a>
         </li>
       ))}
