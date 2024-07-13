@@ -1,7 +1,7 @@
 import { Link } from "react-scroll";
 
 import { FaArrowRightLong as ArrowIcon } from "react-icons/fa6";
-import { TbExternalLink as ExternalLinkIcon } from "react-icons/tb";
+import { MdOutlineArrowOutward as ExternalLinkIcon } from "react-icons/md";
 import { LuSendHorizonal as SendIcon } from "react-icons/lu";
 
 import "../assets/scss/components/Button.scss";
