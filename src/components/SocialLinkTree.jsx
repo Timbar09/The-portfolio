@@ -19,8 +19,8 @@ const socialLinks = [
     icon: <LinkedInIcon />,
   },
   {
-    name: "X / Twitter",
-    url: `https://twitter.com/Milez09${ref}`,
+    name: "X",
+    url: `https://x.com/Milez09${ref}`,
     icon: <XIcon />,
   },
   {

@@ -6,8 +6,8 @@ import SocialLinkTree from "../../components/SocialLinkTree";
 
 import "../../assets/scss/sections/HomeSection.scss";
 
-import darkBgImg from "../../assets/images/hero-bg-dark.jpg";
-import lightBgImg from "../../assets/images/hero-bg-light.jpg";
+import darkBgImg from "../../assets/images/hero-bg-dark.webp";
+import lightBgImg from "../../assets/images/hero-bg-light.webp";
 
 const HomeSection = () => {
   const { theme } = useContext(ThemeContext);
@@ -31,8 +31,7 @@ const HomeSection = () => {
 
         <div className="home__group">
           <p className="home__description">
-            I craft unique, functional and modern websites that captivate and
-            invite engagement.
+            I craft unique, functional and modern websites that captivate and invite engagement.
           </p>
         </div>
 
