@@ -18,9 +18,7 @@ const AboutBioInfo = () => {
 
   const fetchQuote = async () => {
     try {
-      const response = await fetch(
-        "https://api.quotable.io/quotes/random?maxLength=100"
-      );
+      const response = await fetch("https://api.quotable.io/quotes/random?maxLength=100");
       const data = await response.json();
       const [obj] = data;
       const quote = {
@@ -44,18 +42,12 @@ const AboutBioInfo = () => {
     >
       <div className="about__bio--info__container" onMouseLeave={fetchQuote}>
         <div className="about__bio--info__image">
-          <img
-            src={bioImage}
-            alt="Miles Mosweu"
-            className="about__bio--image"
-          />
+          <img src={bioImage} alt="Miles Mosweu" className="about__bio--image" />
 
           <div className="about__bio--info__contact">
             <div className="about__bio--info__contact--content p-2">
               <p className="about__bio--info__contact--name">Miles Mosweu</p>
-              <p className="about__bio--info__contact--title">
-                Full Stack Developer
-              </p>
+              <p className="about__bio--info__contact--title">Full Stack Developer</p>
 
               <div className="about__bio--info__contact--socials grid grid-pi-c pt-1">
                 <SocialLinkTree />

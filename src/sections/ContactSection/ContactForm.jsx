@@ -15,9 +15,7 @@ const ContactForm = () => {
       },
     })
       .then((response) => (response.ok ? form.reset() : Promise.reject()))
-      .then(() =>
-        alert("Thank you for your message! I'll get back to you soon.")
-      )
+      .then(() => alert("Thank you for your message! I'll get back to you soon."))
       .catch(() => alert("Oops! Something went wrong. Please try again."));
   };
 
@@ -42,16 +40,13 @@ const ContactForm = () => {
   ];
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="contact__form p-2 grid grid-col grid-gap-2"
-    >
+    <form onSubmit={handleSubmit} className="contact__form p-2 grid grid-col grid-gap-2">
       {fields.map((field, index) => (
         <FormField key={index} {...field} />
       ))}
 
       <div className="form-field__submit">
-        <Button type="primary" name="Send" form={true} />
+        <Button type="primary" name="Send" isFormButton />
       </div>
     </form>
   );
