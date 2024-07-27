@@ -2,6 +2,7 @@ import { useEffect, useState, createContext } from "react";
 import useLocalStorage from "use-local-storage";
 
 import Overlay from "./Overlay";
+import ProjectModal from "../sections/ProjectsSection/ProjectModal";
 import Layout from "../layout";
 
 import "../assets/scss/components/App.scss";
@@ -22,14 +23,11 @@ const App = () => {
       features: ["This is a dummy project."],
       summary: "This is a dummy project.",
     },
-    image: "project-modal-placeholder.jpg",
+    imagesFile: "dummy",
     tech: ["HTML", "CSS", "JavaScript"],
   });
   const preference = window.matchMedia("(prefers-color-scheme: light)").matches;
-  const [theme, setTheme] = useLocalStorage(
-    "theme",
-    preference ? "light" : "dark"
-  );
+  const [theme, setTheme] = useLocalStorage("theme", preference ? "light" : "dark");
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
@@ -68,6 +66,7 @@ const App = () => {
         >
           <div className="app">
             <Overlay />
+            <ProjectModal />
 
             <Layout />
           </div>

@@ -6,7 +6,7 @@ import Logo from "../Logo";
 import MenuToggleButton from "./MenuToggleButton";
 
 const MenuHeader = () => {
-  const { isMenuOpen, toggleMenu } = useContext(MenuContext);
+  const { isMenuOpen } = useContext(MenuContext);
 
   const menuLogoVariants = {
     open: { opacity: 1, visibility: "visible" },

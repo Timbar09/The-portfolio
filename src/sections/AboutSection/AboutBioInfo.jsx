@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import SocialLinkTree from "../../components/SocialLinkTree";
 import Button from "../../components/Button";
+import Transition from "../../components/Transition";
 
 import { IoMdDownload as DownloadIcon } from "react-icons/io";
 import { BiSolidQuoteLeft as OpenQuotationIcon } from "react-icons/bi";
@@ -17,9 +18,7 @@ const AboutBioInfo = () => {
 
   const fetchQuote = async () => {
     try {
-      const response = await fetch(
-        "https://api.quotable.io/quotes/random?maxLength=100"
-      );
+      const response = await fetch("https://api.quotable.io/quotes/random?maxLength=100");
       const data = await response.json();
       const [obj] = data;
       const quote = {
@@ -34,21 +33,21 @@ const AboutBioInfo = () => {
   };
 
   return (
-    <div className="about__bio--info grid grid-pi-c">
+    <Transition
+      className="about__bio--info grid grid-pi-c"
+      transitionName="fade-in-up"
+      trigger="whileInView"
+      offset="-25%"
+      duration={1}
+    >
       <div className="about__bio--info__container" onMouseLeave={fetchQuote}>
         <div className="about__bio--info__image">
-          <img
-            src={bioImage}
-            alt="Miles Mosweu"
-            className="about__bio--image"
-          />
+          <img src={bioImage} alt="Miles Mosweu" className="about__bio--image" />
 
           <div className="about__bio--info__contact">
             <div className="about__bio--info__contact--content p-2">
               <p className="about__bio--info__contact--name">Miles Mosweu</p>
-              <p className="about__bio--info__contact--title">
-                Full Stack Developer
-              </p>
+              <p className="about__bio--info__contact--title">Full Stack Developer</p>
 
               <div className="about__bio--info__contact--socials grid grid-pi-c pt-1">
                 <SocialLinkTree />
@@ -81,7 +80,7 @@ const AboutBioInfo = () => {
           />
         </div>
       </div>
-    </div>
+    </Transition>
   );
 };
 

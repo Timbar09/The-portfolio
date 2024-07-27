@@ -1,0 +1,255 @@
+@use "../../utils/" as *;
+
+.about__bio {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "image"
+    "subtitle"
+    "description";
+
+  @include breakpoint-up(lg) {
+    grid-template-columns: auto min-content;
+    grid-template-areas:
+      "subtitle subtitle"
+      "description image";
+  }
+
+  .about__subtitle {
+    grid-area: subtitle;
+    max-width: 20em;
+
+    @include breakpoint-up(lg) {
+      margin-top: 0;
+    }
+  }
+
+  &--info {
+    --dimension: 21em;
+
+    position: relative;
+
+    @include touch {
+      --dimension: 100%;
+
+      max-width: 25em;
+      margin: 0 auto;
+
+      .about__bio--info {
+        &__image {
+          img {
+            position: relative;
+            height: 10em;
+            width: 10em;
+            left: 50%;
+            translate: -50% 0;
+            bottom: -5em;
+            background: var(--primary-gradient);
+            border-radius: var(--radius-round);
+            z-index: 1;
+          }
+        }
+
+        &__contact {
+          margin-top: 0;
+          padding-top: 5em;
+        }
+
+        &__buttons {
+          max-width: 18em;
+          margin: 0.75em auto 0;
+        }
+      }
+
+      @include breakpoint-up(lg) {
+        --dimension: 21em;
+
+        max-width: 100%;
+
+        .about__bio--info {
+          &__image {
+            img {
+              bottom: 5em;
+            }
+          }
+
+          &__contact {
+            top: -10em;
+          }
+
+          &__buttons {
+            margin-top: -9em;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    &__container {
+      position: relative;
+      width: var(--dimension);
+      perspective: 1000px;
+
+      &:hover,
+      &:focus-within {
+        .about__bio--info {
+          &__image {
+            rotate: y 180deg;
+          }
+
+          &__contact {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+
+    &__image {
+      grid-area: image;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      transition: rotate 1000ms ease;
+
+      img {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: dashed 0.125em var(--opaque-200);
+        background-color: var(--bg-300);
+        border-radius: var(--radius-200);
+      }
+    }
+
+    &__contact {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: calc(100% + 3px);
+      height: calc(var(--dimension) + 3px);
+      border-radius: var(--radius-200);
+      background-color: var(--bg-400);
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0ms 300ms ease, opacity 100ms 200ms ease,
+        rotate 1000ms ease;
+
+      @include touch {
+        position: relative;
+        width: 100%;
+        height: auto;
+        rotate: y 0deg;
+        inset: auto;
+        visibility: visible;
+        opacity: 1;
+        margin-top: 0.5em;
+        border: solid 0.125em var(--bg-300);
+
+        .about__bio--info {
+          &__contact {
+            &--content {
+              rotate: y 0deg;
+            }
+          }
+        }
+      }
+
+      &--content {
+        rotate: y 180deg;
+      }
+
+      &--name {
+        color: var(--text-200);
+        font-size: 1.75em;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+
+      &--title {
+        margin-bottom: 0;
+      }
+
+      &--socials {
+        .social__item {
+          margin-left: 0;
+          opacity: 1;
+          scale: 1;
+        }
+
+        svg {
+          background-color: var(--bg-400);
+        }
+      }
+
+      &--quote {
+        margin-top: 1em;
+        position: relative;
+        border: solid 0.125em var(--bg-400);
+        border-radius: var(--radius-200);
+        background-color: var(--opaque-20);
+        overflow: hidden;
+
+        blockquote {
+          margin: 0.5em 0;
+          font-size: 0.95em;
+        }
+
+        cite {
+          font-size: 0.75em;
+          color: var(--text-200);
+        }
+
+        .quotation {
+          position: absolute;
+          font-size: 2.5em;
+          rotate: -20deg;
+          color: var(--opaque-20);
+          z-index: -1;
+
+          &__open {
+            bottom: -0.25em;
+            left: -0.25em;
+          }
+
+          &__close {
+            top: -0.25em;
+            right: -0.25em;
+          }
+        }
+      }
+    }
+
+    &__buttons {
+      margin-top: 0.5em;
+
+      a {
+        &:first-child {
+          flex: 1;
+        }
+
+        &:last-child {
+          font-size: 1.25em;
+          border-color: var(--opaque-40);
+
+          &:hover {
+            background-color: var(--bg-400);
+          }
+        }
+      }
+    }
+  }
+
+  &--description {
+    grid-area: description;
+    position: relative;
+
+    @include breakpoint-up(lg) {
+      flex: min-content;
+      order: -1;
+    }
+  }
+}
