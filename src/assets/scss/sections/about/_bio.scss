@@ -1,18 +1,18 @@
-@use "../../utils/" as *;
+@use '../../utils/' as *;
 
 .about__bio {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "image"
-    "subtitle"
-    "description";
+    'image'
+    'subtitle'
+    'description';
 
   @include breakpoint-up(lg) {
     grid-template-columns: auto min-content;
     grid-template-areas:
-      "subtitle subtitle"
-      "description image";
+      'subtitle subtitle'
+      'description image';
   }
 
   .about__subtitle {
@@ -34,30 +34,48 @@
 
       max-width: 25em;
       margin: 0 auto;
-
-      .about__bio--info {
-        &__image {
-          img {
-            position: relative;
-            height: 10em;
-            width: 10em;
-            left: 50%;
-            translate: -50% 0;
-            bottom: -5em;
-            background: var(--primary-gradient);
-            border-radius: var(--radius-round);
-            z-index: 1;
+      .about {
+        &__container {
+          &:hover,
+          &:focus-within {
+            .about__bio--info {
+              &__image {
+                rotate: y 0deg;
+              }
+            }
           }
         }
 
-        &__contact {
-          margin-top: 0;
-          padding-top: 5em;
-        }
+        &__bio--info {
+          &__image {
+            img {
+              position: relative;
+              height: 10em;
+              width: 10em;
+              left: 50%;
+              translate: -50% 0;
+              bottom: -5em;
+              background: var(--primary-gradient);
+              border-radius: var(--radius-round);
+              z-index: 1;
+            }
+          }
 
-        &__buttons {
-          max-width: 18em;
-          margin: 0.75em auto 0;
+          &__contact {
+            margin-top: 0;
+            padding-top: 5em;
+
+            &--quote {
+              &__button {
+                display: grid;
+              }
+            }
+          }
+
+          &__buttons {
+            max-width: 18em;
+            margin: 0.75em auto 0;
+          }
         }
       }
 
@@ -135,8 +153,7 @@
       background-color: var(--bg-400);
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0ms 300ms ease, opacity 100ms 200ms ease,
-        rotate 1000ms ease;
+      transition: visibility 0ms 300ms ease, opacity 100ms 200ms ease, rotate 1000ms ease;
 
       @include touch {
         position: relative;
@@ -218,6 +235,32 @@
           &__close {
             top: -0.25em;
             right: -0.25em;
+          }
+        }
+
+        &__button {
+          --dimension: 1.75em;
+
+          border: 0;
+          position: absolute;
+          bottom: 0.5em;
+          right: 0.5em;
+          z-index: 1;
+          width: var(--dimension);
+          height: var(--dimension);
+          display: none;
+          place-items: center;
+          font-size: 1.25em;
+          border: solid 0.075em var(--opaque-20);
+          border-radius: var(--radius-round);
+          color: inherit;
+          background-color: var(--opaque-20);
+          transition: transform 300ms ease, color 300ms ease, background-color 300ms ease;
+
+          &:hover {
+            transform: rotate(90deg);
+            color: var(--text-200);
+            background-color: var(--opaque-40);
           }
         }
       }

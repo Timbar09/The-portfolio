@@ -1,24 +1,25 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import SocialLinkTree from "../../components/SocialLinkTree";
-import Button from "../../components/Button";
-import Transition from "../../components/Transition";
+import SocialLinkTree from '../../components/SocialLinkTree';
+import Button from '../../components/Button';
+import Transition from '../../components/Transition';
 
-import { IoMdDownload as DownloadIcon } from "react-icons/io";
-import { BiSolidQuoteLeft as OpenQuotationIcon } from "react-icons/bi";
-import { BiSolidQuoteRight as CloseQuotationIcon } from "react-icons/bi";
+import { IoMdDownload as DownloadIcon } from 'react-icons/io';
+import { BiSolidQuoteLeft as OpenQuotationIcon } from 'react-icons/bi';
+import { BiSolidQuoteRight as CloseQuotationIcon } from 'react-icons/bi';
+import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md';
 
-import bioImage from "../../assets/images/miles_processed.png";
+import bioImage from '../../assets/images/miles_processed.png';
 
 const AboutBioInfo = () => {
   const [quote, setQuote] = useState({
-    content: "When people show you who they are, believe them the first time.",
-    author: "Maya Angelou",
+    content: 'When people show you who they are, believe them the first time.',
+    author: 'Maya Angelou',
   });
 
   const fetchQuote = async () => {
     try {
-      const response = await fetch("https://api.quotable.io/quotes/random?maxLength=100");
+      const response = await fetch('https://api.quotable.io/quotes/random?maxLength=100');
       const data = await response.json();
       const [obj] = data;
       const quote = {
@@ -28,7 +29,7 @@ const AboutBioInfo = () => {
 
       setQuote(quote);
     } catch (error) {
-      console.error("Failed to fetch quote: ", error);
+      console.error('Failed to fetch quote: ', error);
     }
   };
 
@@ -59,6 +60,13 @@ const AboutBioInfo = () => {
 
                 <OpenQuotationIcon className="quotation quotation__open" />
                 <CloseQuotationIcon className="quotation quotation__close" />
+                <button
+                  className="about__bio--info__contact--quote__button"
+                  onClick={fetchQuote}
+                  title="Refresh quote"
+                >
+                  <RefreshIcon />
+                </button>
               </div>
             </div>
           </div>
