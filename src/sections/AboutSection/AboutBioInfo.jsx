@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import quotes from '../../data/quotes.json'; // Import the quotes JSON file
 
 import SocialLinkTree from '../../components/SocialLinkTree';
 import Button from '../../components/Button';
@@ -17,19 +18,13 @@ const AboutBioInfo = () => {
     author: 'Maya Angelou',
   });
 
-  const fetchQuote = async () => {
+  const fetchQuote = () => {
     try {
-      const response = await fetch('https://api.quotable.io/quotes/random?maxLength=100');
-      const data = await response.json();
-      const [obj] = data;
-      const quote = {
-        content: obj.content,
-        author: obj.author,
-      };
-
-      setQuote(quote);
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const randomQuote = quotes[randomIndex];
+      setQuote(randomQuote);
     } catch (error) {
-      console.error('Failed to fetch quote: ', error);
+      console.error('Error fetching quote:', error);
     }
   };
 
@@ -41,7 +36,7 @@ const AboutBioInfo = () => {
       offset="-25%"
       duration={1}
     >
-      <div className="about__bio--info__container" onMouseLeave={fetchQuote}>
+      <div className="about__bio--info__container" onMouseEnter={fetchQuote}>
         <div className="about__bio--info__image">
           <img src={bioImage} alt="Miles Mosweu" className="about__bio--image" />
 
