@@ -37,6 +37,7 @@ const ProjectCard = ({ data, onHoverOrFocus, isActive }) => {
       aria-label={data.title}
       style={isActive ? cardStyle : {}}
       onMouseEnter={handleMouseEnter}
+      onFocus={handleMouseEnter}
     >
       <div className="project__card--container__content">
         <div className="project__card--container__content--text flex flex-col pt-2">

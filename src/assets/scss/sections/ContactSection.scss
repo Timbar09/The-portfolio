@@ -78,6 +78,12 @@
     margin-top: 0.75em;
   }
 
+  &:focus-within {
+    &::before {
+      opacity: 0;
+    }
+  }
+
   &__label {
     position: absolute;
     top: 0.55em;
@@ -154,6 +160,21 @@
 
     &:valid {
       color: var(--text-400);
+    }
+  }
+
+  &--select {
+    &::before {
+      content: "Subject";
+      position: absolute;
+      padding: 0.5rem;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      color: var(--opaque-200);
+      z-index: 1;
+      transition: opacity 200ms ease-in-out;
     }
   }
 

@@ -84,10 +84,7 @@ const Select = ({
         onFocus={handleFocus}
         onClick={handleSelectClick}
       >
-        <option value="" disabled selected>
-          {label.split(" *")[0]}
-        </option>
-
+        <option value="" disabled selected hidden></option>
         {options.map((option, index) => (
           <option key={index} value={option}>
             {option}
@@ -120,7 +117,7 @@ const FormField = ({
   };
 
   return (
-    <div className="form-field">
+    <div className={`form-field form-field--${type}`}>
       <Label label={label} name={name} />
 
       {type === "textarea" ? (
