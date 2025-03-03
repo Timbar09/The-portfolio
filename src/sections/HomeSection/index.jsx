@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../components/App";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 import Button from "../../components/Button";
 import SocialLinkTree from "../../components/SocialLinkTree";
@@ -11,6 +12,11 @@ import lightBgImg from "../../assets/images/hero-bg-light.webp";
 
 const HomeSection = () => {
   const { theme } = useContext(ThemeContext);
+  const isTablet = useMediaQuery("md", "down");
+
+  const tertiaryButtonProps = isTablet
+    ? { name: "Contact Me", linkTo: "#contact" }
+    : { name: "More About Me", linkTo: "#about" };
 
   return (
     <section name="home" id="home" className="home__section">
@@ -38,7 +44,7 @@ const HomeSection = () => {
         <div className="home__buttons home__group flex flex-jc-c flex-ai-c flex_md-jc-fs flex-wrap gap-2">
           <Button name="View Projects" linkTo="#projects" />
 
-          <Button type="tertiary" name="More About Me" linkTo="#about" />
+          <Button type="tertiary" {...tertiaryButtonProps} />
         </div>
 
         <div className="home__group flex flex-jc-c flex_md-jc-fs">
