@@ -10,6 +10,8 @@ import { BiSolidQuoteLeft as OpenQuotationIcon } from 'react-icons/bi';
 import { BiSolidQuoteRight as CloseQuotationIcon } from 'react-icons/bi';
 import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md';
 
+import { fetchQuote } from './aboutUtils';
+
 import bioImage from '../../assets/images/miles_processed.png';
 
 const AboutBioInfo = () => {
@@ -17,16 +19,6 @@ const AboutBioInfo = () => {
     content: 'When people show you who they are, believe them the first time.',
     author: 'Maya Angelou',
   });
-
-  const fetchQuote = () => {
-    try {
-      const randomIndex = Math.floor(Math.random() * quotes.length);
-      const randomQuote = quotes[randomIndex];
-      setQuote(randomQuote);
-    } catch (error) {
-      console.error('Error fetching quote:', error);
-    }
-  };
 
   return (
     <Transition

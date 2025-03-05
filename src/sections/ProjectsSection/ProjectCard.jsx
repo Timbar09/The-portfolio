@@ -16,10 +16,6 @@ const ProjectCard = ({ data, onHoverOrFocus, isActive }) => {
   const briefDescription = data.description.brief;
   const { logo, bgImage } = imagesObj[data.imagesFile];
 
-  const handleMouseEnter = () => {
-    onHoverOrFocus();
-  };
-
   const activeClass = isActive ? 'active' : '';
 
   const cardStyle = {
@@ -36,8 +32,8 @@ const ProjectCard = ({ data, onHoverOrFocus, isActive }) => {
       className={`project__card--container${` ${activeClass}`} flex flex-ai-fe`}
       aria-label={data.title}
       style={isActive ? cardStyle : {}}
-      onMouseEnter={handleMouseEnter}
-      onFocus={handleMouseEnter}
+      onMouseEnter={onHoverOrFocus}
+      onFocus={onHoverOrFocus}
     >
       <div className="project__card--container__content">
         <div className="project__card--container__content--text flex flex-col pt-2">
