@@ -2,7 +2,8 @@ import { Link } from "react-scroll";
 
 import { FaArrowRightLong as ArrowIcon } from "react-icons/fa6";
 import { MdOutlineArrowOutward as ExternalLinkIcon } from "react-icons/md";
-import { LuSendHorizonal as SendIcon } from "react-icons/lu";
+import { VscSend as SendIcon } from "react-icons/vsc";
+import { AiOutlineStop as InvalidIcon } from "react-icons/ai";
 
 import "../assets/scss/components/Button.scss";
 
@@ -78,7 +79,7 @@ const Button = ({
         >
           <span className="flex flex-jc-c flex-ai-c gap-1">
             {name}
-            {isFormButton ? <SendIcon /> : icon}
+            {isFormButton ? <><SendIcon /><InvalidIcon /></> : icon}
           </span>
         </button>
       )}
