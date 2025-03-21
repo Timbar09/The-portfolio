@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 import ProjectCard from "./ProjectCard";
+import ProjectModal from "./ProjectModal";
 
 import ProjectData from "../../data/projects.json";
 
@@ -17,9 +18,11 @@ const ProjectList = () => {
           key={index}
           data={item}
           onHoverOrFocus={() => setActiveCard(index)}
-          isActive={activeCard === index}
+          isActive={activeCardd === index}
         />
       ))}
+
+      <ProjectModal />
     </ul>
   );
 };
