@@ -1,36 +1,48 @@
-export const trapFocus = (isProjectModalOpen, modalRef) => {
-  // When the modal is open, add a keydown event listener to trap the focus
-  if (isProjectModalOpen) {
-    // Get all focusable elements within the modal
-    const focusableElements = modalRef.current.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+export const trapFocus = (isActive, containerRef) => {
+  if (!isActive || !containerRef.current) return;
+
+      const focusableElements = containerRef.current.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"]), [data-focusable="true"]'
     );
+
+    if (focusableElements.length === 0) return; // Exit if no focusable elements are found
+    
     const firstFocusableElement = focusableElements[0];
     const lastFocusableElement = focusableElements[focusableElements.length - 1];
+    
+    const handleFocus = (e) => {
+    console.log(e.target);
+    if (e.shiftKey && document.activeElement === firstFocusableElement) {
+      e.preventDefault();
+      lastFocusableElement.focus();
+    } else if (!e.shiftKey && document.activeElement === lastFocusableElement) {
+      e.preventDefault();
+      firstFocusableElement.focus();
+    }
+  };
 
-    const handleKeyDown = (event) => {
-      if (event.key === 'Tab') {
-        // If the shift key is held down and the first focusable element is focused, move the focus to the last focusable element
-        if (event.shiftKey && document.activeElement === firstFocusableElement) {
-          lastFocusableElement.focus();
-          event.preventDefault();
-        }
-        // If the shift key is not held down and the last focusable element is focused, move the focus to the first focusable element
-        else if (!event.shiftKey && document.activeElement === lastFocusableElement) {
-          firstFocusableElement.focus();
-          event.preventDefault();
-        }
-      }
-    };
+  firstFocusableElement.focus();
 
-    // Immediately move the focus to the first focusable element
-    firstFocusableElement.focus();
 
-    window.addEventListener('keydown', handleKeyDown);
+  const keyListener = (e) => {
+    if (e.key === "Tab") {
+      handleFocus(e);
+    }
+  };
 
-    return () => {
-      // When the modal is closed, remove the keydown event listener
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }
+  document.addEventListener("keydown", keyListener);
+
+  return () => {
+    document.removeEventListener("keydown", keyListener);
+  };
+};
+
+export const modalAnimationProps = {
+  initial: { opacity: 0, scale: 0 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+  },
+  exit: { opacity: 0, scale: 0 },
+  transition: { duration: 0.3 },
 };

@@ -160,10 +160,16 @@
     background-color: transparent;
     border: solid 0.125em var(--opaque-200);
     border-radius: var(--radius-200);
+    transition: border-color 100ms ease-in-out;
 
     &:focus {
       outline: none;
       background-color: var(--contact-opaque-bg-100);
+      border-color: var(--opaque-100);
+    }
+
+    &:hover {
+      border-color: var(--opaque-300);
     }
 
     &:valid {

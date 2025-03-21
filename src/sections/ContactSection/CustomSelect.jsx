@@ -6,6 +6,8 @@ import { optionsAnimationProps } from "./formUtils";
 
 import { IoChevronDownOutline as ChevronIcon } from "react-icons/io5";
 
+import { trapFocus } from "../ProjectsSection/projectUtils";
+
 const CustomSelect = ({ 
   name, 
   required, 
@@ -16,10 +18,15 @@ const CustomSelect = ({
 }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const selectRef = useRef(null);
+  const optionsRef = useRef(null);
 
   useEffect(() => {
     return handleClickOutside(selectRef, () => setIsSelectBoxOpen(false));
   }, [setIsSelectBoxOpen]);
+
+  useEffect(() => {
+    trapFocus(isSelectBoxOpen, optionsRef);
+  } , [isSelectBoxOpen]);
 
   const placeholder = selectedOption === "" ? true : false;
 
@@ -29,7 +36,12 @@ const CustomSelect = ({
         className="select form-field__input p-1"
         onClick={toggleDropdown}
         tabIndex={0}
-        onKeyDown={(e) => e.key === " " && toggleDropdown()}
+        onKeyDown={(e) => {
+          if (e.key === " ") {
+            e.preventDefault();
+            toggleDropdown();
+          }
+        }}
       >
         <span
           className={`${placeholder ? "select__placeholder" : ""}`}
@@ -43,7 +55,7 @@ const CustomSelect = ({
       </div>
       <AnimatePresence>
       {isSelectBoxOpen && (
-        <motion.ul className="select__option--list" {...optionsAnimationProps}>
+        <motion.ul className="select__option--list" {...optionsAnimationProps} ref={optionsRef}>
           {options.map((option, index) => (
             <li
               key={index}
@@ -51,6 +63,7 @@ const CustomSelect = ({
               onClick={() => handleOptionClick(option, setSelectedOption, setIsSelectBoxOpen)}
               onKeyDown={(e) => e.key === "Enter" && handleOptionClick(option, setSelectedOption, setIsSelectBoxOpen)}
               tabIndex={0}
+              data-focusable="true"
             >
               {option}
             </li>
