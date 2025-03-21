@@ -79,6 +79,7 @@ const CustomSelect = ({
         value={selectedOption === "Subject" ? "" : selectedOption}
         required={required}
         tabIndex={-1}
+        readOnly
       />
     </div>
   );
