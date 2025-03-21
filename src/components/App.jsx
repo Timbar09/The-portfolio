@@ -2,8 +2,8 @@ import { useEffect, useState, createContext } from 'react';
 import useLocalStorage from 'use-local-storage';
 
 import Overlay from './Overlay';
-import ProjectModal from '../sections/ProjectsSection/ProjectModal';
 import Layout from '../layout';
+import ErrorBoundary from './ErrorBoundary';
 
 import '../assets/scss/components/App.scss';
 
@@ -56,25 +56,26 @@ const App = () => {
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <MenuContext.Provider value={{ isMenuOpen, toggleMenu }}>
-        <ProjectModalContext.Provider
-          value={{
-            isProjectModalOpen,
-            toggleProjectModal,
-            selectedProject,
-            setSelectedProject,
-          }}
-        >
-          <div className="app">
-            <Overlay />
-            <ProjectModal />
+    <ErrorBoundary>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <MenuContext.Provider value={{ isMenuOpen, toggleMenu }}>
+          <ProjectModalContext.Provider
+            value={{
+              isProjectModalOpen,
+              toggleProjectModal,
+              selectedProject,
+              setSelectedProject,
+            }}
+          >
+            <div className="app">
+              <Overlay />
 
-            <Layout />
-          </div>
-        </ProjectModalContext.Provider>
-      </MenuContext.Provider>
-    </ThemeContext.Provider>
+              <Layout />
+            </div>
+          </ProjectModalContext.Provider>
+        </MenuContext.Provider>
+      </ThemeContext.Provider>
+    </ErrorBoundary>
   );
 };
 
