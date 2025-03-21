@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import quotes from '../../data/quotes.json'; // Import the quotes JSON file
+import quotes from '../../data/quotes.json';
 
 import SocialLinkTree from '../../components/SocialLinkTree';
 import Button from '../../components/Button';
@@ -10,15 +10,14 @@ import { BiSolidQuoteLeft as OpenQuotationIcon } from 'react-icons/bi';
 import { BiSolidQuoteRight as CloseQuotationIcon } from 'react-icons/bi';
 import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md';
 
-import { fetchQuote } from './aboutUtils';
+import { displayQuote } from './aboutUtils';
 
 import bioImage from '../../assets/images/miles_processed.png';
 
 const AboutBioInfo = () => {
-  const [quote, setQuote] = useState({
-    content: 'When people show you who they are, believe them the first time.',
-    author: 'Maya Angelou',
-  });
+  const [quote, setQuote] = useState(quotes[0]);
+
+  const fetchQuote = () => displayQuote(quotes, setQuote);
 
   return (
     <Transition

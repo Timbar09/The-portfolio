@@ -1,4 +1,4 @@
-export const fetchQuote = () => {
+export const displayQuote = (quotes, setQuote) => {
   try {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const randomQuote = quotes[randomIndex];
