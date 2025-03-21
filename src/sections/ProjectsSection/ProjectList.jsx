@@ -18,10 +18,10 @@ const ProjectList = () => {
           key={index}
           data={item}
           onHoverOrFocus={() => setActiveCard(index)}
-          isActive={activeCardd === index}
+          isActive={activeCard === index}
         />
       ))}
-
+      
       <ProjectModal />
     </ul>
   );

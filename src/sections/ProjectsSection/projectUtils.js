@@ -11,7 +11,6 @@ export const trapFocus = (isActive, containerRef) => {
     const lastFocusableElement = focusableElements[focusableElements.length - 1];
     
     const handleFocus = (e) => {
-    console.log(e.target);
     if (e.shiftKey && document.activeElement === firstFocusableElement) {
       e.preventDefault();
       lastFocusableElement.focus();
