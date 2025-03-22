@@ -25,6 +25,7 @@ const menuItems = [
 const NavContent = () => {
   const { toggleMenu } = useContext(MenuContext);
   const isMobile = useMediaQuery("sm", "down");
+  const isTablet = useMediaQuery("md", "down");
 
   const menuToggleAnimationProps = {
     initial: { opacity: 0 },
@@ -103,7 +104,7 @@ const NavContent = () => {
         </motion.li>
       </ul>
 
-      {!isMobile && (
+      {!isTablet && (
         <div className="nav__content--button">
           <Button name="Contact Me" linkTo="#contact" />
         </div>

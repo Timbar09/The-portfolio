@@ -7,4 +7,25 @@
   font-family: $ff-mitr;
   font-weight: 600;
   color: var(--text-400);
+
+  &:hover {
+    span {
+      color: var(--primary-100);
+
+      &:first-child {
+        left: -0.25em;
+      }
+
+      &:last-child {
+        left: 0.25em;
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    transition: left 200ms ease-in-out, color 200ms ease-in-out;
+  }
 }

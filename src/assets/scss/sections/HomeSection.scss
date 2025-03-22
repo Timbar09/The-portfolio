@@ -16,7 +16,10 @@
       }
 
       &__name {
-        color: var(--primary-100);
+        background: var(--primary-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
       }
     }
   }
