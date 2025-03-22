@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { handleClickOutside, handleOptionClick } from "./formUtils";
+import { handleClickOutside, handleOptionClick, handleEscapeKey } from "./formUtils";
 import { optionsAnimationProps } from "./formUtils";
 
 import { IoChevronDownOutline as ChevronIcon } from "react-icons/io5";
@@ -27,6 +27,10 @@ const CustomSelect = ({
   useEffect(() => {
     trapFocus(isSelectBoxOpen, optionsRef);
   } , [isSelectBoxOpen]);
+
+  useEffect(() => {
+    return handleEscapeKey(setIsSelectBoxOpen);
+  }, [setIsSelectBoxOpen]);
 
   const placeholder = selectedOption === "" ? true : false;
 

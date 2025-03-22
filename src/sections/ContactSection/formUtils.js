@@ -33,6 +33,17 @@ export const handleOptionClick = (option, setSelectedOption, setIsSelectBoxOpen)
   setIsSelectBoxOpen(false);
 };
 
+export const handleEscapeKey = (setIsSelectBoxOpen) => {
+  const listener = (e) => {
+    if (e.key === "Escape") {
+      setIsSelectBoxOpen(false);
+    }
+  }
+
+  document.addEventListener("keydown", listener);
+  return () => document.removeEventListener("keydown", listener);
+}
+
 export const selectOptions = [
   "General Inquiry",
   "Project Proposal",
