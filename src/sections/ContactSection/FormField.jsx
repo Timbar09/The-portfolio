@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { IoChevronDownOutline as ChevronIcon } from "react-icons/io5";
+import Select from "./CustomSelect";
 
 const Label = ({ label, name }) => {
   const actualLabel = label.split(" *")[0];
@@ -61,47 +61,6 @@ const Textarea = ({ name, placeholder, required, handleBlur, handleFocus }) => (
   />
 );
 
-const Select = ({
-  name,
-  label,
-  required,
-  handleBlur,
-  handleFocus,
-  options,
-}) => {
-  const handleSelectClick = (e) => {
-    e.target.classList.toggle("active");
-  };
-
-  return (
-    <>
-      <select
-        id={name}
-        name={name}
-        required={required}
-        className="form-field__input p-1"
-        onBlur={handleBlur}
-        onFocus={handleFocus}
-        onClick={handleSelectClick}
-      >
-        <option value="" disabled selected>
-          {label.split(" *")[0]}
-        </option>
-
-        {options.map((option, index) => (
-          <option key={index} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-
-      <span className="grid grid-pi-c px-1">
-        <ChevronIcon />
-      </span>
-    </>
-  );
-};
-
 const FormField = ({
   label = "Label text",
   type = "text",
@@ -110,6 +69,7 @@ const FormField = ({
   options = ["Option 1", "Option 2", "Option 3"],
 }) => {
   const [placeholder, setPlaceholder] = useState(label.split(" *")[0]);
+  const [isSelectBoxOpen, setIsSelectBoxOpen] = useState(false);
 
   const handleFocus = () => {
     setTimeout(() => setPlaceholder(`Your ${name}`), 200);
@@ -119,8 +79,10 @@ const FormField = ({
     setTimeout(() => setPlaceholder(label.split(" *")[0]), 100);
   };
 
+  const toggleDropdown = () => setIsSelectBoxOpen((prev) => !prev);
+
   return (
-    <div className="form-field">
+    <div className={`form-field form-field--${type} ${isSelectBoxOpen ? "open" : ""}`}>
       <Label label={label} name={name} />
 
       {type === "textarea" ? (
@@ -135,12 +97,11 @@ const FormField = ({
       ) : type === "select" ? (
         <Select
           name={name}
-          label={label}
           required={required}
-          placeholder={"Subject"}
-          handleBlur={handleBlur}
-          handleFocus={handleFocus}
           options={options}
+          toggleDropdown={toggleDropdown}
+          isSelectBoxOpen={isSelectBoxOpen}
+          setIsSelectBoxOpen={setIsSelectBoxOpen}
         />
       ) : (
         <Input

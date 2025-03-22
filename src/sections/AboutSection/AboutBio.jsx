@@ -25,33 +25,19 @@ const AboutBio = () => {
       >
         <div className="about__bio--description__text">
           <p>
-            I make websites that look great and work well. I am familiar with
-            web design principles and best practices and have experience
-            building interactive web apps on the client side with tools like
-            React, SASS, Javascript, and Rails.
+            I design and develop high-quality, interactive web applications with a focus on performance, usability, and aesthetics. Proficient in React, JavaScript, SASS, and Rails, I build responsive, user-friendly interfaces that enhance digital experiences.
           </p>
 
           <p>
-            The last four years have been a crazy journey for me. I've been
-            working on my programming skills, collaborating with developers from
-            all over the world, and getting involved in some awesome projects.
-            It's been a wild ride, and I've learned a lot more than just how to
-            code. I've become better at communicating, working in a team, and
-            managing my time and projects.
+            Over the past five years, I’ve expanded my expertise in frontend and backend development, collaborating with developers worldwide and contributing to diverse projects. This journey has sharpened not just my technical skills, but also my communication, teamwork, and project management abilities.
           </p>
 
           <p>
-            I'm always on the lookout for ways to grow and learn. I believe that
-            learning is a never-ending process, and I'm always up for a
-            challenge. I'm not afraid to step outside of my comfort zone and try
-            new things.
+            I thrive on continuous learning and embracing new challenges. Whether it's refining a UI component, optimizing performance, or diving into a new tech stack, I'm always eager to grow and push boundaries.
           </p>
 
           <p>
-            Aside from coding, I enjoy watching intellectual debates, football
-            (soccer), and working on awesome projects that benefit fellow
-            developers. If you have a project or freelance gig in mind, hit me
-            up! I'd love to hear about it! 😊
+            Outside of coding, I enjoy intellectual debates, football (soccer), and working on projects that empower developers. If you have an exciting project or a freelance opportunity, feel free to reach out—I’d love to collaborate! 😊
           </p>
         </div>
       </Transition>

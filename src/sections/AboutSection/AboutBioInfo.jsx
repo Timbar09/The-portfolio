@@ -1,36 +1,23 @@
-import { useState } from "react";
+import { useState } from 'react';
+import quotes from '../../data/quotes.json';
 
-import SocialLinkTree from "../../components/SocialLinkTree";
-import Button from "../../components/Button";
-import Transition from "../../components/Transition";
+import SocialLinkTree from '../../components/SocialLinkTree';
+import Button from '../../components/Button';
+import Transition from '../../components/Transition';
 
-import { IoMdDownload as DownloadIcon } from "react-icons/io";
-import { BiSolidQuoteLeft as OpenQuotationIcon } from "react-icons/bi";
-import { BiSolidQuoteRight as CloseQuotationIcon } from "react-icons/bi";
+import { IoMdDownload as DownloadIcon } from 'react-icons/io';
+import { BiSolidQuoteLeft as OpenQuotationIcon } from 'react-icons/bi';
+import { BiSolidQuoteRight as CloseQuotationIcon } from 'react-icons/bi';
+import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md';
 
-import bioImage from "../../assets/images/miles_processed.png";
+import { displayQuote } from './aboutUtils';
+
+import bioImage from '../../assets/images/miles_processed.png';
 
 const AboutBioInfo = () => {
-  const [quote, setQuote] = useState({
-    content: "When people show you who they are, believe them the first time.",
-    author: "Maya Angelou",
-  });
+  const [quote, setQuote] = useState(quotes[0]);
 
-  const fetchQuote = async () => {
-    try {
-      const response = await fetch("https://api.quotable.io/quotes/random?maxLength=100");
-      const data = await response.json();
-      const [obj] = data;
-      const quote = {
-        content: obj.content,
-        author: obj.author,
-      };
-
-      setQuote(quote);
-    } catch (error) {
-      console.error("Failed to fetch quote: ", error);
-    }
-  };
+  const fetchQuote = () => displayQuote(quotes, setQuote);
 
   return (
     <Transition
@@ -40,7 +27,7 @@ const AboutBioInfo = () => {
       offset="-25%"
       duration={1}
     >
-      <div className="about__bio--info__container" onMouseLeave={fetchQuote}>
+      <div className="about__bio--info__container" onMouseEnter={fetchQuote}>
         <div className="about__bio--info__image">
           <img src={bioImage} alt="Miles Mosweu" className="about__bio--image" />
 
@@ -59,6 +46,13 @@ const AboutBioInfo = () => {
 
                 <OpenQuotationIcon className="quotation quotation__open" />
                 <CloseQuotationIcon className="quotation quotation__close" />
+                <button
+                  className="about__bio--info__contact--quote__button"
+                  onClick={fetchQuote}
+                  title="Refresh quote"
+                >
+                  <RefreshIcon />
+                </button>
               </div>
             </div>
           </div>

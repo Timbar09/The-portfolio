@@ -27,3 +27,7 @@ body {
   color: var(--text-400);
   background-color: var(--deep-blue);
 }
+
+.error-boundary {
+  min-height: 100vh;
+}

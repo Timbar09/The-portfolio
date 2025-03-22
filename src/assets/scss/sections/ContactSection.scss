@@ -8,6 +8,11 @@
       position: relative;
       background: center/cover no-repeat;
 
+      @include breakpoint-up(lg) {
+        display: flex;
+        gap: 2em;
+      }
+
       &::before {
         content: "";
         position: absolute;
@@ -22,46 +27,86 @@
           var(--bg-200)
         );
       }
+    }
+  }
+  
+  &__text {
+    position: relative;
+    text-align: center;
 
-      > div {
-        position: relative;
-      }
+    @include breakpoint-up(lg) {
+      flex: 1;
+      text-align: left;
     }
   }
 
   &__title {
     order: 2;
-    text-align: center;
     margin-bottom: 0;
-    font-size: clamp(3.5em, 13vw, 6.5em);
+    font-size: clamp(3.5em, 13vw, 4.275em);
     font-weight: 700;
     -webkit-text-fill-color: var(--contact-opaque-bg-100);
     -webkit-text-stroke: thin var(--primary-100);
+    
+    @include breakpoint-up(lg) {
+      order: unset;
+    }
   }
 
   &__description {
     order: 1;
-    text-align: center;
     max-width: 40em;
     margin: 0 auto;
+    letter-spacing: 0.05em;
+    font-size: 1.15em;
+  }
+
+  &__social {
+    order: 3;
   }
 
   &__form {
     max-width: 40em;
     margin: 2em auto 0;
 
+    @include breakpoint-up(lg) {
+      margin: 0;
+      flex: 1;
+    }
+
     &:invalid {
       button {
         background: var(--opaque-200);
         box-shadow: none;
-        pointer-events: none;
+        // pointer-events: none;
 
-        &:focus {
+        &:focus,
+        &:hover {
           top: 0;
 
           svg {
             left: 0;
           }
+        }
+
+        svg {
+          &:first-child {
+            display: none;
+          }
+
+          &:last-child {
+            display: block;
+          }
+        }
+      }
+    }
+
+    button {
+      svg {
+        left: 0;
+  
+        &:last-child {
+          display: none;
         }
       }
     }
@@ -76,6 +121,12 @@
 
   &:not(:first-child) {
     margin-top: 0.75em;
+  }
+
+  &:focus-within {
+    &::before {
+      opacity: 0;
+    }
   }
 
   &__label {
@@ -98,7 +149,7 @@
 
   input,
   textarea,
-  select {
+  .select {
     margin: 0;
     position: relative;
     display: block;
@@ -109,10 +160,16 @@
     background-color: transparent;
     border: solid 0.125em var(--opaque-200);
     border-radius: var(--radius-200);
+    transition: border-color 100ms ease-in-out;
 
     &:focus {
       outline: none;
       background-color: var(--contact-opaque-bg-100);
+      border-color: var(--opaque-100);
+    }
+
+    &:hover {
+      border-color: var(--opaque-300);
     }
 
     &:valid {
@@ -123,38 +180,6 @@
   textarea {
     resize: none;
     min-height: 5em;
-  }
-
-  select {
-    appearance: none;
-
-    &.active {
-      + span {
-        rotate: 180deg;
-      }
-    }
-
-    option {
-      background-color: var(--bg-300);
-    }
-
-    + span {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      font-size: 1.25em;
-      color: var(--opaque-200);
-      transition: rotate 50ms ease-in-out;
-    }
-
-    &:invalid {
-      color: var(--opaque-200);
-    }
-
-    &:valid {
-      color: var(--text-400);
-    }
   }
 
   &__indicator {
@@ -183,7 +208,8 @@
     }
   }
 
-  &:focus-within {
+  &:focus-within,
+  &.open {
     .form-field {
       &__label {
         color: var(--text-300);
@@ -204,8 +230,75 @@
     }
   }
 
+  &.open {
+    .select {
+      &__icon {
+        rotate: 180deg;
+      }
+    }
+  }
+
   &__submit {
     grid-column: 12;
     text-align: right;
+  }
+}
+
+.select {
+  cursor: pointer;
+
+  &:active {
+    background-color: red;
+  }
+
+  &__container {
+    .hidden-input {
+      all: unset;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+  }
+  
+  &__placeholder {
+    color: var(--opaque-200);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1.25em;
+    color: var(--opaque-200);
+    transition: rotate 250ms ease-in-out;
+  }
+
+  &__option {
+    &--list {
+      position: absolute;
+      top: 125%;
+      width: 100%;
+      background-color: var(--opaque-light-200);
+      backdrop-filter: blur(1em);
+      border: solid 0.125em var(--opaque-200);
+      border-radius: var(--radius-200);
+      overflow: hidden;
+      z-index: 1;
+      transition: max-height 300ms ease-in-out;
+    }
+
+    &--item {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        color: var(--text-100);
+        background-color: var(--opaque-100);
+        outline: none;
+      }
+    }
   }
 }
