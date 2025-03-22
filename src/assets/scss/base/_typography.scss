@@ -21,6 +21,29 @@ a:active {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  --focus-outline-color: #3c83f6bf;
+  
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: 2px;
+  border-radius: var(--radius-200);
+  animation: focus-pulse 500ms forwards ease-in-out;
+
+  @keyframes focus-pulse {
+    0% {
+      outline-width: 3px;
+    }
+    20% {
+      outline-width: 5px;
+    }
+  }
+}
+
 .link {
   position: relative;
   display: inline-flex;
