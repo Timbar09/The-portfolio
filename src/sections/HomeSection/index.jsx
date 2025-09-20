@@ -31,13 +31,14 @@ const HomeSection = () => {
             <span className="title__greeting">
               Hi, I'm <span className="title__name">Miles</span>. I am a
             </span>
-            Software Developer
+            Software <br /> Developer
           </h1>
         </div>
 
         <div className="home__group">
           <p className="home__description">
-            I craft unique, functional and modern websites that captivate and invite engagement.
+            I craft unique, functional and modern websites that captivate and
+            invite engagement.
           </p>
         </div>
 
