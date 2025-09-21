@@ -1,3 +1,5 @@
+import Tooltip from "./Tooltip";
+
 import { FaGithub as GithubIcon } from "react-icons/fa";
 import { FaLinkedin as LinkedInIcon } from "react-icons/fa";
 import { FaXTwitter as XIcon } from "react-icons/fa6";
@@ -35,12 +37,21 @@ const SocialLinkTree = () => {
     <ul className="social__list flex gap-2 py-1">
       {socialLinks.map(({ name, url, icon }, index) => (
         <li key={index} className="social__item">
-          <a href={url} target="_blank" rel="noreferrer" className="social__item--link grid">
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="social__item--link grid"
+          >
             {icon}
             <span className="social__item--name">{name}</span>
           </a>
         </li>
       ))}
+
+      <Tooltip isLink styles={{ maxWidth: "none" }}>
+        Visit my social profiles, I'm social, kinda... 👀
+      </Tooltip>
     </ul>
   );
 };

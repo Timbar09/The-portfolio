@@ -1,6 +1,7 @@
 import { useContext } from "react";
+import { ThemeContext } from "../App";
 import { MenuContext } from "../App";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
@@ -9,13 +10,14 @@ import ThemeToggle from "./ThemeToggle";
 import Button from "../Button";
 import SocialLinkTree from "../SocialLinkTree";
 import MenuSettings from "./MenuSettings";
+import Tooltip from "../Tooltip";
 
 const menuItems = [
   {
     link: "Home",
   },
   {
-    link: "Projects",
+    link: "Portfolio",
   },
   {
     link: "About",
@@ -23,6 +25,7 @@ const menuItems = [
 ];
 
 const NavContent = () => {
+  const { theme } = useContext(ThemeContext);
   const { toggleMenu } = useContext(MenuContext);
   const isMobile = useMediaQuery("sm", "down");
   const isTablet = useMediaQuery("md", "down");
@@ -89,24 +92,34 @@ const NavContent = () => {
               duration={500}
             >
               {item.link}
+              <Tooltip isLink>Go to {item.link} page</Tooltip>
             </Link>
           </motion.li>
         ))}
 
         <motion.li {...(isMobile ? menuItemAnimationProps : {})}>
           {isMobile && (
-            <div>
+            <div className="nav__content--button">
               <Button name="Contact Me" linkTo="#contact" func={toggleMenu} />
             </div>
           )}
 
-          {!isMobile && <ThemeToggle />}
+          {!isMobile && (
+            <div className="nav__theme-toggle--container">
+              <ThemeToggle />
+
+              <Tooltip>
+                Switch to {theme === "light" ? "dark" : "light"} mode
+              </Tooltip>
+            </div>
+          )}
         </motion.li>
       </ul>
 
       {!isTablet && (
         <div className="nav__content--button">
           <Button name="Contact Me" linkTo="#contact" />
+          <Tooltip isLink>Go to Contact Me section</Tooltip>
         </div>
       )}
     </motion.div>

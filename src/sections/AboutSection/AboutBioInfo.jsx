@@ -1,18 +1,19 @@
-import { useState } from 'react';
-import quotes from '../../data/quotes.json';
+import { useState } from "react";
+import quotes from "../../data/quotes.json";
 
-import SocialLinkTree from '../../components/SocialLinkTree';
-import Button from '../../components/Button';
-import Transition from '../../components/Transition';
+import SocialLinkTree from "../../components/SocialLinkTree";
+import Button from "../../components/Button";
+import Transition from "../../components/Transition";
+import Tooltip from "../../components/Tooltip";
 
-import { IoMdDownload as DownloadIcon } from 'react-icons/io';
-import { BiSolidQuoteLeft as OpenQuotationIcon } from 'react-icons/bi';
-import { BiSolidQuoteRight as CloseQuotationIcon } from 'react-icons/bi';
-import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md';
+import { IoMdDownload as DownloadIcon } from "react-icons/io";
+import { BiSolidQuoteLeft as OpenQuotationIcon } from "react-icons/bi";
+import { BiSolidQuoteRight as CloseQuotationIcon } from "react-icons/bi";
+import { MdOutlineRefresh as RefreshIcon } from "react-icons/md";
 
-import { displayQuote } from './aboutUtils';
+import { displayQuote } from "./aboutUtils";
 
-import bioImage from '../../assets/images/miles_processed.png';
+import bioImage from "../../assets/images/miles_processed.png";
 
 const AboutBioInfo = () => {
   const [quote, setQuote] = useState(quotes[0]);
@@ -29,12 +30,18 @@ const AboutBioInfo = () => {
     >
       <div className="about__bio--info__container" onMouseEnter={fetchQuote}>
         <div className="about__bio--info__image">
-          <img src={bioImage} alt="Miles Mosweu" className="about__bio--image" />
+          <img
+            src={bioImage}
+            alt="Miles Mosweu"
+            className="about__bio--image"
+          />
 
           <div className="about__bio--info__contact">
             <div className="about__bio--info__contact--content p-2">
               <p className="about__bio--info__contact--name">Miles Mosweu</p>
-              <p className="about__bio--info__contact--title">Full Stack Developer</p>
+              <p className="about__bio--info__contact--title">
+                Full Stack Developer
+              </p>
 
               <div className="about__bio--info__contact--socials grid grid-pi-c pt-1">
                 <SocialLinkTree />
@@ -58,20 +65,26 @@ const AboutBioInfo = () => {
           </div>
         </div>
 
-        <div className="about__bio--info__buttons flex gap-2">
-          <Button
-            name="View Resume"
-            type="secondary"
-            linkTo="https://docs.google.com/document/d/1rOU5wqF-9cZJrHmSSsP3YFXvpCAB7M-cY_R3njqn6Vs/view?usp=sharing"
-            title="View resume on Google Drive"
-          />
-          <Button
-            name=""
-            type="tertiary"
-            linkTo="https://docs.google.com/document/d/1rOU5wqF-9cZJrHmSSsP3YFXvpCAB7M-cY_R3njqn6Vs/export?format=pdf"
-            icon={<DownloadIcon />}
-            title="Download resume"
-          />
+        <div className="about__bio--info__button--list flex gap-2">
+          <div className="about__bio--info__button">
+            <Button
+              name="View Resume"
+              type="secondary"
+              linkTo="https://docs.google.com/document/d/1rOU5wqF-9cZJrHmSSsP3YFXvpCAB7M-cY_R3njqn6Vs/view?usp=sharing"
+            />
+            <Tooltip isLink>View my Resume on Google Docs</Tooltip>
+          </div>
+
+          <div className="about__bio--info__button">
+            <Button
+              name=""
+              type="tertiary"
+              linkTo="https://docs.google.com/document/d/1rOU5wqF-9cZJrHmSSsP3YFXvpCAB7M-cY_R3njqn6Vs/export?format=pdf"
+              icon={<DownloadIcon />}
+            />
+
+            <Tooltip isLink>Download my Resume as PDF</Tooltip>
+          </div>
         </div>
       </div>
     </Transition>

@@ -5,7 +5,7 @@ import { IoIosArrowForward as LinkIcon } from "react-icons/io";
 
 import "../assets/scss/components/Tooltip.scss";
 
-const Tooltip = ({ children, isLink = false }) => {
+const Tooltip = ({ children, isLink = false, styles = {} }) => {
   const [visible, setVisible] = useState(false);
   const parentRef = useRef(null);
 
@@ -45,6 +45,7 @@ const Tooltip = ({ children, isLink = false }) => {
           ref={parentRef}
           className="tooltip"
           {...tooltipAnimationProps}
+          style={styles}
         >
           <p className="tooltip__text">{children}</p>
           {isLink && (

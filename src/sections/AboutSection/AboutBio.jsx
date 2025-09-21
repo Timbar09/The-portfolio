@@ -1,6 +1,7 @@
 import MyLink from "../../components/MyLink";
 import AboutBioInfo from "./AboutBioInfo";
 import Transition from "../../components/Transition";
+import Tooltip from "../../components/Tooltip";
 
 const AboutBio = () => {
   const yearCount = new Date().getFullYear() - 2020;
@@ -9,10 +10,16 @@ const AboutBio = () => {
     <section className="about__bio grid grid-gap-3">
       <h3 className="about__subtitle">
         I'm Miles Mosweu, a self-driven fullstack web developer based in{" "}
-        <MyLink
-          linkText="Botswana"
-          linkTo="https://www.google.com/maps/place/Botswana"
-        />
+        <span className="about__subtitle--highlight">
+          <MyLink
+            linkText="Botswana"
+            linkTo="https://www.google.com/maps/place/Botswana"
+          />
+
+          <Tooltip isLink styles={{ fontSize: "0.5em", maxWidth: "20rem" }}>
+            View my beautiful country on Google Maps
+          </Tooltip>
+        </span>
         .
       </h3>
 

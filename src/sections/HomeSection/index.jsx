@@ -4,6 +4,7 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 import Button from "../../components/Button";
 import SocialLinkTree from "../../components/SocialLinkTree";
+import Tooltip from "../../components/Tooltip";
 
 import "../../assets/scss/sections/HomeSection.scss";
 
@@ -43,9 +44,19 @@ const HomeSection = () => {
         </div>
 
         <div className="home__buttons home__group flex flex-jc-c flex-ai-c flex_md-jc-fs flex-wrap gap-2">
-          <Button name="View Projects" linkTo="#projects" />
+          <div className="home__button">
+            <Button name="View Projects" linkTo="#projects" />
+            <Tooltip isLink>Go to Projects page</Tooltip>
+          </div>
 
-          <Button type="tertiary" {...tertiaryButtonProps} />
+          <div className="home__button">
+            <Button type="tertiary" {...tertiaryButtonProps} />
+            {
+              <Tooltip isLink>
+                Go to {isTablet ? "Contact Me" : "About Me"} section
+              </Tooltip>
+            }
+          </div>
         </div>
 
         <div className="home__group flex flex-jc-c flex_md-jc-fs">

@@ -1,18 +1,18 @@
-@use '../../utils/' as *;
+@use "../../utils/" as *;
 
 .about__bio {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    'image'
-    'subtitle'
-    'description';
+    "image"
+    "subtitle"
+    "description";
 
   @include breakpoint-up(lg) {
     grid-template-columns: auto min-content;
     grid-template-areas:
-      'subtitle subtitle'
-      'description image';
+      "subtitle subtitle"
+      "description image";
   }
 
   .about__subtitle {
@@ -153,7 +153,8 @@
       background-color: var(--bg-400);
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0ms 300ms ease, opacity 100ms 200ms ease, rotate 1000ms ease;
+      transition: visibility 0ms 300ms ease, opacity 100ms 200ms ease,
+        rotate 1000ms ease;
 
       @include touch {
         position: relative;
@@ -255,7 +256,8 @@
           border-radius: var(--radius-round);
           color: inherit;
           background-color: var(--opaque-20);
-          transition: transform 300ms ease, color 300ms ease, background-color 300ms ease;
+          transition: transform 300ms ease, color 300ms ease,
+            background-color 300ms ease;
 
           &:hover {
             transform: rotate(90deg);
@@ -266,15 +268,19 @@
       }
     }
 
-    &__buttons {
-      margin-top: 0.5em;
+    &__button {
+      position: relative;
 
-      a {
-        &:first-child {
-          flex: 1;
+      &:first-child {
+        flex: 1;
+
+        .button {
+          width: 100%;
         }
+      }
 
-        &:last-child {
+      &:last-child {
+        .button {
           font-size: 1.25em;
           border-color: var(--opaque-40);
 
@@ -282,6 +288,10 @@
             background-color: var(--bg-400);
           }
         }
+      }
+
+      &--list {
+        margin-top: 0.5em;
       }
     }
   }

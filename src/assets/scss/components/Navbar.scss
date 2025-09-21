@@ -32,11 +32,15 @@
         border-radius: 5rem;
       }
     }
+
+    &--button {
+      position: relative;
+    }
   }
 
   &__menu {
     text-align: center;
-    
+
     @include breakpoint-up(md) {
       display: flex;
       padding: 1.5rem 0;
@@ -195,31 +199,9 @@
           padding: 0.5rem;
           font-size: clamp(0.75em, 2.5vw, 1em);
 
-          &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 1em;
-            width: 0.1875em;
-            height: 0.1875em;
-            background-color: var(--primary-100);
-            opacity: 0;
-            border-radius: 10px 10px 0 0;
-            transition: bottom 200ms ease-in-out, opacity 200ms ease-in-out,
-              width 200ms 200ms ease-in-out;
-          }
-
           &:hover {
             color: var(--text-100);
             background-color: transparent;
-
-            &::before {
-              opacity: 1;
-              height: 0.1rem;
-              width: 100%;
-              bottom: -1.5em;
-              background-color: var(--text-100);
-            }
           }
 
           &:active {
@@ -264,8 +246,8 @@
       &__menu {
         &-toggle {
           &--stroke {
-            transition: opacity 100ms 100ms ease-in-out, top 100ms 300ms ease-in-out,
-              rotate 100ms ease-in-out;
+            transition: opacity 100ms 100ms ease-in-out,
+              top 100ms 300ms ease-in-out, rotate 100ms ease-in-out;
 
             &-top {
               top: 0;
@@ -299,6 +281,10 @@
 
     &:hover {
       outline: solid 0.1rem var(--opaque-200);
+    }
+
+    &--container {
+      position: relative;
     }
 
     .light,

@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useContext } from "react";
 import { ThemeContext } from "../../components/App";
 
 import getTechData from "./techData";
 import { TabButtons, TabContent } from "../../components/Tabs";
 import Transition from "../../components/Transition";
+import Tooltip from "../../components/Tooltip";
 
 const techItemAnimationProps = {
   initial: { opacity: 0, y: 20 },
@@ -13,20 +14,7 @@ const techItemAnimationProps = {
   transition: { duration: 0.6 },
 };
 
-const tooltipAnimationProps = {
-  initial: { opacity: 0, y: -10, rotate: 0 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    rotate: [0, -7, 7, -7, 0],
-  },
-  exit: { opacity: 0, y: -10 },
-  transition: { duration: 0.4 },
-};
-
 const RenderTechItems = ({ data, activeTab }) => {
-  const [hoveredItemId, setHoveredItemId] = useState(null);
-
   return (
     <ul className="about__tech--list flex flex-wrap gap-1">
       {data
@@ -46,24 +34,13 @@ const RenderTechItems = ({ data, activeTab }) => {
             <div
               className="about__tech--list__item--content p-1 flex gap-1 flex-ai-c"
               tabIndex={0}
-              onMouseEnter={() => setHoveredItemId(item.id)}
-              onMouseLeave={() => setHoveredItemId(null)}
             >
               {item.icon}
 
               <h4>{item.name}</h4>
             </div>
 
-            <AnimatePresence>
-              {hoveredItemId === item.id && (
-                <motion.div
-                  className="about__tech--list__item--tooltip"
-                  {...tooltipAnimationProps}
-                >
-                  <p>{item.description}</p>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <Tooltip>{item.description}</Tooltip>
           </motion.li>
         ))}
     </ul>

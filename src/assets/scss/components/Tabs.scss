@@ -26,6 +26,7 @@
   }
 
   &__button {
+    position: relative;
     border-radius: var(--radius-200);
     color: var(--opaque-200);
     font-family: $ff-mitr;
