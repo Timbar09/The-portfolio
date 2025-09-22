@@ -1,8 +1,10 @@
 import { useContext } from "react";
+import { motion } from "framer-motion";
+import { NavLink } from "react-router";
+
 import { ThemeContext } from "../App";
 import { MenuContext } from "../App";
-import { motion } from "framer-motion";
-import { Link } from "react-scroll";
+
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 import Logo from "../Logo";
@@ -14,13 +16,19 @@ import Tooltip from "../Tooltip";
 
 const menuItems = [
   {
-    link: "Home",
+    id: "nav-home",
+    name: "Home",
+    path: "/",
   },
   {
-    link: "Portfolio",
+    id: "nav-portfolio",
+    name: "Portfolio",
+    path: "/portfolio",
   },
   {
-    link: "About",
+    id: "nav-about",
+    name: "About",
+    path: "/about",
   },
 ];
 
@@ -75,25 +83,21 @@ const NavContent = () => {
       )}
 
       <ul className="nav__menu flex-ai-c gap-1">
-        {menuItems.map((item, index) => (
+        {menuItems.map((link, index) => (
           <motion.li
-            key={index}
+            key={link.id}
             className="nav__menu-item"
             {...(index === 0 && isMobile ? {} : menuItemAnimationProps)}
           >
-            <Link
-              tabIndex="0"
+            <NavLink
               className="py-1"
-              onClick={() => isMobile && toggleMenu()}
-              to={item.link.toLocaleLowerCase()}
-              spy={true}
-              smooth={true}
-              offset={-50}
-              duration={500}
+              to={link.path}
+              onClick={isMobile ? toggleMenu : undefined}
             >
-              {item.link}
-              <Tooltip isLink>Go to {item.link} page</Tooltip>
-            </Link>
+              {link.name}
+
+              <Tooltip isLink>Go to {link.name} page</Tooltip>
+            </NavLink>
           </motion.li>
         ))}
 
