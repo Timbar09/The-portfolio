@@ -5,9 +5,10 @@ import useLocalStorage from "use-local-storage";
 import Overlay from "./Overlay";
 import Layout from "../layout";
 import ErrorBoundary from "./ErrorBoundary";
-import HomePage from "../sections/HomeSection";
-import PortfolioPage from "../sections/ProjectsSection";
-import AboutPage from "../sections/AboutSection";
+import HomePage from "../pages/Home";
+import PortfolioPage from "../pages/Portfolio";
+import AboutPage from "../pages/About";
+import Contact from "../pages/Contact";
 
 import "../assets/scss/components/App.scss";
 
@@ -82,6 +83,7 @@ const App = () => {
                   <Route index element={<HomePage />} />
                   <Route path="/portfolio" element={<PortfolioPage />} />
                   <Route path="/about" element={<AboutPage />} />
+                  <Route path="/contact" element={<Contact />} />
                   <Route path="*" element={<div>404 Not Found</div>} />
                 </Route>
               </Routes>

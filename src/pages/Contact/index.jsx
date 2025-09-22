@@ -10,12 +10,12 @@ import lightBgImage from "../../assets/images/contact-bg-light.jpg";
 
 import "../../assets/scss/sections/ContactSection.scss";
 
-const ContactSection = () => {
+const Contact = () => {
   const { theme } = useContext(ThemeContext);
   const isDesktop = useMediaQuery("lg", "up");
 
   return (
-    <section name="contact" id="contact" className="contact__section section">
+    <main name="contact" id="contact" className="contact__section page">
       <div
         className="container"
         style={{
@@ -41,8 +41,8 @@ const ContactSection = () => {
 
         <ContactForm />
       </div>
-    </section>
+    </main>
   );
 };
 
-export default ContactSection;
+export default Contact;

@@ -2,26 +2,10 @@
 
 .about {
   &__section {
-    background-color: var(--bg-300);
+    background-color: var(--bg-200);
 
     section {
       padding-bottom: 4em;
-    }
-  }
-
-  &__subtitle {
-    margin: 1em auto;
-    text-align: center;
-    font-size: 2em;
-    font-weight: 200;
-
-    @include breakpoint-up(lg) {
-      margin: 1em 0;
-      text-align: left;
-    }
-
-    &--highlight {
-      position: relative;
     }
   }
 }

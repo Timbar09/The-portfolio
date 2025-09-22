@@ -28,7 +28,7 @@ select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
   --focus-outline-color: #3c83f6bf;
-  
+
   outline: 3px solid var(--focus-outline-color);
   outline-offset: 2px;
   border-radius: var(--radius-200);
@@ -115,16 +115,21 @@ ul {
   }
 }
 
-.section {
+.title {
+  font-size: clamp(2.75rem, 6.5vw, 4.5rem);
+  font-weight: 500;
+}
+
+.page {
   .container {
-    padding-top: 4em;
+    padding-top: 12em;
     padding-bottom: 8em;
   }
 
   &__title {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     text-align: center;
-    font-size: 1.75em;
+    font-size: 3.5em;
     font-weight: 300;
 
     &--word {
@@ -139,7 +144,7 @@ ul {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 0.075em;
+        height: 0.0675em;
         background: var(--primary-gradient);
         border-radius: 5px;
       }
@@ -147,8 +152,18 @@ ul {
   }
 
   &__subtitle {
-    position: relative;
-    max-width: 50em;
-    margin: 0 auto 2em;
+    margin: 1em auto;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 200;
+
+    @include breakpoint-up(lg) {
+      margin: 1em 0;
+      text-align: left;
+    }
+
+    &--highlight {
+      position: relative;
+    }
   }
 }

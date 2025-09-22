@@ -1,22 +1,14 @@
 @use "../../utils/" as *;
 
 .about__bio {
-  display: grid;
   grid-template-columns: 1fr;
-  grid-template-areas:
-    "image"
-    "subtitle"
-    "description";
 
   @include breakpoint-up(lg) {
+    padding-top: 2em;
     grid-template-columns: auto min-content;
-    grid-template-areas:
-      "subtitle subtitle"
-      "description image";
   }
 
-  .about__subtitle {
-    grid-area: subtitle;
+  .page__subtitle {
     max-width: 20em;
 
     @include breakpoint-up(lg) {
@@ -28,6 +20,13 @@
     --dimension: 21em;
 
     position: relative;
+    place-items: center;
+
+    @include breakpoint-up(lg) {
+      place-items: start;
+      grid-column: 2;
+      grid-row: 1 / 3;
+    }
 
     @include touch {
       --dimension: 100%;
@@ -124,7 +123,6 @@
     }
 
     &__image {
-      grid-area: image;
       aspect-ratio: 1 / 1;
       position: relative;
       transition: rotate 1000ms ease;
@@ -150,7 +148,7 @@
       width: calc(100% + 3px);
       height: calc(var(--dimension) + 3px);
       border-radius: var(--radius-200);
-      background-color: var(--bg-400);
+      background-color: var(--bg-300);
       visibility: hidden;
       opacity: 0;
       transition: visibility 0ms 300ms ease, opacity 100ms 200ms ease,
@@ -297,12 +295,6 @@
   }
 
   &--description {
-    grid-area: description;
     position: relative;
-
-    @include breakpoint-up(lg) {
-      flex: min-content;
-      order: -1;
-    }
   }
 }

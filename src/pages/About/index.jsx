@@ -1,13 +1,13 @@
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../PageTitle";
 import AboutBio from "./AboutBio";
 import AboutSoftSkills from "./AboutSoftSkills";
 import AboutTechnologies from "./AboutTechnologies";
 
 import "../../assets/scss/sections/about/index.scss";
 
-const AboutSection = () => {
+const About = () => {
   return (
-    <section name="about" id="about" className="about__section section">
+    <main name="about" id="about" className="about__section page">
       <div className="container">
         <SectionTitle firstWord="About" secondWord="Me" underlineLeft={false} />
 
@@ -17,8 +17,8 @@ const AboutSection = () => {
 
         <AboutTechnologies />
       </div>
-    </section>
+    </main>
   );
 };
 
-export default AboutSection;
+export default About;

@@ -22,7 +22,7 @@ const AboutBioInfo = () => {
 
   return (
     <Transition
-      className="about__bio--info grid grid-pi-c"
+      className="about__bio--info grid"
       transitionName="fade-in-up"
       trigger="whileInView"
       offset="-25%"

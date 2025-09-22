@@ -1,11 +1,14 @@
-import FormField from "./FormField";
-import Button from "../../components/Button";
+import FormField from "./FormField.jsx";
+import Button from "../../components/Button.jsx";
 
 import { handleFormSubmit, formFields } from "./formUtils.js";
 
 const ContactForm = () => {
   return (
-    <form onSubmit={handleFormSubmit} className="contact__form p-2 grid grid-col grid-gap-2">
+    <form
+      onSubmit={handleFormSubmit}
+      className="contact__form p-2 grid grid-col grid-gap-2"
+    >
       {formFields.map((field, index) => (
         <FormField key={index} {...field} />
       ))}

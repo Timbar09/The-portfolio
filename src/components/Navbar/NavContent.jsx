@@ -16,11 +16,6 @@ import Tooltip from "../Tooltip";
 
 const menuItems = [
   {
-    id: "nav-home",
-    name: "Home",
-    path: "/",
-  },
-  {
     id: "nav-portfolio",
     name: "Portfolio",
     path: "/portfolio",
@@ -120,10 +115,10 @@ const NavContent = () => {
         </motion.li>
       </ul>
 
-      {!isTablet && (
+      {!isMobile && (
         <div className="nav__content--button">
-          <Button name="Contact Me" linkTo="#contact" />
-          <Tooltip isLink>Go to Contact Me section</Tooltip>
+          <Button name="Contact Me" linkTo="/contact" />
+          <Tooltip isLink>Get in touch with me</Tooltip>
         </div>
       )}
     </motion.div>

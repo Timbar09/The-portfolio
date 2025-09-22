@@ -1,4 +1,5 @@
-import { Link } from "react-scroll";
+import { Link as SmoothScrollLink } from "react-scroll";
+import { NavLink } from "react-router";
 
 import { FaArrowRightLong as ArrowIcon } from "react-icons/fa6";
 import { MdOutlineArrowOutward as ExternalLinkIcon } from "react-icons/md";
@@ -39,21 +40,8 @@ const Button = ({
   return (
     <>
       {linkTo ? (
-        linkTo.startsWith("http") || linkTo.startsWith("www") ? (
-          <a
-            className={`button button__${type}`}
-            href={linkTo}
-            target="_blank"
-            rel="noreferrer"
-            title={title}
-          >
-            <span className="flex flex-jc-c flex-ai-c gap-1">
-              {name}
-              {icon}
-            </span>
-          </a>
-        ) : (
-          <Link
+        linkTo.startsWith("#") ? (
+          <SmoothScrollLink
             onClick={handleClick}
             className={`button button__${type}`}
             tabIndex="0"
@@ -68,18 +56,39 @@ const Button = ({
               {name}
               <ArrowIcon />
             </span>
-          </Link>
+          </SmoothScrollLink>
+        ) : (
+          <NavLink
+            onClick={handleClick}
+            className={`button button__${type}`}
+            title={title}
+            to={linkTo}
+          >
+            <span className="flex flex-jc-c flex-ai-c gap-1">
+              {name}
+              {icon}
+            </span>
+          </NavLink>
         )
       ) : (
         <button
-          className={`button button__${type} ${isFormButton ? "button__" + type + "--form" : ""}`}
+          className={`button button__${type} ${
+            isFormButton ? "button__" + type + "--form" : ""
+          }`}
           type={isFormButton ? "submit" : "button"}
           onClick={handleClick}
           title={title}
         >
           <span className="flex flex-jc-c flex-ai-c gap-1">
             {name}
-            {isFormButton ? <><SendIcon /><InvalidIcon /></> : icon}
+            {isFormButton ? (
+              <>
+                <SendIcon />
+                <InvalidIcon />
+              </>
+            ) : (
+              icon
+            )}
           </span>
         </button>
       )}

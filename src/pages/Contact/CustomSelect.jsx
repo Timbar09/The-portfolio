@@ -1,20 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { handleClickOutside, handleOptionClick, handleEscapeKey } from "./formUtils";
+import {
+  handleClickOutside,
+  handleOptionClick,
+  handleEscapeKey,
+} from "./formUtils";
 import { optionsAnimationProps } from "./formUtils";
 
 import { IoChevronDownOutline as ChevronIcon } from "react-icons/io5";
 
-import { trapFocus } from "../ProjectsSection/projectUtils";
+import { trapFocus } from "../Portfolio/projectUtils";
 
-const CustomSelect = ({ 
-  name, 
-  required, 
-  options, 
-  toggleDropdown, 
-  isSelectBoxOpen, 
-  setIsSelectBoxOpen 
+const CustomSelect = ({
+  name,
+  required,
+  options,
+  toggleDropdown,
+  isSelectBoxOpen,
+  setIsSelectBoxOpen,
 }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const selectRef = useRef(null);
@@ -26,7 +30,7 @@ const CustomSelect = ({
 
   useEffect(() => {
     trapFocus(isSelectBoxOpen, optionsRef);
-  } , [isSelectBoxOpen]);
+  }, [isSelectBoxOpen]);
 
   useEffect(() => {
     return handleEscapeKey(setIsSelectBoxOpen);
@@ -47,9 +51,7 @@ const CustomSelect = ({
           }
         }}
       >
-        <span
-          className={`${placeholder ? "select__placeholder" : ""}`}
-        >
+        <span className={`${placeholder ? "select__placeholder" : ""}`}>
           {selectedOption || "Subject"}
         </span>
 
@@ -58,22 +60,39 @@ const CustomSelect = ({
         </span>
       </div>
       <AnimatePresence>
-      {isSelectBoxOpen && (
-        <motion.ul className="select__option--list" {...optionsAnimationProps} ref={optionsRef}>
-          {options.map((option, index) => (
-            <li
-              key={index}
-              className="select__option--item px-1"
-              onClick={() => handleOptionClick(option, setSelectedOption, setIsSelectBoxOpen)}
-              onKeyDown={(e) => e.key === "Enter" && handleOptionClick(option, setSelectedOption, setIsSelectBoxOpen)}
-              tabIndex={0}
-              data-focusable="true"
-            >
-              {option}
-            </li>
-          ))}
-        </motion.ul>
-      )}
+        {isSelectBoxOpen && (
+          <motion.ul
+            className="select__option--list"
+            {...optionsAnimationProps}
+            ref={optionsRef}
+          >
+            {options.map((option, index) => (
+              <li
+                key={index}
+                className="select__option--item px-1"
+                onClick={() =>
+                  handleOptionClick(
+                    option,
+                    setSelectedOption,
+                    setIsSelectBoxOpen
+                  )
+                }
+                onKeyDown={(e) =>
+                  e.key === "Enter" &&
+                  handleOptionClick(
+                    option,
+                    setSelectedOption,
+                    setIsSelectBoxOpen
+                  )
+                }
+                tabIndex={0}
+                data-focusable="true"
+              >
+                {option}
+              </li>
+            ))}
+          </motion.ul>
+        )}
       </AnimatePresence>
 
       <input

@@ -11,16 +11,16 @@ import "../../assets/scss/sections/HomeSection.scss";
 import darkBgImg from "../../assets/images/hero-bg-dark.webp";
 import lightBgImg from "../../assets/images/hero-bg-light.webp";
 
-const HomeSection = () => {
+const Home = () => {
   const { theme } = useContext(ThemeContext);
   const isTablet = useMediaQuery("md", "down");
 
   const tertiaryButtonProps = isTablet
-    ? { name: "Contact Me", linkTo: "#contact" }
-    : { name: "More About Me", linkTo: "#about" };
+    ? { name: "Contact Me", linkTo: "/contact" }
+    : { name: "More About Me", linkTo: "/about" };
 
   return (
-    <section name="home" id="home" className="home__section">
+    <main name="home" id="home" className="home__section">
       <div
         className="home__content container flex flex-col flex-jc-c gap-3"
         style={{
@@ -45,15 +45,15 @@ const HomeSection = () => {
 
         <div className="home__buttons home__group flex flex-jc-c flex-ai-c flex_md-jc-fs flex-wrap gap-2">
           <div className="home__button">
-            <Button name="View Projects" linkTo="#projects" />
-            <Tooltip isLink>Go to Projects page</Tooltip>
+            <Button name="View Portfolio" linkTo="/portfolio" />
+            <Tooltip isLink>Check out my projects</Tooltip>
           </div>
 
           <div className="home__button">
             <Button type="tertiary" {...tertiaryButtonProps} />
             {
               <Tooltip isLink>
-                Go to {isTablet ? "Contact Me" : "About Me"} section
+                {isTablet ? "Get in touch with me" : "Learn more about me"}
               </Tooltip>
             }
           </div>
@@ -63,8 +63,8 @@ const HomeSection = () => {
           <SocialLinkTree />
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 
-export default HomeSection;
+export default Home;

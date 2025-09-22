@@ -3,8 +3,28 @@ import { motion } from "framer-motion";
 const Word = ({ underline, children }) => {
   const underlineAnimation = {
     opacity: [0, 1, 1, 1, 1, 1, 1, 1],
-    bottom: ["150%", "0%", "50%", "0%", "25%", "0%", "0%", "0%"],
-    width: ["8%", "8%", "8%", "8%", "8%", "8%", "8%", "100%"],
+    left: ["50%", "40%", "30%", "20%", "10%", "0%", "0%", "0%"],
+    bottom: ["150%", "0%", "40%", "0%", "20%", "0%", "1S0%", "0%"],
+    height: [
+      "0.1em",
+      "0.05em",
+      "0.1em",
+      "0.05em",
+      "0.1em",
+      "0.075em",
+      "0.075em",
+      "0.075em",
+    ],
+    width: [
+      "0.075em",
+      "0.075em",
+      "0.075em",
+      "0.075em",
+      "0.075em",
+      "0.075em",
+      "0.075em",
+      "100%",
+    ],
     transition: {
       duration: 2,
       times: [0, 0.2, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
@@ -13,13 +33,12 @@ const Word = ({ underline, children }) => {
   };
 
   return (
-    <span className="section__title--word">
+    <span className="page__title--word">
       {underline ? (
         <motion.span
           className="underlined-word"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-25%" }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.5 }}
         >
           {children}
@@ -31,20 +50,19 @@ const Word = ({ underline, children }) => {
       {underline && (
         <motion.span
           className="underline"
-          initial={{ opacity: 0, bottom: "150%", width: "8%" }}
-          whileInView={underlineAnimation}
-          viewport={{ margin: "-25%", once: true }}
+          initial={{ opacity: 0, bottom: "150%", width: "5%" }}
+          animate={underlineAnimation}
         />
       )}
     </span>
   );
 };
 
-const SectionTitle = ({ firstWord, secondWord, underlineLeft = true }) => (
-  <h2 className="section__title">
+const PageTitle = ({ firstWord, secondWord, underlineLeft = true }) => (
+  <h1 className="title page__title">
     <Word underline={underlineLeft}>{firstWord}</Word>{" "}
     <Word underline={!underlineLeft}>{secondWord}</Word>
-  </h2>
+  </h1>
 );
 
-export default SectionTitle;
+export default PageTitle;

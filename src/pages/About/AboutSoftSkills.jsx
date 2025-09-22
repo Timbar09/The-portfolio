@@ -19,16 +19,16 @@ const icons = {
 const AboutSoftSkills = () => {
   return (
     <section className="about__soft-skills">
-      <h3 className="about__subtitle">
+      <h2 className="page__subtitle">
         I have honed essential soft skills applicable to both life and the
         workplace, particularly during my time at{" "}
-        <span className="about__subtitle--highlight">
+        <span className="page__subtitle--highlight">
           <MyLink linkText="Microverse" linkTo="https://www.microverse.org/" />:
           <Tooltip isLink styles={{ fontSize: "0.5em", maxWidth: "20rem" }}>
             Visit Microverse website
           </Tooltip>
         </span>
-      </h3>
+      </h2>
 
       <ul className="about__soft-skills--list grid grid-col grid-gap-2">
         {softSkills.map((skill, index) => (

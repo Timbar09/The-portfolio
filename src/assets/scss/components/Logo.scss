@@ -22,6 +22,20 @@
     }
   }
 
+  &:active {
+    span {
+      color: var(--primary-100);
+
+      &:first-child {
+        left: 0;
+      }
+
+      &:last-child {
+        left: 0;
+      }
+    }
+  }
+
   span {
     display: inline-block;
     position: relative;

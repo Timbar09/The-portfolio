@@ -8,9 +8,9 @@ const AboutBio = () => {
 
   return (
     <section className="about__bio grid grid-gap-3">
-      <h3 className="about__subtitle">
+      <h2 className="page__subtitle">
         I'm Miles Mosweu, a self-driven fullstack web developer based in{" "}
-        <span className="about__subtitle--highlight">
+        <span className="page__subtitle--highlight">
           <MyLink
             linkText="Botswana"
             linkTo="https://www.google.com/maps/place/Botswana"
@@ -21,7 +21,7 @@ const AboutBio = () => {
           </Tooltip>
         </span>
         .
-      </h3>
+      </h2>
 
       <AboutBioInfo />
 
