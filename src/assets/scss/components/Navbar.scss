@@ -11,10 +11,6 @@
   @include breakpoint-up(md) {
     &.scrolled {
       background: var(--bg-100);
-
-      .nav__content:before {
-        height: 0.125em;
-      }
     }
   }
 
@@ -33,6 +29,7 @@
         left: 0;
         bottom: 0;
         background-color: var(--opaque-100);
+        height: 0.105em;
         width: 100%;
         border-radius: 5rem;
       }
@@ -149,6 +146,10 @@
       position: relative;
       border-radius: var(--radius-200);
       background-color: var(--bg-200);
+
+      @include breakpoint-up(md) {
+        background-color: transparent;
+      }
 
       &:not(:first-child) {
         margin-top: 0.25rem;

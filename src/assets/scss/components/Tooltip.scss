@@ -15,6 +15,7 @@
   color: var(--text-200);
   background-color: var(--bg-300);
   box-shadow: 0px 8px 20px hsla(0, 0%, 0%, 0.25);
+  pointer-events: none;
   z-index: 1;
 
   @media (hover: none) {
@@ -25,8 +26,9 @@
     content: "";
     position: absolute;
     top: -0.2875em;
-    left: 50%;
-    translate: -50% 0;
+    left: var(--left, 50%);
+    right: var(--right, auto);
+    translate: var(--translate, -50% 0);
     rotate: 45deg;
     width: 0.5em;
     height: 0.5em;
