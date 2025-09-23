@@ -13,23 +13,36 @@ const Navbar = () => {
   const isMobile = useMediaQuery("sm", "down");
   let lastScrollY = 0;
 
-  const NavAppeareance = () => {
+  const hideShowNav = (nav) => {
+    window.scrollY > lastScrollY
+      ? nav.classList.add("hidden")
+      : nav.classList.remove("hidden");
+  };
+
+  const navBackground = (nav) => {
+    if (window.scrollY > 100) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  };
+
+  const navAppearance = () => {
     const nav = document.querySelector(".nav");
 
     if (isMobile) return;
 
-    window.scrollY > lastScrollY
-      ? nav.classList.add("hidden")
-      : nav.classList.remove("hidden");
+    hideShowNav(nav);
+    navBackground(nav);
 
     lastScrollY = window.scrollY;
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", NavAppeareance);
+    window.addEventListener("scroll", navAppearance);
 
     return () => {
-      window.removeEventListener("scroll", NavAppeareance);
+      window.removeEventListener("scroll", navAppearance);
     };
   }, [lastScrollY, isMobile]);
 

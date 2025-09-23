@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 
 import { IoSettingsOutline as SettingsIcon } from "react-icons/io5";
+import Tooltip from "../Tooltip";
 
 const MenuSettings = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -25,7 +26,6 @@ const MenuSettings = () => {
         className={`nav__menu--settings__button grid p-1 ${
           isPopupOpen ? "open" : ""
         }`}
-        title="Settings"
         onClick={togglePopup}
       >
         <SettingsIcon />
@@ -50,6 +50,8 @@ const MenuSettings = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {!isPopupOpen && <Tooltip>Open settings menu</Tooltip>}
     </div>
   );
 };

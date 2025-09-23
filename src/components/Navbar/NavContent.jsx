@@ -9,7 +9,6 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 import Logo from "../Logo";
 import ThemeToggle from "./ThemeToggle";
-import Button from "../Button";
 import SocialLinkTree from "../SocialLinkTree";
 import MenuSettings from "./MenuSettings";
 import Tooltip from "../Tooltip";
@@ -25,13 +24,17 @@ const menuItems = [
     name: "About",
     path: "/about",
   },
+  {
+    id: "nav-contact",
+    name: "Contact",
+    path: "/contact",
+  },
 ];
 
 const NavContent = () => {
   const { theme } = useContext(ThemeContext);
   const { toggleMenu } = useContext(MenuContext);
   const isMobile = useMediaQuery("sm", "down");
-  const isTablet = useMediaQuery("md", "down");
 
   const menuToggleAnimationProps = {
     initial: { opacity: 0 },
@@ -89,36 +92,28 @@ const NavContent = () => {
               to={link.path}
               onClick={isMobile ? toggleMenu : undefined}
             >
-              {link.name}
-
-              <Tooltip isLink>Go to {link.name} page</Tooltip>
+              {({ isActive }) => (
+                <>
+                  {link.name}
+                  {isActive ? (
+                    <Tooltip>You are on this page</Tooltip>
+                  ) : (
+                    <Tooltip isLink>Go to {link.name} page</Tooltip>
+                  )}
+                </>
+              )}
             </NavLink>
           </motion.li>
         ))}
-
-        <motion.li {...(isMobile ? menuItemAnimationProps : {})}>
-          {isMobile && (
-            <div className="nav__content--button">
-              <Button name="Contact Me" linkTo="#contact" func={toggleMenu} />
-            </div>
-          )}
-
-          {!isMobile && (
-            <div className="nav__theme-toggle--container">
-              <ThemeToggle />
-
-              <Tooltip>
-                Switch to {theme === "light" ? "dark" : "light"} mode
-              </Tooltip>
-            </div>
-          )}
-        </motion.li>
       </ul>
 
       {!isMobile && (
-        <div className="nav__content--button">
-          <Button name="Contact Me" linkTo="/contact" />
-          <Tooltip isLink>Get in touch with me</Tooltip>
+        <div className="nav__theme-toggle--container">
+          <ThemeToggle />
+
+          <Tooltip>
+            Switch to {theme === "light" ? "dark" : "light"} mode
+          </Tooltip>
         </div>
       )}
     </motion.div>
