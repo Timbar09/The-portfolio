@@ -31,6 +31,21 @@ const Button = ({
   func = null,
   title = null,
 }) => {
+  const isExternal =
+    linkTo &&
+    (linkTo.startsWith("http") ||
+      linkTo.startsWith("https") ||
+      linkTo.startsWith("www"));
+  const isInternal = linkTo && linkTo.startsWith("/");
+  const buttonIcon =
+    isExternal && !icon ? (
+      <ExternalLinkIcon />
+    ) : isInternal && !icon ? (
+      <ArrowIcon />
+    ) : (
+      icon
+    );
+
   const handleClick = () => {
     if (func) {
       func();
@@ -66,7 +81,7 @@ const Button = ({
           >
             <span className="flex flex-jc-c flex-ai-c gap-1">
               {name}
-              {icon}
+              {buttonIcon}
             </span>
           </NavLink>
         )

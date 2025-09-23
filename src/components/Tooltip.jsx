@@ -38,10 +38,15 @@ const Tooltip = ({ children, isLink = false, styles = {} }) => {
 
   return (
     <AnimatePresence>
-      <span ref={parentRef} style={{ display: "none" }} />
+      <span
+        key={crypto.randomUUID()}
+        ref={parentRef}
+        style={{ display: "none" }}
+      />
 
       {visible && (
         <motion.span
+          key={crypto.randomUUID()}
           ref={parentRef}
           className="tooltip"
           {...tooltipAnimationProps}

@@ -2,7 +2,7 @@
 
 .contact {
   &__section {
-    // background-color: var(--bg-200);
+    background-color: var(--bg-200);
 
     .container {
       position: relative;
@@ -29,7 +29,7 @@
       }
     }
   }
-  
+
   &__text {
     position: relative;
     text-align: center;
@@ -47,7 +47,7 @@
     font-weight: 700;
     -webkit-text-fill-color: var(--contact-opaque-bg-100);
     -webkit-text-stroke: thin var(--primary-100);
-    
+
     @include breakpoint-up(lg) {
       order: unset;
     }
@@ -104,7 +104,7 @@
     button {
       svg {
         left: 0;
-  
+
         &:last-child {
           display: none;
         }
@@ -259,7 +259,7 @@
       position: absolute;
     }
   }
-  
+
   &__placeholder {
     color: var(--opaque-200);
   }
