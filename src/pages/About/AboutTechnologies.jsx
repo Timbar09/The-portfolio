@@ -55,10 +55,10 @@ const AboutTechnologies = () => {
 
   return (
     <section className="about__tech">
-      <h2 className="page__subtitle">
+      <h3 className="page__subtitle">
         I use a variety of technologies and tools to build projects, including
         but not limited to:
-      </h2>
+      </h3>
 
       <Transition
         className="about__tech--content"

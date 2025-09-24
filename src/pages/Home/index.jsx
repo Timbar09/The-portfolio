@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../components/App";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
 
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { ThemeContext } from "../../components/App";
+
+import MetaTags from "../../components/MetaTags";
 import Button from "../../components/Button";
 import SocialLinkTree from "../../components/SocialLinkTree";
 import Tooltip from "../../components/Tooltip";
@@ -20,50 +22,56 @@ const Home = () => {
     : { name: "More About Me", linkTo: "/about" };
 
   return (
-    <main name="home" id="home" className="home__section">
-      <div
-        className="home__content container flex flex-col flex-jc-c gap-3"
-        style={{
-          backgroundImage: `url(${theme === "light" ? lightBgImg : darkBgImg})`,
-        }}
-      >
-        <div className="home__group">
-          <h1 className="title">
-            <span className="title__greeting">
-              Hi, I'm <span className="title__name">Miles</span>. I am a
-            </span>
-            Software <br /> Developer
-          </h1>
-        </div>
+    <>
+      <MetaTags />
 
-        <div className="home__group">
-          <p className="home__description">
-            I craft unique, functional and modern websites that captivate and
-            invite engagement.
-          </p>
-        </div>
-
-        <div className="home__buttons home__group flex flex-jc-c flex-ai-c flex_md-jc-fs flex-wrap gap-2">
-          <div className="home__button">
-            <Button name="View Portfolio" linkTo="/portfolio" />
-            <Tooltip isLink>Check out my projects</Tooltip>
+      <main name="home" id="home" className="home__section">
+        <div
+          className="home__content container flex flex-col flex-jc-c gap-3"
+          style={{
+            backgroundImage: `url(${
+              theme === "light" ? lightBgImg : darkBgImg
+            })`,
+          }}
+        >
+          <div className="home__group">
+            <h1 className="title">
+              <span className="title__greeting">
+                Hi, I'm <span className="title__name">Miles</span>. I am a
+              </span>
+              Software <br /> Developer
+            </h1>
           </div>
 
-          <div className="home__button">
-            <Button type="tertiary" {...tertiaryButtonProps} />
-            {
-              <Tooltip isLink>
-                {isTablet ? "Get in touch with me" : "Learn more about me"}
-              </Tooltip>
-            }
+          <div className="home__group">
+            <p className="home__description">
+              I craft unique, functional and modern websites that captivate and
+              invite engagement.
+            </p>
+          </div>
+
+          <div className="home__buttons home__group flex flex-jc-c flex-ai-c flex_md-jc-fs flex-wrap gap-2">
+            <div className="home__button">
+              <Button name="View Portfolio" linkTo="/portfolio" />
+              <Tooltip isLink>Check out my projects</Tooltip>
+            </div>
+
+            <div className="home__button">
+              <Button type="tertiary" {...tertiaryButtonProps} />
+              {
+                <Tooltip isLink>
+                  {isTablet ? "Get in touch with me" : "Learn more about me"}
+                </Tooltip>
+              }
+            </div>
+          </div>
+
+          <div className="home__group flex flex-jc-c flex_md-jc-fs">
+            <SocialLinkTree />
           </div>
         </div>
-
-        <div className="home__group flex flex-jc-c flex_md-jc-fs">
-          <SocialLinkTree />
-        </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 };
 
