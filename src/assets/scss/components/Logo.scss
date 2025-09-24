@@ -8,38 +8,38 @@
   font-weight: 600;
   color: var(--text-400);
 
+  &__curly-brace {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    transition: left 200ms ease-in-out, color 200ms ease-in-out;
+  }
+
   &:hover {
-    span {
+    .logo__curly-brace {
       color: var(--primary-100);
 
-      &:first-child {
+      &--left {
         left: -0.25em;
       }
 
-      &:last-child {
+      &--right {
         left: 0.25em;
       }
     }
   }
 
   &:active {
-    span {
+    .logo__curly-brace {
       color: var(--primary-100);
 
-      &:first-child {
+      &--left {
         left: 0;
       }
 
-      &:last-child {
+      &--right {
         left: 0;
       }
     }
-  }
-
-  span {
-    display: inline-block;
-    position: relative;
-    left: 0;
-    transition: left 200ms ease-in-out, color 200ms ease-in-out;
   }
 }
