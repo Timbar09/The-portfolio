@@ -83,7 +83,7 @@ const TechItem = ({ item, isCardHovered }) => {
   };
 
   return (
-    <li className="project__tech--item flex flex-ai-c">
+    <li className="portfolio__project--tech__item flex flex-ai-c">
       {techIcons[item] || <CodeIcon />}
       <span>{item}</span>
     </li>

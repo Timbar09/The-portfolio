@@ -1,4 +1,4 @@
-@use '../../utils/' as *;
+@use "../../utils/" as *;
 
 .project__card {
   &--container {
@@ -23,7 +23,7 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -101,7 +101,8 @@
           overflow: hidden;
           padding-bottom: 0.25em;
           opacity: 0;
-          transition: height 500ms 300ms ease-in-out, opacity 300ms 300ms ease-in-out;
+          transition: height 500ms 300ms ease-in-out,
+            opacity 300ms 300ms ease-in-out;
 
           &--description {
             margin: 1em 0;
@@ -116,6 +117,166 @@
       button span {
         padding-left: 0.75em;
         padding-right: 0.75em;
+      }
+    }
+  }
+}
+
+.portfolio {
+  &__project {
+    &--card {
+      --spacing: 1rem;
+      --logo-dimension: 3.5rem;
+
+      position: relative;
+
+      &:hover,
+      &:focus-within {
+        .portfolio__project {
+          &--container {
+            background-color: var(--bg-400);
+          }
+
+          &--title {
+            color: var(--text-200);
+          }
+        }
+      }
+
+      &.active {
+        .portfolio__project {
+          &--container {
+            width: 105%;
+            gap: var(--spacing);
+            background-color: var(--bg-400);
+            box-shadow: 0px 14px 36px hsla(0, 0%, 0%, 0.35);
+            z-index: 1;
+
+            @include breakpoint-up(lg) {
+              width: 115%;
+            }
+          }
+
+          &--logo__image {
+            border-color: var(--opaque-40);
+          }
+
+          &--cta {
+            bottom: calc(100% - 2.65rem);
+          }
+
+          &--badge {
+            text-transform: capitalize;
+            // color: var(--text-400);
+            // background-color: var(--opaque-40);
+            max-width: max-content;
+            padding: 0.125em 0.5em;
+          }
+
+          &--bottom {
+            gap: var(--spacing);
+          }
+
+          &--description__container,
+          &--tech {
+            grid-template-rows: 1fr;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &--dummy,
+    &--container {
+      padding: var(--spacing);
+      border: solid 0.125rem var(--bg-400);
+      border-radius: var(--radius-300);
+      background-color: var(--bg-300);
+      gap: 0;
+      transition: gap 300ms ease-in-out;
+    }
+
+    &--dummy {
+      position: relative;
+      visibility: hidden;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    &--container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      transition: width 300ms ease-in-out, background-color 300ms ease-in-out;
+    }
+
+    &--logo {
+      &__image {
+        width: var(--logo-dimension);
+        height: var(--logo-dimension);
+        border: solid 0.125rem var(--bg-400);
+        border-radius: var(--radius-200);
+      }
+    }
+
+    &--title {
+      font-size: 1.125em;
+      font-weight: 500;
+      transition: color 300ms ease-in-out;
+    }
+
+    &--cta {
+      display: inline-block;
+      position: absolute;
+      right: var(--spacing);
+      bottom: var(--spacing);
+      transition: bottom 300ms ease-in-out;
+
+      .button {
+        font-size: 0.85em;
+        padding: 0.25em 0.75em;
+      }
+    }
+
+    &--badge {
+      padding: 0.5em 0.75em;
+      font-size: 0.75em;
+      font-weight: 500;
+      color: var(--text-100);
+      background-color: var(--opaque-20);
+      border: solid 0.125em var(--opaque-30);
+      border-radius: var(--radius-100);
+      text-transform: uppercase;
+      transition: bottom 300ms ease-in-out;
+    }
+
+    &--bottom {
+      gap: 0;
+      transition: gap 300ms ease-in-out;
+    }
+
+    &--description {
+      margin: 0;
+      overflow: hidden;
+
+      &__container {
+        grid-template-rows: 0fr;
+        opacity: 0;
+        transition: grid-template-rows 300ms ease-in-out,
+          opacity 300ms ease-in-out;
+      }
+    }
+
+    &--tech {
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition: grid-template-rows 300ms ease-in-out,
+        opacity 300ms ease-in-out;
+
+      &__list {
+        overflow: hidden;
       }
     }
   }

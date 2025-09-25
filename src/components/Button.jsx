@@ -18,6 +18,7 @@ import "../assets/scss/components/Button.scss";
  * @param {JSX.Element} icon - The icon to display next to the button name (optional)
  * @param {string} title - The title of the button (optional)
  * @param {function} func - The function to execute when the button is clicked (optional)
+ * @param {function} onBlur - The function to execute when the button loses focus (optional)
  *
  * @returns {JSX.Element} - The button component
  */
@@ -28,8 +29,10 @@ const Button = ({
   linkTo = null,
   isFormButton = false,
   icon = <ExternalLinkIcon />,
+  // TODO: Change func to onClick for consistency
   func = null,
   title = null,
+  onBlur = null,
 }) => {
   const isExternal =
     linkTo &&
@@ -66,6 +69,7 @@ const Button = ({
             smooth={true}
             offset={-100}
             duration={500}
+            onBlur={onBlur}
           >
             <span className="flex flex-jc-c flex-ai-c gap-1">
               {name}
@@ -75,6 +79,7 @@ const Button = ({
         ) : (
           <NavLink
             onClick={handleClick}
+            onBlur={onBlur}
             className={`button button__${type}`}
             title={title}
             to={linkTo}
@@ -92,6 +97,7 @@ const Button = ({
           }`}
           type={isFormButton ? "submit" : "button"}
           onClick={handleClick}
+          onBlur={onBlur}
           title={title}
         >
           <span className="flex flex-jc-c flex-ai-c gap-1">

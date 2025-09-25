@@ -13,21 +13,21 @@ const Portfolio = () => {
     <>
       <MetaTags page="portfolio" />
 
-      <main name="projects" id="projects" className="project__section page">
+      <main name="portfolio" id="portfolio" className="portfolio__page page">
         <div className="container">
           <header className="project__section--header">
             <PageTitle firstWord="My" secondWord="Portfolio" />
 
             <Transition
-              trigger="whileInView"
+              transitionName="fade-in-up"
               elementTag="h2"
               className="page__subtitle"
-              offset="-25%"
-              duration={1.5}
+              duration={1.25}
+              delay={0.5}
             >
               <>
-                I've built many projects. Feel free to explore or contribute. If
-                you have an idea or want to collaborate,{" "}
+                I've built a number projects. Feel free to explore or
+                contribute. If you have an idea or want to collaborate,{" "}
                 <span className="page__subtitle--highlight">
                   <NavLink to="contact" className="link">
                     let's connect
@@ -45,7 +45,14 @@ const Portfolio = () => {
             </Transition>
           </header>
 
-          <ProjectList />
+          <Transition
+            transitionName="fade-in-up"
+            className="relative"
+            duration={1}
+            delay={1}
+          >
+            <ProjectList />
+          </Transition>
         </div>
       </main>
     </>

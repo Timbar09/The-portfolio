@@ -14,9 +14,18 @@
       "summary": "In summary, ConsoleHub is a well-crafted web application that streamlines the booking of gaming consoles. It leverages React and Ruby on Rails for its frontend and backend respectively, with Devise for authentication and Tailwind CSS for stylish design. The combination of these technologies ensures a seamless and enjoyable user experience for users."
     },
     "imagesFile": "consolehub",
-    "tech": ["Ruby on Rails", "React", "Tailwind CSS", "Redux", "PostgreSQL", "Devise", "Rspec"],
+    "tech": [
+      "Ruby on Rails",
+      "React",
+      "Tailwind CSS",
+      "Redux",
+      "PostgreSQL",
+      "Devise",
+      "Rspec"
+    ],
     "source": "https://github.com/stephenkati/gaming_console_reservation_front_end",
-    "live": "https://console-hub.netlify.app/"
+    "live": "https://console-hub.netlify.app/",
+    "stackType": "fullstack"
   },
   {
     "title": "BudgetTrail",
@@ -45,7 +54,8 @@
       "Terminal"
     ],
     "source": "https://github.com/Timbar09/BudgetTrail",
-    "live": "https://budgettrail.onrender.com/"
+    "live": "https://budgettrail.onrender.com/",
+    "stackType": "fullstack"
   },
   {
     "title": "Space Traveler's Hub",
@@ -65,7 +75,8 @@
     "imagesFile": "spacetravelershub",
     "tech": ["React", "Redux", "Bootstrap", "REST API"],
     "source": "https://github.com/Timbar09/React-Redux-Group-Project-Space-Travelers-Hub",
-    "live": "https://spacetravelershub-react.onrender.com/"
+    "live": "https://spacetravelershub-react.onrender.com/",
+    "stackType": "frontend"
   },
   {
     "title": "Blogister",
@@ -96,7 +107,8 @@
       "Terminal"
     ],
     "source": "https://github.com/Timbar09/Blogister",
-    "live": ""
+    "live": "",
+    "stackType": "fullstack"
   },
   {
     "title": "ALT Confrence 2023",
@@ -117,7 +129,8 @@
     "imagesFile": "conference",
     "tech": ["JavaScript", "CSS3", "HTML5", "GitHub", "Terminal"],
     "source": "https://github.com/Timbar09/Africas-Leading-Tech-Conference",
-    "live": "https://timbar09.github.io/Africas-Leading-Tech-Conference/"
+    "live": "https://timbar09.github.io/Africas-Leading-Tech-Conference/",
+    "stackType": "frontend"
   },
   {
     "title": "Todo App",
@@ -138,7 +151,8 @@
     "imagesFile": "todoapp",
     "tech": ["React", "CSS3", "Git", "Github", "HTML5", "Terminal"],
     "source": "https://github.com/Timbar09/Todo-list-vol-2",
-    "live": "https://timbar09.github.io/Todo-list-vol-2/dist/"
+    "live": "https://timbar09.github.io/Todo-list-vol-2/dist/",
+    "stackType": "frontend"
   },
   {
     "title": "Awesome books",
@@ -159,6 +173,7 @@
     "imagesFile": "awesomebooks",
     "tech": ["JavaScript", "CSS3", "HTML5", "Luxon", "GitHub", "Terminal"],
     "source": "https://github.com/Timbar09/Awesome-books-vol-2",
-    "live": "https://timbar09.github.io/Awesome-books-vol-2/"
+    "live": "https://timbar09.github.io/Awesome-books-vol-2/",
+    "stackType": "frontend"
   }
 ]

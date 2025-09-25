@@ -27,6 +27,7 @@ const Word = ({ underline, children }) => {
     ],
     transition: {
       duration: 2,
+      delay: 1.5,
       times: [0, 0.2, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
       ease: "linear",
     },
@@ -39,7 +40,7 @@ const Word = ({ underline, children }) => {
           className="underlined-word"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
+          transition={{ duration: 0.8, delay: 3 }}
         >
           {children}
         </motion.span>

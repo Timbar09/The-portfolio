@@ -82,7 +82,7 @@ const Transition = ({
       className={className}
       initial={animations[transitionName].initial}
       {...(trigger === "animate"
-        ? { animate: animations[transition].animate }
+        ? { animate: animations[transitionName].animate }
         : { whileInView: animations[transitionName].animate })}
       {...(trigger === "animate"
         ? {}

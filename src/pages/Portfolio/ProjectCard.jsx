@@ -1,85 +1,156 @@
-import { useContext } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useContext, useRef } from "react";
+// import { motion } from "framer-motion";
 
-import { ProjectModalContext } from '../../components/App';
+import { ProjectModalContext } from "../../components/App";
 
-import TechItem from './TechItem';
-import Button from '../../components/Button';
+import TechItem from "./TechItem";
+import Button from "../../components/Button";
 
-import { IoSearch as ViewMoreIcon } from 'react-icons/io5';
+import { IoSearch as ViewMoreIcon } from "react-icons/io5";
 
-import imagesObj from './projectImages';
+import imagesObj from "./projectImages";
+import { i } from "framer-motion/client";
 
-const ProjectCard = ({ data, onHoverOrFocus, isActive }) => {
-  const { toggleProjectModal, setSelectedProject } = useContext(ProjectModalContext);
+const ProjectCardDummy = () => {
+  return (
+    <div className="portfolio__project--dummy flex flex-col" inert>
+      <div className="portfolio__project--top flex ai-s gap-2">
+        <div className="portfolio__project--logo grid">
+          <span className="portfolio__project--logo__image"></span>
+        </div>
 
-  const briefDescription = data.description.brief;
-  const { logo, bgImage } = imagesObj[data.imagesFile];
+        <div className="portfolio__project--title">&nbsp;</div>
+      </div>
+    </div>
+  );
+};
 
-  const activeClass = isActive ? 'active' : '';
+const ProjectCardTop = ({ project, logo, isActive }) => {
+  return (
+    <div className="portfolio__project--top flex ai-s gap-2">
+      <div className="portfolio__project--logo grid">
+        <img
+          src={logo}
+          alt={project.title}
+          className="portfolio__project--logo__image"
+        />
+      </div>
 
-  const cardStyle = {
-    backgroundImage: `url(${bgImage})`,
+      <div className="portfolio__project--title flex flex-col gap-1">
+        {project.title}
+
+        {isActive && (
+          <span className="portfolio__project--badge">{project.stackType}</span>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const ProjectCardBottom = ({ project, activeCard, isActive }) => {
+  return (
+    <div className="portfolio__project--bottom flex flex-col" inert={!isActive}>
+      <div className="portfolio__project--description__container grid">
+        <p className="portfolio__project--description">
+          {project.description.brief}
+        </p>
+      </div>
+
+      <div className="portfolio__project--tech grid" inert={!isActive}>
+        <ul className="portfolio__project--tech__list flex gap-1">
+          {project.tech.slice(0, 3).map((item, index) => (
+            <TechItem
+              key={index}
+              item={item}
+              isCardHovered={activeCard === index}
+            />
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const ProjectCard = ({ project, index }) => {
+  const { toggleProjectModal, setSelectedProject } =
+    useContext(ProjectModalContext);
+  const timeoutRef = useRef(null);
+  const [activeCard, setActiveCard] = useState(-1);
+  const [previousActiveCard, setPreviousActiveCard] = useState(-1);
+  const logo = imagesObj[project.imagesFile].logo;
+  const isActive = activeCard === index;
+
+  const handleMouseEnter = (index) => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveCard(index);
+    }, 1500);
   };
 
-  const titleVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
+  const handleMouseLeave = () => {
+    clearTimeout(timeoutRef.current);
+    setActiveCard(-1);
+  };
+
+  const handleFocus = (index) => {
+    setActiveCard(index);
+  };
+
+  const handleShiftTab = (e) => {
+    // Standard reverse tabbing
+    if (e.key === "Tab" && e.shiftKey) {
+      setActiveCard(-1);
+    }
+    // Mac VoiceOver (Control+Option+Shift+Tab)
+    if (
+      e.key === "Tab" &&
+      ((e.ctrlKey && e.altKey && e.shiftKey) || (e.metaKey && e.shiftKey))
+    ) {
+      setActiveCard(-1);
+    }
+    // Some browsers/extensions
+    if (e.key === "Tab" && (e.altKey || e.ctrlKey)) {
+      setActiveCard(-1);
+    }
   };
 
   return (
     <li
-      className={`project__card--container${` ${activeClass}`} flex flex-ai-fe`}
-      aria-label={data.title}
-      style={isActive ? cardStyle : {}}
-      onMouseEnter={onHoverOrFocus}
-      onFocus={onHoverOrFocus}
+      key={index}
+      className={`portfolio__project--card ${isActive ? "active" : ""}`}
+      onMouseEnter={() => handleMouseEnter(index)}
+      onMouseLeave={handleMouseLeave}
+      onFocus={() => handleFocus(index)}
+      onKeyDown={handleShiftTab}
+      aria-label={project.title}
     >
-      <div className="project__card--container__content">
-        <div className="project__card--container__content--text flex flex-col pt-2">
-          <div className="project__card--container__content--text__title flex gap-2 flex-ai-c px-2">
-            <div className="project__card--container__content--text__title--logo grid">
-              <img src={logo} alt={data.title} />
-            </div>
+      <ProjectCardDummy />
 
-            {isActive && (
-              <motion.h3
-                className="project__card--container__content--text__title--name"
-                initial="hidden"
-                animate="visible"
-                variants={titleVariants}
-                transition={{ duration: 0.5, delay: 0.75 }}
-              >
-                {data.title}
-              </motion.h3>
-            )}
-          </div>
-          <div className="project__card--container__content--text__body px-2">
-            <p className="project__card--container__content--text__body--description">
-              {briefDescription}
-            </p>
+      <div className="portfolio__project--container flex flex-col" tabIndex="0">
+        <ProjectCardTop project={project} logo={logo} isActive={isActive} />
 
-            <div className="project__card--details flex flex-jc-sb flex-wrap gap-1">
-              <ul className="project__card--tech__list flex flex-wrap flex-ai-c flex-jc-sb gap-1">
-                {data.tech.slice(0, 3).map((item, index) => (
-                  <TechItem key={index} item={item} isCardHovered={isActive} />
-                ))}
-              </ul>
-
-              <div className="project__card--container__button">
-                <Button
-                  type="secondary"
-                  name="View more"
-                  icon={<ViewMoreIcon />}
-                  func={() => {
-                    setSelectedProject(data);
-                    toggleProjectModal();
-                  }}
-                />
-              </div>
-            </div>
-          </div>
+        <div className="portfolio__project--cta">
+          {isActive ? (
+            <Button
+              name="View more"
+              icon={<ViewMoreIcon />}
+              func={() => {
+                setSelectedProject(project);
+                toggleProjectModal();
+              }}
+              onBlur={() => setActiveCard(-1)}
+            />
+          ) : (
+            <span className="portfolio__project--badge">
+              {project.stackType}
+            </span>
+          )}
         </div>
+
+        <ProjectCardBottom
+          project={project}
+          activeCard={activeCard}
+          isActive={isActive}
+        />
       </div>
     </li>
   );
