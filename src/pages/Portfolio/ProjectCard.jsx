@@ -1,5 +1,4 @@
 import { useState, useContext, useRef } from "react";
-// import { motion } from "framer-motion";
 
 import { ProjectModalContext } from "../../components/App";
 
@@ -9,7 +8,6 @@ import Button from "../../components/Button";
 import { IoSearch as ViewMoreIcon } from "react-icons/io5";
 
 import imagesObj from "./projectImages";
-import { i } from "framer-motion/client";
 
 const ProjectCardDummy = () => {
   return (
@@ -47,7 +45,7 @@ const ProjectCardTop = ({ project, logo, isActive }) => {
   );
 };
 
-const ProjectCardBottom = ({ project, activeCard, isActive }) => {
+const ProjectCardBottom = ({ project, isActive }) => {
   return (
     <div className="portfolio__project--bottom flex flex-col" inert={!isActive}>
       <div className="portfolio__project--description__container grid">
@@ -59,11 +57,7 @@ const ProjectCardBottom = ({ project, activeCard, isActive }) => {
       <div className="portfolio__project--tech grid" inert={!isActive}>
         <ul className="portfolio__project--tech__list flex gap-1">
           {project.tech.slice(0, 3).map((item, index) => (
-            <TechItem
-              key={index}
-              item={item}
-              isCardHovered={activeCard === index}
-            />
+            <TechItem key={index} item={item} isCardHovered={true} />
           ))}
         </ul>
       </div>
@@ -76,7 +70,6 @@ const ProjectCard = ({ project, index }) => {
     useContext(ProjectModalContext);
   const timeoutRef = useRef(null);
   const [activeCard, setActiveCard] = useState(-1);
-  const [previousActiveCard, setPreviousActiveCard] = useState(-1);
   const logo = imagesObj[project.imagesFile].logo;
   const isActive = activeCard === index;
 
@@ -146,11 +139,7 @@ const ProjectCard = ({ project, index }) => {
           )}
         </div>
 
-        <ProjectCardBottom
-          project={project}
-          activeCard={activeCard}
-          isActive={isActive}
-        />
+        <ProjectCardBottom project={project} isActive={isActive} />
       </div>
     </li>
   );

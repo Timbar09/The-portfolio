@@ -34,17 +34,6 @@
       max-width: 25em;
       margin: 0 auto;
       .about {
-        &__container {
-          &:hover,
-          &:focus-within {
-            .about__bio--info {
-              &__image {
-                rotate: y 0deg;
-              }
-            }
-          }
-        }
-
         &__bio--info {
           &__image {
             img {
@@ -117,6 +106,23 @@
           &__contact {
             opacity: 1;
             visibility: visible;
+          }
+        }
+      }
+
+      @include touch {
+        &:hover,
+        &:focus-within {
+          .about__bio--info {
+            &__image {
+              rotate: y 0deg;
+            }
+
+            &__contact {
+              rotate: y 0deg;
+              opacity: 1;
+              visibility: visible;
+            }
           }
         }
       }

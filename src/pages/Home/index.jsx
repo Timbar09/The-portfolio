@@ -70,6 +70,10 @@ const Home = () => {
             <SocialLinkTree />
           </div>
         </div>
+
+        {/* Add GitHub Commit Graph */}
+
+        {/* Add Featured Project */}
       </main>
     </>
   );

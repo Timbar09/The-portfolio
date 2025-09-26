@@ -20,6 +20,13 @@ const AboutBioInfo = () => {
 
   const fetchQuote = () => displayQuote(quotes, setQuote);
 
+  const handleMouseEnter = () => {
+    const isNotTouchDevice = window.matchMedia("(hover: hover)").matches;
+    if (isNotTouchDevice) {
+      fetchQuote();
+    }
+  };
+
   return (
     <Transition
       className="about__bio--info grid"
@@ -28,7 +35,10 @@ const AboutBioInfo = () => {
       offset="-25%"
       duration={1}
     >
-      <div className="about__bio--info__container" onMouseEnter={fetchQuote}>
+      <div
+        className="about__bio--info__container"
+        onMouseEnter={handleMouseEnter}
+      >
         <div className="about__bio--info__image">
           <img
             src={bioImage}
