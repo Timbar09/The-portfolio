@@ -1,127 +1,5 @@
 @use "../../utils/" as *;
 
-.project__card {
-  &--container {
-    --height-hover: 20em;
-    --logo-dimension: 2.5em;
-
-    position: relative;
-    height: calc(var(--logo-dimension) * 2);
-    border-radius: var(--radius-300);
-    background-color: var(--bg-400);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transition: height 300ms ease-in-out, flex 300ms ease-in-out;
-
-    @include breakpoint-up(md) {
-      --height-hover: 25em;
-
-      height: var(--height-hover);
-      flex: 1;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: background-color 500ms 200ms linear;
-    }
-
-    &.active {
-      height: var(--height-hover);
-      outline: solid 0.175em var(--bg-300);
-      outline-offset: -1px;
-
-      &::before {
-        background-color: var(--opaque-light-100);
-      }
-
-      @include breakpoint-up(md) {
-        flex: 7;
-      }
-
-      .project__card {
-        &--container {
-          &__content {
-            &--text {
-              background-color: var(--bg-300);
-              border-radius: var(--radius-300) var(--radius-300) 0 0;
-              box-shadow: 0 0 1em 0.25em rgba(0, 0, 0, 0.075);
-
-              &__body {
-                height: calc(var(--height-hover) * 0.6);
-                overflow: visible;
-                opacity: 1;
-
-                @include breakpoint-up(sm) {
-                  height: calc(var(--height-hover) * 0.35);
-                }
-
-                @include breakpoint-up(md) {
-                  height: calc(var(--height-hover) * 0.275);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    &__content {
-      position: relative;
-      width: 100%;
-
-      &--text {
-        padding-bottom: calc(var(--logo-dimension) / 2);
-        transition: background-color 50ms linear;
-
-        &__title {
-          &--logo {
-            > img {
-              width: var(--logo-dimension);
-              height: var(--logo-dimension);
-              border-radius: var(--radius-round);
-              outline: solid 0.125em var(--bg-300);
-              margin-right: 0.5em;
-            }
-          }
-
-          &--name {
-            margin: 0;
-          }
-        }
-
-        &__body {
-          height: 0;
-          overflow: hidden;
-          padding-bottom: 0.25em;
-          opacity: 0;
-          transition: height 500ms 300ms ease-in-out,
-            opacity 300ms 300ms ease-in-out;
-
-          &--description {
-            margin: 1em 0;
-          }
-        }
-      }
-    }
-
-    &__button {
-      font-size: 0.85em;
-
-      button span {
-        padding-left: 0.75em;
-        padding-right: 0.75em;
-      }
-    }
-  }
-}
-
 .portfolio {
   &__project {
     &--card {
@@ -152,8 +30,16 @@
             box-shadow: 0px 14px 36px hsla(0, 0%, 0%, 0.35);
             z-index: 1;
 
+            @include touch {
+              width: 100%;
+            }
+
             @include breakpoint-up(lg) {
               width: 115%;
+
+              @include touch {
+                width: 100%;
+              }
             }
           }
 
@@ -167,8 +53,6 @@
 
           &--badge {
             text-transform: capitalize;
-            // color: var(--text-400);
-            // background-color: var(--opaque-40);
             max-width: max-content;
             padding: 0.125em 0.5em;
           }
@@ -201,6 +85,12 @@
       visibility: hidden;
       pointer-events: none;
       user-select: none;
+
+      @include touch {
+        display: none;
+        height: 0;
+        padding: 0;
+      }
     }
 
     &--container {
@@ -210,6 +100,13 @@
       transform: translate(-50%, -50%);
       width: 100%;
       transition: width 300ms ease-in-out, background-color 300ms ease-in-out;
+
+      @include touch {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
     }
 
     &--logo {

@@ -72,6 +72,7 @@ const ProjectCard = ({ project, index }) => {
   const [activeCard, setActiveCard] = useState(-1);
   const logo = imagesObj[project.imagesFile].logo;
   const isActive = activeCard === index;
+  const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints;
 
   const handleMouseEnter = (index) => {
     timeoutRef.current = setTimeout(() => {
@@ -86,6 +87,11 @@ const ProjectCard = ({ project, index }) => {
 
   const handleFocus = (index) => {
     setActiveCard(index);
+  };
+
+  const handleTouch = (index) => {
+    // When on touch devices, toggle card active state on tap
+    setActiveCard((prevIndex) => (prevIndex === index ? -1 : index));
   };
 
   const handleShiftTab = (e) => {
@@ -113,6 +119,7 @@ const ProjectCard = ({ project, index }) => {
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}
       onFocus={() => handleFocus(index)}
+      onTouchStart={() => handleTouch(index)}
       onKeyDown={handleShiftTab}
       aria-label={project.title}
     >
