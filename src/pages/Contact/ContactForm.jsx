@@ -1,21 +1,47 @@
-import FormField from "./FormField.jsx";
-import Button from "../../components/Button.jsx";
+import { useRef, useState } from "react";
 
-import { handleFormSubmit, formFields } from "./formUtils.js";
+import Tooltip from "../../components/Tooltip";
+import Transition from "../../components/Transition";
+import Button from "../../components/Button";
+import FormField from "./FormField";
+
+import { handleFormSubmit, formFields } from "./formUtils";
 
 const ContactForm = () => {
+  const formRef = useRef(null);
+  const [isValid, setIsValid] = useState(false);
+
+  const handleInput = () => {
+    if (formRef.current) {
+      setIsValid(formRef.current.checkValidity());
+    }
+  };
+
   return (
     <form
+      ref={formRef}
+      onInput={handleInput}
       onSubmit={handleFormSubmit}
       className="contact__form p-2 grid grid-col grid-gap-2"
     >
       {formFields.map((field, index) => (
-        <FormField key={index} {...field} />
+        <FormField key={index} index={index} {...field} />
       ))}
 
-      <div className="form-field__submit">
+      <Transition
+        className="form-field__submit relative"
+        transitionName="fade-in-right"
+        duration={1}
+        delay={0.3 * formFields.length}
+      >
         <Button type="primary" name="Send" isFormButton />
-      </div>
+
+        <Tooltip isLink={isValid}>
+          {isValid
+            ? "You're ready to send your message!"
+            : "You've got to fill in all the fields first!"}
+        </Tooltip>
+      </Transition>
     </form>
   );
 };

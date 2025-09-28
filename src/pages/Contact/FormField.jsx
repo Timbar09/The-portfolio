@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import Transition from "../../components/Transition";
+
 import Select from "./CustomSelect";
 
 const Label = ({ label, name }) => {
@@ -62,6 +64,7 @@ const Textarea = ({ name, placeholder, required, handleBlur, handleFocus }) => (
 );
 
 const FormField = ({
+  index,
   label = "Label text",
   type = "text",
   name,
@@ -82,7 +85,13 @@ const FormField = ({
   const toggleDropdown = () => setIsSelectBoxOpen((prev) => !prev);
 
   return (
-    <div className={`form-field form-field--${type} ${isSelectBoxOpen ? "open" : ""}`}>
+    <Transition
+      className={`form-field form-field--${type} ${
+        isSelectBoxOpen ? "open" : ""
+      }`}
+      duration={1}
+      delay={0.2 * index}
+    >
       <Label label={label} name={name} />
 
       {type === "textarea" ? (
@@ -116,7 +125,7 @@ const FormField = ({
       )}
 
       <div className="form-field__indicator" />
-    </div>
+    </Transition>
   );
 };
 
