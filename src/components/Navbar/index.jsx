@@ -1,15 +1,22 @@
 import { useContext, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
+// import { AnimatePresence } from "framer-motion";
+import { ThemeContext } from "../App";
 import { MenuContext } from "../App";
+
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
-import MenuHeader from "./MenuHeader";
-import NavContent from "./NavContent";
+import Logo from "../Logo";
+import NavList from "./NavList";
+import Tooltip from "../Tooltip";
+import MenuList from "./MenuList";
+import ThemeToggle from "./ThemeToggle";
+import MenuToggleButton from "./MenuToggleButton";
 
 import "../../assets/scss/components/Navbar.scss";
 
 const Navbar = () => {
   const { isMenuOpen } = useContext(MenuContext);
+  const { theme } = useContext(ThemeContext);
   const isMobile = useMediaQuery("sm", "down");
   let lastScrollY = 0;
 
@@ -48,12 +55,22 @@ const Navbar = () => {
 
   return (
     <nav className={`nav ${isMobile && (isMenuOpen ? "open" : "closed")}`}>
-      <div className="container">
-        {isMobile && <MenuHeader />}
+      <div className="container relative flex flex-ai-c flex-jc-sb gap-1">
+        <Logo />
 
-        <AnimatePresence>
-          {isMobile && !isMenuOpen ? null : <NavContent />}
-        </AnimatePresence>
+        {isMobile && <MenuToggleButton />}
+
+        {isMobile ? <MenuList /> : <NavList />}
+
+        {!isMobile && (
+          <div className="nav__theme-toggle--container">
+            <ThemeToggle />
+
+            <Tooltip>
+              Switch to {theme === "light" ? "dark" : "light"} mode
+            </Tooltip>
+          </div>
+        )}
       </div>
     </nav>
   );

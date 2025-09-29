@@ -302,5 +302,10 @@
 
   &--description {
     position: relative;
+    text-align: center;
+
+    @include breakpoint-up(lg) {
+      text-align: left;
+    }
   }
 }
