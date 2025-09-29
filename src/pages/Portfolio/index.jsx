@@ -6,7 +6,7 @@ import Tooltip from "../../components/Tooltip";
 import ProjectList from "./ProjectList";
 import PageTitle from "../PageTitle";
 
-import "../../assets/scss/sections/projects/index.scss";
+import "../../assets/scss/pages/portfolio/index.scss";
 
 const Portfolio = () => {
   return (

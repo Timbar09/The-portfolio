@@ -8,7 +8,7 @@ import Button from "../../components/Button";
 import SocialLinkTree from "../../components/SocialLinkTree";
 import Tooltip from "../../components/Tooltip";
 
-import "../../assets/scss/sections/HomeSection.scss";
+import "../../assets/scss/pages/Home.scss";
 
 import darkBgImg from "../../assets/images/hero-bg-dark.webp";
 import lightBgImg from "../../assets/images/hero-bg-light.webp";
@@ -25,7 +25,7 @@ const Home = () => {
     <>
       <MetaTags />
 
-      <main name="home" id="home" className="home__section">
+      <main name="home" id="home" className="home__page">
         <div
           className="home__content container flex flex-col flex-jc-c gap-3"
           style={{

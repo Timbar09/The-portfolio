@@ -5,14 +5,14 @@ import AboutBio from "./AboutBio";
 import AboutSoftSkills from "./AboutSoftSkills";
 import AboutTechnologies from "./AboutTechnologies";
 
-import "../../assets/scss/sections/about/index.scss";
+import "../../assets/scss/pages/about/index.scss";
 
 const About = () => {
   return (
     <>
       <MetaTags page="about" />
 
-      <main name="about" id="about" className="about__section page">
+      <main name="about" id="about" className="about__page page">
         <div className="container">
           <PageTitle firstWord="About" secondWord="Me" underlineLeft={false} />
 

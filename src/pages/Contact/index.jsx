@@ -10,7 +10,7 @@ import ContactForm from "./ContactForm";
 import darkBgImage from "../../assets/images/contact-bg.jpg";
 import lightBgImage from "../../assets/images/contact-bg-light.jpg";
 
-import "../../assets/scss/sections/ContactSection.scss";
+import "../../assets/scss/pages/Contact.scss";
 
 const Contact = () => {
   const { theme } = useContext(ThemeContext);
@@ -20,7 +20,7 @@ const Contact = () => {
     <>
       <MetaTags page="contact" />
 
-      <main name="contact" id="contact" className="contact__section page">
+      <main name="contact" id="contact" className="contact__page page">
         <div
           className="container"
           style={{
