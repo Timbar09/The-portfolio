@@ -40,7 +40,10 @@ const App = () => {
   );
 
   const toggleTheme = () => {
+    const html = document.documentElement;
+
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    html.style.colorScheme = theme === "light" ? "dark" : "light";
   };
 
   const toggleMenu = () => {
@@ -58,8 +61,10 @@ const App = () => {
   };
 
   useEffect(() => {
+    const html = document.documentElement;
     const body = document.querySelector("body");
 
+    html.style.colorScheme = theme;
     body.dataset.theme = theme;
   }, [theme]);
 
