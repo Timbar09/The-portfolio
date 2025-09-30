@@ -12,8 +12,8 @@ const AboutBio = () => {
         I'm Miles Mosweu, a self-driven fullstack web developer based in{" "}
         <span className="page__subtitle--highlight">
           <MyLink
-            linkText="Botswana"
-            linkTo="https://www.google.com/maps/place/Botswana"
+            text="Botswana"
+            path="https://www.google.com/maps/place/Botswana"
           />
 
           <Tooltip isLink styles={{ fontSize: "0.5em", maxWidth: "20rem" }}>

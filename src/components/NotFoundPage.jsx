@@ -12,7 +12,7 @@ const NotFoundPage = () => {
             Oops! The page you're looking for doesn't exist.
           </p>
 
-          <Button linkTo="/" name="Go Back Home" type="secondary" />
+          <Button path="/" text="Go Back Home" variant="secondary" />
         </div>
       </div>
     </main>

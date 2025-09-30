@@ -2,7 +2,7 @@
 
 .button {
   position: relative;
-  display: inline-block;
+  display: grid;
   border-radius: var(--radius-200);
   color: var(--bg-100);
   font-family: $ff-titillium;

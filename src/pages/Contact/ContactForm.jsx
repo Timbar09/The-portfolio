@@ -34,7 +34,7 @@ const ContactForm = () => {
         duration={1}
         delay={0.3 * formFields.length}
       >
-        <Button type="primary" name="Send" isFormButton />
+        <Button variant="primary" text="Send" type="submit" />
 
         <Tooltip isLink={isValid}>
           {isValid

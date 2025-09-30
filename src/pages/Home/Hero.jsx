@@ -15,8 +15,8 @@ const Hero = () => {
   const isTablet = useMediaQuery("md", "down");
 
   const tertiaryButtonProps = isTablet
-    ? { name: "Contact Me", linkTo: "/contact" }
-    : { name: "More About Me", linkTo: "/about" };
+    ? { text: "Contact Me", path: "/contact" }
+    : { text: "More About Me", path: "/about" };
 
   return (
     <section
@@ -43,12 +43,12 @@ const Hero = () => {
 
       <div className="home__hero--buttons home__hero--group flex flex-jc-c flex-ai-c flex_md-jc-fs flex-wrap gap-2">
         <div className="home__hero--button">
-          <Button name="View Portfolio" linkTo="/portfolio" />
+          <Button text="View Portfolio" path="/portfolio" />
           <Tooltip isLink>Check out my projects</Tooltip>
         </div>
 
         <div className="home__hero--button">
-          <Button type="tertiary" {...tertiaryButtonProps} />
+          <Button variant="tertiary" {...tertiaryButtonProps} />
           {
             <Tooltip isLink>
               {isTablet ? "Get in touch with me" : "Learn more about me"}

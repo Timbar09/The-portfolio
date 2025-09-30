@@ -78,18 +78,18 @@ const AboutBioInfo = () => {
         <div className="about__bio--info__button--list flex gap-2">
           <div className="about__bio--info__button">
             <Button
-              name="View Resume"
-              type="secondary"
-              linkTo="https://docs.google.com/document/d/1rOU5wqF-9cZJrHmSSsP3YFXvpCAB7M-cY_R3njqn6Vs/view?usp=sharing"
+              text="View Resume"
+              variant="secondary"
+              path="https://docs.google.com/document/d/1rOU5wqF-9cZJrHmSSsP3YFXvpCAB7M-cY_R3njqn6Vs/view?usp=sharing"
             />
             <Tooltip isLink>View my Resume on Google Docs</Tooltip>
           </div>
 
           <div className="about__bio--info__button">
             <Button
-              name=""
-              type="tertiary"
-              linkTo="https://docs.google.com/document/d/1rOU5wqF-9cZJrHmSSsP3YFXvpCAB7M-cY_R3njqn6Vs/export?format=pdf"
+              text=""
+              variant="tertiary"
+              path="https://docs.google.com/document/d/1rOU5wqF-9cZJrHmSSsP3YFXvpCAB7M-cY_R3njqn6Vs/export?format=pdf"
               icon={<DownloadIcon />}
             />
 

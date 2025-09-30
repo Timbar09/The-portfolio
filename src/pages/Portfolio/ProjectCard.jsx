@@ -72,7 +72,6 @@ const ProjectCard = ({ project, index }) => {
   const [activeCard, setActiveCard] = useState(-1);
   const logo = imagesObj[project.imagesFile].logo;
   const isActive = activeCard === index;
-  const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints;
 
   const handleMouseEnter = (index) => {
     timeoutRef.current = setTimeout(() => {
@@ -131,9 +130,9 @@ const ProjectCard = ({ project, index }) => {
         <div className="portfolio__project--cta">
           {isActive ? (
             <Button
-              name="View more"
+              text="View more"
               icon={<ViewMoreIcon />}
-              func={() => {
+              onClick={() => {
                 setSelectedProject(project);
                 toggleProjectModal();
               }}

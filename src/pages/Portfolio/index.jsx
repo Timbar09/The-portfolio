@@ -1,10 +1,11 @@
 import { NavLink } from "react-router";
 
+import MyLink from "../../components/MyLink";
+import PageTitle from "../PageTitle";
+import ProjectList from "./ProjectList";
+import Tooltip from "../../components/Tooltip";
 import MetaTags from "../../components/MetaTags";
 import Transition from "../../components/Transition";
-import Tooltip from "../../components/Tooltip";
-import ProjectList from "./ProjectList";
-import PageTitle from "../PageTitle";
 
 import "../../assets/scss/pages/portfolio/index.scss";
 
