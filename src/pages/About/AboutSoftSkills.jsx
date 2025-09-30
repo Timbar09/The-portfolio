@@ -18,7 +18,7 @@ const icons = {
 
 const AboutSoftSkills = () => {
   return (
-    <section className="about__soft-skills">
+    <section className="about__soft-skills page__section">
       <h3 className="page__subtitle">
         I have honed essential soft skills applicable to both life and the
         workplace, particularly during my time at{" "}

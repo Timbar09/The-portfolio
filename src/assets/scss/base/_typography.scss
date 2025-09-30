@@ -4,16 +4,16 @@ h1,
 h2,
 h3,
 h4 {
-  margin-top: 0;
+  margin: 0;
   font-family: $ff-mitr;
   font-weight: 300;
   color: var(--text-200);
   line-height: 1.2;
 }
 
-p {
-  margin-top: 0;
-}
+// p {
+//   margin-top: 0;
+// }
 
 a,
 a:visited,
@@ -152,18 +152,26 @@ ul {
   }
 
   &__subtitle {
-    margin: 1em auto;
+    margin: 0 auto 1em;
     text-align: center;
     font-size: 2em;
     font-weight: 200;
 
     @include breakpoint-up(lg) {
-      margin: 1em 0;
+      margin: 0 0 1em;
       text-align: left;
     }
 
     &--highlight {
       position: relative;
+    }
+  }
+
+  &__section {
+    margin-top: 3em;
+
+    @include breakpoint-up(lg) {
+      margin-top: 5em;
     }
   }
 }

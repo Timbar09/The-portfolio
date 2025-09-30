@@ -1,0 +1,22 @@
+.home {
+  &__page {
+    background-color: var(--bg-100);
+
+    .title {
+      margin-bottom: 0;
+
+      &__greeting {
+        display: block;
+        font-size: clamp(0.35em, 2.5vw, 0.375em);
+        font-weight: 200;
+      }
+
+      &__name {
+        background: var(--primary-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+}

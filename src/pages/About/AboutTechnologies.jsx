@@ -54,7 +54,7 @@ const AboutTechnologies = () => {
   const techData = getTechData(theme);
 
   return (
-    <section className="about__tech">
+    <section className="about__tech page__section">
       <h3 className="page__subtitle">
         I use a variety of technologies and tools to build projects, including
         but not limited to:

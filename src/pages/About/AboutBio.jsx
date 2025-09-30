@@ -7,7 +7,7 @@ const AboutBio = () => {
   const yearCount = new Date().getFullYear() - 2020;
 
   return (
-    <section className="about__bio grid grid-gap-3">
+    <section className="about__bio page__section grid grid-gap-3">
       <h2 className="page__subtitle">
         I'm Miles Mosweu, a self-driven fullstack web developer based in{" "}
         <span className="page__subtitle--highlight">

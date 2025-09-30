@@ -10,10 +10,7 @@
 
   .page__subtitle {
     max-width: 20em;
-
-    @include breakpoint-up(lg) {
-      margin-top: 0;
-    }
+    margin-bottom: 0;
   }
 
   &--info {
