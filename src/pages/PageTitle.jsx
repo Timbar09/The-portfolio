@@ -1,68 +1,53 @@
 import { motion } from "framer-motion";
 
-const Word = ({ underline, children }) => {
-  const underlineAnimation = {
-    opacity: [0, 1, 1, 1, 1, 1, 1, 1],
-    left: ["50%", "40%", "30%", "20%", "10%", "0%", "0%", "0%"],
-    bottom: ["150%", "0%", "40%", "0%", "20%", "0%", "1S0%", "0%"],
-    height: [
-      "0.1em",
-      "0.05em",
-      "0.1em",
-      "0.05em",
-      "0.1em",
-      "0.075em",
-      "0.075em",
-      "0.075em",
-    ],
-    width: [
-      "0.075em",
-      "0.075em",
-      "0.075em",
-      "0.075em",
-      "0.075em",
-      "0.075em",
-      "0.075em",
-      "100%",
-    ],
-    transition: {
-      duration: 2,
-      delay: 1.5,
-      times: [0, 0.2, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-      ease: "linear",
+const Word = ({ fade, wordPosition, children }) => {
+  const firstFadeAnimation = {
+    initial: { opacity: 0, left: -20 },
+    animate: {
+      opacity: 1,
+      left: 0,
     },
+    transition: { duration: 3, delay: 2 },
   };
+
+  const secondFadeAnimation = {
+    initial: { opacity: 0, right: 20 },
+    animate: {
+      opacity: 1,
+      right: 0,
+    },
+    transition: { duration: 3, delay: 2 },
+  };
+
+  const fadeAnimation =
+    wordPosition === "first" ? firstFadeAnimation : secondFadeAnimation;
 
   return (
     <span className="page__title--word">
-      {underline ? (
+      {fade ? (
         <motion.span
-          className="underlined-word"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 3 }}
+          className={`faded-word faded-word__${wordPosition}`}
+          initial={fadeAnimation.initial}
+          animate={fadeAnimation.animate}
+          transition={fadeAnimation.transition}
         >
           {children}
         </motion.span>
       ) : (
         children
       )}
-
-      {underline && (
-        <motion.span
-          className="underline"
-          initial={{ opacity: 0, bottom: "150%", width: "5%" }}
-          animate={underlineAnimation}
-        />
-      )}
     </span>
   );
 };
 
-const PageTitle = ({ firstWord, secondWord, underlineLeft = true }) => (
+const PageTitle = ({ firstWord, secondWord, fadeLeft = true }) => (
   <h1 className="title page__title">
-    <Word underline={underlineLeft}>{firstWord}</Word>{" "}
-    <Word underline={!underlineLeft}>{secondWord}</Word>
+    <Word fade={fadeLeft} wordPosition="first">
+      {firstWord}
+    </Word>{" "}
+    <Word fade={!fadeLeft} wordPosition="second">
+      {secondWord}
+    </Word>
   </h1>
 );
 

@@ -55,7 +55,7 @@ const GitHubContribution = () => {
           </div>
 
           <ul
-            className="home__github-contribution--year__list flex flex-jc-c flex_md-jc-fs gap-1 flex-wrap"
+            className="home__github-contribution--year__list flex flex-jc-c flex_lg-jc-fs gap-1 flex-wrap"
             aria-label="GitHub contribution years"
             style={styleVariables}
           >

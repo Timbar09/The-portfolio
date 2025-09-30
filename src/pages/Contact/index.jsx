@@ -1,11 +1,12 @@
 import { useContext } from "react";
 
-import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { ThemeContext } from "../../components/App";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
+import ContactForm from "./ContactForm";
+import PageTitle from "../PageTitle";
 import MetaTags from "../../components/MetaTags";
 import SocialLinkTree from "../../components/SocialLinkTree";
-import ContactForm from "./ContactForm";
 
 import darkBgImage from "../../assets/images/contact-bg.jpg";
 import lightBgImage from "../../assets/images/contact-bg-light.jpg";
@@ -30,7 +31,7 @@ const Contact = () => {
           }}
         >
           <div className="contact__text flex flex-col gap-2">
-            <h1 className="contact__title">Get in touch</h1>
+            <PageTitle firstWord="Contact" secondWord="Me" fadeLeft={false} />
 
             <p className="contact__description">
               I'm always open to new opportunities. Whether you have a question

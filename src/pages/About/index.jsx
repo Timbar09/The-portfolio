@@ -14,7 +14,7 @@ const About = () => {
 
       <main name="about" id="about" className="about__page page">
         <div className="container">
-          <PageTitle firstWord="About" secondWord="Me" underlineLeft={false} />
+          <PageTitle firstWord="About" secondWord="Me" fadeLeft={false} />
 
           <AboutBio />
 

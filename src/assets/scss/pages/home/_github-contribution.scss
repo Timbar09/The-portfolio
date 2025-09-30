@@ -2,6 +2,11 @@
 
 .home__github-contribution {
   padding-bottom: 6rem;
+  text-align: center;
+
+  @include breakpoint-up(lg) {
+    text-align: left;
+  }
 
   .react-activity-calendar {
     padding: 2rem;
