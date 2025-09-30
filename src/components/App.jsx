@@ -2,13 +2,14 @@ import { useEffect, useState, createContext } from "react";
 import { Routes, Route } from "react-router";
 import useLocalStorage from "use-local-storage";
 
-import Overlay from "./Overlay";
 import Layout from "../layout";
-import ErrorBoundary from "./ErrorBoundary";
+import Overlay from "./Overlay";
 import HomePage from "../pages/Home";
-import PortfolioPage from "../pages/Portfolio";
 import AboutPage from "../pages/About";
 import Contact from "../pages/Contact";
+import NotFoundPage from "./NotFoundPage";
+import ErrorBoundary from "./ErrorBoundary";
+import PortfolioPage from "../pages/Portfolio";
 
 import "../assets/scss/components/App.scss";
 
@@ -89,7 +90,7 @@ const App = () => {
                   <Route path="/portfolio" element={<PortfolioPage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/contact" element={<Contact />} />
-                  <Route path="*" element={<div>404 Not Found</div>} />
+                  <Route path="*" element={<NotFoundPage />} />
                 </Route>
               </Routes>
             </div>
