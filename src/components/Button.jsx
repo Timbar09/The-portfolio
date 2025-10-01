@@ -8,6 +8,126 @@ import { AiOutlineStop as InvalidIcon } from "react-icons/ai";
 
 import "../assets/scss/components/Button.scss";
 
+export const BASE_URL = "https://milesmosweu.netlify.app/";
+
+const LinkGoesToExternalSite = ({ props }) => {
+  const ref = `?ref=${BASE_URL}`;
+
+  return (
+    <a
+      href={props.path + ref}
+      className={`button button__${props.variant}`}
+      title={props.title}
+      target="_blank"
+      onClick={props.onClick}
+      onBlur={props.onBlur}
+      rel="noopener"
+    >
+      <span className="flex flex-jc-c flex-ai-c gap-1">
+        {props.text}
+
+        <span className="button__icon grid">
+          {props.icon || <ExternalLinkIcon />}
+        </span>
+      </span>
+    </a>
+  );
+};
+
+const LinkGoesToInternalPage = ({ props }) => {
+  console.log("We are here!", props.icon);
+  return (
+    <NavLink
+      to={props.path}
+      className={`button button__${props.variant}`}
+      title={props.title}
+      onClick={props.onClick}
+      onBlur={props.onBlur}
+    >
+      <span className="flex flex-jc-c flex-ai-c gap-1">
+        {props.text}
+
+        <span className="button__icon grid">{props.icon || <ArrowIcon />}</span>
+      </span>
+    </NavLink>
+  );
+};
+
+const LinkGoesToPageSection = ({ props }) => {
+  return (
+    <SmoothScrollLink
+      onClick={props.onClick}
+      className={`button button__${props.variant}`}
+      title={props.title}
+      to={props.path}
+      spy={true}
+      smooth={true}
+      offset={-100}
+      duration={500}
+      onBlur={props.onBlur}
+    >
+      <span className="flex flex-jc-c flex-ai-c gap-1">
+        {props.text}
+
+        <span className="button__icon grid">{props.icon || <ArrowIcon />}</span>
+      </span>
+    </SmoothScrollLink>
+  );
+};
+
+const LinkButton = ({ props }) => {
+  const goesToExternalSite =
+    props.path.startsWith("http") ||
+    props.path.startsWith("https") ||
+    props.path.startsWith("www");
+  const goesToExternalPage = props.path && props.path.startsWith("/");
+  const goesToPageSection = props.path && props.path.startsWith("#");
+
+  const goesOutsideCurrentPage = goesToExternalSite || goesToExternalPage;
+
+  let link;
+
+  if (goesOutsideCurrentPage) {
+    if (goesToExternalSite) {
+      link = <LinkGoesToExternalSite props={props} />;
+    } else {
+      console.log(`Goes to internal page: ${props.path}`);
+      link = <LinkGoesToInternalPage props={props} />;
+    }
+  } else if (goesToPageSection) {
+    link = <LinkGoesToPageSection props={props} />;
+  }
+
+  return link;
+};
+
+const ActualButton = ({ props }) => {
+  return (
+    <button
+      className={`button button__${props.variant} ${
+        props.type === "submit" ? "button__" + props.variant + "--form" : ""
+      }`}
+      type={props.type}
+      onClick={props.onClick}
+      onBlur={props.onBlur}
+      title={props.title}
+    >
+      <span className="flex flex-jc-c flex-ai-c gap-1">
+        {props.text}
+
+        {props.type === "submit" ? (
+          <>
+            <SendIcon />
+            <InvalidIcon />
+          </>
+        ) : (
+          props.icon && <span className="button__icon grid">{props.icon}</span>
+        )}
+      </span>
+    </button>
+  );
+};
+
 /**
  * Adds a button Component to the application
  *
@@ -28,92 +148,21 @@ const Button = ({
   variant = "primary",
   text = "Primary",
   path = null,
-  icon = <ExternalLinkIcon />,
+  icon = null,
   onClick = null,
   title = null,
   onBlur = null,
 }) => {
-  const icons = {
-    link: {
-      external: <ExternalLinkIcon />,
-      internal: <ArrowIcon />,
-    },
-    custom: icon,
-  };
-
-  const isExternal =
-    path &&
-    (path.startsWith("http") ||
-      path.startsWith("https") ||
-      path.startsWith("www"));
-  const isInternal = path && path.startsWith("/");
-  const buttonIcon =
-    isExternal || isInternal
-      ? isExternal
-        ? icons.link.external
-        : icons.link.internal
-      : icons.custom;
-
   return (
     <>
       {path ? (
-        path.startsWith("#") ? (
-          <SmoothScrollLink
-            onClick={onClick}
-            className={`button button__${type}`}
-            tabIndex="0"
-            title={title}
-            to={linkTo.replace("#", "")}
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration={500}
-            onBlur={onBlur}
-          >
-            <span className="flex flex-jc-c flex-ai-c gap-1">
-              {text}
-
-              {icon || buttonIcon}
-            </span>
-          </SmoothScrollLink>
-        ) : (
-          <NavLink
-            onClick={onClick}
-            onBlur={onBlur}
-            className={`button button__${variant}`}
-            title={title}
-            to={path}
-          >
-            <span className="flex flex-jc-c flex-ai-c gap-1">
-              {text}
-
-              {icon || buttonIcon}
-            </span>
-          </NavLink>
-        )
+        <LinkButton
+          props={{ variant, text, path, icon, title, onClick, onBlur }}
+        />
       ) : (
-        <button
-          className={`button button__${variant} ${
-            type === "submit" ? "button__" + variant + "--form" : ""
-          }`}
-          type={type}
-          onClick={onClick}
-          onBlur={onBlur}
-          title={title}
-        >
-          <span className="flex flex-jc-c flex-ai-c gap-1">
-            {text}
-
-            {type === "submit" ? (
-              <>
-                <SendIcon />
-                <InvalidIcon />
-              </>
-            ) : (
-              icon && buttonIcon
-            )}
-          </span>
-        </button>
+        <ActualButton
+          props={{ type, variant, text, icon, title, onClick, onBlur }}
+        />
       )}
     </>
   );

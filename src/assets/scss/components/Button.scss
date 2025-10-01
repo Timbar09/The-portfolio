@@ -1,19 +1,27 @@
 @use "../utils/" as *;
 
 .button {
+  --button-clr: var(--bg-100);
+  --button-hover-clr: var(--bg-100);
+
+  --border-width: 0.115rem;
+  --padding: calc(0.375rem - var(--border-width)) 1.5rem;
+
   position: relative;
   display: grid;
   border-radius: var(--radius-200);
-  color: var(--bg-100);
+  color: var(--button-clr);
   font-family: $ff-titillium;
   font-size: inherit;
   font-weight: 600;
-  padding: 0.375rem 1.5rem;
+  padding: var(--padding);
   cursor: pointer;
   transition: background-color 150ms ease-in-out, border 150ms ease-in-out,
     box-shadow 150ms ease-in-out, top 150ms ease-in-out;
 
   &__primary {
+    --padding: 0.375rem 1.5rem;
+
     background: var(--primary-gradient);
     box-shadow: var(--shadow-100);
     top: 0;
@@ -48,9 +56,9 @@
   }
 
   &__secondary {
-    color: var(--primary-100);
-    border: solid 0.115em var(--primary-100);
-    padding: 0;
+    --button-clr: var(--primary-100);
+
+    border: solid var(--border-width) var(--primary-100);
     overflow: hidden;
     z-index: 1;
     transition: color 300ms ease-in-out;
@@ -69,11 +77,6 @@
       transition: width 300ms ease-in-out;
     }
 
-    span {
-      display: inline-block;
-      padding: 0.25rem 1.5rem;
-    }
-
     &:hover,
     &:focus {
       box-shadow: var(--shadow-200);
@@ -90,7 +93,9 @@
   }
 
   &__tertiary {
-    color: var(--text-400);
+    --button-clr: var(--text-400);
+    --button-hover-clr: var(--text-300);
+
     font-weight: 400;
     border: solid 0.115em var(--bg-400);
     background-color: var(--opaque-light-100);
@@ -99,7 +104,7 @@
     &:hover,
     &:focus {
       background-color: var(--bg-300);
-      color: var(--text-300);
+      color: var(--button-hover-clr);
     }
 
     &:active {
