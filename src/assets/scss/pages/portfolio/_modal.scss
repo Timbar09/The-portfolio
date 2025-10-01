@@ -7,17 +7,6 @@
   min-width: 16.5625rem;
   margin: 0 auto;
   z-index: 1010;
-  // transition: opacity 300ms 100ms ease-in-out, scale 300ms 100ms ease-in-out;
-
-  // &.open {
-  //   opacity: 1;
-  //   scale: 1;
-  // }
-
-  // &.closed {
-  //   opacity: 0;
-  //   scale: 0;
-  // }
 
   &--container {
     height: 100%;
@@ -42,12 +31,40 @@
 
     h2 {
       margin: 0;
-      text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200), -1px 1px 0 var(--bg-200),
-        1px 1px 0 var(--bg-200);
+      text-shadow: -1px -1px 0 var(--bg-200), 1px -1px 0 var(--bg-200),
+        -1px 1px 0 var(--bg-200), 1px 1px 0 var(--bg-200);
     }
 
-    &__buttons {
-      font-size: 0.8em;
+    &__button {
+      &s {
+        font-size: 0.8em;
+      }
+
+      .button__icon {
+        position: relative;
+
+        &::before {
+          display: none;
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+          width: 0.125em;
+          height: 120%;
+          background-color: var(--button-clr, var(--text-400));
+        }
+      }
+
+      &.inactive {
+        .button {
+          pointer-events: none;
+
+          &__icon::before {
+            display: block;
+          }
+        }
+      }
     }
   }
 
@@ -75,6 +92,7 @@
     }
 
     &__text {
+      text-align: center;
       border-radius: var(--radius-200);
       background-color: var(--bg-100);
       grid-template-columns: 1fr;
@@ -85,7 +103,8 @@
         "features"
         "summary";
 
-      @include breakpoint-up(md) {
+      @include breakpoint-up(lg) {
+        text-align: left;
         grid-template-columns: repeat(6, 1fr);
         grid-template-areas:
           "overview overview overview overview tech tech"
@@ -108,10 +127,16 @@
         ul {
           list-style: disclosure-closed;
           margin-bottom: 1rem;
+          text-align: left;
+          li {
+            &:not(:last-child) {
+              margin-bottom: 0.5rem;
+            }
 
-          span {
-            font-weight: bold;
-            color: var(--text-200);
+            span {
+              font-weight: bold;
+              color: var(--text-200);
+            }
           }
         }
       }

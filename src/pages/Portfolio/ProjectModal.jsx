@@ -2,11 +2,12 @@ import { useContext, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectModalContext } from "../../components/App";
 
-import Button from "../../components/Button";
 import TechItem from "./TechItem";
+import Button from "../../components/Button";
+import Tooltip from "../../components/Tooltip";
 
-import { IoCloseCircle as CloseModalIcon } from "react-icons/io5";
 import { FaGitAlt as SourceCodeIcon } from "react-icons/fa6";
+import { IoCloseCircle as CloseModalIcon } from "react-icons/io5";
 
 import { trapFocus, modalAnimationProps } from "./projectUtils";
 
@@ -20,6 +21,9 @@ const ProjectModal = () => {
   const { overview, problem, features, summary } = selectedProject.description;
 
   const { bgImage } = imagesObj[selectedProject.imagesFile];
+
+  const liveInactiveLinkClass = selectedProject.live ? " " : " inactive ";
+  const codeInactiveLinkClass = selectedProject.code ? " " : " inactive ";
 
   useEffect(() => {
     trapFocus(isProjectModalOpen, modalRef);
@@ -46,21 +50,49 @@ const ProjectModal = () => {
 
               <h2>{selectedProject.title}</h2>
 
-              <div className="project__modal--header__buttons flex flex-wrap gap-2">
-                {selectedProject.live.length > 0 && (
+              <div className="project__modal--header__buttons flex flex-ai-c flex-wrap gap-2">
+                <span
+                  className={`project__modal--header__button${liveInactiveLinkClass}project__modal--header__button--live relative`}
+                >
                   <Button
-                    variant="primary"
-                    text="Live Demo"
-                    path={selectedProject.live}
+                    variant={selectedProject.live ? "primary" : "tertiary"}
+                    text={
+                      selectedProject.live
+                        ? "Live Demo"
+                        : "Live Demo Unavailable"
+                    }
+                    path={selectedProject.live ? selectedProject.live : null}
                   />
-                )}
 
-                <Button
-                  variant="secondary"
-                  text="Source Code"
-                  path={selectedProject.source}
-                  icon={<SourceCodeIcon />}
-                />
+                  <Tooltip
+                    isLink={selectedProject.live}
+                    styles={{ fontSize: "0.85rem", maxWidth: "15rem" }}
+                  >
+                    {selectedProject.live
+                      ? "Visit the live website"
+                      : "Live demo is unavailable for this project"}
+                  </Tooltip>
+                </span>
+
+                <span
+                  className={`project__modal--header__button${codeInactiveLinkClass}project__modal--header__button--code relative`}
+                >
+                  <Button
+                    variant="secondary"
+                    text="Source Code"
+                    path={selectedProject.code}
+                    icon={<SourceCodeIcon />}
+                  />
+
+                  <Tooltip
+                    isLink={selectedProject.code}
+                    styles={{ fontSize: "0.85rem", maxWidth: "15rem" }}
+                  >
+                    {selectedProject.code
+                      ? "Check out the source code on GitHub"
+                      : "Source code is unavailable for this project"}
+                  </Tooltip>
+                </span>
               </div>
             </header>
 
@@ -76,12 +108,14 @@ const ProjectModal = () => {
               <div className="project__modal--body__text p-2 grid grid-gap-2">
                 <section className="project__modal--body__text--overview">
                   <h3>Overview</h3>
-                  <p> {overview} </p>
+
+                  <p className="my-2"> {overview} </p>
                 </section>
 
                 <section className="project__modal--body__text--tech">
                   <h3>Technologies Used</h3>
-                  <ul className="flex flex-ai-fs flex-wrap gap-1">
+
+                  <ul className="flex flex-jc-c flex_lg-jc-fs flex-ai-fs flex-wrap gap-1 my-2">
                     {selectedProject.tech.map((item, index) => (
                       <TechItem key={index} item={item} isCardHovered={true} />
                     ))}
@@ -90,12 +124,14 @@ const ProjectModal = () => {
 
                 <section className="project__modal--body__text--problem">
                   <h3>Problem Statement</h3>
-                  <p> {problem} </p>
+
+                  <p className="my-2"> {problem} </p>
                 </section>
 
                 <section className="project__modal--body__text--features">
                   <h3>Features & Functionalities</h3>
-                  <ul className="pl-3">
+
+                  <ul className="pl-3 my-2">
                     {features.map((item, index) => (
                       <li key={index}>
                         <span>{`${item.split(":")[0]}: `}</span>
@@ -107,7 +143,8 @@ const ProjectModal = () => {
 
                 <section className="project__modal--body__text--summary">
                   <h3>Summary</h3>
-                  <p> {summary} </p>
+
+                  <p className="my-2"> {summary} </p>
                 </section>
               </div>
             </div>

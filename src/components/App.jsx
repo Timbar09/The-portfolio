@@ -31,8 +31,8 @@ const App = () => {
     },
     imagesFile: "dummy",
     tech: ["HTML", "CSS", "JavaScript"],
-    live: "",
-    source: "https://github.com/Timbar09",
+    live: "https://github.com/Timbar09",
+    code: "https://github.com/Timbar09",
   });
   const preference = window.matchMedia("(prefers-color-scheme: light)").matches;
   const [theme, setTheme] = useLocalStorage(
