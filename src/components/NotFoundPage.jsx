@@ -7,7 +7,7 @@ const NotFoundPage = () => {
     <main className="not-found">
       <div className="container relative grid grid-pi-c">
         <h1 className="not-found__title">404</h1>
-        <div className="not-found__content p-2">
+        <div className="not-found__content p-2 flex flex-col flex-ai-c gap-1">
           <p className="not-found__message">
             Oops! The page you're looking for doesn't exist.
           </p>

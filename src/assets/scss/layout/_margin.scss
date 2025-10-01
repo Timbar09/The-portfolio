@@ -1,0 +1,531 @@
+@use "../utils/" as *;
+
+.m {
+  &-0 {
+    margin: 0;
+  }
+
+  &-1 {
+    margin: 0.5rem;
+  }
+
+  &-2 {
+    margin: 1rem;
+  }
+
+  &-3 {
+    margin: 1.75rem;
+  }
+
+  &_sm {
+    &-0 {
+      @include breakpoint-up("sm") {
+        margin: 0;
+      }
+    }
+
+    &-1 {
+      @include breakpoint-up("sm") {
+        margin: 0.5rem;
+      }
+    }
+
+    &-2 {
+      @include breakpoint-up("sm") {
+        margin: 1rem;
+      }
+    }
+
+    &-3 {
+      @include breakpoint-up("sm") {
+        margin: 1.75rem;
+      }
+    }
+  }
+
+  &_md {
+    &-0 {
+      @include breakpoint-up("md") {
+        margin: 0;
+      }
+    }
+
+    &-1 {
+      @include breakpoint-up("md") {
+        margin: 0.5rem;
+      }
+    }
+
+    &-2 {
+      @include breakpoint-up("md") {
+        margin: 1rem;
+      }
+    }
+
+    &-3 {
+      @include breakpoint-up("md") {
+        margin: 1.75rem;
+      }
+    }
+  }
+
+  &_lg {
+    &-0 {
+      @include breakpoint-up("lg") {
+        margin: 0;
+      }
+    }
+
+    &-1 {
+      @include breakpoint-up("lg") {
+        margin: 0.5rem;
+      }
+    }
+
+    &-2 {
+      @include breakpoint-up("lg") {
+        margin: 1rem;
+      }
+    }
+
+    &-3 {
+      @include breakpoint-up("lg") {
+        margin: 1.75rem;
+      }
+    }
+  }
+
+  &x {
+    &-0 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &-1 {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+
+    &-2 {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    &-3 {
+      margin-left: 1.75rem;
+      margin-right: 1.75rem;
+    }
+
+    &_sm {
+      &-0 {
+        @include breakpoint-up("sm") {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("sm") {
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("sm") {
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("sm") {
+          margin-left: 1.75rem;
+          margin-right: 1.75rem;
+        }
+      }
+    }
+
+    &_md {
+      &-0 {
+        @include breakpoint-up("md") {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("md") {
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("md") {
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("md") {
+          margin-left: 1.75rem;
+          margin-right: 1.75rem;
+        }
+      }
+    }
+
+    &_lg {
+      &-0 {
+        @include breakpoint-up("lg") {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("lg") {
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("lg") {
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("lg") {
+          margin-left: 1.75rem;
+          margin-right: 1.75rem;
+        }
+      }
+    }
+  }
+
+  &l {
+    &-0 {
+      margin-left: 0;
+    }
+
+    &-1 {
+      margin-left: 0.5rem;
+    }
+
+    &-2 {
+      margin-left: 1rem;
+    }
+
+    &-3 {
+      margin-left: 1.75rem;
+    }
+
+    &_md {
+      &-0 {
+        @include breakpoint-up("md") {
+          margin-left: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("md") {
+          margin-left: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("md") {
+          margin-left: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("md") {
+          margin-left: 1.75rem;
+        }
+      }
+    }
+
+    &_lg {
+      &-0 {
+        @include breakpoint-up("lg") {
+          margin-left: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("lg") {
+          margin-left: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("lg") {
+          margin-left: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("lg") {
+          margin-left: 1.75rem;
+        }
+      }
+    }
+  }
+
+  &y {
+    &-0 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    &-1 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &-2 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &-3 {
+      margin-top: 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    &_sm {
+      &-0 {
+        @include breakpoint-up("sm") {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("sm") {
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("sm") {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("sm") {
+          margin-top: 1.75rem;
+          margin-bottom: 1.75rem;
+        }
+      }
+    }
+
+    &_md {
+      &-0 {
+        @include breakpoint-up("md") {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("md") {
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("md") {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("md") {
+          margin-top: 1.75rem;
+          margin-bottom: 1.75rem;
+        }
+      }
+    }
+
+    &_lg {
+      &-0 {
+        @include breakpoint-up("lg") {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("lg") {
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("lg") {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("lg") {
+          margin-top: 1.75rem;
+          margin-bottom: 1.75rem;
+        }
+      }
+    }
+  }
+
+  &b {
+    &-0 {
+      margin-bottom: 0;
+    }
+
+    &-1 {
+      margin-bottom: 0.5rem;
+    }
+
+    &-2 {
+      margin-bottom: 1rem;
+    }
+
+    &-3 {
+      margin-bottom: 1.75rem;
+    }
+
+    &_md {
+      &-0 {
+        @include breakpoint-up("md") {
+          margin-bottom: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("md") {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("md") {
+          margin-bottom: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("md") {
+          margin-bottom: 1.75rem;
+        }
+      }
+    }
+
+    &_lg {
+      &-0 {
+        @include breakpoint-up("lg") {
+          margin-bottom: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("lg") {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("lg") {
+          margin-bottom: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("lg") {
+          margin-bottom: 1.75rem;
+        }
+      }
+    }
+  }
+
+  &t {
+    &-0 {
+      margin-top: 0;
+    }
+
+    &-1 {
+      margin-top: 0.5rem;
+    }
+
+    &-2 {
+      margin-top: 1rem;
+    }
+
+    &-3 {
+      margin-top: 1.75rem;
+    }
+
+    &_md {
+      &-0 {
+        @include breakpoint-up("md") {
+          margin-top: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("md") {
+          margin-top: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("md") {
+          margin-top: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("md") {
+          margin-top: 1.75rem;
+        }
+      }
+    }
+
+    &_lg {
+      &-0 {
+        @include breakpoint-up("lg") {
+          margin-top: 0;
+        }
+      }
+
+      &-1 {
+        @include breakpoint-up("lg") {
+          margin-top: 0.5rem;
+        }
+      }
+
+      &-2 {
+        @include breakpoint-up("lg") {
+          margin-top: 1rem;
+        }
+      }
+
+      &-3 {
+        @include breakpoint-up("lg") {
+          margin-top: 1.75rem;
+        }
+      }
+    }
+  }
+}
