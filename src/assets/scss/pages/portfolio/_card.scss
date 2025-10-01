@@ -16,7 +16,9 @@
           }
 
           &--title {
-            color: var(--text-200);
+            &__text {
+              color: var(--text-200);
+            }
           }
         }
       }
@@ -119,9 +121,11 @@
     }
 
     &--title {
-      font-size: 1.125em;
-      font-weight: 500;
-      transition: color 300ms ease-in-out;
+      &__text {
+        font-size: 1.125em;
+        color: var(--text-400);
+        transition: color 300ms ease-in-out;
+      }
     }
 
     &--cta {

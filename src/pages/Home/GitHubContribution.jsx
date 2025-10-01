@@ -42,7 +42,9 @@ const GitHubContribution = () => {
   return (
     <section className="home__github-contribution page__section">
       <div className="container">
-        <h2 className="page__subtitle">GitHub Contributions</h2>
+        <h2 className="page__subtitle page__subtitle--short">
+          GitHub Contributions
+        </h2>
 
         <div className="home__github-contribution--grid flex flex-col gap-2">
           <div className="">

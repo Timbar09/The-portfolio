@@ -35,7 +35,7 @@ const ProjectCardTop = ({ project, logo, isActive }) => {
       </div>
 
       <div className="portfolio__project--title flex flex-col gap-1">
-        {project.title}
+        <h3 className="portfolio__project--title__text">{project.title}</h3>
 
         {isActive && (
           <span className="portfolio__project--badge">{project.stackType}</span>

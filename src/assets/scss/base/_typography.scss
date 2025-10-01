@@ -180,6 +180,10 @@ ul {
     &--highlight {
       position: relative;
     }
+
+    &--short {
+      font-weight: 300;
+    }
   }
 
   &__section {
