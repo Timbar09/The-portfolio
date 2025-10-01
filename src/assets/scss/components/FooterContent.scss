@@ -5,20 +5,61 @@
   font-size: 0.85em;
   color: var(--opaque-200);
   background-color: var(--bg-100);
+  text-align: center;
 
-  @include breakpoint-down(sm) {
-    text-align: center;
+  @include breakpoint-up(sm) {
+    text-align: left;
   }
 
-  &__author {
-    span,
-    svg:first-child {
-      margin-right: -0.5em;
+  &__title {
+    font-size: 1.125em;
+    font-weight: 400;
+    color: var(--opaque-200);
+  }
+
+  &__list {
+    gap: 0.125em;
+  }
+
+  &__link--item {
+    position: relative;
+    display: inline-block;
+    color: var(--opaque-200);
+    transition: color 200ms ease-in-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.1em;
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary-100);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 200ms ease-in-out;
     }
 
-    span {
-      cursor: default;
-      color: var(--text-400);
+    &:hover {
+      color: var(--primary-100);
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+
+  &__social-links {
+    .social {
+      &__list {
+        padding: 0;
+      }
+      &__item {
+        margin-left: 0;
+        opacity: 1;
+        scale: 1;
+      }
     }
   }
 }

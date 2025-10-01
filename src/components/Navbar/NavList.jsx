@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 import Tooltip from "../Tooltip";
 
-const menuItems = [
+export const NAV_LINKS = [
   {
     id: "nav-portfolio",
     name: "Portfolio",
@@ -23,7 +23,7 @@ const menuItems = [
 const NavContent = () => {
   return (
     <ul className="nav__list flex flex-ai-c gap-1">
-      {menuItems.map((link) => (
+      {NAV_LINKS.map((link) => (
         <li key={link.id} className="nav__list--item">
           <NavLink
             className="nav__list--item__link relative py-1"

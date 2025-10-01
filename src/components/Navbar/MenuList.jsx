@@ -6,24 +6,7 @@ import { MenuContext } from "../App";
 
 import SocialLinkTree from "../SocialLinkTree";
 import MenuSettings from "./MenuSettings";
-
-const menuItems = [
-  {
-    id: "nav-portfolio",
-    name: "Portfolio",
-    path: "/portfolio",
-  },
-  {
-    id: "nav-about",
-    name: "About",
-    path: "/about",
-  },
-  {
-    id: "nav-contact",
-    name: "Contact",
-    path: "/contact",
-  },
-];
+import { NAV_LINKS } from "./NavList";
 
 const NavContent = () => {
   const { toggleMenu, isMenuOpen } = useContext(MenuContext);
@@ -71,7 +54,7 @@ const NavContent = () => {
             aria-label="Main navigation menu"
             role="menu"
           >
-            {menuItems.map((link, index) => (
+            {NAV_LINKS.map((link, index) => (
               <motion.li
                 key={link.id}
                 className="nav__menu--item"
