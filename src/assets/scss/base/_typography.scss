@@ -29,15 +29,6 @@ textarea:focus-visible,
   outline-offset: 2px;
   border-radius: var(--radius-200);
   animation: focus-pulse 500ms forwards ease-in-out;
-
-  @keyframes focus-pulse {
-    0% {
-      outline-width: 3px;
-    }
-    20% {
-      outline-width: 5px;
-    }
-  }
 }
 
 .link {
@@ -123,7 +114,7 @@ ul {
     text-align: left;
   }
 
-  .container {
+  > .container {
     padding-top: 12em;
     padding-bottom: 8em;
   }
