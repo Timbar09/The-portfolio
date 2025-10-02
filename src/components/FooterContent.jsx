@@ -15,6 +15,37 @@ import { NAV_LINKS } from "./Navbar/NavList";
 import "../assets/scss/components/FooterContent.scss";
 
 const FooterContent = () => {
+  const tools = [
+    {
+      icon: <VscodeIcon />,
+      name: {
+        long: "Visual Studio Code - IDE",
+        short: "VS Code",
+      },
+    },
+    {
+      icon: <ViteIcon />,
+      name: {
+        long: "Vite - Build Tool",
+        short: "Vite",
+      },
+    },
+    {
+      icon: <ReactIcon />,
+      name: {
+        long: "React - UI Library",
+        short: "React",
+      },
+    },
+    {
+      icon: <SassIcon />,
+      name: {
+        long: "Sass - CSS Preprocessor",
+        short: "Sass",
+      },
+    },
+  ];
+
   return (
     <footer className="footer">
       <div className="container py-3 flex flex-col flex_sm-row flex-jc-sb gap-2">
@@ -23,15 +54,23 @@ const FooterContent = () => {
 
           <ul className="footer__list flex flex-col mt-1">
             <li className="">
-              <p className="footer__text flex flex-jc-c gap-1 m-0">
+              <div className="footer__text flex flex-jc-c gap-1 m-0">
                 Built with:{" "}
-                <span className="flex-inline flex-ai-c gap-1">
-                  <VscodeIcon className="footer__icon" />
-                  <ViteIcon className="footer__icon" />
-                  <ReactIcon className="footer__icon" />
-                  <SassIcon className="footer__icon" />
-                </span>
-              </p>
+                <ul className="flex-inline flex-ai-c gap-1">
+                  {tools.map(({ name, icon }, index) => (
+                    <li
+                      key={index}
+                      className="relative"
+                      aria-label={name.long}
+                      role="img"
+                    >
+                      {icon}
+
+                      <Tooltip>{name.short}</Tooltip>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </li>
 
             <li className="">
@@ -39,6 +78,12 @@ const FooterContent = () => {
                 <p className="footer__text m-0">
                   &copy; {new Date().getFullYear()} Miles Mosweu
                 </p>
+              </div>
+            </li>
+
+            <li className="">
+              <div className="footer__bottom">
+                <p className="footer__text m-0">Some Rights Reserved</p>
               </div>
             </li>
           </ul>

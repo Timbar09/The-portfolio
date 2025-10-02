@@ -2,13 +2,18 @@
 
 .footer {
   padding: 2em 0 15em;
-  font-size: 0.85em;
   color: var(--opaque-200);
   background-color: var(--bg-100);
   text-align: center;
 
   @include breakpoint-up(sm) {
     text-align: left;
+  }
+
+  &__left,
+  &__center,
+  &__right {
+    font-size: 0.875em;
   }
 
   &__title {
