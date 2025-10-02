@@ -1,5 +1,7 @@
 import Button from "./Button";
 
+import { FaArrowLeftLong as ArrowIcon } from "react-icons/fa6";
+
 import "../assets/scss/components/NotFoundPage.scss";
 
 const NotFoundPage = () => {
@@ -12,7 +14,13 @@ const NotFoundPage = () => {
             Oops! The page you're looking for doesn't exist.
           </p>
 
-          <Button path="/" text="Go Back Home" variant="secondary" />
+          <Button
+            path="/"
+            text="Go Back Home"
+            variant="secondary"
+            icon={<ArrowIcon />}
+            iconPosition="left"
+          />
         </div>
       </div>
     </main>

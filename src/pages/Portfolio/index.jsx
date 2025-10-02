@@ -1,6 +1,5 @@
 import { NavLink } from "react-router";
 
-import MyLink from "../../components/MyLink";
 import PageTitle from "../PageTitle";
 import ProjectList from "./ProjectList";
 import Tooltip from "../../components/Tooltip";
@@ -30,7 +29,7 @@ const Portfolio = () => {
                 I've built a number projects. Feel free to explore or
                 contribute. If you have an idea or want to collaborate,{" "}
                 <span className="page__subtitle--highlight">
-                  <NavLink to="contact" className="link">
+                  <NavLink to="/contact" className="link">
                     let's connect
                   </NavLink>
 

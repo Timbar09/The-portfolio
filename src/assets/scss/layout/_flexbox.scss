@@ -40,10 +40,18 @@
 
   &-row {
     flex-direction: row;
+
+    &-reverse {
+      flex-direction: row-reverse;
+    }
   }
 
   &-col {
     flex-direction: column;
+
+    &-reverse {
+      flex-direction: column-reverse;
+    }
   }
 
   &-wrap {
@@ -104,11 +112,23 @@
       @include breakpoint-up(sm) {
         flex-direction: row;
       }
+
+      &-reverse {
+        @include breakpoint-up(sm) {
+          flex-direction: row-reverse;
+        }
+      }
     }
 
     &-col {
       @include breakpoint-up(sm) {
         flex-direction: column;
+      }
+
+      &-reverse {
+        @include breakpoint-up(sm) {
+          flex-direction: column-reverse;
+        }
       }
     }
 
@@ -174,11 +194,23 @@
       @include breakpoint-up(md) {
         flex-direction: row;
       }
+
+      &-reverse {
+        @include breakpoint-up(md) {
+          flex-direction: row-reverse;
+        }
+      }
     }
 
     &-col {
       @include breakpoint-up(md) {
         flex-direction: column;
+      }
+
+      &-reverse {
+        @include breakpoint-up(md) {
+          flex-direction: column-reverse;
+        }
       }
     }
 
@@ -244,11 +276,23 @@
       @include breakpoint-up(lg) {
         flex-direction: row;
       }
+
+      &-reverse {
+        @include breakpoint-up(lg) {
+          flex-direction: row-reverse;
+        }
+      }
     }
 
     &-col {
       @include breakpoint-up(lg) {
         flex-direction: column;
+      }
+
+      &-reverse {
+        @include breakpoint-up(lg) {
+          flex-direction: column-reverse;
+        }
       }
     }
 

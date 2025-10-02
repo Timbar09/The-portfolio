@@ -10,7 +10,7 @@ import "../assets/scss/components/Button.scss";
 
 export const BASE_URL = "https://milesmosweu.netlify.app/";
 
-const LinkGoesToExternalSite = ({ props }) => {
+const LinkGoesToExternalSite = ({ props, className }) => {
   const ref = `?ref=${BASE_URL}`;
 
   return (
@@ -23,7 +23,7 @@ const LinkGoesToExternalSite = ({ props }) => {
       onBlur={props.onBlur}
       rel="noopener"
     >
-      <span className="flex flex-jc-c flex-ai-c gap-1">
+      <span className={className}>
         {props.text}
 
         <span className="button__icon grid">
@@ -34,8 +34,7 @@ const LinkGoesToExternalSite = ({ props }) => {
   );
 };
 
-const LinkGoesToInternalPage = ({ props }) => {
-  console.log("We are here!", props.icon);
+const LinkGoesToInternalPage = ({ props, className }) => {
   return (
     <NavLink
       to={props.path}
@@ -44,7 +43,7 @@ const LinkGoesToInternalPage = ({ props }) => {
       onClick={props.onClick}
       onBlur={props.onBlur}
     >
-      <span className="flex flex-jc-c flex-ai-c gap-1">
+      <span className={className}>
         {props.text}
 
         <span className="button__icon grid">{props.icon || <ArrowIcon />}</span>
@@ -53,7 +52,7 @@ const LinkGoesToInternalPage = ({ props }) => {
   );
 };
 
-const LinkGoesToPageSection = ({ props }) => {
+const LinkGoesToPageSection = ({ props, className }) => {
   return (
     <SmoothScrollLink
       onClick={props.onClick}
@@ -66,7 +65,7 @@ const LinkGoesToPageSection = ({ props }) => {
       duration={500}
       onBlur={props.onBlur}
     >
-      <span className="flex flex-jc-c flex-ai-c gap-1">
+      <span className={className}>
         {props.text}
 
         <span className="button__icon grid">{props.icon || <ArrowIcon />}</span>
@@ -75,7 +74,7 @@ const LinkGoesToPageSection = ({ props }) => {
   );
 };
 
-const LinkButton = ({ props }) => {
+const LinkButton = ({ props, className }) => {
   const goesToExternalSite =
     props.path.startsWith("http") ||
     props.path.startsWith("https") ||
@@ -89,19 +88,18 @@ const LinkButton = ({ props }) => {
 
   if (goesOutsideCurrentPage) {
     if (goesToExternalSite) {
-      link = <LinkGoesToExternalSite props={props} />;
+      link = <LinkGoesToExternalSite props={props} className={className} />;
     } else {
-      console.log(`Goes to internal page: ${props.path}`);
-      link = <LinkGoesToInternalPage props={props} />;
+      link = <LinkGoesToInternalPage props={props} className={className} />;
     }
   } else if (goesToPageSection) {
-    link = <LinkGoesToPageSection props={props} />;
+    link = <LinkGoesToPageSection props={props} className={className} />;
   }
 
   return link;
 };
 
-const ActualButton = ({ props }) => {
+const ActualButton = ({ props, className }) => {
   return (
     <button
       className={`button button__${props.variant} ${
@@ -112,7 +110,7 @@ const ActualButton = ({ props }) => {
       onBlur={props.onBlur}
       title={props.title}
     >
-      <span className="flex flex-jc-c flex-ai-c gap-1">
+      <span className={className}>
         {props.text}
 
         {props.type === "submit" ? (
@@ -136,6 +134,7 @@ const ActualButton = ({ props }) => {
  * @param {string} text - The text to display on the button
  * @param {string} path - The path to link to (optional)
  * @param {JSX.Element} icon - The icon to display next to the button text (optional)
+ * @param {string} iconPosition - Whether to display the icon on the left or right of the text (optional), defaults to right
  * @param {string} title - The title of the button (optional)
  * @param {function} onClick - The function to execute when the button is clicked (optional)
  * @param {function} onBlur - The function to execute when the button loses focus (optional)
@@ -146,23 +145,36 @@ const ActualButton = ({ props }) => {
 const Button = ({
   type = "button",
   variant = "primary",
-  text = "Primary",
+  text = "Click me!",
   path = null,
   icon = null,
+  iconPosition = "right",
   onClick = null,
   title = null,
   onBlur = null,
 }) => {
+  const buttonProps = {
+    type,
+    variant,
+    text,
+    path,
+    icon,
+    iconPosition,
+    title,
+    onClick,
+    onBlur,
+  };
+
+  const iconPositioning =
+    iconPosition.toLowerCase() === "right" ? " " : " flex-row-reverse ";
+  const className = `flex${iconPositioning}flex-jc-c flex-ai-c gap-1`;
+
   return (
     <>
       {path ? (
-        <LinkButton
-          props={{ variant, text, path, icon, title, onClick, onBlur }}
-        />
+        <LinkButton props={buttonProps} className={className} />
       ) : (
-        <ActualButton
-          props={{ type, variant, text, icon, title, onClick, onBlur }}
-        />
+        <ActualButton props={buttonProps} className={className} />
       )}
     </>
   );

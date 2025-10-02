@@ -51,6 +51,10 @@
         &:hover {
           color: var(--text-100);
         }
+
+        &.active {
+          color: var(--text-100);
+        }
       }
     }
   }
