@@ -7,27 +7,27 @@ import { FaCodepen as CodePenIcon } from "react-icons/fa";
 
 import "../assets/scss/components/SocialLinkTree.scss";
 
-const ref = "?ref=milesmosweu.netlify.app";
+import { REF } from "./MyLink";
 
 const socialLinks = [
   {
     name: "GitHub",
-    url: `https://github.com/Timbar09${ref}`,
+    url: `https://github.com/Timbar09${REF}`,
     icon: <GithubIcon />,
   },
   {
     name: "LinkedIn",
-    url: `https://www.linkedin.com/in/miles-mosweu09${ref}`,
+    url: `https://www.linkedin.com/in/miles-mosweu09${REF}`,
     icon: <LinkedInIcon />,
   },
   {
     name: "X",
-    url: `https://x.com/Milez09${ref}`,
+    url: `https://x.com/Milez09${REF}`,
     icon: <XIcon />,
   },
   {
     name: "CodePen",
-    url: `https://codepen.io/Timbar09${ref}`,
+    url: `https://codepen.io/Timbar09${REF}`,
     icon: <CodePenIcon />,
   },
 ];
