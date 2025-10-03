@@ -31,10 +31,7 @@ const RenderTechItems = ({ data, activeTab }) => {
             key={item.id}
             {...techItemAnimationProps}
           >
-            <div
-              className="about__tech--list__item--content p-1 flex gap-1 flex-ai-c"
-              tabIndex={0}
-            >
+            <div className="about__tech--list__item--content p-1 flex gap-1 flex-ai-c">
               {item.icon}
 
               <h4>{item.name}</h4>

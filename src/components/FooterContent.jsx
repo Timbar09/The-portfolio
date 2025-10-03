@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 
+import MyLink from "./MyLink";
 import Tooltip from "./Tooltip";
 import SocialLinkTree from "./SocialLinkTree";
 
@@ -94,12 +95,10 @@ const FooterContent = () => {
 
           <ul className="footer__list flex flex-col mt-1">
             {NAV_LINKS.map((link) => (
-              <li key={link.id}>
-                <NavLink className="footer__link--item relative" to={link.path}>
-                  {link.name}
+              <li key={link.id} className="footer__link--item relative">
+                <MyLink text={link.name} path={link.path} showIcon={false} />
 
-                  <Tooltip isLink>Go to {link.name} page</Tooltip>
-                </NavLink>
+                <Tooltip isLink>Go to {link.name} page</Tooltip>
               </li>
             ))}
           </ul>

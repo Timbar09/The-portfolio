@@ -21,7 +21,7 @@ const InfoItemText = ({ title, description }) => {
       {link ? (
         <a
           href={link.href}
-          className="contact__info--description__link relative"
+          className="contact__info--description__link link link__default relative"
           rel="noopener noreferrer"
         >
           {icon && icon}

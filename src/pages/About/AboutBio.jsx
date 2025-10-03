@@ -13,6 +13,7 @@ const AboutBio = () => {
         <span className="page__subtitle--highlight">
           <MyLink
             text="Botswana"
+            variant="highlighted"
             path="https://www.google.com/maps/place/Botswana"
           />
 

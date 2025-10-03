@@ -23,7 +23,12 @@ const AboutSoftSkills = () => {
         I have honed essential soft skills applicable to both life and the
         workplace, particularly during my time at{" "}
         <span className="page__subtitle--highlight">
-          <MyLink text="Microverse" path="https://www.microverse.org/" />:
+          <MyLink
+            text="Microverse"
+            path="https://www.microverse.org/"
+            variant="highlighted"
+          />
+          :
           <Tooltip isLink styles={{ fontSize: "0.5em", maxWidth: "20rem" }}>
             Visit Microverse website
           </Tooltip>

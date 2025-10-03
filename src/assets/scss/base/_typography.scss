@@ -32,33 +32,40 @@ textarea:focus-visible,
 }
 
 .link {
+  --link-clr: inherit;
+
   position: relative;
   display: inline-flex;
-  color: hsla(217, 91%, 60%, 0.75);
+  color: var(--link-clr);
   text-decoration: none;
   gap: 0.15em;
-  cursor: pointer;
   transition: color 200ms ease-in-out;
 
-  &::before,
-  &::after {
+  &::before {
     content: "";
     position: absolute;
-    bottom: 0;
     left: 0;
+    bottom: -0.1em;
     height: 0.075em;
-    border-radius: var(--radius-pill);
-  }
-
-  &::before {
-    background: hsla(217, 91%, 60%, 0.75);
     width: 100%;
+    border-radius: var(--radius-pill);
+    background-color: var(--primary-100);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 200ms ease-in-out;
   }
 
-  &::after {
-    transition: width 200ms ease-in-out;
-    background: var(--primary-gradient);
-    width: 0;
+  &:hover {
+    color: var(--primary-100);
+
+    &::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+
+  &__highlighted {
+    --link-clr: hsla(217, 91%, 60%);
   }
 
   svg {
