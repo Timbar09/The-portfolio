@@ -1,0 +1,51 @@
+import { motion } from "framer-motion";
+import { animations } from "./animationUtils";
+
+/**
+ * A component that applies a transition effect to its children using Framer Motion.
+ *
+ * @param {string} name - The name of the transition effect. Options are "fadeInUp", "fadeInRight", "tilt", and "enter". Defaults to "fadeInUp".
+ * @param {JSX.Element} children - The children elements to apply the transition effect to.
+ * @param {string} className - The class name of the element to apply the transition effect to (optional).
+ * @param {string} trigger - The trigger for the transition effect (optional). Defaults to "animate". Other options are "whileInView".
+ * @param {string} tag - The tag of the element to apply the transition effect to (optional). Defaults to "div".
+ * @param {string} offset - The offset for the transition effect (optional)
+ * @param {number} duration - The duration of the transition effect (optional). Defaults to 0.75.
+ * @param {number} delay - The delay of the transition effect (optional). Defaults to 0.
+ * @param {object} style - The style object to apply to the element (optional).
+ *
+ * @returns {JSX.Element} - The component with the transition effect
+ */
+
+export const AnimatedComponent = ({
+  name = "fadeInUp",
+  children,
+  className = "",
+  trigger = "animate",
+  tag = "div",
+  offset = "-20%",
+  duration = 0.75,
+  delay = 0,
+  style = {},
+}) => {
+  const Tag = motion[tag] || motion.div;
+
+  const animationFunc = animations[name] || animations.fadeInUp;
+  const { initial, animate } = animationFunc(duration, delay);
+
+  return (
+    <Tag
+      className={className}
+      initial={initial}
+      style={style}
+      {...(trigger === "animate"
+        ? { animate: animate }
+        : { whileInView: animate })}
+      {...(trigger === "animate"
+        ? {}
+        : { viewport: { margin: offset, once: true } })}
+    >
+      {children}
+    </Tag>
+  );
+};
