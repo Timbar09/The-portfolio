@@ -3,7 +3,7 @@ import ProjectList from "./ProjectList";
 import MyLink from "../../components/MyLink";
 import Tooltip from "../../components/Tooltip";
 import MetaTags from "../../components/MetaTags";
-import Transition from "../../components/Transition";
+import { AnimatedComponent } from "../../components/Animations";
 
 import "../../assets/scss/pages/portfolio/index.scss";
 
@@ -17,9 +17,9 @@ const Portfolio = () => {
           <header className="project__section--header">
             <PageTitle firstWord="My" secondWord="Portfolio" />
 
-            <Transition
-              transitionName="fade-in-up"
-              elementTag="h2"
+            <AnimatedComponent
+              name="fadeInUp"
+              tag="h2"
               className="page__subtitle"
               duration={1.25}
               delay={0.5}
@@ -44,17 +44,18 @@ const Portfolio = () => {
                 </span>
                 ! Excited to hear from you. 😎
               </>
-            </Transition>
+            </AnimatedComponent>
           </header>
 
-          <Transition
-            transitionName="fade-in-up"
+          <AnimatedComponent
+            name="enter"
             className="relative"
-            duration={1}
+            trigger="whileInView"
+            duration={1.125}
             delay={1}
           >
             <ProjectList />
-          </Transition>
+          </AnimatedComponent>
         </div>
       </main>
     </>

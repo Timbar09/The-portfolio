@@ -3,7 +3,7 @@ import quotes from "../../data/quotes.json";
 
 import SocialLinkTree from "../../components/SocialLinkTree";
 import Button from "../../components/Button";
-import Transition from "../../components/Transition";
+import { AnimatedComponent } from "../../components/Animations";
 import Tooltip from "../../components/Tooltip";
 
 import { IoMdDownload as DownloadIcon } from "react-icons/io";
@@ -28,11 +28,10 @@ const AboutBioInfo = () => {
   };
 
   return (
-    <Transition
+    <AnimatedComponent
       className="about__bio--info grid"
-      transitionName="fade-in-up"
+      name="fadeInUp"
       trigger="whileInView"
-      offset="-25%"
       duration={1}
     >
       <div
@@ -97,7 +96,7 @@ const AboutBioInfo = () => {
           </div>
         </div>
       </div>
-    </Transition>
+    </AnimatedComponent>
   );
 };
 

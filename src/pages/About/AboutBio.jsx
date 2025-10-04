@@ -1,6 +1,6 @@
 import MyLink from "../../components/MyLink";
 import AboutBioInfo from "./AboutBioInfo";
-import Transition from "../../components/Transition";
+import { AnimatedComponent } from "../../components/Animations";
 import Tooltip from "../../components/Tooltip";
 
 const AboutBio = () => {
@@ -26,11 +26,10 @@ const AboutBio = () => {
 
       <AboutBioInfo />
 
-      <Transition
+      <AnimatedComponent
         className="about__bio--description"
-        transitionName="fade-in-right"
+        name="fadeInRight"
         trigger="whileInView"
-        offset="-25%"
         duration={1}
       >
         <div className="about__bio--description__text">
@@ -63,7 +62,7 @@ const AboutBio = () => {
             out—I’d love to collaborate! 😊
           </p>
         </div>
-      </Transition>
+      </AnimatedComponent>
     </section>
   );
 };

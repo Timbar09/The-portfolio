@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AnimatedComponent } from "../../components/Animations";
 
 import { TbCopy as CopyIcon } from "react-icons/tb";
 import { MdOutlineAlternateEmail as EmailIcon } from "react-icons/md";
@@ -63,19 +64,21 @@ const InfoItemCopyButton = ({ text, tooltip, successTooltip }) => {
 };
 
 const ContactInfo = () => {
-  const [copied, setCopied] = useState(false);
-
-  const AvailabilityDescriptionIcon = () => (
-    <span className="contact__info--description__icon relative" />
-  );
-
   const info = [
     {
       title: "Availability",
       icon: <AvailableIcon />,
       description: {
         text: "I am available for work",
-        icon: <AvailabilityDescriptionIcon />,
+        icon: (
+          <AnimatedComponent
+            tag="span"
+            name="enter"
+            duration={1.25}
+            delay={1.5}
+            className="contact__info--description__icon relative"
+          />
+        ),
       },
     },
     {
@@ -107,7 +110,10 @@ const ContactInfo = () => {
       <div className="container">
         <ul className="contact__info--list flex flex-col flex_md-row flex_md-jc-c gap-2">
           {info.map(({ icon, title, description }, index) => (
-            <li
+            <AnimatedComponent
+              name="enter"
+              delay={index * 0.2}
+              tag="li"
               key={index}
               className="contact__info--item relative flex flex_md-col gap-2 p-2"
             >
@@ -122,7 +128,7 @@ const ContactInfo = () => {
                   successTooltip={description.copier.successTooltip}
                 />
               )}
-            </li>
+            </AnimatedComponent>
           ))}
         </ul>
       </div>

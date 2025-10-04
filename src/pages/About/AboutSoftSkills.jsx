@@ -1,5 +1,5 @@
 import MyLink from "../../components/MyLink";
-import Transition from "../../components/Transition";
+import { AnimatedComponent } from "../../components/Animations";
 
 import { RiSpeakLine as CommsIcon } from "react-icons/ri";
 import { MdOutlineHandshake as CollabIcon } from "react-icons/md";
@@ -37,13 +37,12 @@ const AboutSoftSkills = () => {
 
       <ul className="about__soft-skills--list grid grid-col grid-gap-2">
         {softSkills.map((skill, index) => (
-          <Transition
+          <AnimatedComponent
             key={skill.id}
             className="about__soft-skills--list__item p-2"
-            elementTag="li"
+            tag="li"
             trigger="whileInView"
-            offset="-25%"
-            duration={1}
+            duration={1.5}
             delay={index * 0.2}
           >
             <h4 className="flex flex-ai-c gap-1">
@@ -52,7 +51,7 @@ const AboutSoftSkills = () => {
             </h4>
 
             <p>{skill.description}</p>
-          </Transition>
+          </AnimatedComponent>
         ))}
       </ul>
     </section>
