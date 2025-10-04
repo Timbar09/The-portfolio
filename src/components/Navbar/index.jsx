@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-// import { AnimatePresence } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { ThemeContext } from "../App";
 import { MenuContext } from "../App";
 
@@ -17,6 +17,8 @@ import "../../assets/scss/components/Navbar.scss";
 const Navbar = () => {
   const { isMenuOpen } = useContext(MenuContext);
   const { theme } = useContext(ThemeContext);
+  const { scrollYProgress } = useScroll();
+
   const isMobile = useMediaQuery("sm", "down");
   let lastScrollY = 0;
 
@@ -71,6 +73,11 @@ const Navbar = () => {
             </Tooltip>
           </div>
         )}
+
+        <motion.div
+          style={{ scaleX: scrollYProgress, originX: 0 }}
+          className="nav__scroll-progress"
+        />
       </div>
     </nav>
   );
