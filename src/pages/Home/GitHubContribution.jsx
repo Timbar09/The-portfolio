@@ -3,27 +3,37 @@ import GitHubCalendar from "react-github-calendar";
 
 import { ThemeContext } from "../../components/App";
 
-import Tooltip from "../../components/Tooltip";
+import { AnimatedComponent } from "../../components/Animations";
+
+import { GITHUB_COLORS } from "./homeUtils";
+
+const YearButtonItem = ({
+  year,
+  isLastYear,
+  currentYear,
+  selectedYear,
+  setSelectedYear,
+}) => {
+  const isActive =
+    selectedYear === year || (isLastYear && year === currentYear);
+
+  return (
+    <li key={year} className="home__github-contribution--year__list--item">
+      <button
+        className={`home__github-contribution--year__list--item__button button${
+          isActive ? " active" : ""
+        }`}
+        onClick={() => setSelectedYear(year)}
+      >
+        {year}
+      </button>
+    </li>
+  );
+};
 
 const GitHubContribution = () => {
   const [selectedYear, setSelectedYear] = useState("last");
-  const { theme } = useContext(ThemeContext);
-  const colorTheme = {
-    light: [
-      "hsla(139, 54%, 28%, 0.05)",
-      "#9BE9A8",
-      "#40C463",
-      "#30A14E",
-      "#216E39",
-    ],
-    dark: [
-      "hsla(127, 59%, 58%, 0.025)",
-      "#033A16",
-      "#196C2E",
-      "#2EA043",
-      "#56D364",
-    ],
-  };
+  const { theme: colorScheme } = useContext(ThemeContext);
 
   const isLastYear = selectedYear === "last";
 
@@ -39,6 +49,8 @@ const GitHubContribution = () => {
     "--bg-hover": "hsla(127, 59%, 58%, 0.25)",
   };
 
+  const { theme } = GITHUB_COLORS;
+
   return (
     <section className="home__github-contribution page__section">
       <div className="container">
@@ -47,39 +59,38 @@ const GitHubContribution = () => {
         </h2>
 
         <div className="home__github-contribution--grid flex flex-col gap-2">
-          <div className="">
+          <AnimatedComponent
+            name="fadeInUp"
+            trigger="whileInView"
+            className="relative"
+          >
             <GitHubCalendar
               username="Timbar09"
-              colorScheme={theme}
-              theme={colorTheme}
+              colorScheme={colorScheme}
+              theme={theme}
               year={selectedYear}
             />
-          </div>
+          </AnimatedComponent>
 
-          <ul
+          <AnimatedComponent
+            tag="ul"
+            name="enter"
+            trigger="whileInView"
             className="home__github-contribution--year__list flex flex-jc-c flex_lg-jc-fs gap-1 flex-wrap"
             aria-label="GitHub contribution years"
             style={styleVariables}
           >
             {years.map((year) => (
-              <li
+              <YearButtonItem
                 key={year}
-                className="home__github-contribution--year__list--item"
-              >
-                <button
-                  className={`home__github-contribution--year__list--item__button button ${
-                    selectedYear === year ||
-                    (isLastYear && year === currentYear)
-                      ? "active"
-                      : ""
-                  }`}
-                  onClick={() => setSelectedYear(year)}
-                >
-                  {year}
-                </button>
-              </li>
+                year={year}
+                isLastYear={isLastYear}
+                currentYear={currentYear}
+                selectedYear={selectedYear}
+                setSelectedYear={setSelectedYear}
+              />
             ))}
-          </ul>
+          </AnimatedComponent>
         </div>
       </div>
     </section>
