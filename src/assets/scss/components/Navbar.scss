@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: translate 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
 
   @include breakpoint-up(md) {
     &.scrolled {
@@ -15,7 +15,7 @@
   }
 
   &.hidden {
-    translate: 0 -96%;
+    transform: translateY(-96%);
   }
 
   &__list {

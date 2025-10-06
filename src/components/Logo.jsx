@@ -23,7 +23,8 @@ const Logo = ({ className = "logo__header" }) => {
           <span className="logo__curly-brace logo__curly-brace--left">
             {"{"}
           </span>{" "}
-          MILES{" "}
+          M<span className="logo__pop">I</span>
+          LES{" "}
           <span className="logo__curly-brace logo__curly-brace--right">
             {"}"}
           </span>
