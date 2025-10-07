@@ -1,16 +1,16 @@
 export const trapFocus = (isActive, containerRef) => {
   if (!isActive || !containerRef.current) return;
 
-      const focusableElements = containerRef.current.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"]), [data-focusable="true"]'
-    );
+  const focusableElements = containerRef.current.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"]), [data-focusable="true"]'
+  );
 
-    if (focusableElements.length === 0) return; // Exit if no focusable elements are found
-    
-    const firstFocusableElement = focusableElements[0];
-    const lastFocusableElement = focusableElements[focusableElements.length - 1];
-    
-    const handleFocus = (e) => {
+  if (focusableElements.length === 0) return;
+
+  const firstFocusableElement = focusableElements[0];
+  const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+  const handleFocus = (e) => {
     if (e.shiftKey && document.activeElement === firstFocusableElement) {
       e.preventDefault();
       lastFocusableElement.focus();
@@ -21,7 +21,6 @@ export const trapFocus = (isActive, containerRef) => {
   };
 
   firstFocusableElement.focus();
-
 
   const keyListener = (e) => {
     if (e.key === "Tab") {
@@ -41,7 +40,8 @@ export const modalAnimationProps = {
   animate: {
     opacity: 1,
     scale: 1,
+    transition: { delay: 0.125 },
   },
   exit: { opacity: 0, scale: 0 },
-  transition: { duration: 0.3 },
+  transition: { type: "spring", duration: 0.75 },
 };
