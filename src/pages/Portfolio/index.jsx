@@ -48,11 +48,10 @@ const Portfolio = () => {
           </header>
 
           <AnimatedComponent
-            name="enter"
+            name="fadeInUp"
             className="relative"
-            trigger="whileInView"
-            duration={1.125}
-            delay={1}
+            duration={1.25}
+            delay={1.25}
           >
             <ProjectList />
           </AnimatedComponent>

@@ -52,7 +52,7 @@ const InfoItemCopyButton = ({ text, tooltip, successTooltip }) => {
   };
 
   return (
-    <button className="contact__info--copy-button" onClick={handleCopy}>
+    <button className="contact__info--copy-button grid" onClick={handleCopy}>
       {copied ? <CopySuccessIcon style={{ color: "#56D364" }} /> : <CopyIcon />}
       <span className="sr-only">{tooltip}</span>
 

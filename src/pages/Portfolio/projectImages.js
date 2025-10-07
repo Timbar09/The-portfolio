@@ -12,27 +12,27 @@ import conferenceLogoImage from "../../assets/images/projects/conference-logo.pn
 
 export default {
   dummy: {
-    bgImage: placeHolderLogo,
+    bgImages: [placeHolderLogo, placeHolderLogo],
     logo: placeHolderLogo,
   },
   consolehub: {
-    bgImage: consoleHubBgImage,
+    bgImages: [consoleHubBgImage, consoleHubBgImage],
     logo: consoleHubLogoImage,
   },
   budgettrail: {
-    bgImage: budgettrailBgImage,
+    bgImages: [budgettrailBgImage, budgettrailBgImage],
     logo: budgettrailLogoImage,
   },
   spacetravelershub: {
-    bgImage: spacetravelershubBgImage,
+    bgImages: [spacetravelershubBgImage, spacetravelershubBgImage],
     logo: spacetravelershubLogoImage,
   },
   blogister: {
-    bgImage: blogisterBgImage,
+    bgImages: [blogisterBgImage, blogisterBgImage],
     logo: blogisterLogoImage,
   },
   conference: {
-    bgImage: conferenceBgImage,
+    bgImages: [conferenceBgImage, conferenceBgImage],
     logo: conferenceLogoImage,
   },
 };
