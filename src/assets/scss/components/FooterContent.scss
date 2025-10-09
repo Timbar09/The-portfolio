@@ -30,7 +30,18 @@
     .social {
       &__list {
         padding: 0;
+
+        @include breakpoint-up(sm) {
+          flex-direction: column;
+          padding: 0 0.5em;
+        }
+
+        @include breakpoint-up(md) {
+          flex-direction: row;
+          padding: 0;
+        }
       }
+
       &__item {
         margin-left: 0;
         opacity: 1;

@@ -1,25 +1,18 @@
-import { useContext } from "react";
-
-import { ThemeContext } from "../../components/App";
-
 import PageTitle from "../PageTitle";
 import SocialLinkTree from "../../components/SocialLinkTree";
+import PageBackgroundImage from "../../components/PageBackgroundImage";
 
 import darkBgImage from "../../assets/images/contact-bg.jpg";
 import lightBgImage from "../../assets/images/contact-bg-light.jpg";
 
 const ContactHeader = () => {
-  const { theme } = useContext(ThemeContext);
   return (
     <header className="contact__header">
-      <div
-        className="container relative"
-        style={{
-          backgroundImage: `url(${
-            theme === "light" ? lightBgImage : darkBgImage
-          })`,
-        }}
-      >
+      <div className="container relative">
+        <PageBackgroundImage
+          images={{ light: lightBgImage, dark: darkBgImage }}
+        />
+
         <PageTitle firstWord="Contact" secondWord="Me" fadeLeft={false} />
 
         <h2 className="page__subtitle relative">

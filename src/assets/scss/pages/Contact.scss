@@ -9,33 +9,31 @@
     .container {
       padding-block-start: 12rem;
       padding-block-end: 4rem;
-      background: bottom/cover no-repeat;
 
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-      }
+      .page-background-image {
+        background: bottom/cover no-repeat;
 
-      &::before {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          to right,
-          var(--bg-200),
-          var(--contact-opaque-bg-100),
-          var(--bg-200)
-        );
-      }
+        &::after {
+          content: "";
+          position: absolute;
+        }
 
-      &::after {
-        top: 90%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to top, var(--bg-200), transparent);
+        &::before {
+          background: linear-gradient(
+            to right,
+            var(--bg-200),
+            var(--contact-opaque-bg-100),
+            var(--bg-200)
+          );
+        }
+
+        &::after {
+          top: 90%;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(to top, var(--bg-200), transparent);
+        }
       }
     }
   }
