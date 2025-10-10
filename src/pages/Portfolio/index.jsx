@@ -3,13 +3,13 @@ import ProjectList from "./ProjectList";
 import MyLink from "../../components/MyLink";
 import Tooltip from "../../components/Tooltip";
 import MetaTags from "../../components/MetaTags";
-import { AnimatedComponent } from "../../components/Animations";
+import { AnimatedComponent, PageTransition } from "../../components/Animations";
 
 import "../../assets/scss/pages/portfolio/index.scss";
 
 const Portfolio = () => {
   return (
-    <>
+    <PageTransition>
       <MetaTags page="portfolio" />
 
       <main name="portfolio" id="portfolio" className="portfolio__page page">
@@ -57,7 +57,7 @@ const Portfolio = () => {
           </AnimatedComponent>
         </div>
       </main>
-    </>
+    </PageTransition>
   );
 };
 
