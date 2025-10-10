@@ -46,13 +46,13 @@ export const enter = (duration = 1, delay = 0) =>
 
 // PAGE TRANSITION VARIANTS
 
-const opacity = {
+const appear = {
   initial: { opacity: 0 },
   enter: { opacity: 1, transition: { duration: 1 } },
   exit: { opacity: 1 },
 };
 
-const slide = {
+const slideUp = {
   initial: { scaleY: 0 },
   enter: { scaleY: 0 },
   exit: {
@@ -62,7 +62,7 @@ const slide = {
   },
 };
 
-const perspective = {
+const dropBack = {
   initial: { rotateX: 0, scale: 1 },
   enter: { rotateX: 0, scale: 1 },
   exit: {
@@ -73,4 +73,4 @@ const perspective = {
 };
 
 export const animations = { fadeInUp, fadeInRight, tilt, enter };
-export const pageTransitionVariants = { opacity, slide, perspective };
+export const pageTransitionVariants = { appear, slideUp, dropBack };
