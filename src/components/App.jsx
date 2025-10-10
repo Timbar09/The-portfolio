@@ -1,5 +1,6 @@
 import { useEffect, useState, createContext } from "react";
-import { Routes, Route } from "react-router";
+import { Routes, Route, useLocation } from "react-router";
+import { AnimatePresence } from "framer-motion";
 import useLocalStorage from "use-local-storage";
 
 import Layout from "../layout";
@@ -20,6 +21,7 @@ export const ProjectModalContext = createContext(null);
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+  const location = useLocation();
   const [selectedProject, setSelectedProject] = useState({
     title: "Dummy Project",
     description: {
@@ -84,15 +86,17 @@ const App = () => {
             <div className="app">
               <Overlay />
 
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  <Route index element={<HomePage />} />
-                  <Route path="/portfolio" element={<PortfolioPage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="*" element={<NotFoundPage />} />
-                </Route>
-              </Routes>
+              <AnimatePresence mode="wait">
+                <Routes key={location.pathname} location={location}>
+                  <Route path="/" element={<Layout />}>
+                    <Route index element={<HomePage />} />
+                    <Route path="/portfolio" element={<PortfolioPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="*" element={<NotFoundPage />} />
+                  </Route>
+                </Routes>
+              </AnimatePresence>
             </div>
           </ProjectModalContext.Provider>
         </MenuContext.Provider>

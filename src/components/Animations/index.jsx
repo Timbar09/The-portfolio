@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { animations } from "./animationUtils";
+import { animations, pageTransitionVariants } from "./animationUtils";
+
+import "../../assets/scss/components/Animations.scss";
 
 /**
  * A component that applies a transition effect to its children using Framer Motion.
@@ -47,5 +49,26 @@ export const AnimatedComponent = ({
     >
       {children}
     </Tag>
+  );
+};
+
+export const PageTransition = ({ children }) => {
+  const { opacity, slide, perspective } = pageTransitionVariants;
+
+  const animate = (variants) => ({
+    initial: "initial",
+    animate: "enter",
+    exit: "exit",
+    variants,
+  });
+
+  return (
+    <div className="page-transition">
+      <motion.div {...animate(slide)} className="slider" />
+
+      <motion.div {...animate(perspective)}>
+        <motion.div {...animate(opacity)}>{children}</motion.div>
+      </motion.div>
+    </div>
   );
 };
