@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+
+import Header from "../../layout/Header";
+import Footer from "../../layout/Footer";
+
 import { animations, pageTransitionVariants } from "./animationUtils";
 
 import "../../assets/scss/components/Animations.scss";
@@ -52,6 +56,15 @@ export const AnimatedComponent = ({
   );
 };
 
+/**
+ * A component that applies a page transition effect to its children (Page) using Framer Motion.
+ * The Header and Footer components are included within the transition effect.
+ *
+ * @param {JSX.Element} children - The children elements (Page) to apply the transition effect to.
+ *
+ * @returns {JSX.Element} - The component with the page transition effect
+ */
+
 export const PageTransition = ({ children }) => {
   const { opacity, slide, perspective } = pageTransitionVariants;
 
@@ -67,7 +80,14 @@ export const PageTransition = ({ children }) => {
       <motion.div {...animate(slide)} className="slider" />
 
       <motion.div {...animate(perspective)}>
-        <motion.div {...animate(opacity)}>{children}</motion.div>
+        <motion.div {...animate(opacity)}>
+          {/* Header & Footer should be in the Layout component but this works for the page transition */}
+          <Header />
+
+          {children}
+
+          <Footer />
+        </motion.div>
       </motion.div>
     </div>
   );
