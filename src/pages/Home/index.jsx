@@ -3,8 +3,6 @@ import MetaTags from "../../components/MetaTags";
 import GitHubContribution from "./GitHubContribution";
 import { PageTransition } from "../../components/Animations";
 
-import "../../assets/scss/pages/home/index.scss";
-
 const Home = () => {
   return (
     <PageTransition>

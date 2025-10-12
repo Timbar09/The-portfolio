@@ -3,8 +3,6 @@ import ContactHeader from "./ContactHeader";
 import MetaTags from "../../components/MetaTags";
 import { PageTransition } from "../../components/Animations";
 
-import "../../assets/scss/pages/Contact.scss";
-
 const Contact = () => {
   return (
     <PageTransition>

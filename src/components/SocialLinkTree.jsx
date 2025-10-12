@@ -5,8 +5,6 @@ import { FaLinkedin as LinkedInIcon } from "react-icons/fa";
 import { FaXTwitter as XIcon } from "react-icons/fa6";
 import { FaCodepen as CodePenIcon } from "react-icons/fa";
 
-import "../assets/scss/components/SocialLinkTree.scss";
-
 import { REF } from "./MyLink";
 
 const socialLinks = [

@@ -1,7 +1,5 @@
 import Tooltip from "./Tooltip";
 
-import "../assets/scss/components/Tabs.scss";
-
 export const TabButtons = ({ tabData, activeTab, setActiveTab }) => {
   return (
     <header className="tab__header">

@@ -6,8 +6,6 @@ import AboutSoftSkills from "./AboutSoftSkills";
 import AboutTechnologies from "./AboutTechnologies";
 import { PageTransition } from "../../components/Animations";
 
-import "../../assets/scss/pages/about/index.scss";
-
 const About = () => {
   return (
     <PageTransition>

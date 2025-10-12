@@ -1,5 +1,3 @@
-import { NavLink } from "react-router";
-
 import MyLink from "./MyLink";
 import Tooltip from "./Tooltip";
 import SocialLinkTree from "./SocialLinkTree";
@@ -12,8 +10,6 @@ import {
 } from "react-icons/tb";
 
 import { NAV_LINKS } from "./Navbar/NavList";
-
-import "../assets/scss/components/FooterContent.scss";
 
 const FooterContent = () => {
   const tools = [

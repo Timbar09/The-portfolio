@@ -4,7 +4,6 @@ import { NavLink } from "react-router";
 import { MenuContext } from "./App";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
-import "../assets/scss/components/Logo.scss";
 import Tooltip from "./Tooltip";
 
 const Logo = ({ className = "logo__header" }) => {

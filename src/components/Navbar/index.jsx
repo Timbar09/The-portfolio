@@ -12,8 +12,6 @@ import MenuList from "./MenuList";
 import ThemeToggle from "./ThemeToggle";
 import MenuToggleButton from "./MenuToggleButton";
 
-import "../../assets/scss/components/Navbar.scss";
-
 const Navbar = () => {
   const { isMenuOpen } = useContext(MenuContext);
   const { theme } = useContext(ThemeContext);

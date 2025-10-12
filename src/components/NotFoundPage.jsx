@@ -3,8 +3,6 @@ import { PageTransition } from "./Animations";
 
 import { FaArrowLeftLong as ArrowIcon } from "react-icons/fa6";
 
-import "../assets/scss/components/NotFoundPage.scss";
-
 const NotFoundPage = () => {
   return (
     <PageTransition>

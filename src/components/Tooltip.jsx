@@ -3,8 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { IoIosArrowForward as LinkIcon } from "react-icons/io";
 
-import "../assets/scss/components/Tooltip.scss";
-
 const Tooltip = ({ children, isLink = false, styles = {} }) => {
   const [visible, setVisible] = useState(false);
   const [position, setPosition] = useState({});

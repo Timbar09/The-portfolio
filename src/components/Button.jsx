@@ -3,8 +3,6 @@ import MyLink from "./MyLink";
 import { VscSend as SendIcon } from "react-icons/vsc";
 import { AiOutlineStop as InvalidIcon } from "react-icons/ai";
 
-import "../assets/scss/components/Button.scss";
-
 const ActualButton = ({ props }) => {
   return (
     <button

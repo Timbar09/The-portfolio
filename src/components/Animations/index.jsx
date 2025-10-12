@@ -5,8 +5,6 @@ import Footer from "../../layout/Footer";
 
 import { animations, pageTransitionVariants } from "./animationUtils";
 
-import "../../assets/scss/components/Animations.scss";
-
 /**
  * A component that applies a transition effect to its children using Framer Motion.
  *

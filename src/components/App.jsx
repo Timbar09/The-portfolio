@@ -12,8 +12,6 @@ import NotFoundPage from "./NotFoundPage";
 import ErrorBoundary from "./ErrorBoundary";
 import PortfolioPage from "../pages/Portfolio";
 
-import "../assets/scss/components/App.scss";
-
 export const ThemeContext = createContext(null);
 export const MenuContext = createContext(null);
 export const ProjectModalContext = createContext(null);

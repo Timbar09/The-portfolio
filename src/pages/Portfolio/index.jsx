@@ -1,11 +1,7 @@
 import { PageTitle, PageSubtitle } from "../PageTitles";
 import ProjectList from "./ProjectList";
-import MyLink from "../../components/MyLink";
-import Tooltip from "../../components/Tooltip";
 import MetaTags from "../../components/MetaTags";
 import { AnimatedComponent, PageTransition } from "../../components/Animations";
-
-import "../../assets/scss/pages/portfolio/index.scss";
 
 const Portfolio = () => {
   return (

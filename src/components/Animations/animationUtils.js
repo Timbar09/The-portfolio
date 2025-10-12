@@ -54,7 +54,7 @@ const slideUp = {
   exit: {
     scaleY: 1,
 
-    transition: { duration: 1, ease: [0.61, 1, 0.88, 1] },
+    transition: { duration: 0.75, ease: [0.61, 1, 0.88, 1] },
   },
 };
 
@@ -63,7 +63,7 @@ const dropBack = {
   enter: { scale: 1 },
   exit: {
     scale: 0.9,
-    transition: { duration: 1 },
+    transition: { duration: 0.75 },
   },
 };
 
