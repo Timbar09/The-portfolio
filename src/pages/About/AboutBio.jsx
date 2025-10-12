@@ -23,9 +23,8 @@ const AboutBio = () => {
 
       <AnimatedComponent
         className="about__bio--description"
-        name="fadeInRight"
-        trigger="whileInView"
         duration={1}
+        delay={1}
       >
         <div className="about__bio--description__text">
           <p>

@@ -112,7 +112,7 @@ const ContactInfo = () => {
           {info.map(({ icon, title, description }, index) => (
             <AnimatedComponent
               name="enter"
-              delay={index * 0.2}
+              delay={index * 0.3}
               tag="li"
               key={index}
               className="contact__info--item relative flex flex_md-col gap-2 p-2"

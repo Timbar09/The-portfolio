@@ -28,12 +28,7 @@ const Portfolio = () => {
             />
           </header>
 
-          <AnimatedComponent
-            name="fadeInUp"
-            className="relative"
-            duration={1.25}
-            delay={1.25}
-          >
+          <AnimatedComponent className="relative" delay={1.25}>
             <ProjectList />
           </AnimatedComponent>
         </div>

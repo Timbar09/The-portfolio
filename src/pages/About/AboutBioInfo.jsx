@@ -30,9 +30,9 @@ const AboutBioInfo = () => {
   return (
     <AnimatedComponent
       className="about__bio--info grid"
-      name="fadeInUp"
-      trigger="whileInView"
+      name="fadeInLeft"
       duration={1}
+      delay={1.25}
     >
       <div
         className="about__bio--info__container"
@@ -74,7 +74,11 @@ const AboutBioInfo = () => {
           </div>
         </div>
 
-        <div className="about__bio--info__button--list flex gap-2">
+        <AnimatedComponent
+          name="fadeInDown"
+          delay={2}
+          className="about__bio--info__button--list flex gap-2 relative"
+        >
           <div className="about__bio--info__button">
             <Button
               text="View Resume"
@@ -94,7 +98,7 @@ const AboutBioInfo = () => {
 
             <Tooltip isLink>Download my Resume as PDF</Tooltip>
           </div>
-        </div>
+        </AnimatedComponent>
       </div>
     </AnimatedComponent>
   );

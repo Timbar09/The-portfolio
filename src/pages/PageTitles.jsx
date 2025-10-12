@@ -120,8 +120,11 @@ export const PageSubtitle = ({ text, linkData = null, isShort = false }) => {
   return (
     <AnimatedComponent
       tag="h2"
-      delay={0.75}
-      className={`page__subtitle ${isShort ? "page__subtitle--short" : ""}`}
+      duration={1}
+      delay={0.25}
+      className={`page__subtitle ${
+        isShort ? "page__subtitle--short" : ""
+      } relative`}
     >
       {processedText}
     </AnimatedComponent>
