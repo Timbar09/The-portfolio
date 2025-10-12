@@ -267,11 +267,16 @@
 
   &__scroll-progress {
     position: absolute;
+    top: 0;
     left: 0;
-    bottom: 0;
     background: var(--primary-gradient);
     height: 0.105em;
     width: 100%;
     border-radius: 5rem;
+
+    @include breakpoint-up(md) {
+      top: auto;
+      bottom: 0;
+    }
   }
 }

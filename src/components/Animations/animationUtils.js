@@ -1,7 +1,7 @@
 const transitionValues = (duration, delay) => ({
   duration,
   delay,
-  ease: [0.61, 1, 0.88, 1],
+  ease: [0.37, 0, 0.63, 1],
 });
 
 function makeAnimation(initial, animate, duration, delay) {
@@ -15,13 +15,14 @@ function makeAnimation(initial, animate, duration, delay) {
 export const fadeInUp = (duration = 1, delay = 0) =>
   makeAnimation({ opacity: 0, y: 20 }, { opacity: 1, y: 0 }, duration, delay);
 
+export const fadeInDown = (duration = 1, delay = 0) =>
+  makeAnimation({ opacity: 0, y: -20 }, { opacity: 1, y: 0 }, duration, delay);
+
 export const fadeInRight = (duration = 1, delay = 0) =>
-  makeAnimation(
-    { opacity: 0, left: -50 },
-    { opacity: 1, left: 0 },
-    duration,
-    delay
-  );
+  makeAnimation({ opacity: 0, x: -50 }, { opacity: 1, x: 0 }, duration, delay);
+
+export const fadeInLeft = (duration = 1, delay = 0) =>
+  makeAnimation({ opacity: 0, x: 50 }, { opacity: 1, x: 0 }, duration, delay);
 
 export const tilt = (duration = 1, delay = 0) =>
   makeAnimation(
@@ -66,5 +67,12 @@ const dropBack = {
   },
 };
 
-export const animations = { fadeInUp, fadeInRight, tilt, enter };
 export const pageTransitionVariants = { appear, slideUp, dropBack };
+export const animations = {
+  fadeInUp,
+  fadeInDown,
+  fadeInRight,
+  fadeInLeft,
+  tilt,
+  enter,
+};
