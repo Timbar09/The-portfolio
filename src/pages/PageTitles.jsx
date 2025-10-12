@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { AnimatedComponent } from "../components/Animations";
 
 import MyLink from "../components/MyLink";
 import Tooltip from "../components/Tooltip";
@@ -62,14 +63,14 @@ export const PageTitle = ({ firstWord, secondWord, fadeLeft = true }) => {
   };
 
   return (
-    <motion.h1 {...titleVariants} className="title page__title">
+    <AnimatedComponent tag="h1" className="title page__title">
       <Word fade={fadeLeft} wordPosition="first">
         {firstWord}
       </Word>{" "}
       <Word fade={!fadeLeft} wordPosition="second">
         {secondWord}
       </Word>
-    </motion.h1>
+    </AnimatedComponent>
   );
 };
 
@@ -117,8 +118,12 @@ export const PageSubtitle = ({ text, linkData = null, isShort = false }) => {
   const processedText = processText();
 
   return (
-    <h2 className={`page__subtitle ${isShort ? "page__subtitle--short" : ""}`}>
+    <AnimatedComponent
+      tag="h2"
+      delay={0.75}
+      className={`page__subtitle ${isShort ? "page__subtitle--short" : ""}`}
+    >
       {processedText}
-    </h2>
+    </AnimatedComponent>
   );
 };
