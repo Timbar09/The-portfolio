@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 import Header from "../../layout/Header";
@@ -67,7 +66,6 @@ export const AnimatedComponent = ({
  */
 
 export const PageTransition = ({ children }) => {
-  const [perspective, setPerspective] = useState("2000px");
   const { appear, slideUp, dropBack } = pageTransitionVariants;
 
   const animate = (variants) => ({
@@ -77,21 +75,12 @@ export const PageTransition = ({ children }) => {
     variants,
   });
 
-  const removePerspective = () => {
-    setTimeout(() => {
-      setPerspective("none");
-    }, 1500);
-  };
-
   return (
-    <div className="page-transition" style={{ perspective }}>
+    <div className="page-transition">
       <motion.div {...animate(slideUp)} className="slider" />
 
       <motion.div {...animate(dropBack)}>
-        <motion.div
-          {...animate(appear)}
-          onAnimationComplete={removePerspective}
-        >
+        <motion.div {...animate(appear)}>
           {/* Header & Footer should be in the Layout component but this works for the page transition */}
           <Header />
 

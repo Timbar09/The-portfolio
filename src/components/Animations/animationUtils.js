@@ -13,12 +13,7 @@ function makeAnimation(initial, animate, duration, delay) {
 }
 
 export const fadeInUp = (duration = 1, delay = 0) =>
-  makeAnimation(
-    { opacity: 0, top: 50 },
-    { opacity: 1, top: 0 },
-    duration,
-    delay
-  );
+  makeAnimation({ opacity: 0, y: 20 }, { opacity: 1, y: 0 }, duration, delay);
 
 export const fadeInRight = (duration = 1, delay = 0) =>
   makeAnimation(
@@ -63,10 +58,9 @@ const slideUp = {
 };
 
 const dropBack = {
-  initial: { rotateX: 0, scale: 1 },
-  enter: { rotateX: 0, scale: 1 },
+  initial: { scale: 1 },
+  enter: { scale: 1 },
   exit: {
-    rotateX: 20,
     scale: 0.9,
     transition: { duration: 1 },
   },
