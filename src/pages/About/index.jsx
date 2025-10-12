@@ -1,6 +1,6 @@
 import MetaTags from "../../components/MetaTags";
 
-import PageTitle from "../PageTitle";
+import { PageTitle } from "../PageTitles";
 import AboutBio from "./AboutBio";
 import AboutSoftSkills from "./AboutSoftSkills";
 import AboutTechnologies from "./AboutTechnologies";

@@ -1,4 +1,4 @@
-import PageTitle from "../PageTitle";
+import { PageTitle, PageSubtitle } from "../PageTitles";
 import ProjectList from "./ProjectList";
 import MyLink from "../../components/MyLink";
 import Tooltip from "../../components/Tooltip";
@@ -17,34 +17,15 @@ const Portfolio = () => {
           <header className="project__section--header">
             <PageTitle firstWord="My" secondWord="Portfolio" />
 
-            <AnimatedComponent
-              name="fadeInUp"
-              tag="h2"
-              className="page__subtitle"
-              duration={1.25}
-              delay={0.5}
-            >
-              <>
-                I've built a number projects. Feel free to explore or
-                contribute. If you have an idea or want to collaborate,{" "}
-                <span className="page__subtitle--highlight">
-                  <MyLink
-                    text="let's connect"
-                    path="/contact"
-                    variant="highlighted"
-                    showIcon={false}
-                  />
-
-                  <Tooltip
-                    isLink
-                    styles={{ fontSize: "0.5em", maxWidth: "20rem" }}
-                  >
-                    Go to contact page
-                  </Tooltip>
-                </span>
-                ! Excited to hear from you. 😎
-              </>
-            </AnimatedComponent>
+            <PageSubtitle
+              text="I've built a number projects. Feel free to explore or
+                contribute. If you have an idea or want to collaborate, let's connect! Excited to hear from you. 😎"
+              linkData={{
+                text: "let's connect",
+                path: "/contact",
+                tooltip: "Go to contact page",
+              }}
+            />
           </header>
 
           <AnimatedComponent

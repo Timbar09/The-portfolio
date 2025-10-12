@@ -1,4 +1,4 @@
-import PageTitle from "../PageTitle";
+import { PageTitle, PageSubtitle } from "../PageTitles";
 import SocialLinkTree from "../../components/SocialLinkTree";
 import PageBackgroundImage from "../../components/PageBackgroundImage";
 
@@ -15,10 +15,10 @@ const ContactHeader = () => {
 
         <PageTitle firstWord="Contact" secondWord="Me" fadeLeft={false} />
 
-        <h2 className="page__subtitle relative">
-          I'm always open to new opportunities. Whether you have a question or
-          just want to say hi, my inbox is always open.
-        </h2>
+        <PageSubtitle
+          text="I'm always open to new opportunities. Whether you have a question or
+          just want to say hi, my inbox is always open."
+        />
 
         <div className="contact__social flex flex-jc-c flex_lg-jc-fs">
           <SocialLinkTree />

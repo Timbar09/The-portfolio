@@ -1,5 +1,6 @@
 import MyLink from "../../components/MyLink";
 import AboutBioInfo from "./AboutBioInfo";
+import { PageSubtitle } from "../PageTitles";
 import { AnimatedComponent } from "../../components/Animations";
 import Tooltip from "../../components/Tooltip";
 
@@ -8,21 +9,15 @@ const AboutBio = () => {
 
   return (
     <section className="about__bio grid grid-gap-3">
-      <h2 className="page__subtitle">
-        I'm Miles Mosweu, a self-driven fullstack web developer based in{" "}
-        <span className="page__subtitle--highlight">
-          <MyLink
-            text="Botswana"
-            variant="highlighted"
-            path="https://www.google.com/maps/place/Botswana"
-          />
-
-          <Tooltip isLink styles={{ fontSize: "0.5em", maxWidth: "20rem" }}>
-            View my beautiful country on Google Maps
-          </Tooltip>
-        </span>
-        .
-      </h2>
+      <PageSubtitle
+        text="I'm Miles Mosweu, a self-driven fullstack web developer based in
+          Botswana."
+        linkData={{
+          text: "Botswana",
+          path: "https://www.google.com/maps/place/Botswana",
+          tooltip: "View my beautiful country on Google Maps",
+        }}
+      />
 
       <AboutBioInfo />
 

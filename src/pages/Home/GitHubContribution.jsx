@@ -4,6 +4,7 @@ import GitHubCalendar from "react-github-calendar";
 import { ThemeContext } from "../../components/App";
 
 import { AnimatedComponent } from "../../components/Animations";
+import { PageSubtitle } from "../PageTitles";
 
 import { GITHUB_COLORS } from "./homeUtils";
 
@@ -54,9 +55,7 @@ const GitHubContribution = () => {
   return (
     <section className="home__github-contribution page__section">
       <div className="container">
-        <h2 className="page__subtitle page__subtitle--short">
-          GitHub Contributions
-        </h2>
+        <PageSubtitle text="GitHub Contributions" isShort />
 
         <div className="home__github-contribution--grid flex flex-col gap-2">
           <AnimatedComponent
