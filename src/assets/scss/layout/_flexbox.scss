@@ -40,14 +40,103 @@
 
   &-row {
     flex-direction: row;
+
+    &-reverse {
+      flex-direction: row-reverse;
+    }
   }
 
   &-col {
     flex-direction: column;
+
+    &-reverse {
+      flex-direction: column-reverse;
+    }
   }
 
   &-wrap {
     flex-wrap: wrap;
+  }
+
+  // SMALL SCREENS
+  &_sm {
+    @include breakpoint-up(sm) {
+      display: flex !important;
+    }
+
+    &-jc {
+      &-sb {
+        @include breakpoint-up(sm) {
+          justify-content: space-between;
+        }
+      }
+      &-c {
+        @include breakpoint-up(sm) {
+          justify-content: center;
+        }
+      }
+
+      &-fs {
+        @include breakpoint-up(sm) {
+          justify-content: flex-start;
+        }
+      }
+      &-fe {
+        @include breakpoint-up(sm) {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    &-ai {
+      &-c {
+        @include breakpoint-up(sm) {
+          align-items: center;
+        }
+      }
+
+      &-fs {
+        @include breakpoint-up(sm) {
+          align-items: flex-start;
+        }
+      }
+
+      &-fe {
+        @include breakpoint-up(sm) {
+          align-items: flex-end;
+        }
+      }
+    }
+
+    &-row {
+      @include breakpoint-up(sm) {
+        flex-direction: row;
+      }
+
+      &-reverse {
+        @include breakpoint-up(sm) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+
+    &-col {
+      @include breakpoint-up(sm) {
+        flex-direction: column;
+      }
+
+      &-reverse {
+        @include breakpoint-up(sm) {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+
+    &-wrap {
+      @include breakpoint-up(sm) {
+        flex-wrap: wrap;
+      }
+    }
   }
 
   // MEDIUM SCREENS
@@ -105,11 +194,23 @@
       @include breakpoint-up(md) {
         flex-direction: row;
       }
+
+      &-reverse {
+        @include breakpoint-up(md) {
+          flex-direction: row-reverse;
+        }
+      }
     }
 
     &-col {
       @include breakpoint-up(md) {
         flex-direction: column;
+      }
+
+      &-reverse {
+        @include breakpoint-up(md) {
+          flex-direction: column-reverse;
+        }
       }
     }
 
@@ -175,11 +276,23 @@
       @include breakpoint-up(lg) {
         flex-direction: row;
       }
+
+      &-reverse {
+        @include breakpoint-up(lg) {
+          flex-direction: row-reverse;
+        }
+      }
     }
 
     &-col {
       @include breakpoint-up(lg) {
         flex-direction: column;
+      }
+
+      &-reverse {
+        @include breakpoint-up(lg) {
+          flex-direction: column-reverse;
+        }
       }
     }
 

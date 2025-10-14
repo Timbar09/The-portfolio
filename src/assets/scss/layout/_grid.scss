@@ -3,6 +3,10 @@
 .grid {
   display: grid;
 
+  &-inline {
+    display: inline-grid;
+  }
+
   &-col {
     grid-template-columns: repeat(12, 1fr);
 
@@ -39,6 +43,12 @@
   &_md {
     @include breakpoint-up("md") {
       display: grid;
+    }
+
+    &-inline {
+      @include breakpoint-up("md") {
+        display: inline-grid;
+      }
     }
 
     &-col {

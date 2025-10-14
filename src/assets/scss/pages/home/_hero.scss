@@ -1,0 +1,59 @@
+@use "../../utils/" as *;
+
+.home__hero {
+  .container {
+    height: clamp(30em, 100vh, 60em);
+    text-align: center;
+
+    @include breakpoint-up(md) {
+      text-align: left;
+    }
+
+    .page-background-image {
+      background: no-repeat center / cover;
+
+      &::before {
+        background: linear-gradient(
+          180deg,
+          var(--hero-opaque-bg-200) 65%,
+          var(--bg-200)
+        );
+      }
+
+      @include breakpoint-up(md) {
+        background: no-repeat right / contain;
+
+        &::before {
+          background: linear-gradient(
+            90deg,
+            var(--bg-100) 55%,
+            var(--hero-opaque-bg-100),
+            var(--bg-100)
+          );
+        }
+      }
+    }
+  }
+
+  &--group {
+    position: relative;
+
+    @include breakpoint-up(md) {
+      padding: 0 3em;
+    }
+  }
+
+  &--description {
+    max-width: 25em;
+    margin: auto;
+    font-size: 1.15em;
+
+    @include breakpoint-up(md) {
+      margin: 0;
+    }
+  }
+
+  &--button {
+    position: relative;
+  }
+}

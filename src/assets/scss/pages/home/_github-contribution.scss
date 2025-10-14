@@ -1,0 +1,35 @@
+@use "../../utils/" as *;
+
+.home__github-contribution {
+  padding-bottom: 6rem;
+  text-align: center;
+
+  @include breakpoint-up(lg) {
+    text-align: left;
+  }
+
+  .react-activity-calendar {
+    padding: 2rem;
+    background-color: var(--bg-200);
+    border-radius: var(--radius-300);
+    border: solid 0.15em var(--bg-300);
+  }
+
+  &--year {
+    &__list {
+      &--item__button {
+        color: var(--text-200);
+        background-color: var(--bg-400);
+
+        &:hover {
+          background-color: var(--bg-hover);
+        }
+
+        &.active {
+          background-color: var(--bg-active, var(--primary-100));
+          color: var(--bg-200);
+        }
+      }
+    }
+  }
+}

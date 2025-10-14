@@ -1,0 +1,36 @@
+@use "../utils/" as *;
+
+.not-found {
+  background-color: var(--bg-200);
+  .container {
+    min-height: 100vh;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: min(45vw, 27rem);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--text-100),
+      transparent
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    width: 80%;
+    max-width: 25rem;
+    color: var(--text-300);
+    background-color: var(--opaque-light-400);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-300);
+  }
+}

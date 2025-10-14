@@ -1,11 +1,16 @@
-import { useEffect, useState, createContext } from 'react';
-import useLocalStorage from 'use-local-storage';
+import { useEffect, useState, createContext } from "react";
+import { Routes, Route, useLocation } from "react-router";
+import { AnimatePresence } from "framer-motion";
+import useLocalStorage from "use-local-storage";
 
-import Overlay from './Overlay';
-import Layout from '../layout';
-import ErrorBoundary from './ErrorBoundary';
-
-import '../assets/scss/components/App.scss';
+import Layout from "../layout";
+import Overlay from "./Overlay";
+import HomePage from "../pages/Home";
+import AboutPage from "../pages/About";
+import Contact from "../pages/Contact";
+import NotFoundPage from "./NotFoundPage";
+import ErrorBoundary from "./ErrorBoundary";
+import PortfolioPage from "../pages/Portfolio";
 
 export const ThemeContext = createContext(null);
 export const MenuContext = createContext(null);
@@ -14,44 +19,53 @@ export const ProjectModalContext = createContext(null);
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+  const location = useLocation();
   const [selectedProject, setSelectedProject] = useState({
-    title: 'Dummy Project',
+    title: "Dummy Project",
     description: {
-      brief: 'This is a dummy project.',
-      overview: 'This is a dummy project.',
-      problem: 'This is a dummy project.',
-      features: ['This is a dummy project.'],
-      summary: 'This is a dummy project.',
+      brief: "This is a dummy project.",
+      overview: "This is a dummy project.",
+      problem: "This is a dummy project.",
+      features: ["This is a dummy project."],
+      summary: "This is a dummy project.",
     },
-    imagesFile: 'dummy',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    live: '',
-    source: 'https://github.com/Timbar09',
+    imagesFile: "dummy",
+    tech: ["HTML", "CSS", "JavaScript"],
+    live: "https://github.com/Timbar09",
+    code: "https://github.com/Timbar09",
   });
-  const preference = window.matchMedia('(prefers-color-scheme: light)').matches;
-  const [theme, setTheme] = useLocalStorage('theme', preference ? 'light' : 'dark');
+  const preference = window.matchMedia("(prefers-color-scheme: light)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    preference ? "light" : "dark"
+  );
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    const html = document.documentElement;
+
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    html.style.colorScheme = theme === "light" ? "dark" : "light";
   };
 
   const toggleMenu = () => {
-    const body = document.querySelector('body');
+    const body = document.querySelector("body");
 
     setIsMenuOpen(!isMenuOpen);
-    body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
+    body.style.overflow = isMenuOpen ? "auto" : "hidden";
   };
 
   const toggleProjectModal = () => {
-    const body = document.querySelector('body');
+    const body = document.querySelector("body");
 
     setIsProjectModalOpen(!isProjectModalOpen);
-    body.style.overflow = isProjectModalOpen ? 'auto' : 'hidden';
+    body.style.overflow = isProjectModalOpen ? "auto" : "hidden";
   };
 
   useEffect(() => {
-    const body = document.querySelector('body');
+    const html = document.documentElement;
+    const body = document.querySelector("body");
 
+    html.style.colorScheme = theme;
     body.dataset.theme = theme;
   }, [theme]);
 
@@ -70,7 +84,17 @@ const App = () => {
             <div className="app">
               <Overlay />
 
-              <Layout />
+              <AnimatePresence mode="wait">
+                <Routes key={location.pathname} location={location}>
+                  <Route path="/" element={<Layout />}>
+                    <Route index element={<HomePage />} />
+                    <Route path="/portfolio" element={<PortfolioPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="*" element={<NotFoundPage />} />
+                  </Route>
+                </Routes>
+              </AnimatePresence>
             </div>
           </ProjectModalContext.Provider>
         </MenuContext.Provider>

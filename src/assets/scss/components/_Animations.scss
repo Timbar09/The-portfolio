@@ -1,0 +1,14 @@
+@use "../utils/" as *;
+
+.page-transition {
+  .slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-100);
+    transform-origin: bottom;
+    z-index: 1001;
+  }
+}
