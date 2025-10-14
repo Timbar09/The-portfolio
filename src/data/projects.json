@@ -4,7 +4,7 @@
     "description": {
       "brief": "ConsoleHub lets users book gaming console at a time that works for them.",
       "overview": "ConsoleHub simplifies the process of scheduling gaming sessions by allowing users to reserve their preferred gaming console at a convenient time slot. With an extensive library of gaming consoles, ConsoleHub offers users a wide variety of choices to suit their gaming preferences.",
-      "problem": "The creation of ConsoleHub was motivated by the need for a streamlined solution for scheduling gaming sessions. Additionally, there was a lack of comprehensive resources on utilizing React and Ruby on Rails together for web development projects.",
+      "problem": "The creation of ConsoleHub was motivated by the need for a streamlined solution for scheduling gaming sessions. Additionally, there was a lack of comprehensive recodes on utilizing React and Ruby on Rails together for web development projects.",
       "features": [
         "User-friendly Interface: Utilizes React for a responsive and intuitive user experience.",
         "Robust Backend: Relies on Ruby on Rails for efficient data management and security.",
@@ -14,16 +14,25 @@
       "summary": "In summary, ConsoleHub is a well-crafted web application that streamlines the booking of gaming consoles. It leverages React and Ruby on Rails for its frontend and backend respectively, with Devise for authentication and Tailwind CSS for stylish design. The combination of these technologies ensures a seamless and enjoyable user experience for users."
     },
     "imagesFile": "consolehub",
-    "tech": ["Ruby on Rails", "React", "Tailwind CSS", "Redux", "PostgreSQL", "Devise", "Rspec"],
-    "source": "https://github.com/stephenkati/gaming_console_reservation_front_end",
-    "live": "https://console-hub.netlify.app/"
+    "tech": [
+      "Ruby on Rails",
+      "React",
+      "Tailwind CSS",
+      "Redux",
+      "PostgreSQL",
+      "Devise",
+      "Rspec"
+    ],
+    "code": "https://github.com/stephenkati/gaming_console_reservation_front_end",
+    "live": "https://console-hub.netlify.app/",
+    "stackType": "fullstack"
   },
   {
     "title": "BudgetTrail",
     "description": {
       "brief": "This is a mobile web app for tracking, optimizing and managing users' finances.",
       "overview": "BudgetTrail is a handy mobile web app meticulously designed for users to track and optimize their finances. It empowers users to take control of their budget by managing their income and expenses comprehensively.",
-      "problem": "The development of BudgetTrail was driven by the necessity for a simplified approach to financial management. Moreover, there was a notable scarcity of comprehensive resources on effectively utilizing Ruby on Rails, PostgreSQL, and SASS in tandem for web development projects.",
+      "problem": "The development of BudgetTrail was driven by the necessity for a simplified approach to financial management. Moreover, there was a notable scarcity of comprehensive recodes on effectively utilizing Ruby on Rails, PostgreSQL, and SASS in tandem for web development projects.",
       "features": [
         "Comprehensive Financial Management: Users can effortlessly input and monitor their day-to-day transactions, gaining unparalleled clarity into their spending patterns.",
         "Robust Architecture: Built on a robust architecture combining Ruby on Rails, PostgreSQL, and SASS, BudgetTrail ensures a seamless and responsive user experience.",
@@ -44,8 +53,9 @@
       "GitHub",
       "Terminal"
     ],
-    "source": "https://github.com/Timbar09/BudgetTrail",
-    "live": "https://budgettrail.onrender.com/"
+    "code": "https://github.com/Timbar09/BudgetTrail",
+    "live": "https://budgettrail.onrender.com/",
+    "stackType": "fullstack"
   },
   {
     "title": "Space Traveler's Hub",
@@ -64,8 +74,9 @@
     },
     "imagesFile": "spacetravelershub",
     "tech": ["React", "Redux", "Bootstrap", "REST API"],
-    "source": "https://github.com/Timbar09/React-Redux-Group-Project-Space-Travelers-Hub",
-    "live": "https://spacetravelershub-react.onrender.com/"
+    "code": "https://github.com/Timbar09/React-Redux-Group-Project-Space-Travelers-Hub",
+    "live": "https://spacetravelershub-react.onrender.com/",
+    "stackType": "frontend"
   },
   {
     "title": "Blogister",
@@ -95,8 +106,9 @@
       "GitHub",
       "Terminal"
     ],
-    "source": "https://github.com/Timbar09/Blogister",
-    "live": ""
+    "code": "https://github.com/Timbar09/Blogister",
+    "live": null,
+    "stackType": "fullstack"
   },
   {
     "title": "ALT Confrence 2023",
@@ -116,8 +128,9 @@
     },
     "imagesFile": "conference",
     "tech": ["JavaScript", "CSS3", "HTML5", "GitHub", "Terminal"],
-    "source": "https://github.com/Timbar09/Africas-Leading-Tech-Conference",
-    "live": "https://timbar09.github.io/Africas-Leading-Tech-Conference/"
+    "code": "https://github.com/Timbar09/Africas-Leading-Tech-Conference",
+    "live": "https://timbar09.github.io/Africas-Leading-Tech-Conference/",
+    "stackType": "frontend"
   },
   {
     "title": "Todo App",
@@ -137,8 +150,9 @@
     },
     "imagesFile": "todoapp",
     "tech": ["React", "CSS3", "Git", "Github", "HTML5", "Terminal"],
-    "source": "https://github.com/Timbar09/Todo-list-vol-2",
-    "live": "https://timbar09.github.io/Todo-list-vol-2/dist/"
+    "code": "https://github.com/Timbar09/Todo-list-vol-2",
+    "live": "https://timbar09.github.io/Todo-list-vol-2/dist/",
+    "stackType": "frontend"
   },
   {
     "title": "Awesome books",
@@ -158,7 +172,8 @@
     },
     "imagesFile": "awesomebooks",
     "tech": ["JavaScript", "CSS3", "HTML5", "Luxon", "GitHub", "Terminal"],
-    "source": "https://github.com/Timbar09/Awesome-books-vol-2",
-    "live": "https://timbar09.github.io/Awesome-books-vol-2/"
+    "code": "https://github.com/Timbar09/Awesome-books-vol-2",
+    "live": "https://timbar09.github.io/Awesome-books-vol-2/",
+    "stackType": "frontend"
   }
 ]

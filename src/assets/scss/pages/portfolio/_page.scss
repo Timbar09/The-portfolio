@@ -1,0 +1,41 @@
+@use "../../utils/" as *;
+
+.portfolio {
+  &__page {
+    background-color: var(--bg-200);
+
+    .page__subtitle {
+      position: relative;
+      margin-bottom: 2em;
+    }
+  }
+
+  &__project {
+    &--list {
+      grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+      gap: var(--spacing, 1rem);
+    }
+
+    &--tech {
+      &__item {
+        gap: 0.25em;
+        padding: 0.5em;
+        font-size: 0.75em;
+        border: solid 0.125em var(--opaque-400);
+        color: var(--bg-300);
+        background-color: var(--text-300);
+        border-radius: var(--radius-200);
+        cursor: default;
+
+        svg {
+          color: var(--opaque-light-200);
+          transition: color 150ms ease-in-out;
+
+          @include touch {
+            color: var(--text-300);
+          }
+        }
+      }
+    }
+  }
+}

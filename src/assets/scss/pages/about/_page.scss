@@ -1,0 +1,7 @@
+@use "../../utils/" as *;
+
+.about {
+  &__page {
+    background-color: var(--bg-200);
+  }
+}

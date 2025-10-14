@@ -1,0 +1,147 @@
+@use "../utils/" as *;
+
+.contact {
+  &__page {
+    background-color: var(--bg-200);
+  }
+
+  &__header {
+    .container {
+      padding-block-start: 12rem;
+      padding-block-end: 4rem;
+
+      .page-background-image {
+        background: bottom/cover no-repeat;
+
+        &::after {
+          content: "";
+          position: absolute;
+        }
+
+        &::before {
+          background: linear-gradient(
+            to right,
+            var(--bg-200),
+            var(--contact-opaque-bg-100),
+            var(--bg-200)
+          );
+        }
+
+        &::after {
+          top: 90%;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(to top, var(--bg-200), transparent);
+        }
+      }
+    }
+  }
+
+  &__info {
+    padding-block: 4em;
+
+    &--list {
+      max-width: max-content;
+      margin-inline: auto;
+
+      @include breakpoint-up(md) {
+        max-width: none;
+        margin: 0;
+      }
+    }
+
+    &--item {
+      flex: 1;
+      background-color: var(--bg-100);
+      border-radius: var(--radius-300);
+      border: 0.125em solid var(--bg-300);
+
+      &:hover {
+        .contact__info--copy-button {
+          opacity: 1;
+        }
+      }
+    }
+
+    &--icon {
+      font-size: 2.75em;
+      color: var(--bg-100);
+      padding: 1rem;
+      background-color: var(--text-100);
+      border-radius: var(--radius-200);
+
+      @include breakpoint-up(md) {
+        margin-inline: auto;
+      }
+    }
+
+    &--text {
+      text-align: left;
+
+      @include breakpoint-up(md) {
+        text-align: center;
+      }
+    }
+
+    &--title {
+      font-size: 1.25em;
+    }
+
+    &--description {
+      &__icon {
+        --dimension: 0.75em;
+
+        display: inline-block;
+        margin-right: 0.75em;
+        width: var(--dimension);
+        height: var(--dimension);
+        background-color: var(--primary-100);
+        border-radius: 50%;
+        z-index: 1;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          translate: -50% -50%;
+          width: 60%;
+          height: 60%;
+          background-color: var(--primary-100);
+          border-radius: 50%;
+          animation: availability-pulse 1500ms infinite forwards ease-in-out;
+        }
+      }
+
+      &__link {
+        @include breakpoint-up(md) {
+          margin-inline: auto;
+        }
+      }
+    }
+
+    &--copy-button {
+      opacity: 0;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.25em;
+      padding: 0.25em;
+      border-radius: var(--radius-200);
+      color: var(--text-400);
+      background-color: var(--bg-300);
+      cursor: pointer;
+      transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+
+      &:hover {
+        background-color: var(--bg-400);
+        color: var(--text-200);
+      }
+
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}

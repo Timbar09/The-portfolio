@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -21,9 +21,10 @@ class ErrorBoundary extends Component {
       return (
         <div className="error-boundary flex flex-col flex-ai-c flex-jc-c">
           <h2 className="error-boundary__heading">Something went wrong.</h2>
-          
+
           <p className="error-boundary__message">
-            An error occurred while trying to render this component. Check dev tools console for more details.
+            An error occurred while trying to render this component. Check dev
+            tools console for more details.
           </p>
         </div>
       );

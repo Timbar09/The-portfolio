@@ -1,4 +1,4 @@
-import "../assets/scss/components/Tabs.scss";
+import Tooltip from "./Tooltip";
 
 export const TabButtons = ({ tabData, activeTab, setActiveTab }) => {
   return (
@@ -15,18 +15,25 @@ export const TabButtons = ({ tabData, activeTab, setActiveTab }) => {
           </button>
         </li>
 
-        {[...new Set(tabData.map((item) => item.category))].map((category) => (
-          <li key={category}>
-            <button
-              className={`tab__button py-1 ${
-                activeTab === category ? "tab__button--active" : ""
-              }`}
-              onClick={() => setActiveTab(category)}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </button>
-          </li>
-        ))}
+        {[...new Set(tabData.map((item) => item.category))].map((category) => {
+          const tabTitle = category.charAt(0).toUpperCase() + category.slice(1);
+
+          return (
+            <li key={category}>
+              <button
+                className={`tab__button py-1 ${
+                  activeTab === category ? "tab__button--active" : ""
+                }`}
+                onClick={() => setActiveTab(category)}
+              >
+                {tabTitle}
+                <Tooltip styles={{ fontWeight: "300" }}>
+                  Show {tabTitle} technologies
+                </Tooltip>
+              </button>
+            </li>
+          );
+        })}
       </ul>
 
       <div className={`tab__indicator ${activeTab}`}></div>

@@ -1,0 +1,26 @@
+@use "../../utils/" as *;
+
+.about__tech {
+  &--content {
+    position: relative;
+  }
+
+  &--list {
+    &__item {
+      position: relative;
+      background-color: var(--opaque-20);
+      border: solid 0.105em var(--opaque-40);
+      border-radius: var(--radius-200);
+      cursor: default;
+
+      svg {
+        font-size: 1.5em;
+      }
+
+      h4 {
+        font-size: 1em;
+        margin-bottom: 0.15em;
+      }
+    }
+  }
+}

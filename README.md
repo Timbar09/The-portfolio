@@ -1,7 +1,7 @@
 # Miles Mosweu | Portfolio
 
 <div align="center">
-  <img src="src/assets/images/logo-icon.png" alt="Todo X Factr Logo" width="200" height="200" />
+  <img src="src/assets/images/logo-icon.png" alt="Portfolio logo" width="200" height="200" />
 </div>
 
 <a name="readme-top"></a>
@@ -44,13 +44,14 @@ This repository contains the source code for my personal portfolio website that 
 - **Dark Mode Toggle**: The project features a toggle button for light/dark mode. The website can also auto-detect the user's system theme.
 - **Responsive Design**: The fully responsive layout ensures a seamless experience across all device types and screen sizes.
 - **Transitions and Animations**: Implemented using Framer Motion to create smooth and engaging visual effects.
-- **Dynamic Navigation**: On desktop viewports, the navigation bar hides when scrolling down and reappears when scrolling up.
+- **Tooltip Component**: Reusable tooltip component for enhanced UX and accessibility. <!-- NEW -->
+- **GitHub Contribution Calendar**: Integrated a GitHub contribution calendar to showcase commit activity. <!-- NEW -->
 - **Reusable Components**: Includes reusable components such as Button, Link, Transitions, Social Links, and Tab Feature that display lists according to the selected tab.
 - **Custom Hooks**: Features custom hooks like `useMediaQuery` to handle media queries effectively.
 - **Project Showcases**: Displays a collection of my best projects, with detailed descriptions and links to live demos and GitHub repositories.
-- **Contact Form**: Integrated contact form allowing visitors to reach out directly.
-<!-- - **SEO Optimization**: Implemented best practices for search engine optimization to improve visibility.
-- **Performance Optimizations**: Ensures fast loading times and a smooth user experience. -->
+- **Page Transitions**: Added animated page transitions for a smoother navigation experience. <!-- NEW -->
+- **SEO Optimization**: Implemented best practices for search engine optimization to improve visibility.
+<!-- - **Performance Optimizations**: Ensures fast loading times and a smooth user experience. -->
 - **Deployment**: Hosted on Netlify for continuous deployment and easy management.
 
 <p align="right">(<a href="#readme-top">back to top ⬆️</a>)</p>
@@ -66,6 +67,22 @@ The website is live at [milesmosweu.netlify.app](https://milesmosweu.netlify.app
 - **Improved SEO**: Implement further SEO optimizations to improve visibility.
 - **Performance Improvements**: Optimize performance for faster loading times.
 - **Accessibility Improvements**: Enhance accessibility for users with disabilities.
+
+---
+
+**Changelog**
+
+> **October 2025**
+>
+> - Separated landing page sections into individual pages
+> - Added tooltip component
+> - Added GitHub Contribution Calendar
+> - Added 404 page component
+> - Updated Footer
+> - Substituted form submission powered by Formspree with mailto
+> - Added a scrollYProgress bar in the nav
+> - Added a project images carousel to selected project modal
+> - Added page transitions
 
 ## 💻 Running Locally <a name='running-locally'></a>
 
